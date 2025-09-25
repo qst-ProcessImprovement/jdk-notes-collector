@@ -1,0 +1,643 @@
+Java SE 21.0.8 Bundled Patch Release (BPR) - Bug Fixes and Updates
+The following sections summarize changes made in all Java SE 21.0.8 BPR. Bug fixes and any other changes are listed below in date order, most current BPR first. Note that bug fixes in the previous BPR are also included in the current BPR.
+
+ 
+
+Changes in Java SE 21.0.8.0.2
+Bug Fixes
+Release date: July 25, 2025
+BugId	Category	Subcategory	Summary
+JDK-8358764	core-libs	java.nio	(sc) SocketChannel.close when thread blocked in read causes connection to be reset (win)
+ 
+
+Changes in Java SE 21.0.8.0.1
+Bug Fixes
+Release date: July 15, 2025
+BugId	Category	Subcategory	Summary
+JDK-8355072 (not public)	install	install	[OL9] java on systemd environments: /etc/rc.d/init.d/jexec' lacks a native systemd unit file
+Java™ SE Development Kit 21.0.8 (JDK 21.0.8)
+July 15, 2025
+
+The full version string for this update release is 21.0.8+12 (where "+" means "build"). The version number is 21.0.8. This JDK conforms to version 21 of the Java SE Specification (JSR 396 2023-09-19).
+
+ 
+
+IANA TZ Data 2025b
+JDK 21.0.8 contains IANA time zone data 2025b which contains the following changes:
+
+New zone for Aysén Region in Chile which moves from -04/-03 to -03.
+For more information, refer to Timezone Data Versions in the JRE Software.
+
+ 
+
+Security Baselines
+The security baselines for the Java Runtime Environment (JRE) at the time of the release of JDK 21.0.8 are specified in the following table:
+
+Java Family Version	Security Baseline (Full Version String)
+21	21.0.8+12
+17	17.0.16+12
+11	11.0.28+12
+8	1.8.0_461-b11
+ 
+
+Keeping the JDK up to Date
+Oracle recommends that the JDK is updated with each Critical Patch Update. In order to determine if a release is the latest, the Security Baseline page can be used to determine which is the latest version for each release family.
+
+Critical patch updates, which contain security vulnerability fixes, are announced one year in advance on Critical Patch Updates, Security Alerts and Bulletins. It is not recommended that this JDK (version 21.0.8) be used after the next critical patch update scheduled for October 21, 2025.
+
+Java Management Service, available to all users, can help you find vulnerable Java versions in your systems. Java SE Subscribers and customers running in Oracle Cloud can use Java Management Service to update Java Runtimes and to do further security reviews like identifying potentially vulnerable third party libraries used by your Java programs. Existing Java Management Service user click here to log in to your dashboard. The Java Management Service Documentation provides a list of features available to everyone and those available only to customers. Learn more about using Java Management Service to monitor and secure your Java Installations.
+
+ 
+
+Removed Features and Options
+
+security-libs/java.security
+➜ Removed Baltimore CyberTrust Root Certificate After Expiry Date (JDK-8303770)
+The following expired root certificate has been removed from the cacerts keystore:
+
++ alias name "baltimorecybertrustca [jdk]"
+
+  Distinguished Name: CN=Baltimore CyberTrust Root, OU=CyberTrust, O=Baltimore, C=IE
+
+security-libs/java.security
+➜ Removed Two Camerfirma Root Certificates (JDK-8350498)
+The following root certificates, which are terminated and no longer in use, have been removed from the cacerts keystore:
+
++ alias name "camerfirmachamberscommerceca [jdk]"
+
+  Distinguished Name: CN=Chambers of Commerce Root, OU=http://www.chambersign.org, O=AC Camerfirma SA CIF A82743287, C=EU
+
++ alias name "camerfirmachambersignca [jdk]"
+  Distinguished Name: CN=Global Chambersign Root - 2008, O=AC Camerfirma S.A., SERIALNUMBER=A82743287, L=Madrid (see current address at www.camerfirma.com/address), C=EU
+
+ 
+
+Other Notes
+
+security-libs/java.security
+➜ Added 4 New Root Certificates from Sectigo Limited (JDK-8359170)
+The following root certificates have been added to the cacerts truststore:
+
++ Sectigo Limited
+
+  + sectigocodesignroote46
+    DN: CN=Sectigo Public Code Signing Root E46, O=Sectigo Limited, C=GB
+
++ Sectigo Limited
+  + sectigocodesignrootr46
+    DN: CN=Sectigo Public Code Signing Root R46, O=Sectigo Limited, C=GB
+
++ Sectigo Limited
+  + sectigotlsroote46
+    DN: CN=Sectigo Public Server Authentication Root E46, O=Sectigo Limited, C=GB
+
++ Sectigo Limited
+  + sectigotlsrootr46
+    DN: CN=Sectigo Public Server Authentication Root R46, O=Sectigo Limited, C=GB
+
+install/install
+➜ Sign oracle.com JDK RPM Packages with OL9 Signing Key (JDK-8351906 (not public))
+The oracle.com JDK RPM packages meant to be downloaded directly to the target system, now are signed with the OL9 signing key instead of the OL8 signing key. The RPM packages hosted on YUM repositories remain signed with the appropriate key for the target repository.
+
+
+core-libs/java.net
+➜ java.net.http.HttpClient Is Enhanced to Report HTTP/2 Flow Control Errors to the Server (JDK-8342075)
+The java.net.http.HttpClient will now report HTTP/2 flow control errors to the server when they are detected. This is an implementation detail that should be transparent to users of the HttpClient API, but could result in streams being reset or connections being closed if connecting to a non-conformant HTTP/2 server.
+
+
+security-libs/java.security
+➜ Updated HSS/LMS Public Key Encoding (JDK-8347596)
+The X.509 encoded format for HSS/LMS public keys has been updated to align with the latest standard outlined in RFC 9708. Notably, the additional OCTET STRING wrapping around the public key value has been removed. For compatibility, public key encodings generated by earlier JDK releases are still recognized.
+
+
+security-libs/java.security
+➜ Compatible OCSP readtimeout Property with OCSP Timeout (JDK-8347506)
+In JDK 21, an enhanced syntax for various timeout properties was released through JDK-8179502. This included a new system property, com.sun.security.ocsp.readtimeout, which allows users to control the timeout while reading OCSP responses after a successful TCP connection has been established.
+
+This changes the default posture of this property to be the value of the com.sun.security.ocsp.timeout system property from its original default of 15 seconds. If the com.sun.security.ocsp.timeout system property is also not set, then its default 15 second timeout is propagated to the default for com.sun.security.ocsp.readtimeout.
+
+
+security-libs/jdk.security
+➜ Jarsigner Should Print a Warning If an Entry Is Removed (JDK-8309841)
+If an entry is removed from a signed JAR file, there is no mechanism to detect that it has been removed using the JarFile API, since the getJarEntry method returns null as if the entry had never existed. With this change, the jarsigner -verify command analyzes the signature files and if some sections do not have matching file entries, it prints out the following warning: "This JAR contains signed entries for files that do not exist". Users can further find out the names of these entries by adding the -verbose option to the command.
+
+ 
+
+Bug Fixes
+This release also contains fixes for security vulnerabilities described in the Oracle Critical Patch Update.
+
+➜ Issues fixed in 21.0.8:
+#	JBS	Component/Subcomponent	Summary
+1	JDK-8348597	client-libs/2d	Update HarfBuzz to 10.4.0
+2	JDK-8348596	client-libs/2d	Update FreeType to 2.13.3
+3	JDK-8348600	client-libs/java.awt	Update PipeWire to 1.3.81
+4	JDK-8348598	client-libs/java.awt	Update Libpng to 1.6.47
+5	JDK-8280991	client-libs/java.awt	[XWayland] No displayChanged event after setDisplayMode call
+6	JDK-8286204	client-libs/javax.accessibility	[Accessibility,macOS,VoiceOver] VoiceOver reads the spinner value 10 as 1 when user iterates to 10 for the first time on macOS
+7	JDK-8345728	client-libs/javax.accessibility	[Accessibility,macOS,Screen Magnifier]: JCheckbox unchecked state does not magnify but works for checked state
+8	JDK-8348936	client-libs/javax.accessibility	[Accessibility,macOS,VoiceOver] VoiceOver doesn't announce untick on toggling the checkbox with "space" key on macOS
+9	JDK-6928542	client-libs/javax.swing	Chinese characters in RTF are not decoded
+10	JDK-8322754	client-libs/javax.swing	click JComboBox when dialog about to close causes IllegalComponentStateException
+11	JDK-8318915	core-libs/java.math	Enhance checks in BigDecimal.toPlainString()
+12	JDK-8335181	core-libs/java.net	Incorrect handling of HTTP/2 GOAWAY frames in HttpClient
+13	JDK-8343855	core-libs/java.net	HTTP/2 ConnectionWindowUpdateSender may miss some unprocessed DataFrames from closed streams
+14	JDK-8353787	core-libs/java.util.jar	Increased number of SHA-384-Digest java.util.jar.Attributes$Name instances leading to higher memory footprint
+15	JDK-8344589	core-libs/java.util:i18n	Update IANA Language Subtag Registry to Version 2024-11-19
+16	JDK-8356096	core-libs/java.util:i18n	ISO 4217 Amendment 179 Update
+17	JDK-8345296	hotspot/compiler	AArch64: VM crashes with SIGILL when prctl is disallowed
+18	JDK-8349637	hotspot/compiler	Integer.numberOfLeadingZeros outputs incorrectly in certain cases
+19	JDK-8308966	hotspot/compiler	Add intrinsic for float/double modulo for x86 AVX2 and AVX512
+20	JDK-8314056	hotspot/compiler	Remove runtime platform check from frem/drem
+21	JDK-8336042	hotspot/compiler	Caller/callee param size mismatch in deoptimization causes crash
+22	JDK-8357105	hotspot/compiler	C2: compilation fails with "assert(false) failed: empty program detected during loop optimization"
+23	JDK-8332717	hotspot/gc	ZGC: Division by zero in heuristics
+24	JDK-8343285	hotspot/runtime	java.lang.Process is unresponsive and CPU usage spikes to 100%
+25	JDK-8343599	hotspot/runtime	Kmem limit and max values swapped when printing container information
+26	JDK-8320892	hotspot/runtime	AArch64: Restore FPU control state after JNI
+27	JDK-8339148	hotspot/runtime	Make os::Linux::active_processor_count() public
+28	JDK-8345569	hotspot/runtime	[ubsan] adjustments to filemap.cpp and virtualspace.cpp for macOS aarch64
+29	JDK-8319650	hotspot/svc	Improve heap dump performance with class metadata caching
+30	JDK-8320924	hotspot/svc	Improve heap dump performance by optimizing archived object checks
+31	JDK-8311546	security-libs/java.security	Certificate name constraints improperly validated with leading period
+32	JDK-8344361	security-libs/java.security	Restore null return for invalid services from legacy providers
+33	JDK-8332921	tools/jshell	Ctrl+C does not call shutdown hooks after JLine upgrade
+
+Java SE 21.0.7 Bundled Patch Release (BPR) - Bug Fixes and Updates
+The following sections summarize changes made in all Java SE 21.0.7 BPR. Bug fixes and any other changes are listed below in date order, most current BPR first. Note that bug fixes in the previous BPR are also included in the current BPR.
+
+ 
+
+Changes in Java SE 21.0.7.0.1
+Bug Fixes
+Release date: June 27, 2025
+BugId	Category	Subcategory	Summary
+JDK-8332506	hotspot	runtine	SIGFPE In ObjectSynchronizer::is_async_deflation_needed()
+Java™ SE Development Kit 21.0.7 (JDK 21.0.7)
+April 15, 2025
+
+The full version string for this update release is 21.0.7+8 (where "+" means "build"). The version number is 21.0.7. This JDK conforms to version 21 of the Java SE Specification (JSR 396 2023-09-19).
+
+ 
+
+IANA TZ Data 2025a
+JDK 21.0.7 contains IANA time zone data 2025a which contains the following changes:
+
+Paraguay adopts permanent -03 starting spring 2024.
+Improve pre-1991 data for the Philippines.
+Etc/Unknown is now reserved.
+For more information, refer to Timezone Data Versions in the JRE Software.
+
+ 
+
+Security Baselines
+The security baselines for the Java Runtime Environment (JRE) at the time of the release of JDK 21.0.7 are specified in the following table:
+
+Java Family Version	Security Baseline (Full Version String)
+21	21.0.7+8
+17	17.0.15+9
+11	11.0.27+8
+8	1.8.0_451-b10
+ 
+
+Keeping the JDK up to Date
+Oracle recommends that the JDK is updated with each Critical Patch Update. In order to determine if a release is the latest, the Security Baseline page can be used to determine which is the latest version for each release family.
+
+Critical patch updates, which contain security vulnerability fixes, are announced one year in advance on Critical Patch Updates, Security Alerts and Bulletins. It is not recommended that this JDK (version 21.0.7) be used after the next critical patch update scheduled for July 15, 2025.
+
+Java Management Service, available to all users, can help you find vulnerable Java versions in your systems. Java SE Subscribers and customers running in Oracle Cloud can use Java Management Service to update Java Runtimes and to do further security reviews like identifying potentially vulnerable third party libraries used by your Java programs. Existing Java Management Service user click here to log in to your dashboard. The Java Management Service Documentation provides a list of features available to everyone and those available only to customers. Learn more about using Java Management Service to monitor and secure your Java Installations.
+
+ 
+
+New Features
+
+security-libs/javax.crypto:pkcs11
+➜ Legacy Mechanism Check in SunPKCS11 Provider Is Enhanced with Service Type (JDK-8293345)
+Native PKCS11 mechanisms which support decryption but not encryption, or signature verification but not signing, are considered legacy and are disabled by default. The legacy mechanism check in SunPKCS11 provider is enhanced with the service type. For example, prior to this fix, a mechanism supporting encryption, decryption, and verification but not signing, is considered legacy and can't be used at all. After this fix, the corresponding Cipher service using this mechanism is available since both encryption and decryption are supported. However, the corresponding Signature service is not since only verification is supported. To bypass the legacy mechanism check, set the PKCS11 provider configuration attribute "allowLegacy" to true. The default value is false. Note that it is the caller's responsibility to make sure the legacy mechanism is not used for the unsupported functionality.
+
+ 
+
+Other Notes
+
+security-libs/javax.net.ssl
+➜ Distrust TLS Server Certificates Anchored by Camerfirma Root Certificates and Issued After April 15, 2025 (JDK-8346587)
+The JDK will stop trusting TLS server certificates issued after April 15, 2025 and anchored by Camerfirma root certificates, in line with similar plans announced by Google, Mozilla, Apple, and Microsoft.
+
+TLS server certificates issued on or before April 15, 2025 will continue to be trusted until they expire. Certificates issued after that date, and anchored by any of the Certificate Authorities in the table below, will be rejected.
+
+The restrictions are enforced in the JDK implementation (the SunJSSE Provider) of the Java Secure Socket Extension (JSSE) API. A TLS session will not be negotiated if the server's certificate chain is anchored by any of the Certificate Authorities in the table below and the certificate has been issued after April 15, 2025.
+
+An application will receive an exception with a message indicating the trust anchor is not trusted, for example:
+
+"TLS Server certificate issued after 2025-04-15 and anchored by a distrusted legacy Camerfirma root CA: CN=Chambers of Commerce Root - 2008, O=AC Camerfirma S.A.,
+
+SERIALNUMBER=A82743287, L=Madrid (see current address at www.camerfirma.com/address), C=EU"
+
+The JDK can be configured to trust these certificates again by removing "CAMERFIRMA_TLS" from the jdk.security.caDistrustPolicies security property in the java.security configuration file.
+
+The restrictions are imposed on the following Camerfirma Root certificates included in the JDK:
+
+Root Certificates distrusted after 2025-04-15
+Distinguished Name	SHA-256 Fingerprint
+CN=Chambers of Commerce Root, OU=http://www.chambersign.org, O=AC Camerfirma SA CIF A82743287, C=EU	
+0C:25:8A:12:A5:67:4A:EF:25:F2:8B:A7:DC:FA:EC:EE:A3:48:E5:41:E6:F5:CC:4E:E6:3B:71:B3:61:60:6A:C3
+
+CN=Chambers of Commerce Root - 2008, O=AC Camerfirma S.A., SERIALNUMBER=A82743287, L=Madrid (see current address at www.camerfirma.com/address), C=EU	
+06:3E:4A:FA:C4:91:DF:D3:32:F3:08:9B:85:42:E9:46:17:D8:93:D7:FE:94:4E:10:A7:93:7E:E2:9D:96:93:C0
+
+CN=Global Chambersign Root - 2008, O=AC Camerfirma S.A., SERIALNUMBER=A82743287, L=Madrid (see current address at www.camerfirma.com/address), C=EU	
+13:63:35:43:93:34:A7:69:80:16:A0:D3:24:DE:72:28:4E:07:9D:7B:52:20:BB:8F:BD:74:78:16:EE:BE:BA:CA
+
+You can also use the keytool utility from the JDK to print out details of the certificate chain, as follows:
+
+keytool -v -list -alias <your_server_alias> -keystore <your_keystore_filename>
+
+If any of the certificates in the chain are issued by one of the root CAs in the table above are listed in the output you will need to update the certificate or contact the organization that manages the server.
+
+
+core-svc/tools
+➜ JarInputStream Treats Signed JARs with Multiple Manifests As Unsigned (JDK-8337494 (not public))
+The JarInputStream class now treats a signed JAR as unsigned if it detects a second manifest within the first two entries in the JAR file. A warning message "WARNING: Multiple MANIFEST.MF found. Treat JAR file as unsigned." is logged if the system property, -Djava.security.debug=jar, is set.
+
+
+hotspot/gc
+➜ Parallel GC Throws OOM before Heap Is Fully Expanded (JDK-8328744)
+An existing bug may have prevented the full usage of the Java heap allotted with the command line flag -Xmx. That bug has been fixed with JDK-8328744. As a side effect of this fix, installations may experience an increased heap usage when using Parallel GC. Customers should, if necessary, adjust the maximum heap size.
+
+
+security-libs/javax.security
+➜ Fallback Option for POST-only OCSP Requests (JDK-8328638)
+JDK 17 introduced a performance improvement that made OCSP clients unconditionally use GET requests for small requests, while doing POST requests for everything else. This is explicitly allowed and recommended by RFC 5019 and RFC 6960. However, we have seen OCSP responders that, despite RFC requirements, are not working well with GET requests.
+
+This release introduces a new JDK system property to allow clients to fallback to POST-only behavior. This unblocks interactions with those OCSP responders through the use of -Dcom.sun.security.ocsp.useget={false,true}. This amends the original change that introduced GET OCSP requests (JDK-8179503). The default behavior is not changed; the option defaults to true. Set the option to false to disable GET OCSP requests. Any value other than false (case-insensitive) defaults to true.
+
+This option is non-standard, and might go away once problematic OCSP responders get upgraded.
+
+ 
+
+Bug Fixes
+This release also contains fixes for security vulnerabilities described in the Oracle Critical Patch Update.
+
+➜ Issues fixed in 21.0.7:
+#	JBS	Component/Subcomponent	Summary
+1	JDK-8312518	client-libs/java.awt	[macos13] setFullScreenWindow() shows black screen on macOS 13 & above
+2	JDK-8335468	client-libs/java.awt	[XWayland] JavaFX hangs when calling java.awt.Robot.getPixelColor
+3	JDK-8283214	client-libs/javax.accessibility	[macos] Screen magnifier does not show the magnified text for JComboBox
+4	JDK-8339728	client-libs/javax.accessibility	[Accessibility,Windows,JAWS] Bug in the getKeyChar method of the AccessBridge class
+5	JDK-8332866	client-libs/javax.imageio	Crash in ImageIO JPEG decoding when MEM_STATS in enabled
+6	JDK-8347911	client-libs/javax.imageio	Limit the length of inflated text chunks
+7	JDK-8332431	client-libs/javax.swing	NullPointerException in JTable of SwingSet2
+8	JDK-8340824	hotspot/compiler	C2: Memory for TypeInterfaces not reclaimed by hashcons()
+9	JDK-8337660	hotspot/compiler	C2: basic blocks with only BoxLock nodes are wrongly treated as empty
+10	JDK-8340313	hotspot/compiler	Crash due to invalid oop in nmethod after C1 patching
+11	JDK-8331090	hotspot/compiler	Run Ideal_minmax before de-canonicalizing CMoves
+12	JDK-8324655	hotspot/compiler	Identify integer minimum and maximum patterns created with if statements
+13	JDK-8338100	hotspot/compiler	C2: assert(!n_loop->is_member(get_loop(lca))) failed: control must not be back in the loop
+14	JDK-8322957	hotspot/gc	Generational ZGC: Relocation selection must join the STS
+15	JDK-8170817	hotspot/gc	G1: Returning MinTLABSize from unsafe_max_tlab_alloc causes TLAB flapping
+16	JDK-8328168	hotspot/gc	Epsilon: Premature OOM when allocating object larger than uncommitted heap size
+17	JDK-8328166	hotspot/gc	Epsilon: 'EpsilonHeap::allocate_work' misuses the parameter 'size' as size in bytes
+18	JDK-8315031	hotspot/gc	YoungPLABSize and OldPLABSize not aligned by ObjectAlignmentInBytes
+19	JDK-8329570	hotspot/gc	G1: Excessive is_obj_dead_cond calls in verification
+20	JDK-8329223	hotspot/gc	Parallel: Parallel GC resizes heap even if -Xms = -Xmx
+21	JDK-8330981	hotspot/gc	ZGC: Should not dedup strings in the finalizer graph
+22	JDK-8330275	hotspot/gc	Crash in XMark::follow_array
+23	JDK-8329088	hotspot/gc	Stack chunk thawing races with concurrent GC stack iteration
+24	JDK-8329109	hotspot/gc	Threads::print_on() tries to print CPU time for terminated GC threads
+25	JDK-8325937	hotspot/runtime	runtime/handshake/HandshakeDirectTest.java causes "monitor end should be strictly below the frame pointer" assertion failure on AArch64
+26	JDK-8344145	hotspot/test	Remove windows_x64_1803_or_later and it's usages in task definitions
+27	JDK-8335288	security-libs/javax.crypto:pkcs11	SunPKCS11 initialization will call C_GetMechanismInfo on unsupported mechanisms
+28	JDK-8331959	security-libs/javax.crypto:pkcs11	Update PKCS#11 Cryptographic Token Interface to v3.1
+29	JDK-8331958	security-libs/javax.smartcardio	Update PC/SC Lite for Suse Linux to 2.3.0
+
+Java™ SE Development Kit 21.0.6 (JDK 21.0.6)
+January 21, 2025
+
+The full version string for this update release is 21.0.6+8 (where "+" means "build"). The version number is 21.0.6. This JDK conforms to version 21 of the Java SE Specification (JSR 396 2023-09-19).
+
+ 
+
+IANA TZ Data 2024b
+JDK 21.0.6 contains IANA time zone data 2024b which contains the following changes:
+
+Improve historical data for Mexico, Mongolia, and Portugal.
+System V names are now obsolescent.
+The main data form now uses %z.
+The code now conforms to RFC 8536 for early timestamps.
+Support POSIX.1-2024, which removes asctime_r and ctime_r.
+For more information, refer to Timezone Data Versions in the JRE Software.
+
+ 
+
+Security Baselines
+The security baselines for the Java Runtime Environment (JRE) at the time of the release of JDK 21.0.6 are specified in the following table:
+
+Java Family Version	Security Baseline (Full Version String)
+21	21.0.6+8
+17	17.0.14+8
+11	11.0.26+7
+8	1.8.0_441-b07
+ 
+
+Keeping the JDK up to Date
+Oracle recommends that the JDK is updated with each Critical Patch Update. In order to determine if a release is the latest, the Security Baseline page can be used to determine which is the latest version for each release family.
+
+Critical patch updates, which contain security vulnerability fixes, are announced one year in advance on Critical Patch Updates, Security Alerts and Bulletins. It is not recommended that this JDK (version 21.0.6) be used after the next critical patch update scheduled for April 15, 2025.
+
+Java Management Service, available to all users, can help you find vulnerable Java versions in your systems. Java SE Subscribers and customers running in Oracle Cloud can use Java Management Service to update Java Runtimes and to do further security reviews like identifying potentially vulnerable third party libraries used by your Java programs. Existing Java Management Service user click here to log in to your dashboard. The Java Management Service Documentation provides a list of features available to everyone and those available only to customers. Learn more about using Java Management Service to monitor and secure your Java Installations.
+
+ 
+
+Other Notes
+
+core-libs/java.lang
+➜ ProcessBuilder on Windows Quotes Argument Strings Containing Any Space Character (JDK-8335428 (not public))
+On Windows, the ProcessBuilder has expanded the quoting of argument strings when starting a process to ensure they are recognized by the application as a single command argument. The set of space characters has been expanded from space (0x20) to include all space characters as defined by java.lang.Character.isSpaceChar, which includes all Unicode space separator characters, such as EN-SPACE (0x2002), and line separator and paragraph separator characters.
+
+
+core-libs/java.time
+➜ Support for Time Zone Database 2024b (JDK-8339637)
+IANA Time Zone Database has been upgraded to 2024b. This version mainly includes changes to improve historical data for Mexico, Mongolia, and Portugal. It also changes one timestamp abbreviation, for the time zone 'MET'. Also Asia/Choibalsan is now an alias for Asia/Ulaanbaatar.
+
+The new tzdata changes also impact some legacy time zone IDs. As per 2024b changes "EST" links to "America/Panama", "HST" links to "Pacific/Honolulu" and "MST" links to "America/Phoenix". To maintain compatibility with the Java SE specification, the java.time.ZoneId.SHORT_IDS Map has not changed. Further details are available at JDK-8342331
+
+ 
+
+Bug Fixes
+This release also contains fixes for security vulnerabilities described in the Oracle Critical Patch Update.
+
+➜ Issues fixed in 21.0.6:
+#	JBS	Component/Subcomponent	Summary
+1	JDK-8329667	client-libs/javax.accessibility	[macos] Issue with JTree related fix for JDK-8317771
+2	JDK-8340812	core-libs/java.lang.invoke	LambdaForm customization via MethodHandle::updateForm is not thread safe
+3	JDK-8320575	core-libs/java.lang:reflect	generic type information lost on mandated parameters of record's compact constructors
+4	JDK-8334719	core-libs/java.nio	(se) Deferred close of SelectableChannel may result in a Selector doing the final close before concurrent I/O on channel has completed
+5	JDK-8328366	core-libs/java.util.concurrent	Thread.setContextClassloader from thread in FJP commonPool task no longer works after JDK-8327501
+6	JDK-8319876	core-svc/java.lang.management	Reduce memory consumption of VM_ThreadDump::doit
+7	JDK-8321509	hotspot/compiler	False positive in get_trampoline fast path causes crash
+8	JDK-8340214	hotspot/compiler	C2 compilation asserts with "no node with a side effect" in PhaseIdealLoop::try_sink_out_of_loop
+9	JDK-8337066	hotspot/compiler	Repeated call of StringBuffer.reverse with double byte string returns wrong result
+10	JDK-8335709	hotspot/compiler	C2: assert(!loop->is_member(get_loop(useblock))) failed: must be outside loop
+11	JDK-8339648	hotspot/gc	ZGC: Division by zero in rule_major_allocation_rate
+12	JDK-8338389	hotspot/jfr	[JFR] Long strings should be added to the string pool
+13	JDK-8325469	hotspot/runtime	Freeze/Thaw code can crash in the presence of OSR frames
+14	JDK-8335409	hotspot/runtime	Can't allocate and retain memory from resource area in frame::oops_interpreted_do oop closure after 8329665
+15	JDK-8319973	hotspot/runtime	AArch64: Save and restore FPCR in the call stub
+16	JDK-8319818	hotspot/runtime	Address GCC 13.2.0 warnings (stringop-overflow and dangling-pointer)
+17	JDK-8340387	hotspot/runtime	Update OS detection code to recognize Windows Server 2025
+18	JDK-8337410	hotspot/test	The makefiles should set problemlist and adjust timeout basing on the given VM flags
+19	JDK-8328723	security-libs/java.security	IP Address error when client enables HTTPS endpoint check on server socket
+20	JDK-8331864	security-libs/java.security	Update Public Suffix List to 1cbd6e7
+21	JDK-8322809	tools/jlink	SystemModulesMap::classNames and moduleNames arrays do not match the order
+
+Java™ SE Development Kit 21.0.5 (JDK 21.0.5)
+Release date: October 15, 2024
+
+The full version string for this update release is 21.0.5+9 (where "+" means "build"). The version number is 21.0.5.
+
+ 
+
+IANA TZ Data 2024a
+For more information, refer to Timezone Data Versions in the JRE Software.
+
+ 
+
+Security Baselines
+The security baselines for the Java Runtime at the time of the release of JDK 21.0.5 are specified in the following table:
+
+Java Family Version	Security Baseline (Full Version String)
+21	21.0.5+9
+17	17.0.13+10
+11	11.0.25+9
+8	1.8.0_431-b10
+ 
+
+Keeping the JDK up to Date
+Oracle recommends that the JDK is updated with each Critical Patch Update. In order to determine if a release is the latest, the Security Baseline page can be used to determine which is the latest version for each release family.
+
+Critical patch updates, which contain security vulnerability fixes, are announced one year in advance on Critical Patch Updates, Security Alerts and Bulletins. It is not recommended that this JDK (version 21.0.5) be used after the next critical patch update scheduled for January 21, 2025.
+
+Java Management Service, available to all users, can help you find vulnerable Java versions in your systems. Java SE Subscribers and customers running in Oracle Cloud can use Java Management Service to update Java Runtimes and to do further security reviews like identifying potentially vulnerable third party libraries used by your Java programs. Existing Java Management Service user click here to log in to your dashboard. The Java Management Service Documentation provides a list of features available to everyone and those available only to customers. Learn more about using Java Management Service to monitor and secure your Java Installations.
+
+ 
+
+New Features
+
+security-libs/java.security
+➜ Thread and Timestamp Options for java.security.debug System Property (JDK-8051959)
+The java.security.debug system property now accepts arguments which add thread ID, thread name, caller information, and timestamp information to debug statements for all components or a specific component.
+
++timestamp can be appended to debug options to print a timestamp for that debug option. +thread can be appended to debug options to print thread and caller information for that debug option.
+
+Examples: -Djava.security.debug=all+timestamp+thread adds timestamp and thread information to every debug statement generated.
+
+-Djava.security.debug=properties+timestamp adds timestamp information to every debug statement generated for the properties component.
+
+You can also specify -Djava.security.debug=help which will display a complete list of supported components and arguments.
+
+See Printing Thread and Timestamp Information for more information.
+
+ 
+
+Notable Issues Resolved
+
+install/install
+➜ JDK RPM Upgrade Leaves Orphan Alternatives Entry (JDK-8336107 (not public))
+Fixed the issue with entries in the "java" and "javac" groups not being properly managed during an RPM upgrade.
+
+Upgrading from an older Java RPM installed into a shared directory (/usr/lib/jvm/jdk-${FEATURE}-oracle-${ARCH}) to a Java RPM installing into a version-specific directory (/usr/lib/jvm/jdk-${VERSION}-oracle-${ARCH}), results in the older Java entries in the "java" and "javac" groups not being deleted.
+
+The issue does not manifest until the new Java is uninstalled. When it is uninstalled and Java from the lower release is installed, running Java commands like java or keytool without the full path specified will result in the "command not found" error. For example, install 21.0.3; upgrade it to 21.0.4; uninstall 21.0.4; install any Java update of 17 or 11 or 8 release; run "java" from the command line. The command will fail with the "command not found" error.
+
+Manually delete orphan Java entries in the "java" and "javac" groups to workaround the issue.
+
+ 
+
+Other Notes
+
+core-libs/java.net
+➜ New Default Limits in the JDK HTTP Implementations (JDK-8328286 (not public))
+New Default limits have been added to HTTP in the JDK.
+
+The JDK built-in implementation of the legacy URL protocol handler for HTTP, HttpURLConnection, and the new HttpClient, in the module java.net.http, now have a default limit on the maximum response headers size they will accept from a remote party. The limit is set by default at 384kB (393216 bytes) and is computed as the cumulative size of all header names and header values plus an overhead of 32 bytes per header name value pair.
+
+The default value of the limit can be changed by specifying a positive value with the jdk.http.maxHeaderSize system property on the command line, or in the $JAVA_HOME/conf/net.properties file. A negative or zero value is interpreted as no limit. If the limit is exceeded, the request will fail with a protocol exception.
+
+The JDK built-in implementation of the com.sun.net.httpserver.HttpServer (jdk.httpserver) implements a similar limit for the maximum request header size the server is prepared to accept. The HttpServer limit can be changed by specifying a positive value with the sun.net.httpserver.maxReqHeaderSize system property on the command line. A negative or zero value is interpreted as no limit. The limit is set by default at 384kB (393216 bytes) and the size is computed in the same way as explained above. If the limit is exceeded, the connection is closed.
+
+In addition, the JDK built-in implementation of the new java.net.http.HttpClient enforces two additional limits:
+
+The system property jdk.httpclient.maxNonFinalResponses can be specified with a positive value on the java command line, or in the $JAVA_HOME/conf/net.properties file, to control how many interim responses the client will accept before receiving a final response. An interim response is considered informational and is a response whose status is in the range [100, 199]. These responses are typically either handled internally or simply discarded by the implementation. The default limit is now set at a maximum of 8 interim responses before receiving the final response. A negative or zero value is interpreted as no limit. If the limit is exceeded, the request will fail with a protocol exception.
+The system property jdk.httpclient.maxLiteralWithIndexingcan be specified with a positive value on the java command line, or in the $JAVA_HOME/conf/net.properties file, to control how many additions a server may request a client to make to the HPack dynamic table when decoding a set of headers. The default maximum value is now set to 512. A negative or zero value is interpreted as no limit. If the limit is exceeded, the request will fail with a protocol exception.
+
+security-libs/java.security
+➜ Added SSL.com TLS Root CA Certificates Issued in 2022 (JDK-8341057)
+The following root certificates have been added to the cacerts truststore:
+
++ SSL.com
+
+  + ssltlsrootecc2022
+    DN: CN=SSL.com TLS ECC Root CA 2022, O=SSL Corporation, C=US
+
++ SSL.com
+  + ssltlsrootrsa2022
+    DN: CN=SSL.com TLS RSA Root CA 2022, O=SSL Corporation, C=US
+
+security-libs/javax.net.ssl
+➜ Distrust TLS Server Certificates Anchored by Entrust Root Certificates and Issued After Nov 11, 2024 (JDK-8337664)
+The JDK will stop trusting TLS server certificates issued after November 11, 2024 and anchored by Entrust root certificates, in line with similar plans recently announced by Google and Mozilla. The list of affected certificates includes certificates branded as AffirmTrust, which are managed by Entrust.
+
+TLS server certificates issued on or before November 11, 2024 will continue to be trusted until they expire. Certificates issued after that date, and anchored by any of the Certificate Authorities in the table below, will be rejected.
+
+The restrictions will be enforced in the JDK implementation (the SunJSSE Provider) of the Java Secure Socket Extension (JSSE) API. A TLS session will not be negotiated if the server's certificate chain is anchored by any of the Certificate Authorities in the table below and the certificate has been issued after November 11, 2024.
+
+An application will receive an Exception with a message indicating the trust anchor is not trusted, for example:
+
+TLS server certificate issued after 2024-11-11 and anchored by a distrusted legacy Entrust root CA: CN=Entrust.net Certification Authority (2048),
+
+OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net
+
+If necessary, and at your own risk, you can work around the restrictions by removing "ENTRUST_TLS" from the jdk.security.caDistrustPolicies security property in the java.security configuration file.
+
+The restrictions are imposed on the following Entrust Root certificates included in the JDK:
+
+Root Certificates distrusted after 2024-11-11
+Distinguished Name	SHA-256 Fingerprint
+CN=Entrust Root Certification Authority, OU=(c) 2006 Entrust, Inc., OU=www.entrust.net/CPS is incorporated by reference, O=Entrust, Inc., C=US	
+73:C1:76:43:4F:1B:C6:D5:AD:F4:5B:0E:76:E7:27:28:7C:8D:E5:76:16:C1:E6:E6:14:1A:2B:2C:BC:7D:8E:4C
+
+CN=Entrust Root Certification Authority - EC1, OU=(c) 2012 Entrust, Inc. - for authorized use only, OU=See www.entrust.net/legal-terms, O=Entrust, Inc., C=US	
+02:ED:0E:B2:8C:14:DA:45:16:5C:56:67:91:70:0D:64:51:D7:FB:56:F0:B2:AB:1D:3B:8E:B0:70:E5:6E:DF:F5
+
+CN=Entrust Root Certification Authority - G2, OU=(c) 2009 Entrust, Inc. - for authorized use only, OU=See www.entrust.net/legal-terms, O=Entrust, Inc., C=US	
+43:DF:57:74:B0:3E:7F:EF:5F:E4:0D:93:1A:7B:ED:F1:BB:2E:6B:42:73:8C:4E:6D:38:41:10:3D:3A:A7:F3:39
+
+CN=Entrust Root Certification Authority - G4, OU=(c) 2015 Entrust, Inc. - for authorized use only, OU=See www.entrust.net/legal-terms, O=Entrust, Inc., C=US	
+DB:35:17:D1:F6:73:2A:2D:5A:B9:7C:53:3E:C7:07:79:EE:32:70:A6:2F:B4:AC:42:38:37:24:60:E6:F0:1E:88
+
+CN=Entrust.net Certification Authority (2048), OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net	
+6D:C4:71:72:E0:1C:BC:B0:BF:62:58:0D:89:5F:E2:B8:AC:9A:D4:F8:73:80:1E:0C:10:B9:C8:37:D2:1E:B1:77
+
+CN=AffirmTrust Commercial, O=AffirmTrust, C=US	
+03:76:AB:1D:54:C5:F9:80:3C:E4:B2:E2:01:A0:EE:7E:EF:7B:57:B6:36:E8:A9:3C:9B:8D:48:60:C9:6F:5F:A7
+
+CN=AffirmTrust Networking, O=AffirmTrust, C=US	
+0A:81:EC:5A:92:97:77:F1:45:90:4A:F3:8D:5D:50:9F:66:B5:E2:C5:8F:CD:B5:31:05:8B:0E:17:F3:F0B4:1B
+
+CN=AffirmTrust Premium, O=AffirmTrust, C=US	
+70:A7:3F:7F:37:6B:60:07:42:48:90:45:34:B1:14:82:D5:BF:0E:69:8E:CC:49:8D:F5:25:77:EB:F2:E9:3B:9A
+
+CN=AffirmTrust Premium ECC, O=AffirmTrust, C=US	
+BD:71:FD:F6:DA:97:E4:CF:62:D1:64:7A:DD:25:81:B0:7D:79:AD:F8:39:7E:B4:EC:BA:9C:5E:84:88:82:14:23
+
+
+You can also use the keytool utility from the JDK to print out details of the certificate chain, as follows:
+
+keytool -v -list -alias <your_server_alias> -keystore <your_keystore_filename>
+
+If any of the certificates in the chain are issued by one of the root CAs in the table above are listed in the output you will need to update the certificate or contact the organization that manages the server.
+
+
+core-libs/java.text
+➜ MessageFormat ArgumentIndex Now Has a Limit (JDK-8331446 (not public))
+In the JDK, java.text.MessageFormat now has an implementation limit for the ArgumentIndex pattern element. The hard limit for the value is 10,000.
+
+If an ArgumentIndex value is equal to or exceeds the upper limit, an IllegalArgumentException will now be thrown by
+
+MessageFormats constructors
+applyPattern(String pattern) instance method
+format(String pattern, Object... arguments) static method
+De-serializing a MessageFormat object with an ArgumentIndex value at or over the limit will throw an InvalidObjectException.
+
+
+core-svc/java.lang.management
+➜ The ClassLoadingMXBean and MemoryMXBean isVerbose Methods Are Now Consistent with Their setVerbose Methods (JDK-8338139)
+The ClassLoadingMXBean::setVerbose(boolean enabled) method will set class+load* logging on log output stdout to level info if enabled is true, and to level off otherwise. In contrast, the isVerbose method would check if exactly class+load logging was enabled at the info level on any log output. This could result in counter-intuitive behavior when logging class+load=info to a file via the command-line, as it caused isVerbose to return true, even after a call to setVerbose(false) had been made. A similar problem existed for the MemoryMXBean::isVerbose method. Starting with this release, the behavior is as follows:
+
+ClassLoadingMXBean::isVerbose will return true only if class+load* logging (note the wildcard use) has been enabled at the info level (or above) on the stdout log output.
+MemoryMXBean::isVerbose will return true only if gc logging has been enabled at the info level (or above) on the stdout log output.
+
+security-libs/javax.crypto
+➜ KEM.getInstance() Should Check If a Third-Party Security Provider Is Signed (JDK-8322971)
+When instantiating a third-party security provider's implementation (class) of a KEM algorithm, the framework will determine the provider's codebase (JAR file) and verify its signature. In this way, JCA authenticates the provider and ensures that only providers signed by a trusted entity can be plugged into the JCA. This is consistent with other JCE service classes, such as Cipher, Mac, KeyAgreement, and others.
+
+
+tools/launcher
+➜ Available Locales Information Now Listed with -XshowSettings:locale Option (JDK-8310201)
+The showSettings launcher option no longer prints available locales information by default, when -XshowSettings is used. The -XshowSettings:locale option will continue to print all settings related to available locales.
+
+ 
+
+Updates to Third Party Libraries
+Library	New Version	Module	JBS
+GIFlib	5.2.2	java.desktop	JDK-8328999
+Libpng	1.6.43	java.desktop	JDK-8329004
+JQuery	3.7.1	jdk.javadoc	JDK-8330063
+ 
+
+Bug Fixes
+This release also contains fixes for security vulnerabilities described in the Oracle Critical Patch Update.
+
+➜ Issues fixed in 21.0.5:
+#	JBS	Component/Subcomponent	Summary
+1	JDK-8328896	client-libs/2d	Fontmetrics for large Fonts has zero width
+2	JDK-8315701	client-libs/java.awt	[macos] Regression: KeyEvent has different keycode on different keyboard layouts
+3	JDK-8309621	client-libs/java.awt	[XWayland][Screencast] screen capture failure with sun.java2d.uiScale other than 1
+4	JDK-8313697	client-libs/java.awt	[XWayland][Screencast] consequent getPixelColor calls are slow
+5	JDK-8331011	client-libs/java.awt	[XWayland] TokenStorage fails under Security Manager
+6	JDK-8321176	client-libs/java.awt	[Screencast] make a second attempt on screencast failure
+7	JDK-8323801	client-libs/javax.swing	<s> tag doesn't strikethrough the text
+8	JDK-8326734	client-libs/javax.swing	text-decoration applied to <span> lost when mixed with <u> or <s>
+9	JDK-8325179	client-libs/javax.swing	Race in BasicDirectoryModel.validateFileCache
+10	JDK-8328953	client-libs/javax.swing	JEditorPane.read throws ChangedCharSetException
+11	JDK-8335967	client-libs/javax.swing	"text-decoration: none" does not work with "A" HTML tags
+12	JDK-6967482	client-libs/javax.swing	TAB-key does not work in JTables after selecting details-view in JFileChooser
+13	JDK-8321409	core-libs/java.io	Console read line with zero out should zero out underlying buffer in JLine (redux)
+14	JDK-8330748	core-libs/java.io	ByteArrayOutputStream.writeTo(OutputStream) pins carrier
+15	JDK-8325382	core-libs/java.nio	(fc) FileChannel.transferTo throws IOException when position equals size
+16	JDK-8332154	core-libs/java.util.concurrent	Memory leak in SynchronousQueue
+17	JDK-8332424	core-libs/java.util:i18n	Update IANA Language Subtag Registry to Version 2024-05-16
+18	JDK-8334418	core-libs/java.util:i18n	Update IANA Language Subtag Registry to Version 2024-06-14
+19	JDK-8334653	core-libs/java.util:i18n	ISO 4217 Amendment 177 Update
+20	JDK-8324668	core-svc/debugger	JDWP process management needs more efficient file descriptor handling
+21	JDK-8328822	hotspot/compiler	C2: "negative trip count?" assert failure in profile predicate code
+22	JDK-8324121	hotspot/compiler	SIGFPE in PhaseIdealLoop::extract_long_range_checks
+23	JDK-8328938	hotspot/compiler	C2 SuperWord: disable vectorization for large stride and scale
+24	JDK-8312218	hotspot/compiler	Print additional debug information when hitting assert(in_hash)
+25	JDK-8324983	hotspot/compiler	Race in CompileBroker::possibly_add_compiler_threads
+26	JDK-8331863	hotspot/compiler	DUIterator_Fast used before it is constructed
+27	JDK-8329258	hotspot/compiler	TailCall should not use frame pointer register for jump target
+28	JDK-8323682	hotspot/compiler	C2: guard check is not generated in Arrays.copyOfRange intrinsic when allocation is eliminated by EA
+29	JDK-8324969	hotspot/compiler	C2: prevent elimination of unbalanced coarsened locking regions
+30	JDK-8333366	hotspot/compiler	C2: CmpU3Nodes are not pushed back to worklist in PhaseCCP leading to non-fixpoint assertion failure
+31	JDK-8332959	hotspot/compiler	C2: ZGC fails with 'Incorrect load shift' when invoking Object.clone() reflectively on an array
+32	JDK-8332905	hotspot/compiler	C2 SuperWord: bad AD file, with RotateRightV and first operand not a pack
+33	JDK-8316756	hotspot/compiler	C2 EA fails with "missing memory path" when encountering unsafe_arraycopy stub call
+34	JDK-8324174	hotspot/compiler	assert(m->is_entered(current)) failed: invariant
+35	JDK-8319793	hotspot/compiler	C2 compilation fails with "Bad graph detected in build_loop_late" after JDK-8279888
+36	JDK-8317299	hotspot/compiler	safepoint scalarization doesn't keep track of the depth of the JVM state
+37	JDK-8323972	hotspot/compiler	C2 compilation fails with assert(!x->as_Loop()->is_loop_nest_inner_loop()) failed: loop was transformed
+38	JDK-8322996	hotspot/compiler	BoxLockNode creation fails with assert(reg < CHUNK_SIZE) failed: sanity
+39	JDK-8331575	hotspot/compiler	C2: crash when ConvL2I is split thru phi at LongCountedLoop
+40	JDK-8323274	hotspot/compiler	C2: array load may float above range check
+41	JDK-8322743	hotspot/compiler	C2: prevent lock region elimination in OSR compilation
+42	JDK-8308660	hotspot/compiler	C2 compilation hits 'node must be dead' assert
+43	JDK-8330819	hotspot/compiler	C2 SuperWord: bad dominance after pre-loop limit adjustment with base that has CastLL after pre-loop
+44	JDK-8329126	hotspot/compiler	No native wrappers generated anymore with -XX:-TieredCompilation after JDK-8251462
+45	JDK-8332920	hotspot/compiler	C2: Partial Peeling is wrongly applied for CmpU with negative limit
+46	JDK-8325494	hotspot/compiler	C2: Broken graph after not skipping CastII node anymore for Assertion Predicates after JDK-8309902
+47	JDK-8325520	hotspot/compiler	Vector loads and stores with indices and masks incorrectly compiled
+48	JDK-8333099	hotspot/compiler	Missing check for is_LoadVector in StoreNode::Identity
+49	JDK-8334421	hotspot/compiler	assert(!oldbox->is_unbalanced()) failed: this should not be called for unbalanced region
+50	JDK-8330611	hotspot/compiler	AES-CTR vector intrinsic may read out of bounds (x86_64, AVX-512)
+51	JDK-8333542	hotspot/jvmti	Breakpoint in parallel code does not work
+52	JDK-8319773	hotspot/runtime	Avoid inflating monitors when installing hash codes for LM_LIGHTWEIGHT
+53	JDK-8324577	hotspot/runtime	[REDO] - [IMPROVE] OPEN_MAX is no longer the max limit on macOS >= 10.6 for RLIMIT_NOFILE
+54	JDK-8319437	hotspot/runtime	NMT should show library names in call stacks
+55	JDK-8319153	hotspot/test	Fix: Class is a raw type in ProcessTools
+56	JDK-8328785	security-libs/javax.crypto:pkcs11	IOException: Symbol not found: C_GetInterface for PKCS11 interface prior to V3.0
+57	JDK-8330133	security-libs/javax.crypto:pkcs11	libj2pkcs11.so crashes on some pkcs#11 v3.0 libraries
+58	JDK-8261433	security-libs/javax.crypto:pkcs11	Better pkcs11 performance for libpkcs11:C_EncryptInit/libpkcs11:C_DecryptInit
+59	JDK-8341059	security-libs/javax.net.ssl	Change Entrust TLS distrust date to November 12, 2024
+60	JDK-8312229	tools/javac	Crash involving yield, switch and anonymous classes
+61	JDK-8326332	tools/javadoc(tool)	Unclosed inline tags cause misalignment in summary tables
+
