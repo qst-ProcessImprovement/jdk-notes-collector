@@ -1,28 +1,24 @@
-# SOW: step4 list.txt ハイフン整形モジュール
+# SOW: step4 list.txt アンダーバー整形 + description 付与モジュール
 
 ## 目的
-- `step4.資料作成/list.txt` の内容を、`p`/`P` で始まる行をレコード境界と見なしつつ各行を `-` で連結した一行表示に変換する Python モジュールを実装する。
+- `step4.資料作成/list.txt` の内容を、`P` 系行をレコード境界と見なしつつ各行をアンダーバーで連結し、対応する `jdk_issues_combined.txt` から取得した Description を末尾に付与する Python モジュールを実装する。
 
 ## スコープ
-- 入力: 既存ファイル `step4.資料作成/list.txt`
-- 出力: ハイフン区切りへ整形したテキストを標準出力または別ファイルに書き出すロジック（モジュール内の関数として実装）
-- 実装: `step4.資料作成` 配下に新規 Python モジュール（仮称 `hyphenate_list.py`）を作成
-- テスト: モジュールの関数を用いて一部サンプルデータで手動確認（可能ならコマンド実行での動作確認）
+- 入力: 既存ファイル `step4.資料作成/list.txt` および `step4.資料作成/jdk_issues_combined.txt`
+- 出力: アンダーバー区切り + Description を付与したテキストを同ディレクトリに新規ファイルとして書き出す（デフォルト `list_underscored.txt`）
+- 実装: `step4.資料作成/hyphenate_list.py` に処理関数と CLI を実装
+- テスト: モジュールを実行し、Description が正しく連結されることを確認
 
 ## LSP 調査結果（影響シンボル）
-- `run/aggregate_jdk_issues.py`: `serena__get_symbols_overview` より既存シンボル一覧を確認（`determine_release`, `build_row`, `write_detail_report` 等）。今回の処理対象と独立しており、既存シンボルを変更する必要なし。
-- 既存 Python モジュール内に `list.txt` の整形処理に関わる呼び出しは確認できず、影響範囲は新規モジュールの追加に限定される見込み。
+- `run/aggregate_jdk_issues.py`: `serena__get_symbols_overview` でシンボル構造を確認済み。今回の処理とは独立、変更不要。
+- 既存の list 整形処理は今回モジュール内で完結するため、影響範囲は `hyphenate_list.py` および新規出力ファイルに限定。
 
 ## アウトオブスコープ
-- `list.txt` 自体の内容更新
+- `list.txt` / `jdk_issues_combined.txt` の内容変更
 - 他ディレクトリ (`run/`, `step1~3`) のスクリプト修正
-- CLI 引数や設定ファイルの追加要件
+- CLI 引数・環境変数の追加要件（既定引数以外）
 
 ## タスク分割 (AT)
-1. AT1: 具体的な入力/出力形式と `p`/`P` 行の区切り仕様を整理し、関数インターフェースを決定する。
-2. AT2: `hyphenate_list.py` にレコード分割とハイフン連結処理を実装し、再利用可能な関数を提供する。
-3. AT3: 実装関数を試験的に実行し、期待どおりに出力されることを確認する（例: サンプルレコードでの手動テスト）。
-
-## 成果物
-- `step4.資料作成/hyphenate_list.py`（新規）: `list.txt` をハイフン区切りに整形するエントリポイント関数および CLI 実装
-- 簡易的な利用手順（最終報告に記載）
+1. AT1: `list.txt` と `jdk_issues_combined.txt` の構造を確認し、Description の取得ロジックを設計
+2. AT2: `hyphenate_list.py` にアンダーバー連結 + Description 付与処理を実装し、CLI 引数を整備
+3. AT3: 実装関数を実行して出力内容を検証、結果を報告
