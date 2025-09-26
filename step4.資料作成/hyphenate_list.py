@@ -1,4 +1,4 @@
-"""list.txt のレコードをハイフン連結で書き出すユーティリティ."""
+"""list.txt のレコードをアンダーバー連結で書き出すユーティリティ."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def is_record_marker(field: str) -> bool:
 
 
 def hyphenate_records(lines: Iterable[str]) -> List[str]:
-    """p/P で始まる優先度行を区切りとしてレコードをハイフン結合する."""
+    """p/P の優先度行を区切りとし各項目をアンダーバー連結する."""
 
     records: List[str] = []
     current_fields: List[str] = []
@@ -31,19 +31,19 @@ def hyphenate_records(lines: Iterable[str]) -> List[str]:
             continue
 
         if is_record_marker(field) and current_fields:
-            records.append("-".join(current_fields))
+            records.append("_".join(current_fields))
             current_fields = []
 
         current_fields.append(field)
 
     if current_fields:
-        records.append("-".join(current_fields))
+        records.append("_".join(current_fields))
 
     return records
 
 
 def hyphenate_file(input_path: Path, output_path: Path) -> Path:
-    """入力ファイルをハイフン連結して出力ファイルに書き出す."""
+    """入力ファイルをアンダーバー連結して出力ファイルに書き出す."""
 
     lines = input_path.read_text(encoding="utf-8").splitlines()
     records = hyphenate_records(lines)
@@ -58,7 +58,7 @@ def hyphenate_file(input_path: Path, output_path: Path) -> Path:
 
 
 def parse_args() -> Namespace:
-    parser = ArgumentParser(description="list.txt をハイフン区切りに変換する")
+    parser = ArgumentParser(description="list.txt をアンダーバー区切りに変換する")
     parser.add_argument(
         "--input",
         default="list.txt",
@@ -67,7 +67,7 @@ def parse_args() -> Namespace:
     parser.add_argument(
         "--output",
         default=None,
-        help="出力ファイル名（省略時は list-hyphenated.txt）",
+        help="出力ファイル名（省略時は list_underscored.txt）",
     )
     return parser.parse_args()
 
@@ -79,7 +79,7 @@ def main() -> None:
     if not input_path.exists():
         raise SystemExit(f"入力ファイルが見つかりません: {input_path}")
 
-    default_output = input_path.with_name("list-hyphenated.txt")
+    default_output = input_path.with_name("list_underscored.txt")
 
     if args.output is None:
         output_path = default_output
