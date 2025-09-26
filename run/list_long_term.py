@@ -23,6 +23,7 @@ except ImportError:
 
 
 ISSUE_TITLE_PATTERN = re.compile(r"^Title: \[(JDK-\d+)\]")
+META_PREFIXES = ("Category:", "Priority:", "Type:", "Component:")
 
 
 class ListParseError(ValueError):
@@ -35,7 +36,8 @@ def _get_text(element: ET.Element, tag: str) -> str | None:
     child = element.find(tag)
     if child is None or not child.text:
         return None
-    return child.text.strip()
+    value = child.text.strip()
+    return value or None
 
 
 @dataclass(slots=True)
@@ -55,6 +57,15 @@ class ListRecord:
         if self.subsystem:
             return f"{self.priority}_{self.workstream}_{self.subsystem}"
         return f"{self.priority}_{self.workstream}"
+
+
+@dataclass(slots=True)
+class CategoryInfo:
+    """Issue に紐づく優先度・種別・コンポーネント情報."""
+
+    priority: str
+    workstream: str
+    component: str | None
 
 
 def parse_record(line: str, *, line_number: int) -> ListRecord:
@@ -85,7 +96,7 @@ def parse_record(line: str, *, line_number: int) -> ListRecord:
     return ListRecord(
         priority=priority,
         workstream=workstream,
-        subsystem=subsystem,
+        subsystem=subsystem or None,
         issue_id=issue_id,
         summary=summary,
     )
@@ -143,21 +154,28 @@ def filter_records(
     return filtered
 
 
-def build_issue_category_map(records: Sequence[ListRecord]) -> Dict[str, str]:
-    """Issue ID -> カテゴリ名 の写像を生成する."""
+def build_issue_category_map(records: Sequence[ListRecord]) -> Dict[str, CategoryInfo]:
+    """Issue ID -> CategoryInfo の写像を生成する."""
 
-    return {record.issue_id: record.category for record in records}
+    return {
+        record.issue_id: CategoryInfo(
+            priority=record.priority,
+            workstream=record.workstream,
+            component=record.subsystem,
+        )
+        for record in records
+    }
 
 
 class CategoryResolver:
-    """Issue ID からカテゴリを導出するためのヘルパー."""
+    """Issue ID からカテゴリ情報を導出するためのヘルパー."""
 
-    def __init__(self, base_map: Dict[str, str], issues_root: Path) -> None:
+    def __init__(self, base_map: Dict[str, CategoryInfo], issues_root: Path) -> None:
         self._base_map = base_map
         self._issues_root = issues_root
-        self._cache: Dict[str, str | None] = {}
+        self._cache: Dict[str, CategoryInfo | None] = {}
 
-    def resolve(self, issue_id: str) -> str | None:
+    def resolve(self, issue_id: str) -> CategoryInfo | None:
         category = self._base_map.get(issue_id)
         if category is not None:
             return category
@@ -167,7 +185,7 @@ class CategoryResolver:
         self._cache[issue_id] = derived
         return derived
 
-    def _derive_from_xml(self, issue_id: str) -> str | None:
+    def _derive_from_xml(self, issue_id: str) -> CategoryInfo | None:
         xml_dir = self._issues_root / issue_id
         xml_path = xml_dir / f"{issue_id.lower()}.xml"
         if not xml_path.exists():
@@ -180,21 +198,29 @@ class CategoryResolver:
             return None
         priority = _get_text(item, "priority")
         workstream = _get_text(item, "type")
-        subsystem = _get_text(item, "component")
+        component = _get_text(item, "component")
         if priority is None or workstream is None:
             return None
         workstream = workstream.replace(" ", "-")
-        if subsystem:
-            subsystem = subsystem.replace(" ", "-")
-            return f"{priority}_{workstream}_{subsystem}"
-        return f"{priority}_{workstream}"
+        if component:
+            component = component.replace(" ", "-")
+        return CategoryInfo(priority=priority, workstream=workstream, component=component)
+
+
+def _format_metadata_lines(info: CategoryInfo) -> List[str]:
+    """Priority/Type/Component 行を生成する."""
+
+    lines = [f"Priority: {info.priority}", f"Type: {info.workstream}"]
+    component = info.component or ""
+    lines.append(f"Component: {component}")
+    return lines
 
 
 def inject_category_lines(
     lines: Sequence[str],
     resolver: CategoryResolver,
 ) -> Tuple[List[str], bool, int]:
-    """Issue テキストに Category 行を挿入または正規化する."""
+    """Issue テキストに Priority/Type/Component 行を挿入または正規化する."""
 
     updated: List[str] = []
     changed = False
@@ -207,28 +233,26 @@ def inject_category_lines(
         if match:
             updated.append(line)
             issue_id = match.group(1)
-            category_value = resolver.resolve(issue_id)
-            if category_value is None:
+            category_info = resolver.resolve(issue_id)
+            if category_info is None:
                 index += 1
                 continue
 
-            desired = f"Category: {category_value}"
+            desired_lines = _format_metadata_lines(category_info)
+            existing_meta: List[str] = []
             next_index = index + 1
-            if next_index < len(lines) and lines[next_index].startswith("Category:"):
-                existing = lines[next_index]
-                if existing != desired:
-                    updated.append(desired)
-                    changed = True
-                    applied_count += 1
-                else:
-                    updated.append(existing)
-                index += 2
-                continue
+            while next_index < len(lines) and lines[next_index].startswith(META_PREFIXES):
+                existing_meta.append(lines[next_index])
+                next_index += 1
 
-            updated.append(desired)
-            changed = True
-            applied_count += 1
-            index += 1
+            if existing_meta == desired_lines:
+                updated.extend(existing_meta)
+            else:
+                updated.extend(desired_lines)
+                changed = True
+                applied_count += 1
+
+            index = next_index
             continue
 
         updated.append(line)
@@ -373,7 +397,7 @@ def main() -> None:
 
     mode = "DRY-RUN" if dry_run else "APPLIED"
     total = sum(count for _, count in results)
-    print(f"[{mode}] {len(results)} 件のファイルで {total} 個の Category 行を更新対象として検出しました。")
+    print(f"[{mode}] {len(results)} 件のファイルで {total} 個のメタ情報行を更新対象として検出しました。")
     for path, count in results:
         print(f"  {path} ({count} 件)")
 
