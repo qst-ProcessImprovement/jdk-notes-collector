@@ -1,25 +1,30 @@
 -----
 Title: [JDK-8354528] Integer.numberOfLeadingZeros outputs incorrectly in certain cases
+Category: P2_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356675] Kitchensink.java and RenaissanceStressTest.java  time out with jvmti module errors
+Category: P2_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357820] [AArch64] Incorrect result of VectorizedHashCode intrinsic on Cortex-A53
+Category: P2_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8359349] Add 2 TLS and 2 CS Sectigo roots
+Category: P2_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354893] [REDO BACKPORT] javac crashes while adding type annotations to the return type of a constructor (JDK-8320001)
+Category: P2_Bug_tools
 Description:
 It's observed that some of the JCK tests related to Annotation processing are failing in JDK 22-b23 with "java.lang.AssertionError: Cannot add metadata to this type: VOID"
 
@@ -115,6 +120,7 @@ java.lang.AssertionError: Cannot add metadata to this type: VOID
 
 -----
 Title: [JDK-8320001] javac crashes while adding type annotations to the return type of a constructor
+Category: P2_Bug_tools
 Description:
 It's observed that some of the JCK tests related to Annotation processing are failing in JDK 22-b23 with "java.lang.AssertionError: Cannot add metadata to this type: VOID"
 
@@ -210,6 +216,7 @@ java.lang.AssertionError: Cannot add metadata to this type: VOID
 
 -----
 Title: [JDK-8360406] [21u] Disable logic for attaching type annotations to class files until 8359336 is fixed
+Category: P2_Bug_tools
 Description:
 See JDK-8359336 - the logic for attaching type annotations to class files backported in JDK-8341779 is implicated in that crash.
 
@@ -217,261 +224,313 @@ This issue tracks disabling that logic until JDK-8359336 is fixed.
 
 -----
 Title: [JDK-8351528] Update PipeWire to 1.3.81
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351532] [Accessibility,macOS,VoiceOver] VoiceOver doesn't announce untick on toggling the checkbox with "space" key on macOS
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351533] [Accessibility,macOS,Screen Magnifier]: JCheckbox unchecked state does not magnify but works for checked state
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351538] Update FreeType to 2.13.3
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351879] print/Dialog/PaperSizeError.java fails with MediaSizeName is not A4: A4
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352543] [XWayland] No displayChanged event after setDisplayMode call
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352544] Update LCMS to 2.17
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353140] Desktop.browse method fails if earlier CoInitialize call as COINIT_MULTITHREADED
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353538] Update HarfBuzz to 10.4.0
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353540] Update Libpng to 1.6.47
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353852] [ubsan] exclude function BilinearInterp and ShapeSINextSpan in libawt java2d from ubsan checks
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354649] [Accessibility,macOS,VoiceOver] VoiceOver reads the spinner value 10 as 1 when user iterates to 10 for the first time on macOS
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355149] Test javax/swing/JTabbedPane/8007563/Test8007563.java fails
+Category: P3_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8350948] UpcallLinker::on_exit races with GC when copying frame anchor
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352513] Incorrect handling of HTTP/2 GOAWAY frames in HttpClient
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353301] Primitive caches must use boxed instances from the archive
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353921] (tz) Update Timezone Data to 2025b
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354429] (ch) sun.nio.ch.Poller.register throws AssertionError
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355035] HTTP/2 ConnectionWindowUpdateSender may miss some unprocessed DataFrames from closed streams
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355100] Enhance checks in BigDecimal.toPlainString()
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355738] Increased number of SHA-384-Digest java.util.jar.Attributes$Name instances leading to higher memory footprint
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356707] GZIPInputStream constructor could leak an un-end()ed Inflater
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357548] ISO 4217 Amendment 179 Update
+Category: P3_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354640] javax/management/security/HashedPasswordFileTest.java creates tmp file in src dir
+Category: P3_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8357534] [VS 2022 17.14] Warning C5287 in debugInit.c: enum type mismatch during build
+Category: P3_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8350856] [PPC64] Make intrinsic conversions between bit representations of half precision values and floats
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351030] JFR Leak Profiler is broken with Shenandoah
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351340] secondary_super_cache does not scale well
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351341] Out-of-bounds array access in secondary_super_cache
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351637] Out of bounds access on Linux aarch64 in os::print_register_info
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351924] serviceability/dcmd/vm/SystemMapTest.java and SystemDumpMapTest.java may fail after JDK-8326586
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8326586] Improve Speed of System.map
+Category: P4_Enhancement_hotspot
 Description:
 System.map performs a NMT-region lookup by address; since these lookups are usually in order, we can optimize the lookup.
 
 -----
 Title: [JDK-8352436] [AArch64] C1: guarantee(val < (1ULL << nbits)) failed: Field too big for insn
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352526] Test serviceability/sa/ClhsdbCDSJstackPrintAll.java failed: ArrayIndexOutOfBoundsException
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353102] G1: NUMA migrations cause crashes in region allocation
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353522] Make os::Linux::active_processor_count() public
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353675] Caller/callee param size mismatch in deoptimization causes crash
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353676] SIGFPE In ObjectSynchronizer::is_async_deflation_needed()
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354444] Hotspot should support multiple large page sizes on Windows
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355212] Shenandoah/C2: TestVerifyLoopOptimizations test failure
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355552] java -D-D crashes
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356676] Stack overflow during C2 compilation when splitting memory phi
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357391] ZGC: TestAllocateHeapAt.java should not run with UseLargePages
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8359037] C2: compilation fails with "assert(false) failed: empty program detected during loop optimization"
+Category: P3_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354494] Debug symbols bundle should contain full debug files when building --with-external-symbols-in-bundles=public
+Category: P3_Backport_infrastructure
 Description:
 (no description)
 
 -----
 Title: [JDK-8351512] Jarsigner should print a warning if an entry is removed
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351960] Remove Baltimore root certificate expiring in May 2025
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353894] Restore null return for invalid services from legacy providers
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355549] Uninitialised memory in deleteGSSCB of GSSLibStub.c:179
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355729] Update HSS/LMS public key encoding
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355731] Compatible OCSP readtimeout property with OCSP timeout
+Category: P3_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8341779] [REDO BACKPORT] type annotations are not visible to javac plugins across compilation boundaries (JDK-8225377)
+Category: P3_Bug_tools
 Description:
 javac fails to associate type annotations with TypeMirrors for some symbols loaded from the classpath, which prevents plugins from accessing those annotations across compilation boundaries. The annotations are present if the same symbol is compiled from source in the compilation where the plugin runs.
 
@@ -593,6 +652,7 @@ java.util.List
 
 -----
 Title: [JDK-8225377] type annotations are not visible to javac plugins across compilation boundaries
+Category: P3_Bug_tools
 Description:
 javac fails to associate type annotations with TypeMirrors for some symbols loaded from the classpath, which prevents plugins from accessing those annotations across compilation boundaries. The annotations are present if the same symbol is compiled from source in the compilation where the plugin runs.
 
@@ -714,636 +774,763 @@ java.util.List
 
 -----
 Title: [JDK-8354923] Type annotation attached to incorrect type during class reading
+Category: P3_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8355057] CompletionFailure in getEnclosingType attaching type annotations
+Category: P3_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8356013] NPE due to unreported compiler error
+Category: P3_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8357116] Ctrl+C does not call shutdown hooks after JLine upgrade
+Category: P3_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8351506] Open source several Swing CSS related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351507] ColorConvertOp - typo for non-ICC conversions needs one-line fix
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351510] [macos] Menu or JPopupMenu not closed when main window is resized
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351511] Open Source several AWT/2D font and rendering tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351521] sun/awt/font/TestDevTransform.java fails with RuntimeException: Different rendering
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351522] Open source several Choice related tests (part 2)
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351527] Update List/ItemEventTest/ItemEventTest.java
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351531] AIX build failure after upgrade pipewire to 1.3.81
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351830] Open source several Swing Scroll related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352025] Open source several Swing RootPane and Slider related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352028] Automate and open source few closed manual applet test
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352029] Remove applet usage from JFileChooser tests bug4150029
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352030] Convert and Open source few manual applet test to main based
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352031] Open source several AWT focus tests - series 1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352032] Open source several AWT focus tests - series 2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352033] Open source AWT MenuItem related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352034] Open source closed choice tests #2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352035] Open source several AWT focus tests - series 5
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352036] Open source few Checkbox and Cursor tests - Set1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352041]  Open source DnD tests - Set5
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352051] Open source closed frame tests # 2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352103] Open source some Component/Panel/EventQueue tests - Set2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352104] Open source several AWT Dialog tests - Batch 4
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352221] Open source few Component tests - Set1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352225] Open source some Desktop related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352232] Automate javax/print/attribute/PageRangesException.java
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352233] JRadioButton/ButtonGroupFocusTest.java fails in CI on Linux
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352240] Remove PassFailJFrame constructor with screenshots
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352515] Open source several Swing PopupMenu related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352517] Open source closed choice tests #3
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352518] Open source AWT FileDialog related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352519] Open source more AWT window tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352522] Open source few more AWT PopupMenu tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352538] Exception thrown before awaitAndCheck hangs PassFailJFrame
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352539] Improve HTML instruction formatting in PassFailJFrame
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353071] Opensource five more random Swing tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353072] Opensource five Swing component related regression tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353076] Open source closed choice tests #1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353077] Open source several AWT focus tests - series 4
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353078] Open source couple more miscellaneous AWT tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353081] Open source some of the AWT Window tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353082] Open source closed frame tests # 4
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353518] Open source several Swing HTMLEditorKit related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353520] Convert and Opensource few JFileChooser applet test to main
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353524] Opensource few AWT PopupMenu tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353525] Open source several AWT focus tests - series 3
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353528] Opensource few AWT image tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353534] Open source several Java2D rendering loop tests.
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353535] Open source several AWT PopupMenu tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353690] PNGImageWriter uses much more memory than necessary
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353700] Open source some of the AWT Geometry/Button tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353701] Open source few more AWT Frame related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353702] Open source closed frame tests # 3
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353703] Open source additional Component tests (part 3)
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353864] Opensource five more Swing regression tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353866] Open source several AWT Robot tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353870]  Open source DnD tests - Set4
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353872] Open source few Cursor tests - Set2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353874] Open source few TrayIcon tests - Set8
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353876] Open source few DnD tests - Set6
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353877] test/jdk/javax/swing/JRadioButton/8033699/bug8033699.java fails in ubuntu22.04
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354185] Opensource five miscellaneous Swing tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354199] java/awt/Cursor/JPanelCursorTest/JPanelCursorTest.java does not show the default cursor
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354201] Open source AWT Frame related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354202] Open source several AWT focus tests - series 6
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354203] Open source few more AWT List tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354206] Open source additional Component tests (part 2)
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354207] Open source some MenuBar tests - Set2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354208] Open source several AWT Dialog tests - Batch 2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354369] javax/swing/JFileChooser/JFileChooserSetLocationTest.java failed with "setLocation() is not working properly"
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354373] Open source several AWT List tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354374] Open source few more AWT FileDialog tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354375] Open source several Choice related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354377] Open source few Checkbox tests - Set2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354378] open source some 2d graphics tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354379] Open source some of the AWT window test
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354384] Open source few various AWT tests - Set1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354385] Open source some MenuBar tests - Set1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354422] Open source several AWT Mouse tests - Batch 1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354423] Open source few DND tests - Set1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354425] Open source several AWT Canvas and Rectangle related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354633] Convert Applet test ManualHTMLDataFlavorTest.java to main program
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354635] Open source closed frame tests # 5
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354638] java/awt/dnd/DnDRemoveFocusOwnerCrashTest.java timed out after JDK-8341257
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8341257] Open source few DND tests - Set1
+Category: P4_Bug_client-libs
 Description:
 Open source few DND tests
 
 -----
 Title: [JDK-8354648] javax/swing/JMenu/4213634/bug4213634.java fails
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354654] Screen capture for test TaskbarPositionTest.java, failure case
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354786] Open source few TrayIcon tests - Set7
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354787] Open source several AWT Mouse tests - Batch 2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354788] Open source several AWT Dialog tests - Batch 1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354790] Open source several AWT Dialog tests - Batch 3
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355121] Open source mixed AWT tests - Set3
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355151] Tests fails with java.lang.IllegalAccessException: class com.sun.javatest.regtest.agent.MainWrapper$MainTask cannot access
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355169] java/awt/Desktop/MailTest.java fails in platforms where Action.MAIL is not supported
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355710] java/awt/dnd/RejectDragDropActionTest.java timed out
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355733] Test javax/swing/JComboBox/TestComboBoxComponentRendering.java fails in ubuntu 23.x and later
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355735] Test javax/swing/JTabbedPane/TestJTabbedPaneBackgroundColor.java failed
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356514] Open source a few more Component related tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356515] Opensource few List and a Window test
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356518] Test javax/swing/JRadioButton/8033699/bug8033699.java  still fails:  Focus is not on Radio Button Single as Expected
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356520] JButton/bug4796987.java never runs because Windows XP is unavailable
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357001] Test java/awt/Toolkit/Headless/HeadlessToolkit.java fails by timeout
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357065] Re-enable -Wtype-limits for GCC in LCMS
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357115] Convert closed text/html/CSS manual applet test to main
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357118] test/jdk/javax/swing/JToolBar/4529206/bug4529206.java fails in ubuntu22.04
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357120] test/jdk/javax/swing/text/DefaultEditorKit/4278839/bug4278839.java fails in ubuntu22.04
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357122] Opensource JMenu tests - series1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357204] Opensource few misc swing tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357205] Open source more Swing text tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357206] Opensource JInternalFrame tests - series1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357214] Open source two Swing DefaultCaret tests
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357215] Open source several swing tests batch1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357489] Open source Swing Tests - Set 5
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357492] Open source several AWT Menu tests - Batch 2
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357493] Open some JComboBox bugs 4
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357494] Open source several clipboard tests batch1
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357500] Clean up and open source couple AWT Graphics related tests (Part 1)
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357667] Missing @since tag on JColorChooser.showDialog overload
+Category: P4_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8350949] UpcallLinker::on_entry racingly clears pending exception with GC safepoints
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8350950] ProgrammableUpcallHandler::on_entry/on_exit access thread fields from native
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351190] [JMH] time.format.ZonedDateTimeFormatterBenchmark fails
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352000] java/net/ipv6tests/UdpTest.java fails with checkTime failed
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352076] [21u] Problem list tests that fail in 21 and would be fixed by 8309622
+Category: P4_Sub-task_core-libs
 Description:
 We regularly but seldom see tests
 
@@ -1361,251 +1548,301 @@ As we don't want to backport JDK-8309622 add them to the problem list.
 
 -----
 Title: [JDK-8352220] assert fired in java/net/httpclient/DependentPromiseActionsTest (infrequent)
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352227] java/net/Socket/UdpSocket.java fails with "java.net.BindException: Address already in use" (macos-aarch64)
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352234] (fs) Remove some extensions from java/nio/file/Files/probeContentType/Basic.java
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352238] test/jdk/java/net/httpclient/HttpsTunnelAuthTest.java fails intermittently
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352425] HttpClient with StructuredTaskScope does not close when a task fails
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352438] [JMH] vector.IndexInRangeBenchmark failed with IndexOutOfBoundsException for size=1024
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352586] Some java/lang jtreg tests miss requires vm.hasJFR
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8350610] HttpClient: improve HTTP/2 flow control checks
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352658] [JMH] Cannot access class jdk.internal.vm.ContinuationScope
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353096] URLConnection.getLastModified() leaks file handles for jar:file and file: URLs
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353645] java/io/File/GetXSpace.java fails on Windows with CD-ROM drive
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353646] Wrong timeout computations in DnsClient
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353647] com/sun/jndi/dns/ConfigTests/Timeout.java failed intermittent
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353900] Race condition in jdk/java/net/httpclient/offline/FixedResponseHttpClient.java
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354267] java/net/httpclient/ShutdownNow.java fails with java.lang.AssertionError: client was still running, but exited after further delay: timeout should be adjusted
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354349] Several java/net/InetAddress tests fails UnknownHostException
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8354533] Writer not closed with disk full error, file resource leaked
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351934] Inaccurate masking of TC subfield decrement in ForkJoinPool
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355112] java/util/Properties/StoreReproducibilityTest.java times out
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355550] SequenceInputStream.transferTo should not return as soon as Long.MAX_VALUE bytes have been transferred
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355709] Test java/net/httpclient/CancelRequestTest.java failed: WARNING: tracker for HttpClientImpl(42) has outstanding operations
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355712] java/net/vthread/BlockingSocketOps.java timeout/hang intermittently on Windows
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355728] HTTP/2 flow control checks may count unprocessed data twice
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355730] java/net/DatagramSocket/InterruptibleDatagramSocket.java fails with virtual thread factory
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355734] (fc) Make java/nio/channels/FileChannel/BlockDeviceSize.java test manual
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355736] java/net/httpclient/Http1ChunkedTest.java fails with java.util.MissingFormatArgumentException: Format specifier '%s'
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355737] httpclient HeadTest does not run on HTTP2
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355760] Overflow in Collections.rotate
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356637] Pattern.Bound has `static` fields that should be `static final`.
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356672] Misleading exception message from STS.Subtask::get when task forked after shutdown
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356802] j.text.DateFormatSymbols setZoneStrings() exception is unhelpful
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357117] Incorrect error message during startup if working directory does not exist
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357477] AIX: sporadic unexpected errno when calling setsockopt in Net.joinOrDrop
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357484] Bug in com/sun/net/httpserver/bugs/B6361557.java test
+Category: P4_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352524] Adjust timeout in test javax/management/monitor/DerivedGaugeMonitorTest.java
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8354367] java/lang/instrument/modules/AppendToClassPathModuleTest.java ignores VM flags
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8355117] Test ThreadCpuTime.java should pause like ThreadCpuTimeArray.java
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8355714] Update nsk.share.jpda.Jdb to don't use finalization
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8355716] Replace usage of -noclassgc with -Xnoclassgc in test/jdk/java/lang/management/MemoryMXBean/LowMemoryTest2.java
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8355727] Fix incorrect log message in JDI stop002t test
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8355759] sun.jvmstat.monitor.MonitoredHost.getMonitoredHost() throws unexpected exceptions when invoked concurrently
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8356178] Update vmTestbase/nsk/share/LocalProcess.java to don't use finalization
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8356180] com/sun/tools/attach/BasicTests.java fails with "SocketException: Permission denied: connect"
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8356481] Test forceEarlyReturn002.java timed out
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8356508] Update nsk/jdwp tests to use driver instead of othervm
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8357388] The jcmd thread dump related tests should test virtual threads
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8357482] DynamicLauncher for JDP test needs to try harder to find a free port
+Category: P4_Backport_core-svc
 Description:
 (no description)
 
 -----
 Title: [JDK-8350862] Output JVMTI agent information in hserr files
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351031] Problemlist jdk/jfr/event/oldobject/TestShenandoah.java after JDK-8279016
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8279016] JFR Leak Profiler is broken with Shenandoah
+Category: P3_Enhancement_hotspot
 Description:
 The JFR leak profiler associates an Edge* with an object by putting the Edge* into an array, and storing the index to the Edge* into the object's mark-word, and setting the lowest two bits of that mark-word.
 
@@ -1619,91 +1856,109 @@ We may want to consider something similar to: https://github.com/openjdk/lillipu
 
 -----
 Title: [JDK-8351191] 3 gc/epsilon tests ignore external vm options
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351358] Corrupted timezone string in JVM crash log
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351508] [Testbug] g-tests for cgroup leave files in /tmp on linux
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351557] Add jcmd to print annotated process memory map
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351559] gc/stress/TestStressG1Uncommit.java gets OOM-killed
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351684] "Total compile time" counter should include time spent in failing/bailout compiles
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351831] Move BufferNode from PtrQueue files to new files
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351872] Skip ValidateHazardPtrsClosure in non-debug builds
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351899] Bug in jdk.jfr.event.gc.collection.TestSystemGC
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8351920] Improve Speed of System.map
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352026] Replace NULL with nullptr in HotSpot gtests
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352167] WB_IsFrameDeoptimized miss ResourceMark
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352183] [x64] Fix useless padding
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352230] CompileFramework: test library to conveniently compile java and jasm sources for fuzzing
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352283] Shenandoah: Improve handshake closure labels
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352285] CTW: Attempt to preload all classes in constant pool
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352286] Give better error for ConcurrentHashTable corruption
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8350412] [21u] AArch64: Ambiguous frame layout leads to incorrect traces in JFR
+Category: P4_Bug_hotspot
 Description:
 It was previously pointed https://bugs.openjdk.org/browse/JDK-8323755?focusedId=14640270&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-14640270 that "When doing a runtime call from compiled code, JVM puts two words onto the stack: ... This breaks the invariant the stack walker relies on: the size of the compiled frame is constant".
 
@@ -1745,31 +2000,37 @@ https://github.com/openjdk/jdk/commit/78b80150e009745b8f28d36c3836f18ad0ca921f#d
 
 -----
 Title: [JDK-8352516] Update runtime/condy tests to be executed with VM flags
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352523] Enable debug logging for vmTestbase/nsk/jvmti/scenarios/sampling/SP05/sp05t003/TestDescription.java
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352525] serviceability/sa/ClhsdbWhere.java fails AssertionFailure: Corrupted constant pool
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352771] Crash: assert(h_array_list.not_null()) failed: invariant
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8352772] OpenJDK fails to configure on linux aarch64 when CDS is disabled after JDK-8331942
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8331942] On Linux aarch64, CDS archives should be using 64K alignment by default
+Category: P4_Enhancement_hotspot
 Description:
 On Linux aarch64, a JVM may encounter with three different page sizes: 4K, 64K and (when run on Mac M1 hardware) 16K.
 
@@ -1777,96 +2038,115 @@ Since forgetting to specify --enable-compatible-cds-alignment is a common error,
 
 -----
 Title: [JDK-8353128] JFR: Split JFRCheckpoint VM operation
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353292] Replaying compilation with null static final fields results in a crash
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353536] More reliable OOM handling in ExceptionDuringDumpAtObjectsInitPhase test
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353648] Remove unused UseNUMA in os_aix.cpp
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353650] C2: Loop strip mining uses ABS with min int
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353651] C2: VectorInsertNode::make() shouldn't call ConINode::make() directly
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353652] Incorrect TraceLoopPredicate output
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353653] Fatal error in auto-vectorizer with float16 kernel.
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353654] ShenandoahHeap::is_in should check for alive regions
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353853] [ubsan] block.cpp:1617:30: runtime error: 9.97582e+36 is outside the range of representable values of type 'int'
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353865] memory_swap_current_in_bytes reports 0 as "unlimited"
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353867] [TESTBUG] gtest CollectorPolicy.young_scaled_initial_ergo_vm fails if heap is too small
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353893] CollectorPolicy.young_scaled_initial_ergo_vm gtest fails on ppc64 based platforms
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353901] nsk.share.gc.Memory::getArrayLength returns wrong value
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8353922] G1: interpreter post-barrier x86 code asserts index size of wrong buffer
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354058] AArch64: turn on signum intrinsics by default on Ampere CPUs
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354165] compiler/vectorization/TestFloat16VectorConvChain.java fails with non-standard AVX/SSE settings
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354197] compiler/vectorization/TestFloat16VectorConvChain.java  timeouts on ppc64 platforms after JDK-8335860
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8335860] compiler/vectorization/TestFloat16VectorConvChain.java fails with non-standard AVX/SSE settings
+Category: P4_Bug_hotspot
 Description:
 The test fails with -XX:UseAVX=0 -XX:UseSSE=3
 
@@ -1896,36 +2176,43 @@ Failed IR Rules (1) of Methods (1)
 
 -----
 Title: [JDK-8354253] jcmd Compiler.codecache should print total size of code cache
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354271] ZGC: Another division by zero in rule_major_allocation_rate
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354368] Test jdk/incubator/vector/LoadJsvmlTest.java ignores VM flags
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354370] zgc/genzgc tests ignore vm flags
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354579] Extend printing for System.map
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354639] serviceability/dcmd/vm tests fail for ZGC after JDK-8322475
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8322475] Extend printing for System.map
+Category: P4_Enhancement_hotspot
 Description:
 Make System.map and System.dump_map drastically more useful by adding:
 
@@ -1953,266 +2240,319 @@ Also, provide a summary for:
 
 -----
 Title: [JDK-8354642] Test vmTestbase/nsk/jvmti/scenarios/sampling/SP05/sp05t003/TestDescription.java timed out: thread not suspended
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354644] Improve diagnostic logging runtime/cds/DeterministicDump.java
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8354647] serviceability/dcmd/vm/SystemDumpMapTest.java and SystemMapTest.java fail on Linux Alpine after 8322475
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355075] TestVectorZeroCount: counter not reset between iterations
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355096] Add intrinsic for float/double modulo for x86 AVX2 and AVX512
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355152] serviceability/sa/TestJhsdbJstackLineNumbers.java failed with "Didn't find enough line numbers"
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355316] Include timings for leaving safepoint in safepoint logging
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355419] Test TestCodeCacheFull.java fails with option -XX:-UseCodeCacheFlushing
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355551] C2: assert(false) failed: node should be in igvn hash table
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355655] [ASAN] Gtest os_linux.glibc_mallinfo_wrapper_vm fails
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355707] Remove runtime platform check from frem/drem
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355715] JFR GCHelper class recognizes "Archive" regions as valid
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355761] [AArch64] C2 compilation hits offset_ok_for_immed: assert "c2 compiler bug"
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8355762] MacOS Zero cannot run gtests due to wrong JVM path
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356248] MAX_SECS definition is unused in os_linux
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356254] Use "/native" Run Option for TestAvailableProcessors Execution
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356489] Test WaitNotifySuspendedVThreadTest.java timed out
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356490] Rename nsk_strace.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356491] Update nsk.share.jpda.BindServer to don't use finalization
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356507] Clean up Finalizable.java and finalize terminology in vmTestbase/nsk/share
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356509] serviceability/jvmti/StartPhase/AllowedFunctions/AllowedFunctions.java fails with unexpected exit code: 112
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356512] Fix -Wzero-as-null-pointer-constant warnings in gtest framework
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356669] x86 count_positives intrinsic broken for -XX:AVX3Threshold=0
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356670] Compiler directives parser swallows a character after line comments
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356671] jdk/jfr/event/runtime/TestResidentSetSizeEvent.java fails with "The size should be less than or equal to peak"
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356674] NPE when HSDB visits bad oop
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356677] LogCompilation doesn't reset lateInlining when it encounters a failure.
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356786] Remove support of remote and manual debuggee launchers
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8356992] [JVMCI] fatal error: Never compilable: in JVMCI shutdown
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357023] Replace NULL with nullptr in HotSpot jtreg test native code files
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357024] Rename get_stack_trace.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357025] Rename Injector.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357026] Rename jvmti_FollowRefObjects.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357027] Rename native_thread.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357028] Rename nsk_list.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357029] Rename nsk_mutex.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357030] Rename mlvmJvmtiUtils.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357031] Rename jnihelper.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357032] Rename jvmti_aod.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357069] [AIX] Adapt code for C++ VLA rule
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357112] Improve test coverage for JVMTI GetThreadState on carrier and mounted vthread
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357113] Rename agent_common.h
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357121] Test: add more test case for string compare (UL case)
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357261] Avoid sending per-region GCPhaseParallel JFR events in G1ScanCollectionSetRegionClosure
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357389] jdk/jfr/startupargs/TestMemoryOptions.java fails with 32-bit build
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357437] Use correct extension for C++ test headers
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357483] Remove the appcds/javaldr/AnonVmClassesDuringDump.java test
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357487] Incomplete logging in nsk/jvmti/ResourceExhausted/resexhausted00* tests
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357488] [jittester] Remove TempDir debug output
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357544] Clean up vmTestbase/vm/share
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357855] Merge vm/share/InMemoryJavaCompiler w/ jdk/test/lib/compiler/InMemoryJavaCompiler
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8357856] failure_handler lldb command times out on macosx-aarch64 core file
+Category: P4_Backport_hotspot
 Description:
 (no description)
 
 -----
 Title: [JDK-8350650] Bump update version for OpenJDK: jdk-21.0.8
+Category: P4_Enhancement_infrastructure
 Description:
 Development of update 21.0.8 starts in repository jdk21u-dev on Wednesday February 26th, 2025. The first change should be to bump the version.
 
@@ -2222,155 +2562,186 @@ For the date, see also https://wiki.openjdk.org/display/JDKUpdates/JDK%2021u or 
 
 -----
 Title: [JDK-8356785] Many test files have the wrong Copyright header
+Category: P4_Backport_infrastructure
 Description:
 (no description)
 
 -----
 Title: [JDK-8357114] [test] improve assertEquals failure output
+Category: P4_Backport_infrastructure
 Description:
 (no description)
 
 -----
 Title: [JDK-8355099] TLS handshake fails because of ConcurrentModificationException in PKCS12KeyStore.engineGetEntry
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355101] DistributionPointFetcher fails to fetch CRLs if the DistributionPoints field contains more than one DistributionPoint and the first one fails
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355170] Refactor ClassLoaderDeadlock.sh and Deadlock.sh to run fully in java
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355713] KeyStore getEntry is not thread-safe
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8355732] security/auth/callback/TextCallbackHandler/Password.java make runnable with JTReg and add the UI
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356181] Relocate supporting classes in security/testlibrary to test/lib/jdk tree
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8357545] Better cleanup for jdk/test/sun/security/pkcs12/P12SecretKey.java
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8361672] [21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.8
+Category: P4_Bug_infrastructure
 Description:
 As discussed in https://github.com/openjdk/jdk17u-dev/pull/307, we'd like to have DEFAULT_PROMOTED_VERSION_PRE set to 'ea' in dev source trees and remove it for GA tagged source levels.
 -----
 Title: [JDK-8353017] Use jvmArgs consistently in microbenchmarks
+Category: P4_Backport_performance
 Description:
 (no description)
 
 -----
 Title: [JDK-8353018] Use -jvmArgsPrepend when running microbenchmarks in RunTests.gmk
+Category: P4_Backport_performance
 Description:
 (no description)
 
 -----
 Title: [JDK-8351239] Failure when creating non-CRT RSA private keys in SunPKCS11
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352540] Upgrade NSS binaries for interop tests
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8352548] Test sun/security/tools/jarsigner/TimestampCheck.java is failing
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353086] Test sun/security/tools/jarsigner/ConciseJarsigner.java failed: unable to find valid certification path to requested target
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353881] jdk/test/lib/security/timestamp/TsaServer.java warnings
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353899] Test sun/security/tools/jarsigner/TsacertOptionTest.java failed: Warning found in stdout
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353915] NullPointerException in sun.security.jca.ProviderList.getService()
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356519] Test sun/security/mscapi/nonUniqueAliases/NonUniqueAliases.java is marked with @ignore
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356530] Remove two Camerfirma root CA certificates
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356650] Update sun/security/pkcs12/KeytoolOpensslInteropTest.java to use a recent Openssl version
+Category: P4_Backport_security-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8351022] Test FailOverDirectExecutionControlTest.java fails with -Xcomp
+Category: P4_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8352735] Clean up the code in sun.tools.jar.Main to properly close resources and use ZipFile during extract
+Category: P4_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8354630] org.jline.util.PumpReader signed byte problem
+Category: P4_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8354948] In ClassReader, extract a constant for the superclass supertype_index
+Category: P4_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8356517] WinInstallerUiTest fails in local test runs if the path to test work directory is longer that regular
+Category: P4_Backport_tools
 Description:
 (no description)
 
 -----
 Title: [JDK-8356943] translet-name ignored when package-name is also set
+Category: P4_Backport_xml
 Description:
 (no description)
 
 -----
 Title: [JDK-8352537] Use latch in AbstractButton/bug6298940.java instead of delay
+Category: P5_Backport_client-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8356784] Misformatted copyright messages in FFM
+Category: P5_Backport_core-libs
 Description:
 (no description)
 
 -----
 Title: [JDK-8353073] vmTestbase/nsk/jdb/stop_at/stop_at002/stop_at002.java failure goes undetected
+Category: P5_Backport_core-svc
 Description:
 (no description)
 
