@@ -1,21 +1,33 @@
-https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
-https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
-https://adoptium.net/temurin/release-notes?version=jdk-21.0.6+7
-リリースノートのサマリ資料をpptxで作成して下さい。
+--- NotebookLM book1
+
+INPUT:jdk_issues_combined.txt,list.txt,URL.txt
+
+OpenJDK 21.0.6+7の変更点を詳細に説明して下さい
+OpenJDK 21.0.7+6の変更点を詳細に説明して下さい
+OpenJDK 21.0.8+9の変更点を詳細に説明して下さい
+
+--- NotebookLM book2
+
+INPUT:上の3つ
+
+OpenJDK 21.0.6+7
+OpenJDK 21.0.7+6
+OpenJDK 21.0.8+9
+上記リリースノートの詳細なサマリ資料を作成して下さい。
 
 ■背景
 案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
 非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
 
-この資料で約20分間の説明を予定していますので、それなりのボリュームのある資料にしてください。
+--- Claude
 
-■参考資料
+INPUT:最初の3つ＋上の1つ
 
-- csv/jdk_issues_summary_detail.csv
-    - 個別 Issue の一覧です。影響判定（除外／要確認）、機能領域、適用ルール、ラベル、対象リリースなどを横持ちで記載しています。要確認 Issue の深掘りや資料化の根拠として参照してください。
-- csv/jdk_issues_summary_release.csv
-    - リリース別 × 影響判定（除外／要確認）の件数サマリです。21.0.6〜21.0.8 の要確認ボリュームを俯瞰する際に利用してください。
-- csv/jdk_issues_summary_area.csv
-    - リリース別 × 機能領域 × 影響判定の件数サマリです。どの領域（runtime_core / classlib / interop 等）を重点的に調査・説明するか判断する材料になります。
+OpenJDK 21.0.6+7
+OpenJDK 21.0.7+6
+OpenJDK 21.0.8+9
+上記リリースノートのサマリ資料をpptx作成して下さい。
 
-必要に応じて jdk_issues_classification.csv も参照すると、各 Issue の除外理由（doc_or_test / new_feature / non_windows11_platform / gc_related）の詳細を確認できます。
+■背景
+案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
+非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
