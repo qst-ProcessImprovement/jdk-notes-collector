@@ -1,11 +1,19 @@
---- Claude
+--- NotebookLM book1
+
+INPUT:jdk_issues_combined.txt,list.txt,URL.txt
+
+OpenJDK 21.0.6+7の変更点を説明して下さい
+OpenJDK 21.0.7+6の変更点を説明して下さい
+OpenJDK 21.0.8+9の変更点を説明して下さい
+
+--- NotebookLM book2
 
 INPUT:上の3つ
 
 OpenJDK 21.0.6+7
 OpenJDK 21.0.7+6
 OpenJDK 21.0.8+9
-上記リリースノートのサマリ資料をマークダウンで作成して下さい。
+上記リリースノートのサマリ資料を作成して下さい。
 
 ■背景
 案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
