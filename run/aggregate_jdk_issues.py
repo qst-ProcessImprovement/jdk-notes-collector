@@ -34,14 +34,6 @@ from pathlib import Path
 from typing import Iterable, Sequence
 import re
 
-# 同一リポジトリ内の step5.非互換抽出/filter_jdk_issues.py を利用するため、パスを追加
-import sys
-
-SCRIPT_DIR = Path(__file__).resolve().parent
-FILTER_MODULE_DIR = SCRIPT_DIR.parent / "step5.非互換抽出"
-if FILTER_MODULE_DIR.exists():
-    sys.path.append(str(FILTER_MODULE_DIR))
-
 from filter_jdk_issues import (
     IssueClassification,
     IssueClassifier,
@@ -295,23 +287,22 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         default=[],
         help="Additional directories to resolve backport sources",
     )
-    output_root = Path.cwd() / "csv"
     parser.add_argument(
         "--detail-report",
         type=Path,
-        default=output_root / "jdk_issues_summary_detail.csv",
+        default=Path.cwd() / "jdk_issues_summary_detail.csv",
         help="Detail CSV output path",
     )
     parser.add_argument(
         "--release-summary",
         type=Path,
-        default=output_root / "jdk_issues_summary_release.csv",
+        default=Path.cwd() / "jdk_issues_summary_release.csv",
         help="Release summary CSV output path",
     )
     parser.add_argument(
         "--area-summary",
         type=Path,
-        default=output_root / "jdk_issues_summary_area.csv",
+        default=Path.cwd() / "jdk_issues_summary_area.csv",
         help="Feature area summary CSV output path",
     )
     return parser.parse_args(argv)
