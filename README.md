@@ -1,6 +1,8 @@
 # jdk-notes-collector
 
-step1-3を実行し、JDK-xxの改訂内容を1ファイルにまとめる。
-できたファイルをNotebookLMに登録して、AIとチャットする。
+pptx作成はstep4です。INPUTにissueの集計結果があった方が良いと思うので、step1-3で作って下さい。
+merge_jdk_issues.py でissueのtitle/descriptionを1ファイルにまとめられます。これをNotebookLMに渡して、Chatに使ってください。
 
-https://notebooklm.google.com/notebook/b12ed2e1-13e1-47c7-9052-abbea2b4329f
+# memo
+
+issueの取得処理（fetch_jdk_issues.py）がものすごく遅いです・・並列化すればよかった。

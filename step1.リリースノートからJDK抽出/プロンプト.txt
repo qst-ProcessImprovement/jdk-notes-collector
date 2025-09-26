@@ -1,4 +1,4 @@
-カレントファイルにlist.txtというファイルが必ず存在しています。この文章を読み込み、jdk-xxと記載されている一覧を抽出するpythonを作ってください。文章のフォーマットは固定ではありません。jdk-xxを探す必要があります。
+カレントにlist.txtというファイルが必ず存在しています。この文章を読み込み、jdk-xxと記載されている一覧を抽出するpythonを作ってください。文章のフォーマットは固定ではありません。jdk-xxを探す必要があります。
 そしてJDK一覧を jdk.txt として保存してほしい。
 
 list.txtの記載例
@@ -133,25 +133,3 @@ This release also contains fixes for security vulnerabilities described in the O
 ➜ Issues fixed in 21.0.8:
 #	JBS	Component/Subcomponent	Summary
 1	JDK-8348597	client-libs/2d	Update HarfBuzz to 10.4.0
-
-＝＝＝＝＝＝ 履歴
-
-SOWを .work/docs/20250926-0715_jdk-extraction/SOW.md に作成しました。内容をご確認のうえ、この方針で進めてよいかご指示ください。
-
-お願いします。
-
-
-実装概要
-
-extract_jdk.py:1 に新規スクリプトを追加し、list.txt をUTF-8で読み込み re.findall(r"JDK-\d+", ...) でJDK識別子を抽出、初出順で重複排除して jdk.txt に書き出すようにしました。
-スクリプトを python3 extract_jdk.py で実行し、181件の識別子を含む jdk.txt を生成・確認しました。
-生成物
-
-extract_jdk.py
-jdk.txt（抽出結果を1行1識別子で保存）
-次のステップとして考えられるものがあればお知らせください。
-
-実行してみてください。
-
-
-python3 extract_jdk.py を再実行し、jdk.txt を更新しました。現在 jdk.txt には 181 件の JDK 識別子が出力されています。必要に応じて追加の確認や処理があればお知らせください。
