@@ -103,6 +103,12 @@ def main(argv: list[str] | None = None) -> int:
     skipped: list[str] = []
 
     for issue_id in issue_ids:
+        target_dir = issue_directory(issue_id)
+        target_file = build_issue_filename(issue_id)
+        if target_file.exists():
+            print(f"[SKIP] {issue_id}: 出力ファイルが既に存在するためダウンロードを省略します")
+            continue
+
         try:
             payload = download_issue(issue_id)
             validate_issue_payload(payload)
@@ -124,9 +130,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"[SKIP] {issue_id}: {exc}")
             continue
 
-        target_dir = issue_directory(issue_id)
         target_dir.mkdir(parents=True, exist_ok=True)
-        target_file = build_issue_filename(issue_id)
         target_file.write_bytes(payload)
         print(f"[OK]   {issue_id} -> {target_file}")
 

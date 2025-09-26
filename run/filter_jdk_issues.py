@@ -435,8 +435,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--source-dir",
         type=Path,
-        default=Path("step4.非互換抽出/jdk_issues"),
-        help="解析対象の課題ディレクトリ (既定: step4.非互換抽出/jdk_issues)",
+        default=Path("jdk_issues"),
+        help="解析対象の課題ディレクトリ (既定: jdk_issues)",
     )
     parser.add_argument(
         "--extra-source",

@@ -1,1 +1,10 @@
 release,impact_status,count
+21.0.6,excluded,37
+21.0.6,needs_review,197
+21.0.7,excluded,44
+21.0.7,needs_review,192
+21.0.8,excluded,113
+21.0.8,needs_review,250
+21.0.x,excluded,11
+21.0.x,needs_review,10
+unknown,needs_review,4
