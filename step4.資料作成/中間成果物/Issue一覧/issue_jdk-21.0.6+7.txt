@@ -1,0 +1,1874 @@
+-----
+Title: [JDK-8342726] Tests create files in src tree instead of scratch dir
+Category: P2_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343612] LambdaForm customization via MethodHandle::updateForm is not thread safe
+Category: P2_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344392] Additional tests in jmxremote/startstop to match on PID not app name
+Category: P2_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8340156] ResolvedReferencesNotNullTest.java failed with Incorrect resolved references array, quxString should not be archived
+Category: P2_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340886] Tests crash: assert(is_in_encoding_range || k->is_interface() || k->is_abstract()) failed: sanity
+Category: P2_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343520] Repeated call of StringBuffer.reverse with double byte string returns wrong result
+Category: P2_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343524] C2 compilation asserts with "no node with a side effect" in PhaseIdealLoop::try_sink_out_of_loop
+Category: P2_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343927] Replace hardcoded security providers with new test.provider.name system property
+Category: P2_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344276] Update tests to use stronger Key and Salt size
+Category: P2_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344398] Update tests to use stronger key parameters and certificates
+Category: P2_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344400] Update tests to use stronger algorithms and keys
+Category: P2_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340023] [macos13] setFullScreenWindow() shows black screen on macOS 13 & above
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340170] Update ProblemList.txt with tests known to fail on XWayland
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342554] Crash in ImageIO JPEG decoding when MEM_STATS in enabled
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343042] When the Tab Policy is checked,the scroll button direction displayed incorrectly.
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343043] click JComboBox when dialog about to close causes IllegalComponentStateException
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343254] [macos] Screen magnifier does not show the magnified text for JComboBox
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343255] [macos] Regression: KeyEvent has different keycode on different keyboard layouts
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343364] Remove wildcard bound in PositionWindows.positionTestWindows
+Category: P3_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8338748] [17u,21u] Test Disconnect.java compile error: cannot find symbol after JDK-8299813
+Category: P3_Bug_core-libs
+Description:
+STDERR:
+
+/var/tmp/tone/run/jtreg/jdk-repo/test/jdk/java/nio/channels/DatagramChannel/Disconnect.java:55: error: cannot find symbol
+
+                InetAddress lo4 = InetAddress.ofLiteral("127.0.0.1");
+
+                                             ^
+
+  symbol:   method ofLiteral(String)
+
+  location: class InetAddress
+
+/var/tmp/tone/run/jtreg/jdk-repo/test/jdk/java/nio/channels/DatagramChannel/Disconnect.java:65: error: cannot find symbol
+
+                InetAddress lo6 = InetAddress.ofLiteral("::1");
+
+                                             ^
+
+  symbol:   method ofLiteral(String)
+
+  location: class InetAddress
+
+2 errors
+
+TEST RESULT: Failed. Compilation failed: Compilation failed
+
+There is no InetAddress.ofLiteral API in jdk21u and jdk17u, the InetAddress.ofLiteral API was added by JDK-8272215 in jdk22.  Thus the fix applies only to 21 and older.
+
+-----
+Title: [JDK-8299813] java/nio/channels/DatagramChannel/Disconnect.java fails with jtreg test timeout due to lost datagram
+Category: P4_Bug_core-libs
+Description:
+----------messages:(10/289)----------
+
+command: main Disconnect
+
+reason: User specified action: run main Disconnect
+
+started: Mon Jan 09 13:23:41 GMT 2023
+
+Mode: agentvm
+
+Agent id: 15
+
+Timeout refired 480 times
+
+Timeout information:
+
+--- Timeout information end.
+
+finished: Mon Jan 09 13:32:25 GMT 2023
+
+elapsed time (seconds): 524.117
+
+The test is stuck in receive:
+
+"AgentVMThread" #438 [39687] prio=5 os_prio=31 cpu=17.81ms elapsed=490.77s allocated=94064B defined_classes=7 tid=0x00007facbf020000 nid=39687 runnable  [0x000070000b18a000]
+
+   java.lang.Thread.State: RUNNABLE
+
+	at sun.nio.ch.DatagramChannelImpl.receive0(java.base@21-ea/Native Method)
+
+	at sun.nio.ch.DatagramChannelImpl.receiveIntoNativeBuffer(java.base@21-ea/DatagramChannelImpl.java:789)
+
+	at sun.nio.ch.DatagramChannelImpl.receive(java.base@21-ea/DatagramChannelImpl.java:773)
+
+	at sun.nio.ch.DatagramChannelImpl.receive(java.base@21-ea/DatagramChannelImpl.java:577)
+
+	at Disconnect.test(Disconnect.java:81)
+
+	at Disconnect.main(Disconnect.java:45)
+
+	at java.lang.invoke.LambdaForm$DMH/0x00000007c0001c00.invokeStatic(java.base@21-ea/LambdaForm$DMH)
+
+	at java.lang.invoke.LambdaForm$MH/0x00000007c00cd800.invoke(java.base@21-ea/LambdaForm$MH)
+
+	at java.lang.invoke.Invokers$Holder.invokeExact_MT(java.base@21-ea/Invokers$Holder)
+
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(java.base@21-ea/DirectMethodHandleAccessor.java:155)
+
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(java.base@21-ea/DirectMethodHandleAccessor.java:104)
+
+	at java.lang.reflect.Method.invoke(java.base@21-ea/Method.java:578)
+
+	at com.sun.javatest.regtest.agent.MainActionHelper$AgentVMRunnable.run(MainActionHelper.java:312)
+
+	at java.lang.Thread.runWith(java.base@21-ea/Thread.java:1636)
+
+	at java.lang.Thread.run(java.base@21-ea/Thread.java:1623)
+
+-----
+Title: [JDK-8340783] java/util/concurrent/locks/Lock/OOMEInAQS.java still times out with ZGC, Generational ZGC, and SerialGC
+Category: P3_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341941] (se) Deferred close of SelectableChannel may result in a Selector doing the final close before concurrent I/O on channel has completed
+Category: P3_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343828] generic type information lost on mandated parameters of record's compact constructors
+Category: P3_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344678] (tz) Update Timezone Data to 2024b
+Category: P3_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344964] Test AsyncClose.java intermittent fails - Socket.getInputStream().read() wasn't preempted
+Category: P3_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344291] JMXStatusTest.java fails assertion intermittently
+Category: P3_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8339681] crash: pinned virtual thread will lead to jvm crash when running with the javaagent option
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340160] runtime/cds/DeterministicDump.java fails with File content different at byte ...
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340817] RISC-V: C ABI breakage for integer on stack
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341054] Hotspot should be able to use more than 64 logical processors on Windows
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341112] VM issues warning failure to find kernel32.dll on Windows nanoserver
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341192] Concurrent GC crashed due to GetMethodDeclaringClass
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341515] Update OS detection code to recognize Windows Server 2025
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342060] AArch64: Save and restore FPCR in the call stub
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342516] [AArch64] C1 compilation fails with "Field too big for insn"
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342571] AArch64: Restore FPU control state after JNI
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343210] [PPC64] TestOSRLotsOfLocals.java crashes
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343301] [s390x] TestOSRLotsOfLocals.java crashes
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343349] C2: assert(!loop->is_member(get_loop(useblock))) failed: must be outside loop
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343538] C2/Shenandoah: SEGV in compiled code when running jcstress
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343645] TestLoadBypassesNullCheck.java fails improperly specified VM option
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344416] [JFR] Long strings should be added to the string pool
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8345290] java.lang.Process is unresponsive and CPU usage spikes to 100%
+Category: P3_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339816] IP Address error when client enables HTTPS endpoint check on server socket
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8339817] Update Public Suffix List to 1cbd6e7
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340204] Regtest java/security/Security/SynchronizedAccess.java is incorrect
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340333] SHAKE256 does not work correctly if n >= 137
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340504] test/jdk/sun/security/tools/keytool/NssTest.java fails to compile
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342049] Update NSS to version 3.96
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343350] Test sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java failed with: Invalid ECDH ServerKeyExchange signature
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343514] Add a Test against ECDSA and ECDH NIST Test vector
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344657] Improve logging in OCSPTimeout and SimpleOCSPResponder to help diagnose JDK-8309754
+Category: P3_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8309754] java/security/cert/CertPathValidator/OCSP/OCSPTimeout.java failed with "Expected to pass, found 1 soft fail exceptions"
+Category: P3_Bug_security-libs
+Description:
+The following test failed in the JDK22 CI:
+
+java/security/cert/CertPathValidator/OCSP/OCSPTimeout.java
+
+Here's a snippet from the log file:
+
+#section:main
+
+----------messages:(7/575)----------
+
+command: main -Dcom.sun.security.ocsp.readtimeout=2750ms OCSPTimeout 2000 true
+
+reason: User specified action: run main/othervm -Dcom.sun.security.ocsp.readtimeout=2750ms OCSPTimeout 2000 true
+
+started: Fri Jun 09 21:20:32 UTC 2023
+
+Mode: othervm [/othervm specified]
+
+Additional options from @modules: --add-modules java.base --add-exports java.base/sun.security.x509=ALL-UNNAMED --add-exports java.base/sun.security.provider.certpath=ALL-UNNAMED --add-exports java.base/sun.security.util=ALL-UNNAMED
+
+finished: Fri Jun 09 21:20:38 UTC 2023
+
+elapsed time (seconds): 5.427
+
+----------configuration:(6/279)----------
+
+Boot Layer
+
+  add modules: java.base
+
+  add exports: java.base/sun.security.provider.certpath ALL-UNNAMED
+
+               java.base/sun.security.util              ALL-UNNAMED
+
+               java.base/sun.security.x509              ALL-UNNAMED
+
+----------System.out:(19/658)----------
+
+Generated Root CA KeyPair
+
+Generated End Entity KeyPair
+
+Root CA Created:
+
+Issuer: CN=Root CA Cert, O=SomeCompany
+
+Subject: CN=Root CA Cert, O=SomeCompany
+
+Serial: 1
+
+[MainThread]: nextUpdate set to Fri Jun 09 22:20:34 UTC 2023
+
+[MainThread]: Response Content-Length field disabled
+
+[pool-1-thread-1]: Listening on 0.0.0.0/0.0.0.0:63089
+
+Root OCSP Responder URI is http://localhost:63089
+
+SSL Certificate Created:
+
+Issuer: CN=Root CA Cert, O=SomeCompany
+
+Subject: CN=SSLCertificate, O=SomeCompany
+
+Serial: 4096
+
+[MainThread]: Added entry for serial 4096(CERT_STATUS_GOOD)
+
+[MainThread]: OCSP latency set to 2000 milliseconds.
+
+Test case expects to pass
+
+----------System.err:(11/700)----------
+
+java.lang.RuntimeException: Expected to pass, found 1 soft fail exceptions
+
+	at OCSPTimeout.main(OCSPTimeout.java:116)
+
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+
+	at com.sun.javatest.regtest.agent.MainWrapper$MainTask.run(MainWrapper.java:138)
+
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+JavaTest Message: Test threw exception: java.lang.RuntimeException: Expected to pass, found 1 soft fail exceptions
+
+JavaTest Message: shutting down test
+
+STATUS:Failed.`main' threw exception: java.lang.RuntimeException: Expected to pass, found 1 soft fail exceptions
+
+----------rerun:(46/6462)*----------
+
+-----
+Title: [JDK-8345317] SystemModulesMap::classNames and moduleNames arrays do not match the order
+Category: P3_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8339815] gtk headers : Fix typedef redeclaration of GMainContext and GdkPixbuf
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340169] [macos13] java/awt/Frame/MaximizedToIconified/MaximizedToIconified.java: getExtendedState() != 6 as expected.
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340429] java/awt/Mouse/EnterExitEvents/ResizingFrameTest.java duplicate in ProblemList
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340508] [XWayland] move screencast tokens from .awt to .java folder
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340879] java.desktop/share/classes/javax/swing/text/html/default.css typo in margin settings
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341699] Refactor KeyEvent/FunctionKeyTest.java
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341942] Convert applet test java/awt/List/SetFontTest/SetFontTest.html to main program
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342054] KeyEvent/KeyTyped/Numpad1KeyTyped.java has 15 seconds timeout
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342685] Use PassFailJFrame.Builder.splitUI() in PrintLatinCJKTest.java
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342793] Implement pausing functionality for the PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342922] Add a log area to the PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343045] PageFormat/CustomPaper.java has no Pass/Fail buttons; multiple instructions
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342073] Call to insertText with single character from custom Input Method ignored
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343199] Convert URLDragTest.html applet test to main
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343303] ConfigureNotify behavior has changed in KWin 6.2
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343351] Select{Current,New}ItemTest.java for Choice don't open popup on macOS
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343353] Add positionTestUI() to PassFailJFrame.Builder
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343356] Add border around instructions in PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343357] PassFailJFrame: Make rows default to number of lines in instructions
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343360] Amend description for logArea
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343362] Position the first window of a window list
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343371] Add description for PassFailJFrame constructors
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343518] Provide layouts for multiple test UI in PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343519] Update description of PassFailJFrame and samples
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343613] Add border inside instruction frame in PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343614] Improve default instruction frame title in PassFailJFrame
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343746] ProblemList BasicDirectoryModel/LoaderThreadCount.java on Windows
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344295] Disable ubsan checks in some awt/2d coding
+Category: P4_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8337966] (fs) Files.readAttributes fails with Operation not permitted on older docker releases
+Category: P4_Bug_core-libs
+Description:
+JDK fails with java.nio.file.FileSystemException: Operation not permitted
+
+on the old docker versions (before v19)
+
+Regression is introduced by JDK-8316304 adding a statx syscall
+
+On the old docker versions, statx is not added to the default seccomp white list ( https://github.com/moby/moby/blob/00c1c604d08bbceb73a680d37d7428e6a4e986af/profiles/seccomp/default.json ) It causes EPERM in some systems even if the container image is updated.
+
+```
+
+root@88d002f4c30b:/# /jdk/bin/java -Xdiag -jar ../apps/customjsse.jar
+
+Error: An unexpected error occurred while trying to open file ../apps/customjsse.jar
+
+java.nio.file.FileSystemException: ../apps/customjsse.jar: Operation not permitted
+
+        at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+
+        at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:56)
+
+        at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:163)
+
+        at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+
+        at java.base/java.nio.file.Files.readAttributes(Files.java:1865)
+
+        at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1512)
+
+        at java.base/java.util.zip.ZipFile$CleanableResource.(ZipFile.java:744)
+
+        at java.base/java.util.zip.ZipFile.(ZipFile.java:254)
+
+        at java.base/java.util.zip.ZipFile.(ZipFile.java:181)
+
+        at java.base/java.util.jar.JarFile.(JarFile.java:345)
+
+        at java.base/java.util.jar.JarFile.(JarFile.java:316)
+
+        at java.base/java.util.jar.JarFile.(JarFile.java:255)
+
+        at java.base/sun.launcher.LauncherHelper.loadMainClass(LauncherHelper.java:834)
+
+        at java.base/sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:736)
+
+```
+
+-----
+Title: [JDK-8340447] Improve parsing of Day/Month in tzdata rules
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340550] Files.isReadable/isWritable/isExecutable expensive when file does not exist
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340589] update manual test/jdk/TEST.groups
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340603] Retire binary test vectors in test/jdk/java/util/zip/ZipFile
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340604] Add test case for ZipFile opening a ZIP with no entries
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340612] DeflaterDictionaryTests should use Deflater.getBytesWritten instead of Deflater.getTotalOut
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340734] Add tests for virtual threads doing Selector operations
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340776] Java file extension missing in AuthenticatorTest
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340989] update jdk_core at open/test/jdk/TEST.groups
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341016] java/nio/channels/Selector/SelectWithConsumer.java#id0 failed in testWakeupDuringSelect
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341824] ProcessHandleImpl os_getChildren sysctl call - retry in case of ENOMEM and enhance exception message
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342057] ProblemList java/nio/channels/DatagramChannel/ for Macos
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342063] [21u][aix] Backport introduced redundant line in ProblemList
+Category: P4_Bug_core-libs
+Description:
+Bakcport of  https://bugs.openjdk.org/browse/JDK-8316387: Exclude more failing multicast tests on AIX after JDK-8315651 introduced a second line for java/nio/channels/DatagramChannel/AfterDisconnect.java. Remove.
+
+-----
+Title: [JDK-8342900] SaslInputStream.read() may return wrong value
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343354] Add extra diagnostic to java/net/InetAddress/ptr/Lookup.java
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343363] Reading from an input stream backed by a closed ZipFile has no test coverage
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343368] Add some additional diagnostic output to java/net/ipv6tests/UdpTest.java
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343464] ClassicFormat::parseObject (from DateTimeFormatter) does not conform to the javadoc and may leak DateTimeException
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343611] Acknowledge case insensitive unambiguous keywords in tzdata files
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344296] java/net/httpclient/ManyRequests2.java fails intermittently on Linux
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344574] ThreadLocal.nextHashCode can be static final
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344679] Several tests from corelibs areas ignore VM flags
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344993] [21u] [REDO] Backport JDK-8327501 and JDK-8328366 to JDK 21
+Category: P4_Bug_core-libs
+Description:
+JDK-8327501 and JDK-8328366 got backported to OpenJDK 21.0.5 and backed out with JDK-8341989 in the same release 21.0.5. This is a redo bug for a new attempt to fix the class unloading issue described in JDK-8327501 in a future version of OpenJDK 21.
+
+By backing out JDK-8341989, we plan to re-introduce JDK-8327501 and JDK-8328366 to JDK 21u. Contrary to the initial attempt to have JDK-8327501 and JDK-8328366 in JDK 21u, we will now also backport JDK-8342905 that fixes the issue observed with the previous attempt.
+
+-----
+Title: [JDK-8327501] Common ForkJoinPool prevents class unloading in some cases
+Category: P4_Bug_core-libs
+Description:
+When the ForkJoinPool.commonPool() creates new worker threads, they capture an AccessControlContext from the location where they were created, which means that the class won't get unloaded for the lifetime of that worker thread.
+
+-----
+Title: [JDK-8328366] Thread.setContextClassloader from thread in FJP commonPool task no longer works after JDK-8327501
+Category: P3_Bug_core-libs
+Description:
+Christian Wimmer in JDK-8327501 writes:
+
+The fix for JDK-8327501 has a compatibility impact that has been overlooked: Using `InnocuousForkJoinWorkerThread` means that any task that runs in the common pool can no longer use `Thread.currentThread().setContextClassLoader(...)` - that unconditionally throws a `SecurityException`.
+
+This breaks many existing Java libraries and frameworks. One example is Quarkus. See:
+
+https://github.com/quarkusio/quarkus/issues/39526
+
+-----
+Title: [JDK-8345417] Thread.setContextClassloader from thread in FJP commonPool task no longer works after JDK-8327501 redux
+Category: P4_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340152] 3 JDI tests timed out with UT enabled
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8340153] NSK tests should listen on loopback addresses only
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8343602] java/lang/management/ThreadMXBean/Locks.java transient failures
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8343912] JDI stopListening/stoplis001 "FAILED: listening is successfully stopped without starting listening"
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8343919] vmTestbase/nsk/jdb/kill/kill001/kill001.java fails with C1
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8344677] sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.java failed with BindException: Address already in use
+Category: P4_Backport_core-svc
+Description:
+(no description)
+
+-----
+Title: [JDK-8339146] Exclude Fingerprinter::do_type from ubsan checks
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339147] SeenThread::print_action_queue called on a null pointer
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339272] AArch64: enable tests compiler/intrinsics/Test(Long|Integer)UnsignedDivMod.java on aarch64
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339273] RISC-V: compiler/intrinsics/TestInteger/LongUnsignedDivMod.java failed with "counts: Graph contains wrong number of nodes"
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339315] [test] runtime/os/TestTracePageSizes move ppc handling
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339323] map_or_reserve_memory_aligned Windows enhance remap assertion
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339397] RISC-V: C2: Change C calling convention for sp to NS
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339585] remove old remap assertion in map_or_reserve_memory_aligned  after JDK-8338058
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8338058] map_or_reserve_memory_aligned Windows enhance remap assertion
+Category: P4_Enhancement_hotspot
+Description:
+In method map_or_reserve_memory_aligned on Windows we should enhance the output in the  remap assertion, to get more details in case of failures.
+
+-----
+Title: [JDK-8339589] RISC-V: Remove li64 macro assembler routine and related code
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339814] Clean up vmTestbase/nsk/stress/stack tests
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339841] AArch64: u32 _partial_subtype_ctr loaded/stored as 64
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340136] serviceability/jvmti/vthread/PopFrameTest failed with a timeout
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340154] Update several runtime/cds tests to use vm flags or mark as flagless
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340155] TestCDSVMCrash fails on libgraal
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340157] Add JavacBench as a test case for CDS
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340159] Update vmTestbase/nsk/share/DebugeeProcess.java to don't use finalization
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340356] ubsan: bytecodeInfo.cpp:318:59: runtime error: division by zero
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340430] MethodExitTest may fail with stack buffer overrun
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340500] TestAutoCreateSharedArchiveUpgrade.java should be updated with JDK 21
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340502] Make 5 compiler tests use ProcessTools.executeProcess
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340607] Exceptions::wrap_dynamic_exception() doesn't have ResourceMark
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340615] Update JCStress test suite
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340626] [s390x] Provide implementation for resolve_global_jobject
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340630] vmTestbase/gc/g1/unloading/tests/unloading_keepRef_rootClass_inMemoryCompilation_keep_cl failed with Full gc happened. Test was useless.
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341259] Improve CDSHeapVerifier in handling of interned strings
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341322] C1: assert(0 <= i && i < _len) failed: illegal index 5 for length 5
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341323] Parsing jsr broken: assert(bci>= 0 && bci < c->method()->code_size()) failed: index out of bounds
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341479] [PPC64] SA determines wrong unextendedSP
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341821] The class LogSelection copies uninitialized memory
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341823] ZGC: Division by zero in rule_major_allocation_rate
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341943] Exclude two compiler/rtm/locking tests on ppc64le
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341960] RISC-V: Generate comments in -XX:+PrintInterpreter to link to source code
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341962] ubsan : dependencies.cpp:906:3: runtime error: load of value 4294967295, which is not a valid value for type 'DepType'
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8341973] RISC-V: C2: Small improvement to vector gather load and scatter store
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342020] [IR Framework] Add support for IR tests with @Stable
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342021] Test testlibrary_tests/ir_framework/tests/TestPrivilegedMode.java fails with release build
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342048] runtime/logging/ClassLoadUnloadTest.java doesn't reliably trigger class unloading
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342050] Test runtime/classFileParserBug/Bad_NCDFE_Msg.java won't compile
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342056] C2: Fix UB of jlong overflow in PhaseIdealLoop::is_counted_loop()
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342391] RISC-V: Unnecessary fences used for load-acquire in template interpreter
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342395] Assertion on AIX - original PC must be in the main code section of the compiled method
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342396] RISC-V: Avoid passing t0 as temp register to MacroAssembler:: cmpxchg_obj_header/cmpxchgptr
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342527] Ubsan: ciEnv.cpp:1660:65: runtime error: member call on null pointer of type 'struct CompileTask'
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342532] RISC-V: ZStoreBarrierStubC2 clobbers rflags
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342551] Tests assume UnlockExperimentalVMOptions is disabled by default
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342572] Aarch64: Generate comments in -XX:+PrintInterpreter to link to source code
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342710] CTW: Add StressIncrementalInlining to stress options
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342722] [JVMCI] Unintuitive behavior of UseJVMCICompiler option
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342669] [21u] Fix TestArrayAllocatorMallocLimit after backport of JDK-8315097
+Category: P4_Bug_hotspot
+Description:
+I had to extend the changes of 8315097 to this file that was removed in head before the original 8315097 was applied. I got one call wrong.
+
+See also https://github.com/openjdk/jdk21u-dev/commit/1f38afa6c6fa7949c5d7171b817f1d7883987cf4#diff-21d07968b5ddcf0fc75f2b6b8c9e05935fe19a819397c6a17a9f4798a0007b85
+
+-----
+Title: [JDK-8315097] Rename createJavaProcessBuilder
+Category: P4_Sub-task_hotspot
+Description:
+Rename createJavaProcessBuilder so that it is not used by mistake instead of createTestJvm
+
+-----
+Title: [JDK-8342851] Shenandoah: Unused ShenandoahSATBAndRemarkThreadsClosure::_claim_token
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343028] G1: Nmethod count statistics only count last code root set iterated
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343203] [PPC64]: postalloc_expand_java_dynamic_call_sched does not copy all fields
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8342765] [21u] RTM tests assume UnlockExperimentalVMOptions is disabled by default
+Category: P4_Enhancement_hotspot
+Description:
+Distros with Graal integration will have `UnlockExperimentalVMOptions` enabled, causing several RTM tests to fail:
+
+compiler/rtm/cli/TestRTMAbortThresholdOption.java
+
+compiler/rtm/cli/TestRTMLockingCalculationDelayOption.java
+
+compiler/rtm/cli/TestRTMLockingThresholdOption.java
+
+compiler/rtm/cli/TestRTMSpinLoopCountOption.java
+
+compiler/rtm/cli/TestUseRTMForStackLocksOptionOnUnsupportedConfig.java
+
+compiler/rtm/cli/TestUseRTMXendForLockBusyOption.java
+
+Note that this directory of tests was removed by https://bugs.openjdk.org/browse/JDK-8329141 as part of JDK24.
+
+-----
+Title: [JDK-8343591] ubsan: shenandoahFreeSet.cpp:1347:24: runtime error: division by zero
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343908] jvmti/StopThread/stopthrd007 failed with "NoClassDefFoundError: Could not initialize class jdk.internal.misc.VirtualThreads"
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343909] runtime/cds/appcds/ProhibitedPackage.java can fail with UseLargePages
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343914] Update nsk.share.Log to don't print summary during VM shutdown hook
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344290] The makefiles should set problemlist and adjust timeout basing on the given VM flags
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344404] [s390x] multiple test failures with ubsan
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344405] Enhance register printing on x86_64 platforms
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344406] [PPC64] Disallow OptoScheduling
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344407] [s390x] ProblemList hotspot/jtreg/runtime/NMT/VirtualAllocCommitMerge.java
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344408] ZGC: Division by zero in heuristics after JDK-8332717
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8332717] ZGC: Division by zero in heuristics
+Category: P3_Bug_hotspot
+Description:
+When running hs :tier1 tests, with ubsan enabled (configure flag --enable-ubsan), in a couple of  ZGC tests like
+
+compiler/uncommontrap/TestDeoptOOM_ZGenerational.jtr
+
+gc/stringdedup/TestStringDeduplicationInterned_ZGenerational.jtr
+
+this division by zero is reported :
+
+/jdk/src/hotspot/share/gc/z/zDirector.cpp:531:87: runtime error: division by zero
+
+    #0 0x7f34901420b0 in calculate_young_to_old_worker_ratio /jdk/src/hotspot/share/gc/z/zDirector.cpp:531
+
+    #1 0x7f34901420b0 in select_worker_threads /jdk/src/hotspot/share/gc/z/zDirector.cpp:690
+
+    #2 0x7f34944021d3 in select_worker_threads /jdk/src/hotspot/share/gc/z/zDirector.cpp:685
+
+    #3 0x7f34944021d3 in initial_workers /jdk/src/hotspot/share/gc/z/zDirector.cpp:780
+
+    #4 0x7f34944034d5 in initial_workers /jdk/src/hotspot/share/gc/z/zLock.inline.hpp:114
+
+    #5 0x7f34944034d5 in start_major_gc /jdk/src/hotspot/share/gc/z/zDirector.cpp:784
+
+    #6 0x7f34944034d5 in start_gc /jdk/src/hotspot/share/gc/z/zDirector.cpp:812
+
+    #7 0x7f34944034d5 in ZDirector::run_thread() /jdk/src/hotspot/share/gc/z/zDirector.cpp:908
+
+    #8 0x7f34945831f8 in ZThread::run_service() /jdk/src/hotspot/share/gc/z/zThread.cpp:29
+
+    #9 0x7f34917e4f89 in ConcurrentGCThread::run() /jdk/src/hotspot/share/gc/shared/concurrentGCThread.cpp:48
+
+    #10 0x7f3493ee8b0f in Thread::call_run() /jdk/src/hotspot/share/runtime/thread.cpp:225
+
+    #11 0x7f34933dae75 in thread_native_entry /jdk/src/hotspot/os/linux/os_linux.cpp:846
+
+    #12 0x7f349991c6e9 in start_thread (/lib64/libpthread.so.0+0xa6e9) (BuildId: 2f8d3c2d0f4d7888c2598d2ff6356537f5708a73)
+
+    #13 0x7f3498f1550e in clone (/lib64/libc.so.6+0x11850e) (BuildId: f732026552f6adff988b338e92d466bc81a01c37)
+
+-----
+Title: [JDK-8344409] ubsan: division by zero in sharedRuntimeTrans.cpp
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344410] Ubsan: ciEnv.cpp:1614:65: runtime error: member call on null pointer of type 'struct CompileTask'
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344591] Shenandoah: Parallel worker use in parallel_heap_region_iterate
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344605] docker tests do not work when ubsan is configured
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344623] Do libubsan1 installation in test container only if requested
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344676] Fix some warnings as errors when building on Linux with toolchain clang
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344803] VectorGatherMaskFoldingTest.java failed when maximum vector bits is 64
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344805] [s390x]  Disallow OptoScheduling
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344864] Fix nonnull-compare warnings
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344962] Test TestPrivilegedMode.java intermittent fails java.lang.NoClassDefFoundError: jdk/test/lib/Platform
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8345180] Problemlist vmTestbase/vm/mlvm/meth/stress/compiler/deoptimize/Test.java#id1 until JDK-8320865 is fixed
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8345055] [21u] ProblemList failing rtm tests on ppc platforms
+Category: P4_Sub-task_hotspot
+Description:
+Exclude  some rtm related test which we see currently failing on some ppc64 platforms.
+
+-----
+Title: [JDK-8345227] [s390x] C1 unwind_handler fails to unlock synchronized methods with LM_MONITOR
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8345228] UnsafeIntrinsicsTest.java#ZGenerationalDebug assert(!assert_on_failure) failed: Has low-order bits set
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8345311] Test TestEnableJVMCIProduct.java run with virtual thread intermittent fails
+Category: P4_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8339080] Bump update version for OpenJDK: jdk-21.0.6
+Category: P4_Enhancement_infrastructure
+Description:
+Development of update 21.0.6 starts in repository jdk21u-dev on Wednesday August 28th, 2024. The first change should be to bump the version.
+
+Release of 21.0.6 is planned for Tuesday January 21th, 2025.
+
+For the date, see also https://wiki.openjdk.org/display/JDKUpdates/JDK%2021u or https://www.oracle.com/security-alerts/
+
+-----
+Title: [JDK-8339839] GHA: some of bundles may not get removed
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8339991] GHA: RISC-V: Use Debian snapshot archive for bootstrap
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8340513] Mark jdk/jshell/ExceptionMessageTest.java intermittent
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8341092] Add SECURITY.md file
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8341537] GHA: MacOS AArch64 bundles can be removed prematurely
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8341583] doc/building.md update Xcode instructions to note that full install is required
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8342491] [test] build/AbsPathsInImage.java fails with OOM when using ubsan-enabled binaries
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8342573] Gcc version detection failure on Alinux3
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8343253] --enable-ccache's CCACHE_BASEDIR breaks builds
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8343425] GHA: RISC-V: Bootstrap using Debian snapshot is still failing
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8343474] [updates] Customize README.md to specifics of update project
+Category: P4_Bug_infrastructure
+Description:
+Add some project specific information to README.md, among others to better guide new contributors.
+
+Let’s keep this sufficiently generic so that the information holds for jdkXu and jdkXu-dev
+
+and that the change can easily be backported (by adapting 21->17 etc.).
+
+-----
+Title: [JDK-8344421] GHA: Switch to Xcode 15 on MacOS AArch64 runners
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8344961] Compile without -fno-delete-null-pointer-checks
+Category: P4_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8347010] [21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.6
+Category: P4_Bug_infrastructure
+Description:
+As discussed in https://github.com/openjdk/jdk17u-dev/pull/307, we'd like to have DEFAULT_PROMOTED_VERSION_PRE set to 'ea' in dev source trees and remove it for GA tagged source levels.
+
+-----
+Title: [JDK-8339254] CAInterop.java#actalisauthenticationrootca conflicted with /manual and /timeout
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340151] Unify debug printing format of X.509 cert serial numbers
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340503] Automate com/sun/security/auth/callback/TextCallbackHandler/Default.java test
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340611] [jmh] the test java.security.HSS failed with 2 active threads
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8340781] Add manual steps to run security/auth/callback/TextCallbackHandler/Password.java test
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341017] Enhance the keytool code by invoking the buildTrustedCerts method for essential options
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341320] PKCS11 tests still skip execution
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8341620] Unaddressed comments during code review of JDK-8337664
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8337664] Distrust TLS server certificates issued after Oct 2024 and anchored by Entrust Root CAs
+Category: P3_Enhancement_security-libs
+Description:
+Google [1] and Mozilla [2] have announced plans to distrust TLS Server certificates issued by Entrust.
+
+This enhancement will implement similar restrictions in the JDK.
+
+The restrictions will be enforced in the SunJSSE Provider of the Java Secure Socket Extension (JSSE) API. A TLS session will not be negotiated if the server's certificate chain is anchored by any of the Certificate Authorities in the table below and the certificate's notBefore date is after October 31, 2024. An application will receive an Exception with a message indicating the trust anchor (root) is not trusted, ex:
+
+   "TLS Server certificate issued after 2024-10-31 and anchored by a distrusted legacy Entrust root CA: CN=Entrust.net Certification Authority (2048), OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net"
+
+If necessary, you can work around the restrictions by removing "ENTRUST_TLS" from the "jdk.security.caDistrustPolicies" security property.
+
+The restrictions will be imposed on the following Entrust Root certificates (identified by Distinguished Name) included in the JDK (note that AffirmTrust are Entrust CAs):
+
+1. CN=Entrust Root Certification Authority, OU="(c) 2006 Entrust, Inc.",
+
+    OU=www.entrust.net/CPS is incorporated by reference, O="Entrust, Inc.", C=US
+
+2. CN=Entrust Root Certification Authority - EC1, OU="(c) 2012 Entrust, Inc. - for authorized use only",
+
+    OU=See www.entrust.net/legal-terms, O="Entrust, Inc.", C=US
+
+3. CN=Entrust Root Certification Authority - G2, OU="(c) 2009 Entrust, Inc. - for authorized use only",
+
+    OU=See www.entrust.net/legal-terms, O="Entrust, Inc.", C=US
+
+4. CN=Entrust Root Certification Authority - G4, OU="(c) 2015 Entrust, Inc. - for authorized use only",
+
+    OU=See www.entrust.net/legal-terms, O="Entrust, Inc.", C=US
+
+5. CN=Entrust.net Certification Authority (2048), OU=(c) 1999 Entrust.net Limited,
+
+    OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net
+
+6. CN=AffirmTrust Commercial, O=AffirmTrust, C=US
+
+7. CN=AffirmTrust Networking, O=AffirmTrust, C=US
+
+8. CN=AffirmTrust Premium, O=AffirmTrust, C=US
+
+9. CN=AffirmTrust Premium ECC, O=AffirmTrust, C=US
+
+[1] https://security.googleblog.com/2024/06/sustaining-digital-certificate-security.html
+
+[2] https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/jCvkhBjg9Yw
+
+-----
+Title: [JDK-8341698] Update TLSCommon/interop/AbstractServer to specify an interface to listen for connections
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343046] Ensure randomness is only read from provided SecureRandom object
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343913] Have SSLSocketTemplate.doClientSide use loopback address
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344292] Several security shell tests don't set TESTJAVAOPTS
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8344390] Few security tests ignore VM flags
+Category: P4_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343302] Some tests have name which confuse jtreg
+Category: P4_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8343515] JLinkReproducibleTest.java support receive test.tool.vm.opts
+Category: P4_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8344613] Create jtreg test case for JDK-8325203
+Category: P4_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8325203] System.exit(0) kills the launched 3rd party application
+Category: P3_Bug_tools
+Description:
+ADDITIONAL SYSTEM INFORMATION :
+
+Windows 11,
+
+openjdk version "21.0.2" 2024-01-16 LTS
+
+OpenJDK Runtime Environment Temurin-21.0.2+13 (build 21.0.2+13-LTS)
+
+OpenJDK 64-Bit Server VM Temurin-21.0.2+13 (build 21.0.2+13-LTS, mixed mode, sharing)
+
+A DESCRIPTION OF THE PROBLEM :
+
+Hi there,
+
+my Java app experienced a very weird regression when switching from JDK
+
+OpenJDK21U-jdk_x64_windows_hotspot_21.0.1_12
+
+to
+
+OpenJDK21U-jdk_x64_windows_hotspot_21.0.2_13
+
+This small snippet should start a third party software (in this case Notepad++.exe but it's just an example) and after 30 seconds, close the java app that launched it.
+
+public static void main(String... args) throws IOException {
+
+        String[] cmdToRunUsingArgs = {"cmd.exe", "/C", "C:\\Program Files\\Notepad++\\notepad++.exe"};
+
+        Runtime.getRuntime().exec(cmdToRunUsingArgs);
+
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> {
+
+            System.exit(0);
+
+        }, 30, TimeUnit.SECONDS);
+
+    }
+
+It works well with all previous JDK versions but it stopped working from java 21.0.2 and later.
+
+With java 21.0.1, the program launches the third party app correcly, after 30 seconds, it kills itself by leaving the third app running.
+
+With java 21.0.2, the program launches the third party app correcly, after 30 seconds, it kills itself AND the third party app.
+
+This makes even impossible to restart a java app from the app itself.
+
+REGRESSION : Last worked in version 17.0.10
+
+STEPS TO FOLLOW TO REPRODUCE THE PROBLEM :
+
+Run the code snippet from a JAR file not in an IDE!
+
+EXPECTED VERSUS ACTUAL BEHAVIOR :
+
+EXPECTED -
+
+The program should run a third party software and then close itself leaving the third party software running.
+
+ACTUAL -
+
+The program kills both the third party software and itself.
+
+---------- BEGIN SOURCE ----------
+
+public static void main(String... args) throws IOException {
+
+        String[] cmdToRunUsingArgs = {"cmd.exe", "/C", "C:\\Program Files\\Notepad++\\notepad++.exe"};
+
+        Runtime.getRuntime().exec(cmdToRunUsingArgs);
+
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> {
+
+            System.exit(0);
+
+        }, 30, TimeUnit.SECONDS);
+
+    }
+
+---------- END SOURCE ----------
+
+CUSTOMER SUBMITTED WORKAROUND :
+
+no workaround found
+
+FREQUENCY : always
+
+-----
+Title: [JDK-8344614] tools/jpackage/windows/WinChildProcessTest.java Failed: Check is calculator process is alive
+Category: P4_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8345174] langtools/tools/javac/newlines/NewLineTest.java is failing on Japanese Windows
+Category: P4_Backport_tools
+Description:
+(no description)
+
+-----
+Title: [JDK-8343348] Hide PassFailJFrame.Builder constructor
+Category: P5_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343910] Simplify TrayIconScalingTest.java
+Category: P5_Backport_client-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8342942] Unused ClassValue in VarHandles
+Category: P5_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8345437] Add an operation mode to the jar command when extracting to not overwriting existing files
+Category: P5_Backport_core-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8339624] AArch64: C2_MacroAssembler::fast_lock uses rscratch1 for cmpxchg result
+Category: P5_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340158] x86 MacroAssembler may over-align code
+Category: P5_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8340782] Unintentional IOException in jdk.jdi module when JDWP end of stream occurs
+Category: P5_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8343920] compiler/c1/TestTraceLinearScanLevel.java occasionally times out with -Xcomp
+Category: P5_Backport_hotspot
+Description:
+(no description)
+
+-----
+Title: [JDK-8344958] Harden TzdbZoneRulesCompiler against missing zone names
+Category: P5_Backport_infrastructure
+Description:
+(no description)
+
+-----
+Title: [JDK-8340779] Test com/sun/crypto/provider/Cipher/DES/PerformanceTest.java fails with java.lang.ArithmeticException
+Category: P5_Backport_security-libs
+Description:
+(no description)
+
+-----
+Title: [JDK-8343928] Fix typo of property name in TestOAEPPadding after 8341927
+Category: P5_Backport_security-libs
+Description:
+(no description)
+
