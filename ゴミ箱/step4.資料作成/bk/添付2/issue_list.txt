@@ -1,0 +1,4258 @@
+
+P2
+Backport
+hotspot
+JDK-8354528
+Integer.numberOfLeadingZeros outputs incorrectly in certain cases
+P2
+Backport
+hotspot
+JDK-8356675
+Kitchensink.java and RenaissanceStressTest.java time out with jvmti module errors
+P2
+Backport
+hotspot
+JDK-8357820
+[AArch64] Incorrect result of VectorizedHashCode intrinsic on Cortex-A53
+P2
+Backport
+security-libs
+JDK-8359349
+Add 2 TLS and 2 CS Sectigo roots
+P2
+Bug
+tools
+JDK-8354893
+[REDO BACKPORT] javac crashes while adding type annotations to the return type of a constructor (JDK-8320001)
+P2
+Bug
+tools
+JDK-8360406
+[21u] Disable logic for attaching type annotations to class files until 8359336 is fixed
+P3
+Backport
+client-libs
+JDK-8351528
+Update PipeWire to 1.3.81
+P3
+Backport
+client-libs
+JDK-8351532
+[Accessibility,macOS,VoiceOver] VoiceOver doesn't announce untick on toggling the checkbox with "space" key on macOS
+P3
+Backport
+client-libs
+JDK-8351533
+[Accessibility,macOS,Screen Magnifier]: JCheckbox unchecked state does not magnify but works for checked state
+P3
+Backport
+client-libs
+JDK-8351538
+Update FreeType to 2.13.3
+P3
+Backport
+client-libs
+JDK-8351879
+print/Dialog/PaperSizeError.java fails with MediaSizeName is not A4: A4
+P3
+Backport
+client-libs
+JDK-8352543
+[XWayland] No displayChanged event after setDisplayMode call
+P3
+Backport
+client-libs
+JDK-8352544
+Update LCMS to 2.17
+P3
+Backport
+client-libs
+JDK-8353140
+Desktop.browse method fails if earlier CoInitialize call as COINIT_MULTITHREADED
+P3
+Backport
+client-libs
+JDK-8353538
+Update HarfBuzz to 10.4.0
+P3
+Backport
+client-libs
+JDK-8353540
+Update Libpng to 1.6.47
+P3
+Backport
+client-libs
+JDK-8353852
+[ubsan] exclude function BilinearInterp and ShapeSINextSpan in libawt java2d from ubsan checks
+P3
+Backport
+client-libs
+JDK-8354649
+[Accessibility,macOS,VoiceOver] VoiceOver reads the spinner value 10 as 1 when user iterates to 10 for the first time on macOS
+P3
+Backport
+client-libs
+JDK-8355149
+Test javax/swing/JTabbedPane/8007563/Test8007563.java fails
+P3
+Backport
+core-libs
+JDK-8350948
+UpcallLinker::on_exit races with GC when copying frame anchor
+P3
+Backport
+core-libs
+JDK-8352513
+Incorrect handling of HTTP/2 GOAWAY frames in HttpClient
+P3
+Backport
+core-libs
+JDK-8353301
+Primitive caches must use boxed instances from the archive
+P3
+Backport
+core-libs
+JDK-8353921
+(tz) Update Timezone Data to 2025b
+P3
+Backport
+core-libs
+JDK-8354429
+(ch) sun.nio.ch.Poller.register throws AssertionError
+P3
+Backport
+core-libs
+JDK-8355035
+HTTP/2 ConnectionWindowUpdateSender may miss some unprocessed DataFrames from closed streams
+P3
+Backport
+core-libs
+JDK-8355100
+Enhance checks in BigDecimal.toPlainString()
+P3
+Backport
+core-libs
+JDK-8355738
+Increased number of SHA-384-Digest java.util.jar.Attributes$Name instances leading to higher memory footprint
+P3
+Backport
+core-libs
+JDK-8356707
+GZIPInputStream constructor could leak an un-end()ed Inflater
+P3
+Backport
+core-libs
+JDK-8357548
+ISO 4217 Amendment 179 Update
+P3
+Backport
+core-svc
+JDK-8354640
+javax/management/security/HashedPasswordFileTest.java creates tmp file in src dir
+P3
+Backport
+core-svc
+JDK-8357534
+[VS 2022 17.14] Warning C5287 in debugInit.c: enum type mismatch during build
+P3
+Backport
+hotspot
+JDK-8350856
+[PPC64] Make intrinsic conversions between bit representations of half precision values and floats
+P3
+Backport
+hotspot
+JDK-8351030
+JFR Leak Profiler is broken with Shenandoah
+P3
+Backport
+hotspot
+JDK-8351340
+secondary_super_cache does not scale well
+P3
+Backport
+hotspot
+JDK-8351341
+Out-of-bounds array access in secondary_super_cache
+P3
+Backport
+hotspot
+JDK-8351637
+Out of bounds access on Linux aarch64 in os::print_register_info
+P3
+Backport
+hotspot
+JDK-8351924
+serviceability/dcmd/vm/SystemMapTest.java and SystemDumpMapTest.java may fail after JDK-8326586
+P3
+Backport
+hotspot
+JDK-8352436
+[AArch64] C1: guarantee(val < (1ULL << nbits)) failed: Field too big for insn
+P3
+Backport
+hotspot
+JDK-8352526
+Test serviceability/sa/ClhsdbCDSJstackPrintAll.java failed: ArrayIndexOutOfBoundsException
+P3
+Backport
+hotspot
+JDK-8353102
+G1: NUMA migrations cause crashes in region allocation
+P3
+Backport
+hotspot
+JDK-8353522
+Make os::Linux::active_processor_count() public
+P3
+Backport
+hotspot
+JDK-8353675
+Caller/callee param size mismatch in deoptimization causes crash
+P3
+Backport
+hotspot
+JDK-8353676
+SIGFPE In ObjectSynchronizer::is_async_deflation_needed()
+P3
+Backport
+hotspot
+JDK-8354444
+Hotspot should support multiple large page sizes on Windows
+P3
+Backport
+hotspot
+JDK-8355212
+Shenandoah/C2: TestVerifyLoopOptimizations test failure
+P3
+Backport
+hotspot
+JDK-8355552
+java -D-D crashes
+P3
+Backport
+hotspot
+JDK-8356676
+Stack overflow during C2 compilation when splitting memory phi
+P3
+Backport
+hotspot
+JDK-8357391
+ZGC: TestAllocateHeapAt.java should not run with UseLargePages
+P3
+Backport
+hotspot
+JDK-8359037
+C2: compilation fails with "assert(false) failed: empty program detected during loop optimization"
+P3
+Backport
+infrastructure
+JDK-8354494
+Debug symbols bundle should contain full debug files when building --with-external-symbols-in-bundles=public
+P3
+Backport
+security-libs
+JDK-8351512
+Jarsigner should print a warning if an entry is removed
+P3
+Backport
+security-libs
+JDK-8351960
+Remove Baltimore root certificate expiring in May 2025
+P3
+Backport
+security-libs
+JDK-8353894
+Restore null return for invalid services from legacy providers
+P3
+Backport
+security-libs
+JDK-8355549
+Uninitialised memory in deleteGSSCB of GSSLibStub.c:179
+P3
+Backport
+security-libs
+JDK-8355729
+Update HSS/LMS public key encoding
+P3
+Backport
+security-libs
+JDK-8355731
+Compatible OCSP readtimeout property with OCSP timeout
+P3
+Bug
+tools
+JDK-8341779
+[REDO BACKPORT] type annotations are not visible to javac plugins across compilation boundaries (JDK-8225377)
+P3
+Backport
+tools
+JDK-8354923
+Type annotation attached to incorrect type during class reading
+P3
+Backport
+tools
+JDK-8355057
+CompletionFailure in getEnclosingType attaching type annotations
+P3
+Backport
+tools
+JDK-8356013
+NPE due to unreported compiler error
+P3
+Backport
+tools
+JDK-8357116
+Ctrl+C does not call shutdown hooks after JLine upgrade
+P4
+Backport
+client-libs
+JDK-8351506
+Open source several Swing CSS related tests
+P4
+Backport
+client-libs
+JDK-8351507
+ColorConvertOp - typo for non-ICC conversions needs one-line fix
+P4
+Backport
+client-libs
+JDK-8351510
+[macos] Menu or JPopupMenu not closed when main window is resized
+P4
+Backport
+client-libs
+JDK-8351511
+Open Source several AWT/2D font and rendering tests
+P4
+Backport
+client-libs
+JDK-8351521
+sun/awt/font/TestDevTransform.java fails with RuntimeException: Different rendering
+P4
+Backport
+client-libs
+JDK-8351522
+Open source several Choice related tests (part 2)
+P4
+Backport
+client-libs
+JDK-8351527
+Update List/ItemEventTest/ItemEventTest.java
+P4
+Backport
+client-libs
+JDK-8351531
+AIX build failure after upgrade pipewire to 1.3.81
+P4
+Backport
+client-libs
+JDK-8351830
+Open source several Swing Scroll related tests
+P4
+Backport
+client-libs
+JDK-8352025
+Open source several Swing RootPane and Slider related tests
+P4
+Backport
+client-libs
+JDK-8352028
+Automate and open source few closed manual applet test
+P4
+Backport
+client-libs
+JDK-8352029
+Remove applet usage from JFileChooser tests bug4150029
+P4
+Backport
+client-libs
+JDK-8352030
+Convert and Open source few manual applet test to main based
+P4
+Backport
+client-libs
+JDK-8352031
+Open source several AWT focus tests - series 1
+
+Title
+P4
+Backport
+client-libs
+JDK-8352032
+Open source several AWT focus tests - series 2
+P4
+Backport
+client-libs
+JDK-8352033
+Open source AWT MenuItem related tests
+P4
+Backport
+client-libs
+JDK-8352034
+Open source closed choice tests #2
+P4
+Backport
+client-libs
+JDK-8352035
+Open source several AWT focus tests - series 5
+P4
+Backport
+client-libs
+JDK-8352036
+Open source few Checkbox and Cursor tests - Set1
+P4
+Backport
+client-libs
+JDK-8352041
+Open source DnD tests - Set5
+P4
+Backport
+client-libs
+JDK-8352051
+Open source closed frame tests # 2
+P4
+Backport
+client-libs
+JDK-8352103
+Open source some Component/Panel/EventQueue tests - Set2
+P4
+Backport
+client-libs
+JDK-8352104
+Open source several AWT Dialog tests - Batch 4
+P4
+Backport
+client-libs
+JDK-8352221
+Open source few Component tests - Set1
+P4
+Backport
+client-libs
+JDK-8352225
+Open source some Desktop related tests
+P4
+Backport
+client-libs
+JDK-8352232
+Automate javax/print/attribute/PageRangesException.java
+P4
+Backport
+client-libs
+JDK-8352233
+JRadioButton/ButtonGroupFocusTest.java fails in CI on Linux
+P4
+Backport
+client-libs
+JDK-8352240
+Remove PassFailJFrame constructor with screenshots
+P4
+Backport
+client-libs
+JDK-8352515
+Open source several Swing PopupMenu related tests
+P4
+Backport
+client-libs
+JDK-8352517
+Open source closed choice tests #3
+P4
+Backport
+client-libs
+JDK-8352518
+Open source AWT FileDialog related tests
+P4
+Backport
+client-libs
+JDK-8352519
+Open source more AWT window tests
+P4
+Backport
+client-libs
+JDK-8352522
+Open source few more AWT PopupMenu tests
+P4
+Backport
+client-libs
+JDK-8352538
+Exception thrown before awaitAndCheck hangs PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8352539
+Improve HTML instruction formatting in PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8353071
+Opensource five more random Swing tests
+P4
+Backport
+client-libs
+JDK-8353072
+Opensource five Swing component related regression tests
+P4
+Backport
+client-libs
+JDK-8353076
+Open source closed choice tests #1
+P4
+Backport
+client-libs
+JDK-8353077
+Open source several AWT focus tests - series 4
+P4
+Backport
+client-libs
+JDK-8353078
+Open source couple more miscellaneous AWT tests
+P4
+Backport
+client-libs
+JDK-8353081
+Open source some of the AWT Window tests
+P4
+Backport
+client-libs
+JDK-8353082
+Open source closed frame tests # 4
+P4
+Backport
+client-libs
+JDK-8353518
+Open source several Swing HTMLEditorKit related tests
+P4
+Backport
+client-libs
+JDK-8353520
+Convert and Opensource few JFileChooser applet test to main
+P4
+Backport
+client-libs
+JDK-8353524
+Opensource few AWT PopupMenu tests
+P4
+Backport
+client-libs
+JDK-8353525
+Open source several AWT focus tests - series 3
+P4
+Backport
+client-libs
+JDK-8353528
+Opensource few AWT image tests
+P4
+Backport
+client-libs
+JDK-8353534
+Open source several Java2D rendering loop tests.
+P4
+Backport
+client-libs
+JDK-8353535
+Open source several AWT PopupMenu tests
+P4
+Backport
+client-libs
+JDK-8353690
+PNGImageWriter uses much more memory than necessary
+P4
+Backport
+client-libs
+JDK-8353700
+Open source some of the AWT Geometry/Button tests
+P4
+Backport
+client-libs
+JDK-8353701
+Open source few more AWT Frame related tests
+P4
+Backport
+client-libs
+JDK-8353702
+Open source closed frame tests # 3
+P4
+Backport
+client-libs
+JDK-8353703
+Open source additional Component tests (part 3)
+P4
+Backport
+client-libs
+JDK-8353864
+Opensource five more Swing regression tests
+P4
+Backport
+client-libs
+JDK-8353866
+Open source several AWT Robot tests
+P4
+Backport
+client-libs
+JDK-8353870
+Open source DnD tests - Set4
+P4
+Backport
+client-libs
+JDK-8353872
+Open source few Cursor tests - Set2
+P4
+Backport
+client-libs
+JDK-8353874
+Open source few TrayIcon tests - Set8
+P4
+Backport
+client-libs
+JDK-8353876
+Open source few DnD tests - Set6
+P4
+Backport
+client-libs
+JDK-8353877
+test/jdk/javax/swing/JRadioButton/8033699/bug8033699.java fails in ubuntu22.04
+P4
+Backport
+client-libs
+JDK-8354185
+Opensource five miscellaneous Swing tests
+P4
+Backport
+client-libs
+JDK-8354199
+java/awt/Cursor/JPanelCursorTest/JPanelCursorTest.java does not show the default cursor
+P4
+Backport
+client-libs
+JDK-8354201
+Open source AWT Frame related tests
+P4
+Backport
+client-libs
+JDK-8354202
+Open source several AWT focus tests - series 6
+P4
+Backport
+client-libs
+JDK-8354203
+Open source few more AWT List tests
+P4
+Backport
+client-libs
+JDK-8354206
+Open source additional Component tests (part 2)
+P4
+Backport
+client-libs
+JDK-8354207
+Open source some MenuBar tests - Set2
+P4
+Backport
+client-libs
+JDK-8354208
+Open source several AWT Dialog tests - Batch 2
+P4
+Backport
+client-libs
+JDK-8354369
+javax/swing/JFileChooser/JFileChooserSetLocationTest.java failed with "setLocation() is not working properly"
+P4
+Backport
+client-libs
+JDK-8354373
+Open source several AWT List tests
+P4
+Backport
+client-libs
+JDK-8354374
+Open source few more AWT FileDialog tests
+P4
+Backport
+client-libs
+JDK-8354375
+Open source several Choice related tests
+P4
+Backport
+client-libs
+JDK-8354377
+Open source few Checkbox tests - Set2
+P4
+Backport
+client-libs
+JDK-8354378
+open source some 2d graphics tests
+P4
+Backport
+client-libs
+JDK-8354379
+Open source some of the AWT window test
+P4
+Backport
+client-libs
+JDK-8354384
+Open source few various AWT tests - Set1
+P4
+Backport
+client-libs
+JDK-8354385
+Open source some MenuBar tests - Set1
+P4
+Backport
+client-libs
+JDK-8354422
+Open source several AWT Mouse tests - Batch 1
+P4
+Backport
+client-libs
+JDK-8354423
+Open source few DND tests - Set1
+P4
+Backport
+client-libs
+JDK-8354425
+Open source several AWT Canvas and Rectangle related tests
+P4
+Backport
+client-libs
+JDK-8354633
+Convert Applet test ManualHTMLDataFlavorTest.java to main program
+P4
+Backport
+client-libs
+JDK-8354635
+Open source closed frame tests # 5
+P4
+Backport
+client-libs
+JDK-8354638
+java/awt/dnd/DnDRemoveFocusOwnerCrashTest.java timed out after JDK-8341257
+P4
+Backport
+client-libs
+JDK-8354648
+javax/swing/JMenu/4213634/bug4213634.java fails
+P4
+Backport
+client-libs
+JDK-8354654
+Screen capture for test TaskbarPositionTest.java, failure case
+P4
+Backport
+client-libs
+JDK-8354786
+Open source few TrayIcon tests - Set7
+P4
+Backport
+client-libs
+JDK-8354787
+Open source several AWT Mouse tests - Batch 2
+P4
+Backport
+client-libs
+JDK-8354788
+Open source several AWT Dialog tests - Batch 1
+
+
+P4
+Backport
+client-libs
+JDK-8354790
+Open source several AWT Dialog tests - Batch 3
+P4
+Backport
+client-libs
+JDK-8355121
+Open source mixed AWT tests - Set3
+P4
+Backport
+client-libs
+JDK-8355151
+Tests fails with java.lang.IllegalAccessException: class com.sun.javatest.regtest.agent.MainWrapper$MainTask cannot access
+P4
+Backport
+client-libs
+JDK-8355169
+java/awt/Desktop/MailTest.java fails in platforms where Action.MAIL is not supported
+P4
+Backport
+client-libs
+JDK-8355710
+java/awt/dnd/RejectDragDropActionTest.java timed out
+P4
+Backport
+client-libs
+JDK-8355733
+Test javax/swing/JComboBox/TestComboBoxComponentRendering.java fails in ubuntu 23.x and later
+P4
+Backport
+client-libs
+JDK-8355735
+Test javax/swing/JTabbedPane/TestJTabbedPaneBackgroundColor.java failed
+P4
+Backport
+client-libs
+JDK-8356514
+Open source a few more Component related tests
+P4
+Backport
+client-libs
+JDK-8356515
+Opensource few List and a Window test
+P4
+Backport
+client-libs
+JDK-8356518
+Test javax/swing/JRadioButton/8033699/bug8033699.java still fails: Focus is not on Radio Button Single as Expected
+P4
+Backport
+client-libs
+JDK-8356520
+JButton/bug4796987.java never runs because Windows XP is unavailable
+P4
+Backport
+client-libs
+JDK-8357001
+Test java/awt/Toolkit/Headless/HeadlessToolkit.java fails by timeout
+P4
+Backport
+client-libs
+JDK-8357065
+Re-enable -Wtype-limits for GCC in LCMS
+P4
+Backport
+client-libs
+JDK-8357115
+Convert closed text/html/CSS manual applet test to main
+P4
+Backport
+client-libs
+JDK-8357118
+test/jdk/javax/swing/JToolBar/4529206/bug4529206.java fails in ubuntu22.04
+P4
+Backport
+client-libs
+JDK-8357120
+test/jdk/javax/swing/text/DefaultEditorKit/4278839/bug4278839.java fails in ubuntu22.04
+P4
+Backport
+client-libs
+JDK-8357122
+Opensource JMenu tests - series1
+P4
+Backport
+client-libs
+JDK-8357204
+Opensource few misc swing tests
+P4
+Backport
+client-libs
+JDK-8357205
+Open source more Swing text tests
+P4
+Backport
+client-libs
+JDK-8357206
+Opensource JInternalFrame tests - series1
+P4
+Backport
+client-libs
+JDK-8357214
+Open source two Swing DefaultCaret tests
+P4
+Backport
+client-libs
+JDK-8357215
+Open source several swing tests batch1
+P4
+Backport
+client-libs
+JDK-8357489
+Open source Swing Tests - Set 5
+P4
+Backport
+client-libs
+JDK-8357492
+Open source several AWT Menu tests - Batch 2
+P4
+Backport
+client-libs
+JDK-8357493
+Open some JComboBox bugs 4
+P4
+Backport
+client-libs
+JDK-8357494
+Open source several clipboard tests batch1
+P4
+Backport
+client-libs
+JDK-8357500
+Clean up and open source couple AWT Graphics related tests (Part 1)
+P4
+Backport
+client-libs
+JDK-8357667
+Missing @since tag on JColorChooser.showDialog overload
+P4
+Backport
+core-libs
+JDK-8350949
+UpcallLinker::on_entry racingly clears pending exception with GC safepoints
+P4
+Backport
+core-libs
+JDK-8350950
+ProgrammableUpcallHandler::on_entry/on_exit access thread fields from native
+P4
+Backport
+core-libs
+JDK-8351190
+[JMH] time.format.ZonedDateTimeFormatterBenchmark fails
+P4
+Backport
+core-libs
+JDK-8352000
+java/net/ipv6tests/UdpTest.java fails with checkTime failed
+P4
+Sub-task
+core-libs
+JDK-8352076
+[21u] Problem list tests that fail in 21 and would be fixed by 8309622
+P4
+Backport
+core-libs
+JDK-8352220
+assert fired in java/net/httpclient/DependentPromiseActionsTest (infrequent)
+P4
+Backport
+core-libs
+JDK-8352227
+java/net/Socket/UdpSocket.java fails with "java.net.BindException: Address already in use" (macos-aarch64)
+P4
+Backport
+core-libs
+JDK-8352234
+(fs) Remove some extensions from java/nio/file/Files/probeContentType/Basic.java
+P4
+Backport
+core-libs
+JDK-8352238
+test/jdk/java/net/httpclient/HttpsTunnelAuthTest.java fails intermittently
+P4
+Backport
+core-libs
+JDK-8352425
+HttpClient with StructuredTaskScope does not close when a task fails
+P4
+Backport
+core-libs
+JDK-8352438
+[JMH] vector.IndexInRangeBenchmark failed with IndexOutOfBoundsException for size=1024
+P4
+Backport
+core-libs
+JDK-8352586
+Some java/lang jtreg tests miss requires vm.hasJFR
+P4
+Backport
+core-libs
+JDK-8350610
+HttpClient: improve HTTP/2 flow control checks
+P4
+Backport
+core-libs
+JDK-8352658
+[JMH] Cannot access class jdk.internal.vm.ContinuationScope
+P4
+Backport
+core-libs
+JDK-8353096
+URLConnection.getLastModified() leaks file handles for jar:file and file: URLs
+P4
+Backport
+core-libs
+JDK-8353645
+java/io/File/GetXSpace.java fails on Windows with CD-ROM drive
+P4
+Backport
+core-libs
+JDK-8353646
+Wrong timeout computations in DnsClient
+P4
+Backport
+core-libs
+JDK-8353647
+com/sun/jndi/dns/ConfigTests/Timeout.java failed intermittent
+P4
+Backport
+core-libs
+JDK-8353900
+Race condition in jdk/java/net/httpclient/offline/FixedResponseHttpClient.java
+P4
+Backport
+core-libs
+JDK-8354267
+java/net/httpclient/ShutdownNow.java fails with java.lang.AssertionError: client was still running, but exited after further delay: timeout should be adjusted
+P4
+Backport
+core-libs
+JDK-8354349
+Several java/net/InetAddress tests fails UnknownHostException
+P4
+Backport
+core-libs
+JDK-8354533
+Writer not closed with disk full error, file resource leaked
+P4
+Backport
+core-libs
+JDK-8351934
+Inaccurate masking of TC subfield decrement in ForkJoinPool
+P4
+Backport
+core-libs
+JDK-8355112
+java/util/Properties/StoreReproducibilityTest.java times out
+P4
+Backport
+core-libs
+JDK-8355550
+SequenceInputStream.transferTo should not return as soon as Long.MAX_VALUE bytes have been transferred
+P4
+Backport
+core-libs
+JDK-8355709
+Test java/net/httpclient/CancelRequestTest.java failed: WARNING: tracker for HttpClientImpl(42) has outstanding operations
+P4
+Backport
+core-libs
+JDK-8355712
+java/net/vthread/BlockingSocketOps.java timeout/hang intermittently on Windows
+P4
+Backport
+core-libs
+JDK-8355728
+HTTP/2 flow control checks may count unprocessed data twice
+P4
+Backport
+core-libs
+JDK-8355730
+java/net/DatagramSocket/InterruptibleDatagramSocket.java fails with virtual thread factory
+P4
+Backport
+core-libs
+JDK-8355734
+(fc) Make java/nio/channels/FileChannel/BlockDeviceSize.java test manual
+P4
+Backport
+core-libs
+JDK-8355736
+java/net/httpclient/Http1ChunkedTest.java fails with java.util.MissingFormatArgumentException: Format specifier '%s'
+P4
+Backport
+core-libs
+JDK-8355737
+httpclient HeadTest does not run on HTTP2
+P4
+Backport
+core-libs
+JDK-8355760
+Overflow in Collections.rotate
+P4
+Backport
+core-libs
+JDK-8356637
+Pattern.Bound has `static` fields that should be `static final`.
+P4
+Backport
+core-libs
+JDK-8356672
+Misleading exception message from STS.Subtask::get when task forked after shutdown
+P4
+Backport
+core-libs
+JDK-8356802
+j.text.DateFormatSymbols setZoneStrings() exception is unhelpful
+P4
+Backport
+core-libs
+JDK-8357117
+Incorrect error message during startup if working directory does not exist
+P4
+Backport
+core-libs
+JDK-8357477
+AIX: sporadic unexpected errno when calling setsockopt in Net.joinOrDrop
+P4
+Backport
+core-libs
+JDK-8357484
+Bug in com/sun/net/httpserver/bugs/B6361557.java test
+P4
+Backport
+core-svc
+JDK-8352524
+Adjust timeout in test javax/management/monitor/DerivedGaugeMonitorTest.java
+P4
+Backport
+core-svc
+JDK-8354367
+java/lang/instrument/modules/AppendToClassPathModuleTest.java ignores VM flags
+P4
+Backport
+core-svc
+JDK-8355117
+Test ThreadCpuTime.java should pause like ThreadCpuTimeArray.java
+P4
+Backport
+core-svc
+JDK-8355714
+Update nsk.share.jpda.Jdb to don't use finalization
+P4
+Backport
+core-svc
+JDK-8355716
+Replace usage of -noclassgc with -Xnoclassgc in test/jdk/java/lang/management/MemoryMXBean/LowMemoryTest2.java
+P4
+Backport
+core-svc
+JDK-8355727
+Fix incorrect log message in JDI stop002t test
+P4
+Backport
+core-svc
+JDK-8355759
+sun.jvmstat.monitor.MonitoredHost.getMonitoredHost() throws unexpected exceptions when invoked concurrently
+P4
+Backport
+core-svc
+JDK-8356178
+Update vmTestbase/nsk/share/LocalProcess.java to don't use finalization
+
+
+P4
+Backport
+core-svc
+JDK-8356180
+com/sun/tools/attach/BasicTests.java fails with "SocketException: Permission denied: connect"
+P4
+Backport
+core-svc
+JDK-8356481
+Test forceEarlyReturn002.java timed out
+P4
+Backport
+core-svc
+JDK-8356508
+Update nsk/jdwp tests to use driver instead of othervm
+P4
+Backport
+core-svc
+JDK-8357388
+The jcmd thread dump related tests should test virtual threads
+P4
+Backport
+core-svc
+JDK-8357482
+DynamicLauncher for JDP test needs to try harder to find a free port
+P4
+Backport
+hotspot
+JDK-8350862
+Output JVMTI agent information in hserr files
+P4
+Backport
+hotspot
+JDK-8351031
+Problemlist jdk/jfr/event/oldobject/TestShenandoah.java after JDK-8279016
+P4
+Backport
+hotspot
+JDK-8351191
+3 gc/epsilon tests ignore external vm options
+P4
+Backport
+hotspot
+JDK-8351358
+Corrupted timezone string in JVM crash log
+P4
+Backport
+hotspot
+JDK-8351508
+[Testbug] g-tests for cgroup leave files in /tmp on linux
+P4
+Backport
+hotspot
+JDK-8351557
+Add jcmd to print annotated process memory map
+P4
+Backport
+hotspot
+JDK-8351559
+gc/stress/TestStressG1Uncommit.java gets OOM-killed
+P4
+Backport
+hotspot
+JDK-8351684
+"Total compile time" counter should include time spent in failing/bailout compiles
+P4
+Backport
+hotspot
+JDK-8351831
+Move BufferNode from PtrQueue files to new files
+P4
+Backport
+hotspot
+JDK-8351872
+Skip ValidateHazardPtrsClosure in non-debug builds
+P4
+Backport
+hotspot
+JDK-8351899
+Bug in jdk.jfr.event.gc.collection.TestSystemGC
+P4
+Backport
+hotspot
+JDK-8351920
+Improve Speed of System.map
+P4
+Backport
+hotspot
+JDK-8352026
+Replace NULL with nullptr in HotSpot gtests
+P4
+Backport
+hotspot
+JDK-8352167
+WB_IsFrameDeoptimized miss ResourceMark
+P4
+Backport
+hotspot
+JDK-8352183
+[x64] Fix useless padding
+P4
+Backport
+hotspot
+JDK-8352230
+CompileFramework: test library to conveniently compile java and jasm sources for fuzzing
+P4
+Backport
+hotspot
+JDK-8352283
+Shenandoah: Improve handshake closure labels
+P4
+Backport
+hotspot
+JDK-8352285
+CTW: Attempt to preload all classes in constant pool
+P4
+Backport
+hotspot
+JDK-8352286
+Give better error for ConcurrentHashTable corruption
+P4
+Bug
+hotspot
+JDK-8350412
+[21u] AArch64: Ambiguous frame layout leads to incorrect traces in JFR
+P4
+Backport
+hotspot
+JDK-8352516
+Update runtime/condy tests to be executed with VM flags
+P4
+Backport
+hotspot
+JDK-8352523
+Enable debug logging for vmTestbase/nsk/jvmti/scenarios/sampling/SP05/sp05t003/TestDescription.java
+P4
+Backport
+hotspot
+JDK-8352525
+serviceability/sa/ClhsdbWhere.java fails AssertionFailure: Corrupted constant pool
+P4
+Backport
+hotspot
+JDK-8352771
+Crash: assert(h_array_list.not_null()) failed: invariant
+P4
+Backport
+hotspot
+JDK-8352772
+OpenJDK fails to configure on linux aarch64 when CDS is disabled after JDK-8331942
+P4
+Backport
+hotspot
+JDK-8353128
+JFR: Split JFRCheckpoint VM operation
+P4
+Backport
+hotspot
+JDK-8353292
+Replaying compilation with null static final fields results in a crash
+P4
+Backport
+hotspot
+JDK-8353536
+More reliable OOM handling in ExceptionDuringDumpAtObjectsInitPhase test
+P4
+Backport
+hotspot
+JDK-8353648
+Remove unused UseNUMA in os_aix.cpp
+P4
+Backport
+hotspot
+JDK-8353650
+C2: Loop strip mining uses ABS with min int
+P4
+Backport
+hotspot
+JDK-8353651
+C2: VectorInsertNode::make() shouldn't call ConINode::make() directly
+P4
+Backport
+hotspot
+JDK-8353652
+Incorrect TraceLoopPredicate output
+P4
+Backport
+hotspot
+JDK-8353653
+Fatal error in auto-vectorizer with float16 kernel.
+P4
+Backport
+hotspot
+JDK-8353654
+ShenandoahHeap::is_in should check for alive regions
+P4
+Backport
+hotspot
+JDK-8353853
+[ubsan] block.cpp:1617:30: runtime error: 9.97582e+36 is outside the range of representable values of type 'int'
+P4
+Backport
+hotspot
+JDK-8353865
+memory_swap_current_in_bytes reports 0 as "unlimited"
+P4
+Backport
+hotspot
+JDK-8353867
+[TESTBUG] gtest CollectorPolicy.young_scaled_initial_ergo_vm fails if heap is too small
+P4
+Backport
+hotspot
+JDK-8353893
+CollectorPolicy.young_scaled_initial_ergo_vm gtest fails on ppc64 based platforms
+P4
+Backport
+hotspot
+JDK-8353901
+nsk.share.gc.Memory::getArrayLength returns wrong value
+P4
+Backport
+hotspot
+JDK-8353922
+G1: interpreter post-barrier x86 code asserts index size of wrong buffer
+P4
+Backport
+hotspot
+JDK-8354058
+AArch64: turn on signum intrinsics by default on Ampere CPUs
+P4
+Backport
+hotspot
+JDK-8354165
+compiler/vectorization/TestFloat16VectorConvChain.java fails with non-standard AVX/SSE settings
+P4
+Backport
+hotspot
+JDK-8354197
+compiler/vectorization/TestFloat16VectorConvChain.java timeouts on ppc64 platforms after JDK-8335860
+P4
+Backport
+hotspot
+JDK-8354253
+jcmd Compiler.codecache should print total size of code cache
+P4
+Backport
+hotspot
+JDK-8354271
+ZGC: Another division by zero in rule_major_allocation_rate
+P4
+Backport
+hotspot
+JDK-8354368
+Test jdk/incubator/vector/LoadJsvmlTest.java ignores VM flags
+P4
+Backport
+hotspot
+JDK-8354370
+zgc/genzgc tests ignore vm flags
+P4
+Backport
+hotspot
+JDK-8354579
+Extend printing for System.map
+P4
+Backport
+hotspot
+JDK-8354639
+serviceability/dcmd/vm tests fail for ZGC after JDK-8322475
+P4
+Backport
+hotspot
+JDK-8354642
+Test vmTestbase/nsk/jvmti/scenarios/sampling/SP05/sp05t003/TestDescription.java timed out: thread not suspended
+P4
+Backport
+hotspot
+JDK-8354644
+Improve diagnostic logging runtime/cds/DeterministicDump.java
+P4
+Backport
+hotspot
+JDK-8354647
+serviceability/dcmd/vm/SystemDumpMapTest.java and SystemMapTest.java fail on Linux Alpine after 8322475
+P4
+Backport
+hotspot
+JDK-8355075
+TestVectorZeroCount: counter not reset between iterations
+P4
+Backport
+hotspot
+JDK-8355096
+Add intrinsic for float/double modulo for x86 AVX2 and AVX512
+P4
+Backport
+hotspot
+JDK-8355152
+serviceability/sa/TestJhsdbJstackLineNumbers.java failed with "Didn't find enough line numbers"
+P4
+Backport
+hotspot
+JDK-8355316
+Include timings for leaving safepoint in safepoint logging
+P4
+Backport
+hotspot
+JDK-8355419
+Test TestCodeCacheFull.java fails with option -XX:-UseCodeCacheFlushing
+P4
+Backport
+hotspot
+JDK-8355551
+C2: assert(false) failed: node should be in igvn hash table
+P4
+Backport
+hotspot
+JDK-8355655
+[ASAN] Gtest os_linux.glibc_mallinfo_wrapper_vm fails
+P4
+Backport
+hotspot
+JDK-8355707
+Remove runtime platform check from frem/drem
+P4
+Backport
+hotspot
+JDK-8355715
+JFR GCHelper class recognizes "Archive" regions as valid
+P4
+Backport
+hotspot
+JDK-8355761
+[AArch64] C2 compilation hits offset_ok_for_immed: assert "c2 compiler bug"
+P4
+Backport
+hotspot
+JDK-8355762
+MacOS Zero cannot run gtests due to wrong JVM path
+P4
+Backport
+hotspot
+JDK-8356248
+MAX_SECS definition is unused in os_linux
+P4
+Backport
+hotspot
+JDK-8356254
+Use "/native" Run Option for TestAvailableProcessors Execution
+P4
+Backport
+hotspot
+JDK-8356489
+Test WaitNotifySuspendedVThreadTest.java timed out
+P4
+Backport
+hotspot
+JDK-8356490
+Rename nsk_strace.h
+P4
+Backport
+hotspot
+JDK-8356491
+Update nsk.share.jpda.BindServer to don't use finalization
+P4
+Backport
+hotspot
+JDK-8356507
+Clean up Finalizable.java and finalize terminology in vmTestbase/nsk/share
+P4
+Backport
+hotspot
+JDK-8356509
+serviceability/jvmti/StartPhase/AllowedFunctions/AllowedFunctions.java fails with unexpected exit code: 112
+
+
+P4
+Backport
+hotspot
+JDK-8356512
+Fix -Wzero-as-null-pointer-constant warnings in gtest framework
+P4
+Backport
+hotspot
+JDK-8356669
+x86 count_positives intrinsic broken for -XX:AVX3Threshold=0
+P4
+Backport
+hotspot
+JDK-8356670
+Compiler directives parser swallows a character after line comments
+P4
+Backport
+hotspot
+JDK-8356671
+jdk/jfr/event/runtime/TestResidentSetSizeEvent.java fails with "The size should be less than or equal to peak"
+P4
+Backport
+hotspot
+JDK-8356674
+NPE when HSDB visits bad oop
+P4
+Backport
+hotspot
+JDK-8356677
+LogCompilation doesn't reset lateInlining when it encounters a failure.
+P4
+Backport
+hotspot
+JDK-8356786
+Remove support of remote and manual debuggee launchers
+P4
+Backport
+hotspot
+JDK-8356992
+[JVMCI] fatal error: Never compilable: in JVMCI shutdown
+P4
+Backport
+hotspot
+JDK-8357023
+Replace NULL with nullptr in HotSpot jtreg test native code files
+P4
+Backport
+hotspot
+JDK-8357024
+Rename get_stack_trace.h
+P4
+Backport
+hotspot
+JDK-8357025
+Rename Injector.h
+P4
+Backport
+hotspot
+JDK-8357026
+Rename jvmti_FollowRefObjects.h
+P4
+Backport
+hotspot
+JDK-8357027
+Rename native_thread.h
+P4
+Backport
+hotspot
+JDK-8357028
+Rename nsk_list.h
+P4
+Backport
+hotspot
+JDK-8357029
+Rename nsk_mutex.h
+P4
+Backport
+hotspot
+JDK-8357030
+Rename mlvmJvmtiUtils.h
+P4
+Backport
+hotspot
+JDK-8357031
+Rename jnihelper.h
+P4
+Backport
+hotspot
+JDK-8357032
+Rename jvmti_aod.h
+P4
+Backport
+hotspot
+JDK-8357069
+[AIX] Adapt code for C++ VLA rule
+P4
+Backport
+hotspot
+JDK-8357112
+Improve test coverage for JVMTI GetThreadState on carrier and mounted vthread
+P4
+Backport
+hotspot
+JDK-8357113
+Rename agent_common.h
+P4
+Backport
+hotspot
+JDK-8357121
+Test: add more test case for string compare (UL case)
+P4
+Backport
+hotspot
+JDK-8357261
+Avoid sending per-region GCPhaseParallel JFR events in G1ScanCollectionSetRegionClosure
+P4
+Backport
+hotspot
+JDK-8357389
+jdk/jfr/startupargs/TestMemoryOptions.java fails with 32-bit build
+P4
+Backport
+hotspot
+JDK-8357437
+Use correct extension for C++ test headers
+P4
+Backport
+hotspot
+JDK-8357483
+Remove the appcds/javaldr/AnonVmClassesDuringDump.java test
+P4
+Backport
+hotspot
+JDK-8357487
+Incomplete logging in nsk/jvmti/ResourceExhausted/resexhausted00* tests
+P4
+Backport
+hotspot
+JDK-8357488
+[jittester] Remove TempDir debug output
+P4
+Backport
+hotspot
+JDK-8357544
+Clean up vmTestbase/vm/share
+P4
+Backport
+hotspot
+JDK-8357855
+Merge vm/share/InMemoryJavaCompiler w/ jdk/test/lib/compiler/InMemoryJavaCompiler
+P4
+Backport
+hotspot
+JDK-8357856
+failure_handler lldb command times out on macosx-aarch64 core file
+P4
+Enhancement
+infrastructure
+JDK-8350650
+Bump update version for OpenJDK: jdk-21.0.8
+P4
+Backport
+infrastructure
+JDK-8356785
+Many test files have the wrong Copyright header
+P4
+Backport
+infrastructure
+JDK-8357114
+[test] improve assertEquals failure output
+P4
+Backport
+security-libs
+JDK-8355099
+TLS handshake fails because of ConcurrentModificationException in PKCS12KeyStore.engineGetEntry
+P4
+Backport
+security-libs
+JDK-8355101
+DistributionPointFetcher fails to fetch CRLs if the DistributionPoints field contains more than one DistributionPoint and the first one fails
+P4
+Backport
+security-libs
+JDK-8355170
+Refactor ClassLoaderDeadlock.sh and Deadlock.sh to run fully in java
+P4
+Backport
+security-libs
+JDK-8355713
+KeyStore getEntry is not thread-safe
+P4
+Backport
+security-libs
+JDK-8355732
+security/auth/callback/TextCallbackHandler/Password.java make runnable with JTReg and add the UI
+P4
+Backport
+security-libs
+JDK-8356181
+Relocate supporting classes in security/testlibrary to test/lib/jdk tree
+P4
+Backport
+security-libs
+JDK-8357545
+Better cleanup for jdk/test/sun/security/pkcs12/P12SecretKey.java
+P4
+Bug
+infrastructure
+JDK-8361672
+[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.8
+P4
+Backport
+performance
+JDK-8353017
+Use jvmArgs consistently in microbenchmarks
+P4
+Backport
+performance
+JDK-8353018
+Use -jvmArgsPrepend when running microbenchmarks in RunTests.gmk
+P4
+Backport
+security-libs
+JDK-8351239
+Failure when creating non-CRT RSA private keys in SunPKCS11
+P4
+Backport
+security-libs
+JDK-8352540
+Upgrade NSS binaries for interop tests
+P4
+Backport
+security-libs
+JDK-8352548
+Test sun/security/tools/jarsigner/TimestampCheck.java is failing
+P4
+Backport
+security-libs
+JDK-8353086
+Test sun/security/tools/jarsigner/ConciseJarsigner.java failed: unable to find valid certification path to requested target
+P4
+Backport
+security-libs
+JDK-8353881
+jdk/test/lib/security/timestamp/TsaServer.java warnings
+P4
+Backport
+security-libs
+JDK-8353899
+Test sun/security/tools/jarsigner/TsacertOptionTest.java failed: Warning found in stdout
+P4
+Backport
+security-libs
+JDK-8353915
+NullPointerException in sun.security.jca.ProviderList.getService()
+P4
+Backport
+security-libs
+JDK-8356519
+Test sun/security/mscapi/nonUniqueAliases/NonUniqueAliases.java is marked with @ignore
+P4
+Backport
+security-libs
+JDK-8356530
+Remove two Camerfirma root CA certificates
+P4
+Backport
+security-libs
+JDK-8356650
+Update sun/security/pkcs12/KeytoolOpensslInteropTest.java to use a recent Openssl version
+P4
+Backport
+tools
+JDK-8351022
+Test FailOverDirectExecutionControlTest.java fails with -Xcomp
+P4
+Backport
+tools
+JDK-8352735
+Clean up the code in sun.tools.jar.Main to properly close resources and use ZipFile during extract
+P4
+Backport
+tools
+JDK-8354630
+org.jline.util.PumpReader signed byte problem
+P4
+Backport
+tools
+JDK-8354948
+In ClassReader, extract a constant for the superclass supertype_index
+P4
+Backport
+tools
+JDK-8356517
+WinInstallerUiTest fails in local test runs if the path to test work directory is longer that regular
+P4
+Backport
+xml
+JDK-8356943
+translet-name ignored when package-name is also set
+P5
+Backport
+client-libs
+JDK-8352537
+Use latch in AbstractButton/bug6298940.java instead of delay
+P5
+Backport
+core-libs
+JDK-8356784
+Misformatted copyright messages in FFM
+P5
+Backport
+core-svc
+JDK-8353073
+vmTestbase/nsk/jdb/stop_at/stop_at002/stop_at002.java failure goes undetected
+P?
+Hidden
+JDK-8345625
+Better HTTP connections
+P?
+Hidden
+JDK-8348989
+Better Glyph drawing
+P?
+Hidden
+JDK-8349111
+Enhance Swing supports
+P?
+Hidden
+JDK-8349594
+Enhance TLS protocol support
+P?
+Hidden
+JDK-8350991
+Improve HTTP client header handling
+P?
+Hidden
+JDK-8360147
+Better Glyph drawing redux
+
+21.0.7+6
+
+
+P1
+Backport
+client-libs
+JDK-8347095
+Bad copyright notices in changes from JDK-8339902
+P1
+Backport
+hotspot
+JDK-8348068
+Various test failures after JDK-8334305
+P2
+Backport
+client-libs
+JDK-8346625
+JViewport Test headless failure
+P2
+Backport
+client-libs
+JDK-8349089
+JTabbedPane/8134116/Bug8134116.java has no license header
+P2
+Bug
+client-libs
+JDK-8348625
+[21u, 17u] Revert JDK-8185862 to restore old java.awt.headless behavior on Windows
+P2
+Backport
+core-libs
+JDK-8346749
+File libCreationTimeHelper.c compile fails on Alpine
+P2
+Backport
+hotspot
+JDK-8346630
+runtime/handshake/HandshakeDirectTest.java causes "monitor end should be strictly below the frame pointer" assertion failure on AArch64
+P2
+Backport
+hotspot
+JDK-8346900
+Crash due to invalid oop in nmethod after C1 patching
+P2
+Backport
+hotspot
+JDK-8346973
+C2: basic blocks with only BoxLock nodes are wrongly treated as empty
+P2
+Backport
+hotspot
+JDK-8347884
+Add test for Allocation elimination after use as alignment reference by SuperWord
+P2
+Backport
+hotspot
+JDK-8349657
+ZGC: segmentation fault due to missing node type check in barrier elision analysis
+P2
+Backport
+security-libs
+JDK-8348066
+test/jdk/sun/security/x509/DNSName/LeadingPeriod.java validity check failed
+P2
+Backport
+tools
+JDK-8348341
+Crash: SIGSEGV in dlerror()
+P3
+Backport
+client-libs
+JDK-8346812
+Get rid of JApplet in test/jdk/sanity/client/lib/SwingSet2/src/DemoModule.java
+P3
+Backport
+client-libs
+JDK-8346858
+[XWayland] JavaFX hangs when calling java.awt.Robot.getPixelColor
+P3
+Backport
+client-libs
+JDK-8346899
+[XWayland] test/jdk/java/awt/Mouse/EnterExitEvents/ResizingFrameTest.java
+P3
+Backport
+client-libs
+JDK-8349439
+[TestBug] DefaultCloseOperation.java test not working as expected wrt instruction after JDK-8325851 fix
+P3
+Backport
+client-libs
+JDK-8349443
+Limit the length of inflated text chunks
+P3
+Backport
+client-libs
+JDK-8350505
+[Accessibility,Windows,JAWS] Bug in the getKeyChar method of the AccessBridge class
+P3
+Backport
+client-libs
+JDK-8350531
+TrayIcon tests fail in Ubuntu 24.10 Wayland
+P3
+Backport
+client-libs
+JDK-8350669
+javax/swing/JFileChooser/FileSystemView/WindowsDefaultIconSizeTest.java creates tmp file in src dir
+P3
+Backport
+core-libs
+JDK-8346748
+[REDO] java/nio/file/attribute/BasicFileAttributeView/CreationTime.java#tmp fails on alinux3
+P3
+Backport
+core-libs
+JDK-8347876
+Request with timeout aborts later in-flight request on HTTP/1.1 cxn
+P3
+Backport
+core-libs
+JDK-8348843
+(tz) Update Timezone Data to 2025a
+P3
+Backport
+core-libs
+JDK-8349827
+java/nio/file/Files/probeContentType/Basic.java fails on Windows 2025
+P3
+Backport
+core-libs
+JDK-8349987
+java/io/File/createTempFile/SpecialTempFile.java failing
+P3
+Backport
+core-libs
+JDK-8354711
+UpcallLinker::on_exit races with GC when copying frame anchor
+P3
+Backport
+hotspot
+JDK-8345499
+C2: Memory for TypeInterfaces not reclaimed by hashcons()
+P3
+Backport
+hotspot
+JDK-8346000
+[REDO] Native memory leak when not recording any events
+P3
+Backport
+hotspot
+JDK-8346004
+C2: assert(!n_loop->is_member(get_loop(lca))) failed: control must not be back in the loop
+P3
+Backport
+hotspot
+JDK-8346189
+AArch64: VM crashes with SIGILL when prctl is disallowed
+P3
+Backport
+hotspot
+JDK-8346332
+C2: Use after free in PhaseChaitin::Register_Allocate()
+P3
+Backport
+hotspot
+JDK-8346891
+Checked_cast assert in CDS compare_by_loader
+P3
+Backport
+hotspot
+JDK-8347028
+[s390x] minimal build failure
+P3
+Backport
+hotspot
+JDK-8348201
+Kmem limit and max values swapped when printing container information
+P3
+Backport
+hotspot
+JDK-8348394
+Shenandoah: Test TestJcmdHeapDump.java#aggressive intermittent assert(gc_cause() == GCCause::_no_gc) failed: Over-writing cause
+P3
+Backport
+hotspot
+JDK-8348942
+cpuset cgroups controller is required for no good reason
+P3
+Backport
+hotspot
+JDK-8350001
+[ubsan] adjustments to filemap.cpp and virtualspace.cpp for macOS aarch64
+P3
+Backport
+infrastructure
+JDK-8347176
+Compile tests with the same visibility rules as product code
+P3
+Bug
+infrastructure
+JDK-8349729
+[21u] AIX jtreg tests fail to compile with qvisibility=hidden
+P3
+Backport
+security-libs
+JDK-8345708
+Test sun/security/validator/samedn.sh CertificateNotYetValidException: NotBefore validation
+P3
+Backport
+security-libs
+JDK-8345884
+SunPKCS11 provider checks on PKCS11 Mechanism are problematic
+P3
+Backport
+security-libs
+JDK-8346636
+Test sun/security/pkcs11/Provider/RequiredMechCheck.java needs write access to src tree
+P3
+Backport
+security-libs
+JDK-8346813
+SunPKCS11 initialization will call C_GetMechanismInfo on unsupported mechanisms
+P3
+Backport
+security-libs
+JDK-8346817
+Google CAInterop test failures
+P3
+Backport
+security-libs
+JDK-8348065
+Certificate name constraints improperly validated with leading period
+P3
+Backport
+security-libs
+JDK-8349870
+Distrust TLS server certificates anchored by Camerfirma Root CAs
+P3
+Backport
+security-libs
+JDK-8354709
+Jarsigner should print a warning if an entry is removed
+P3
+Backport
+tools
+JDK-8346079
+Consolidate EmptyFolderTest and EmptyFolderPackageTest jpackage tests into single java file
+P3
+Backport
+tools
+JDK-8346699
+Incorrect format string after JDK-8339475
+P3
+Backport
+tools
+JDK-8346815
+Test BasicTest.java javac compile fails cannot find symbol
+P4
+Backport
+client-libs
+JDK-8345701
+Remove applet usage from JColorChooser tests Test4222508
+P4
+Backport
+client-libs
+JDK-8345702
+[TESTBUG] XparColor.java test fails with Error. Parse Exception: Invalid or unrecognized bugid: @
+P4
+Backport
+client-libs
+JDK-8345707
+Test javax/swing/JFileChooser/8080628/bug8080628.java doesn't test for GTK L&F
+P4
+Backport
+client-libs
+JDK-8346395
+Remove applet usage from JColorChooser tests Test4319113
+P4
+Backport
+client-libs
+JDK-8346396
+Remove applet usage from JColorChooser tests Test4759306
+P4
+Backport
+client-libs
+JDK-8346397
+Remove applet usage from JColorChooser tests Test6348456
+P4
+Backport
+client-libs
+JDK-8346398
+Convert java/awt/print/PageFormat/SetOrient.html applet test to main
+P4
+Backport
+client-libs
+JDK-8346401
+Remove applet usage from JColorChooser tests Test4887836
+P4
+Backport
+client-libs
+JDK-8346402
+Remove applet usage from JColorChooser tests Test6977726
+P4
+Backport
+client-libs
+JDK-8346407
+Open source few Undecorated Frame tests
+P4
+Backport
+client-libs
+JDK-8346408
+java/awt/Frame/MaximizeUndecoratedTest.java fails in OEL due to a slight color difference
+P4
+Backport
+client-libs
+JDK-8346409
+PrintNullString.java doesn't use float arguments
+P4
+Backport
+client-libs
+JDK-8346417
+Open source couple TextField related tests
+P4
+Backport
+client-libs
+JDK-8346425
+Improve JButton/bug4490179.java
+P4
+Backport
+client-libs
+JDK-8346451
+Open some swing tests 2
+P4
+Backport
+client-libs
+JDK-8346452
+Open some swing tests 4
+P4
+Backport
+client-libs
+JDK-8346458
+Open some swing tests 5
+P4
+Backport
+client-libs
+JDK-8346459
+Open some swing tests 6
+P4
+Backport
+client-libs
+JDK-8346537
+Convert java/awt/image/MemoryLeakTest/MemoryLeakTest.java applet test to main
+P4
+Backport
+client-libs
+JDK-8346539
+Convert java/awt/print/Dialog/PrintApplet.java applet test to main
+P4
+Backport
+client-libs
+JDK-8346540
+Convert javax/swing/JColorChooser/8065098/bug8065098.java applet test to main
+P4
+Backport
+client-libs
+JDK-8346542
+Convert java/awt/print/PrinterJob/PrinterDialogsModalityTest/PrinterDialogsModalityTest.html applet test to main
+P4
+Backport
+client-libs
+JDK-8346624
+Open source several Swing JTree JViewport KeyboardManager tests
+P4
+Backport
+client-libs
+JDK-8346626
+Remove applet usage from JColorChooser tests Test4759934
+
+
+P4
+Backport
+client-libs
+JDK-8346627
+Convert java/awt/im/JTextFieldTest.java applet test to main
+P4
+Backport
+client-libs
+JDK-8346629
+Frame not disposed in java/awt/dnd/DropActionChangeTest.java
+P4
+Backport
+client-libs
+JDK-8346635
+PassFailJFrame.java test result: Error. Bad action for script: build}
+P4
+Backport
+client-libs
+JDK-8346640
+java/awt/Graphics2D/ScaledTransform/ScaledTransform.java dialog does not get disposed
+P4
+Backport
+client-libs
+JDK-8346646
+Exclude List/KeyEventsTest/KeyEventsTest.java from running on macOS
+P4
+Backport
+client-libs
+JDK-8346746
+Open source several Swing JToolbar JTooltip JTree tests
+P4
+Backport
+client-libs
+JDK-8346804
+Open source several Swing JTree tests
+P4
+Backport
+client-libs
+JDK-8346806
+Open source several Swing JToolbar tests
+P4
+Backport
+client-libs
+JDK-8346807
+Delete Redundant Printer Dialog Modality Test
+P4
+Backport
+client-libs
+JDK-8346816
+Remove JButton/PressedButtonRightClickTest test
+P4
+Backport
+client-libs
+JDK-8346851
+Open source several AWT/2D related tests
+P4
+Backport
+client-libs
+JDK-8346894
+Open some swing tests
+P4
+Backport
+client-libs
+JDK-8346895
+Convert javax/swing/JCheckBox/8032667/bug8032667.java applet test to main
+P4
+Backport
+client-libs
+JDK-8347096
+Open source AWT List tests
+P4
+Backport
+client-libs
+JDK-8347103
+Clean up a few ExtendedRobot tests
+P4
+Backport
+client-libs
+JDK-8347442
+Convert java/awt/image/multiresolution/MultiDisplayTest/MultiDisplayTest.java applet test to main
+P4
+Backport
+client-libs
+JDK-8347443
+[TEST_BUG]GTK L&F: There is no swatches or RGB tab in JColorChooser
+P4
+Backport
+client-libs
+JDK-8347589
+[macos] Test java/awt/Frame/ExceptionOnSetExtendedStateTest/ExceptionOnSetExtendedStateTest.java fails
+P4
+Backport
+client-libs
+JDK-8347878
+Remove applet usage from JFileChooser tests bug6698013
+P4
+Backport
+client-libs
+JDK-8347879
+Manual printer tests have no Pass/Fail buttons, instructions close set 2
+P4
+Backport
+client-libs
+JDK-8347882
+Open source closed frame tests #1
+P4
+Backport
+client-libs
+JDK-8347883
+Write a test to check various components events are triggered properly
+P4
+Backport
+client-libs
+JDK-8347930
+DrawFocusRect() may cause an assertion failure
+P4
+Backport
+client-libs
+JDK-8348057
+[macOS] java/awt/dnd/NextDropActionTest/NextDropActionTest.java fails with java.lang.RuntimeException: wrong next drop action!
+P4
+Backport
+client-libs
+JDK-8348059
+Manual printer tests have no Pass/Fail buttons, instructions close set 1
+P4
+Backport
+client-libs
+JDK-8348060
+Convert PageFormat/Orient.java to use PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8348069
+[macos] javax/swing/ProgressMonitor/ProgressMonitorEscapeKeyPress.java fails sometimes in macos
+P4
+Backport
+client-libs
+JDK-8348070
+java/awt/a11y/AccessibleJTableTest.java fails in some cases where the test tables are not visible
+P4
+Backport
+client-libs
+JDK-8348071
+Simplify JButton/bug4323121.java
+P4
+Backport
+client-libs
+JDK-8348072
+javax/swing/text/StyledEditorKit/4506788/bug4506788.java fails in ubuntu22.04
+P4
+Backport
+client-libs
+JDK-8348331
+Simplify awt/print/PageFormat/NullPaper.java test
+P4
+Backport
+client-libs
+JDK-8348332
+Use standard layouts in DefaultFrameIconTest.java and MenuCrash.java
+P4
+Backport
+client-libs
+JDK-8348333
+open source several AWT tests including menu shortcut tests
+P4
+Backport
+client-libs
+JDK-8348339
+[TESTBUG] java/awt/PrintJob/PrintCheckboxTest/PrintCheckboxManualTest.java fails with rror. Can't find HTML file PrintCheckboxManualTest.html
+P4
+Backport
+client-libs
+JDK-8348947
+Convert java/awt/Frame/FrameStateTest/FrameStateTest.html applet test to main
+P4
+Backport
+client-libs
+JDK-8349277
+test/jdk/javax/swing/JScrollBar/4865918/bug4865918.java fails in ubuntu22.04
+P4
+Backport
+client-libs
+JDK-8349429
+Add more details to FrameStateTest.java test instructions
+P4
+Backport
+client-libs
+JDK-8349436
+Open source several 2D tests
+P4
+Backport
+client-libs
+JDK-8349437
+[TEST_BUG]GTK L&F: There is no Details button in FileChooser Dialog
+P4
+Backport
+client-libs
+JDK-8349642
+open source several 2D imaging tests
+P4
+Backport
+client-libs
+JDK-8350003
+Error output in libjsound has non matching format strings
+P4
+Backport
+client-libs
+JDK-8350407
+Convert java/awt/print/bug8023392/bug8023392.html applet test to main
+P4
+Backport
+client-libs
+JDK-8350408
+Remove jtreg tag manual=yesno for java/awt/print/PrinterJob/PrintTextTest.java
+P4
+Backport
+client-libs
+JDK-8350409
+Write a test to compare the images
+P4
+Backport
+client-libs
+JDK-8350529
+javax/swing/JScrollBar/4865918/bug4865918.java fails in CI
+P4
+Backport
+client-libs
+JDK-8350530
+javax/swing/JScrollBar/4865918/bug4865918.java still fails in CI
+P4
+Backport
+client-libs
+JDK-8350670
+javax/imageio/plugins/wbmp/WBMPStreamTruncateTest.java creates temp file in src dir
+P4
+Backport
+client-libs
+JDK-8350677
+[TESTBUG] java/awt/Robot/ScreenCaptureRobotTest.java failing on macOS
+P4
+Backport
+core-libs
+JDK-8345496
+Fix usages of jtreg-reserved properties
+P4
+Backport
+core-libs
+JDK-8345710
+Update jdk/java/time/tck/java/time/TCKInstant.java now() to be more robust
+P4
+Backport
+core-libs
+JDK-8346416
+Rearrange reachabilityFence()s in jdk.test.lib.util.ForceGC
+P4
+Backport
+core-libs
+JDK-8346631
+Test java/nio/channels/Selector/WakeupNow.java failed
+P4
+Backport
+core-libs
+JDK-8346641
+java/net/httpclient/PlainProxyConnectionTest.java failed: Unexpected connection count: 5
+P4
+Backport
+core-libs
+JDK-8348200
+Update IANA Language Subtag Registry to Version 2024-11-19
+P4
+Backport
+core-libs
+JDK-8348340
+Improve debuggability of test/jdk/java/net/Socket/CloseAvailable.java
+P4
+Backport
+core-libs
+JDK-8348397
+Improve AnnotationFormatError message for duplicate annotation interfaces
+P4
+Backport
+core-libs
+JDK-8348676
+(ch) java/nio/channels/AsynchronousSocketChannel/StressLoopback.java times out (aix)
+P4
+Backport
+core-libs
+JDK-8349830
+java/io/File/createTempFile/SpecialTempFile.java fails on Windows Server 2025
+P4
+Backport
+core-libs
+JDK-8349947
+[JMH] jdk.incubator.vector.SpiltReplicate fails NoClassDefFoundError
+P4
+Backport
+core-libs
+JDK-8349948
+Replace usages of -mx and -ms in some tests
+P4
+Backport
+core-libs
+JDK-8349998
+(dc) java/nio/channels/DatagramChannel/InterruptibleOrNot.java fails with virtual thread factory
+P4
+Backport
+core-libs
+JDK-8350000
+Test java/nio/channels/FileChannel/LoopingTruncate.java fails sometimes with IOException: There is not enough space on the disk
+P4
+Backport
+core-libs
+JDK-8350183
+[aix] java/lang/ProcessHandle/InfoTest.java still fails: "reported cputime less than expected"
+P4
+Backport
+core-libs
+JDK-8350310
+[ubsan] ProcessImpl_md.c:561:40: runtime error: applying zero offset to null pointer on macOS aarch64
+P4
+Backport
+core-libs
+JDK-8350684
+HTTP/2 stream cancelImpl may leave subscriber registered
+P4
+Bug
+core-libs
+JDK-8352097
+(tz) zone.tab update missed in 2025a backport
+P4
+Backport
+core-libs
+JDK-8354712
+UpcallLinker::on_entry racingly clears pending exception with GC safepoints
+P4
+Backport
+core-libs
+JDK-8354713
+ProgrammableUpcallHandler::on_entry/on_exit access thread fields from native
+P4
+Backport
+core-svc
+JDK-8345703
+Test com/sun/jdi/InterruptHangTest.java failed: Thread was never interrupted during sleep
+P4
+Backport
+core-svc
+JDK-8346412
+Test javax/management/remote/mandatory/notif/NotifReconnectDeadlockTest.java failed with NullPointerException
+P4
+Backport
+core-svc
+JDK-8347276
+OperatingSystemMXBean.getSystemCpuLoad() throws NPE
+P4
+Backport
+core-svc
+JDK-8347588
+Test com/sun/jmx/remote/NotificationMarshalVersions/TestSerializationMismatch.java fails
+P4
+Backport
+core-svc
+JDK-8348944
+vmTestbase/nsk/jdwp/ThreadReference/ForceEarlyReturn/forceEarlyReturn002/forceEarlyReturn002.java timed out
+P4
+Backport
+core-svc
+JDK-8348953
+Exceptions in javax/management DeadLockTest.java do not cause test failure
+P4
+Backport
+core-svc
+JDK-8349427
+Remove unused JVMDITools test files
+
+
+P4
+Backport
+core-svc
+JDK-8349438
+javax/management/remote/mandatory/connection/DeadLockTest.java failing with NoSuchObjectException: no such object in table
+P4
+Backport
+core-svc
+JDK-8350312
+[macOS]: UnixOperatingSystem.c:67:40: runtime error: division by zero
+P4
+Backport
+hotspot
+JDK-8345494
+JitTester: Implement temporary folder functionality
+P4
+Backport
+hotspot
+JDK-8345495
+Add counting leading/trailing zero tests for Integer
+P4
+Backport
+hotspot
+JDK-8345508
+PPC64: C1 unwind_handler fails to unlock synchronized methods with LM_MONITOR
+P4
+Backport
+hotspot
+JDK-8345771
+PPC64: ObjectMonitor::_owner should be reset unconditionally in nmethod unlocking
+P4
+Backport
+hotspot
+JDK-8345866
+jdk/jfr/startupargs/TestStartDuration.java should be marked as flagless
+P4
+Backport
+hotspot
+JDK-8345914
+Misc crash dump improvements on more platforms after JDK-8294160
+P4
+Backport
+hotspot
+JDK-8345915
+Cleanup os::print_tos_pc on AIX
+P4
+Backport
+hotspot
+JDK-8345983
+CompileBroker::possibly_add_compiler_threads excessively polls available memory
+P4
+Backport
+hotspot
+JDK-8346001
+DSO created with -ffast-math breaks Java floating-point arithmetic
+P4
+Backport
+hotspot
+JDK-8346021
+[REDO] Implement C2 VectorizedHashCode on AArch64
+P4
+Backport
+hotspot
+JDK-8346075
+jcmd: Compiler.CodeHeap_Analytics cmd does not inform about missing aggregate
+P4
+Bug
+hotspot
+JDK-8346108
+[21u][BACKOUT] 8337994: [REDO] Native memory leak when not recording any events
+P4
+Backport
+hotspot
+JDK-8346155
+jdk/jfr/event/gc/stacktrace/TestParallelMarkSweepAllocationPendingStackTrace.java failed with "OutOfMemoryError: GC overhead limit exceeded"
+P4
+Backport
+hotspot
+JDK-8346191
+Check return value of hcreate_r
+P4
+Backport
+hotspot
+JDK-8346286
+Disable unstable check of ThreadsListHandle.sanity_vm ThreadList values
+P4
+Backport
+hotspot
+JDK-8346403
+pthread_attr_init handle return value and destroy pthread_attr_t object
+P4
+Backport
+hotspot
+JDK-8346413
+Redo fix for JDK-8284620
+P4
+Backport
+hotspot
+JDK-8346578
+SA core file support is broken on macosx-x64 starting with macOS 12.x
+P4
+Backport
+hotspot
+JDK-8346647
+The libjsig deprecation warning should go to stderr not stdout
+P4
+Backport
+hotspot
+JDK-8346808
+Add jtreg test for large arrayCopy disjoint case.
+P4
+Backport
+hotspot
+JDK-8346809
+C2 SuperWord: some additional PopulateIndex tests
+P4
+Backport
+hotspot
+JDK-8346842
+vmTestbase/nsk/stress/strace/strace015.java failed with 'Cannot read the array length because "<local4>" is null'
+P4
+Backport
+hotspot
+JDK-8347440
+Use google test string comparison macros
+P4
+Backport
+hotspot
+JDK-8347579
+[TESTBUG] Jtreg compiler/loopopts/superword/TestDependencyOffsets.java fails on 512-bit SVE
+P4
+Backport
+hotspot
+JDK-8347584
+Improve heap walking API tests to verify correctness of field indexes
+P4
+Backport
+hotspot
+JDK-8347592
+Normalize Random usage by incubator vector tests
+P4
+Backport
+hotspot
+JDK-8347593
+compiler/codecache/CheckSegmentedCodeCache.java fails
+P4
+Backport
+hotspot
+JDK-8348058
+com/sun/tools/attach/BasicTests.java does not verify AgentLoadException case
+P4
+Backport
+hotspot
+JDK-8348061
+Remove all code for nsk.share.Log verbose mode
+P4
+Backport
+hotspot
+JDK-8348329
+test_nmt_locationprinting.cpp broken in the gcc windows build
+P4
+Backport
+hotspot
+JDK-8348395
+Epsilon: Demote heap size and AlwaysPreTouch warnings to info level
+P4
+Backport
+hotspot
+JDK-8348946
+GTest needs larger combination limit
+P4
+Backport
+hotspot
+JDK-8348952
+ASAN reports use-after-free in DirectivesParserTest.empty_object_vm
+P4
+Backport
+hotspot
+JDK-8349045
+java/util/zip/EntryCount64k.java failing with java.lang.RuntimeException: '\\A\\Z' missing from stderr
+P4
+Backport
+hotspot
+JDK-8349430
+Two CDS tests fail with -UseCompressedOops and UseSerialGC/UseParallelGC
+P4
+Backport
+hotspot
+JDK-8349453
+[AIX] Beginning with AIX 7.3 TL1 mmap() supports 64K memory pages
+P4
+Backport
+hotspot
+JDK-8349640
+Update failure handler to don't generate Error message if cores actions are empty
+P4
+Backport
+hotspot
+JDK-8349856
+[testsuite] NeverActAsServerClassMachine breaks TestPLABAdaptToMinTLABSize.java TestPinnedHumongousFragmentation.java TestPinnedObjectContents.java
+P4
+Backport
+hotspot
+JDK-8349983
+AArch64: Build failure with clang due to -Wformat-nonliteral warning
+P4
+Backport
+hotspot
+JDK-8350002
+[ubsan] logSelection.cpp:154:24 / logSelectionList.cpp:72:94 : runtime error: applying non-zero offset 1 to null pointer
+P4
+Backport
+hotspot
+JDK-8350191
+Linux ppc64le with toolchain clang - detection failure in early JVM startup
+P4
+Backport
+hotspot
+JDK-8350291
+Virtual Threads: exclude 2 tests
+P4
+Backport
+hotspot
+JDK-8350311
+[ubsan] logOutput.cpp:357:21: runtime error: applying non-zero offset 1 to null pointer
+P4
+Backport
+hotspot
+JDK-8350527
+gc/TestDisableExplicitGC.java fails due to unexpected CodeCache GC
+P4
+Backport
+hotspot
+JDK-8350528
+Add more linesize for MIME decoder in macro bench test Base64Decode
+P4
+Backport
+hotspot
+JDK-8350658
+Adjust exception No type named <ThreadType> in database
+P4
+Enhancement
+infrastructure
+JDK-8345370
+Bump update version for OpenJDK: jdk-21.0.7
+P4
+Backport
+infrastructure
+JDK-8346266
+[macos] [build]: install-file macro may run into permission denied error
+P4
+Backport
+infrastructure
+JDK-8346267
+Make target mac-jdk-bundle fails on chmod command
+P4
+Backport
+infrastructure
+JDK-8346617
+GHA: Collect hs_errs from build time failures
+P4
+Backport
+infrastructure
+JDK-8346618
+GHA: Report truncation is broken after JDK-8341424
+P4
+Backport
+infrastructure
+JDK-8347403
+GHA: Build JTReg in single step
+P4
+Backport
+infrastructure
+JDK-8349426
+Timeout handler on Windows takes 2 hours to complete
+P4
+Bug
+infrastructure
+JDK-8349603
+[21u, 17u, 11u] Update GHA JDKs after Jan/25 updates
+P4
+Backport
+security-libs
+JDK-8348067
+Fix and rewrite sun/security/x509/DNSName/LeadingPeriod.java test
+P4
+Backport
+security-libs
+JDK-8349986
+Serialization considerations
+P4
+Backport
+security-libs
+JDK-8350671
+Test javax/net/ssl/SSLSocket/Tls13PacketSize.java failed with java.net.SocketException: An established connection was aborted by the software in your host machine
+P4
+Backport
+tools
+JDK-8347583
+RuntimePackageTest.testUsrInstallDir test fails on Linux
+P4
+Backport
+tools
+JDK-8347644
+Remove unused imports from `ModuleGenerator` test file
+P4
+Backport
+tools
+JDK-8347877
+With malformed --app-image the error messages are awful
+P4
+Backport
+tools
+JDK-8349996
+BasicAnnoTests doesn't handle multiple annotations at the same position
+P4
+Backport
+tools
+JDK-8350568
+Upgrade JLine to 3.26.1
+P4
+Bug
+infrastructure
+JDK-8353904
+[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.7
+P4
+Backport
+other-libs
+JDK-8345497
+Normalize string with locale invariant `toLowerCase()`
+P4
+Backport
+security-libs
+JDK-8345709
+Logs truncated in test javax/net/ssl/DTLS/DTLSRehandshakeTest.java
+P4
+Backport
+security-libs
+JDK-8346421
+Update PKCS#11 Cryptographic Token Interface to v3.1
+P4
+Backport
+security-libs
+JDK-8346634
+test/jdk/sun/security/tools/jarsigner/PreserveRawManifestEntryAndDigest.java can fail due to regex
+P4
+Backport
+tools
+JDK-8346077
+test/jdk/tools/jpackage/share/ServiceTest.java test fails
+P4
+Backport
+tools
+JDK-8346078
+Remove `--compress` from jlink command lines from jpackage tests
+P4
+Backport
+tools
+JDK-8346187
+tools/jpackage/windows/Win8282351Test.java fails with java.lang.AssertionError: Expected [0]. Actual [1618]:
+P4
+Backport
+tools
+JDK-8346428
+Move common properties from jpackage jtreg test declarations to TEST.properties file
+P4
+Backport
+tools
+JDK-8346577
+tools/jpackage/windows/Win8301247Test.java fails on localized Windows platform
+P4
+Backport
+tools
+JDK-8346698
+Clean up return code handling for pthread calls in library coding
+
+
+P4
+Backport
+tools
+JDK-8346814
+Rework BasicTest.testTemp test cases
+P4
+Backport
+tools
+JDK-8346857
+jpackage test helper function incorrectly removes a directory instead of its contents only
+P4
+Backport
+tools
+JDK-8347012
+Move jpackage tests from "jdk.jpackage.tests" package to the default package
+P4
+Backport
+tools
+JDK-8347100
+Use OperatingSystem, Architecture, and OSVersion in jpackage tests
+P4
+Backport
+tools
+JDK-8347317
+Improve test coverage for class loading elements with annotations of different retentions
+P4
+Backport
+tools
+JDK-8347580
+jpackage tests run osx-specific checks on windows and linux
+P4
+Backport
+tools
+JDK-8354710
+Clean up the code in sun.tools.jar.Main to properly close resources and use ZipFile during extract
+P5
+Backport
+client-libs
+JDK-8347892
+Use latch in BasicMenuUI/bug4983388.java instead of delay
+P5
+Backport
+core-libs
+JDK-8347587
+Update code gen in CallGeneratorHelper
+P5
+Backport
+core-libs
+JDK-8345498
+Cleanups and JUnit conversion of test/jdk/java/util/zip/Available.java
+P5
+Backport
+hotspot
+JDK-8349432
+failure_handler should execute gdb "info threads" command on linux
+P?
+Hidden
+JDK-8337494
+Clarify JarInputStream behavior
+P?
+Hidden
+JDK-8337692
+Better TLS connection support
+P?
+Hidden
+JDK-8338430
+Improve compiler transformations
+P?
+Hidden
+JDK-8342562
+Enhance Deflater operations
+P?
+Hidden
+JDK-8343007
+Enhance Buffered Image handling
+P?
+Hidden
+JDK-8347847
+Enhance jar file support
+
+21.0.6+7
+
+
+P2
+Backport
+core-libs
+JDK-8342726
+Tests create files in src tree instead of scratch dir
+P2
+Backport
+core-libs
+JDK-8343612
+LambdaForm customization via MethodHandle::updateForm is not thread safe
+P2
+Backport
+core-svc
+JDK-8344392
+Additional tests in jmxremote/startstop to match on PID not app name
+P2
+Backport
+hotspot
+JDK-8340156
+ResolvedReferencesNotNullTest.java failed with Incorrect resolved references array, quxString should not be archived
+P2
+Backport
+hotspot
+JDK-8340886
+Tests crash: assert(is_in_encoding_range || k->is_interface() || k->is_abstract()) failed: sanity
+P2
+Backport
+hotspot
+JDK-8343520
+Repeated call of StringBuffer.reverse with double byte string returns wrong result
+P2
+Backport
+hotspot
+JDK-8343524
+C2 compilation asserts with "no node with a side effect" in PhaseIdealLoop::try_sink_out_of_loop
+P2
+Backport
+security-libs
+JDK-8343927
+Replace hardcoded security providers with new test.provider.name system property
+P2
+Backport
+security-libs
+JDK-8344276
+Update tests to use stronger Key and Salt size
+P2
+Backport
+security-libs
+JDK-8344398
+Update tests to use stronger key parameters and certificates
+P2
+Backport
+security-libs
+JDK-8344400
+Update tests to use stronger algorithms and keys
+P3
+Backport
+client-libs
+JDK-8340023
+[macos13] setFullScreenWindow() shows black screen on macOS 13 & above
+P3
+Backport
+client-libs
+JDK-8340170
+Update ProblemList.txt with tests known to fail on XWayland
+P3
+Backport
+client-libs
+JDK-8342554
+Crash in ImageIO JPEG decoding when MEM_STATS in enabled
+P3
+Backport
+client-libs
+JDK-8343042
+When the Tab Policy is checked,the scroll button direction displayed incorrectly.
+P3
+Backport
+client-libs
+JDK-8343043
+click JComboBox when dialog about to close causes IllegalComponentStateException
+P3
+Backport
+client-libs
+JDK-8343254
+[macos] Screen magnifier does not show the magnified text for JComboBox
+P3
+Backport
+client-libs
+JDK-8343255
+[macos] Regression: KeyEvent has different keycode on different keyboard layouts
+P3
+Backport
+client-libs
+JDK-8343364
+Remove wildcard bound in PositionWindows.positionTestWindows
+P3
+Bug
+core-libs
+JDK-8338748
+[17u,21u] Test Disconnect.java compile error: cannot find symbol after JDK-8299813
+P3
+Backport
+core-libs
+JDK-8340783
+java/util/concurrent/locks/Lock/OOMEInAQS.java still times out with ZGC, Generational ZGC, and SerialGC
+P3
+Backport
+core-libs
+JDK-8341941
+(se) Deferred close of SelectableChannel may result in a Selector doing the final close before concurrent I/O on channel has completed
+P3
+Backport
+core-libs
+JDK-8343828
+generic type information lost on mandated parameters of record's compact constructors
+P3
+Backport
+core-libs
+JDK-8344678
+(tz) Update Timezone Data to 2024b
+P3
+Backport
+core-libs
+JDK-8344964
+Test AsyncClose.java intermittent fails - Socket.getInputStream().read() wasn't preempted
+P3
+Backport
+core-svc
+JDK-8344291
+JMXStatusTest.java fails assertion intermittently
+P3
+Backport
+hotspot
+JDK-8339681
+crash: pinned virtual thread will lead to jvm crash when running with the javaagent option
+P3
+Backport
+hotspot
+JDK-8340160
+runtime/cds/DeterministicDump.java fails with File content different at byte ...
+P3
+Backport
+hotspot
+JDK-8340817
+RISC-V: C ABI breakage for integer on stack
+P3
+Backport
+hotspot
+JDK-8341054
+Hotspot should be able to use more than 64 logical processors on Windows
+P3
+Backport
+hotspot
+JDK-8341112
+VM issues warning failure to find kernel32.dll on Windows nanoserver
+P3
+Backport
+hotspot
+JDK-8341192
+Concurrent GC crashed due to GetMethodDeclaringClass
+P3
+Backport
+hotspot
+JDK-8341515
+Update OS detection code to recognize Windows Server 2025
+P3
+Backport
+hotspot
+JDK-8342060
+AArch64: Save and restore FPCR in the call stub
+P3
+Backport
+hotspot
+JDK-8342516
+[AArch64] C1 compilation fails with "Field too big for insn"
+P3
+Backport
+hotspot
+JDK-8342571
+AArch64: Restore FPU control state after JNI
+P3
+Backport
+hotspot
+JDK-8343210
+[PPC64] TestOSRLotsOfLocals.java crashes
+P3
+Backport
+hotspot
+JDK-8343301
+[s390x] TestOSRLotsOfLocals.java crashes
+P3
+Backport
+hotspot
+JDK-8343349
+C2: assert(!loop->is_member(get_loop(useblock))) failed: must be outside loop
+P3
+Backport
+hotspot
+JDK-8343538
+C2/Shenandoah: SEGV in compiled code when running jcstress
+P3
+Backport
+hotspot
+JDK-8343645
+TestLoadBypassesNullCheck.java fails improperly specified VM option
+P3
+Backport
+hotspot
+JDK-8344416
+[JFR] Long strings should be added to the string pool
+P3
+Backport
+hotspot
+JDK-8345290
+java.lang.Process is unresponsive and CPU usage spikes to 100%
+P3
+Backport
+security-libs
+JDK-8339816
+IP Address error when client enables HTTPS endpoint check on server socket
+P3
+Backport
+security-libs
+JDK-8339817
+Update Public Suffix List to 1cbd6e7
+P3
+Backport
+security-libs
+JDK-8340204
+Regtest java/security/Security/SynchronizedAccess.java is incorrect
+P3
+Backport
+security-libs
+JDK-8340333
+SHAKE256 does not work correctly if n >= 137
+P3
+Backport
+security-libs
+JDK-8340504
+test/jdk/sun/security/tools/keytool/NssTest.java fails to compile
+P3
+Backport
+security-libs
+JDK-8342049
+Update NSS to version 3.96
+P3
+Backport
+security-libs
+JDK-8343350
+Test sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java failed with: Invalid ECDH ServerKeyExchange signature
+P3
+Backport
+security-libs
+JDK-8343514
+Add a Test against ECDSA and ECDH NIST Test vector
+P3
+Backport
+security-libs
+JDK-8344657
+Improve logging in OCSPTimeout and SimpleOCSPResponder to help diagnose JDK-8309754
+P3
+Backport
+tools
+JDK-8345317
+SystemModulesMap::classNames and moduleNames arrays do not match the order
+P4
+Backport
+client-libs
+JDK-8339815
+gtk headers : Fix typedef redeclaration of GMainContext and GdkPixbuf
+P4
+Backport
+client-libs
+JDK-8340169
+[macos13] java/awt/Frame/MaximizedToIconified/MaximizedToIconified.java: getExtendedState() != 6 as expected.
+P4
+Backport
+client-libs
+JDK-8340429
+java/awt/Mouse/EnterExitEvents/ResizingFrameTest.java duplicate in ProblemList
+P4
+Backport
+client-libs
+JDK-8340508
+[XWayland] move screencast tokens from .awt to .java folder
+P4
+Backport
+client-libs
+JDK-8340879
+java.desktop/share/classes/javax/swing/text/html/default.css typo in margin settings
+P4
+Backport
+client-libs
+JDK-8341699
+Refactor KeyEvent/FunctionKeyTest.java
+P4
+Backport
+client-libs
+JDK-8341942
+Convert applet test java/awt/List/SetFontTest/SetFontTest.html to main program
+P4
+Backport
+client-libs
+JDK-8342054
+KeyEvent/KeyTyped/Numpad1KeyTyped.java has 15 seconds timeout
+P4
+Backport
+client-libs
+JDK-8342685
+Use PassFailJFrame.Builder.splitUI() in PrintLatinCJKTest.java
+P4
+Backport
+client-libs
+JDK-8342793
+Implement pausing functionality for the PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8342922
+Add a log area to the PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8343045
+PageFormat/CustomPaper.java has no Pass/Fail buttons; multiple instructions
+P4
+Backport
+client-libs
+JDK-8342073
+Call to insertText with single character from custom Input Method ignored
+P4
+Backport
+client-libs
+JDK-8343199
+Convert URLDragTest.html applet test to main
+P4
+Backport
+client-libs
+JDK-8343303
+ConfigureNotify behavior has changed in KWin 6.2
+P4
+Backport
+client-libs
+JDK-8343351
+Select{Current,New}ItemTest.java for Choice don't open popup on macOS
+P4
+Backport
+client-libs
+JDK-8343353
+Add positionTestUI() to PassFailJFrame.Builder
+P4
+Backport
+client-libs
+JDK-8343356
+Add border around instructions in PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8343357
+PassFailJFrame: Make rows default to number of lines in instructions
+P4
+Backport
+client-libs
+JDK-8343360
+Amend description for logArea
+P4
+Backport
+client-libs
+JDK-8343362
+Position the first window of a window list
+P4
+Backport
+client-libs
+JDK-8343371
+Add description for PassFailJFrame constructors
+
+
+P4
+Backport
+client-libs
+JDK-8343518
+Provide layouts for multiple test UI in PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8343519
+Update description of PassFailJFrame and samples
+P4
+Backport
+client-libs
+JDK-8343613
+Add border inside instruction frame in PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8343614
+Improve default instruction frame title in PassFailJFrame
+P4
+Backport
+client-libs
+JDK-8343746
+ProblemList BasicDirectoryModel/LoaderThreadCount.java on Windows
+P4
+Backport
+client-libs
+JDK-8344295
+Disable ubsan checks in some awt/2d coding
+P4
+Bug
+core-libs
+JDK-8337966
+(fs) Files.readAttributes fails with Operation not permitted on older docker releases
+P4
+Backport
+core-libs
+JDK-8340447
+Improve parsing of Day/Month in tzdata rules
+P4
+Backport
+core-libs
+JDK-8340550
+Files.isReadable/isWritable/isExecutable expensive when file does not exist
+P4
+Backport
+core-libs
+JDK-8340589
+update manual test/jdk/TEST.groups
+P4
+Backport
+core-libs
+JDK-8340603
+Retire binary test vectors in test/jdk/java/util/zip/ZipFile
+P4
+Backport
+core-libs
+JDK-8340604
+Add test case for ZipFile opening a ZIP with no entries
+P4
+Backport
+core-libs
+JDK-8340612
+DeflaterDictionaryTests should use Deflater.getBytesWritten instead of Deflater.getTotalOut
+P4
+Backport
+core-libs
+JDK-8340734
+Add tests for virtual threads doing Selector operations
+P4
+Backport
+core-libs
+JDK-8340776
+Java file extension missing in AuthenticatorTest
+P4
+Backport
+core-libs
+JDK-8340989
+update jdk_core at open/test/jdk/TEST.groups
+P4
+Backport
+core-libs
+JDK-8341016
+java/nio/channels/Selector/SelectWithConsumer.java#id0 failed in testWakeupDuringSelect
+P4
+Backport
+core-libs
+JDK-8341824
+ProcessHandleImpl os_getChildren sysctl call - retry in case of ENOMEM and enhance exception message
+P4
+Backport
+core-libs
+JDK-8342057
+ProblemList java/nio/channels/DatagramChannel/ for Macos
+P4
+Bug
+core-libs
+JDK-8342063
+[21u][aix] Backport introduced redundant line in ProblemList
+P4
+Backport
+core-libs
+JDK-8342900
+SaslInputStream.read() may return wrong value
+P4
+Backport
+core-libs
+JDK-8343354
+Add extra diagnostic to java/net/InetAddress/ptr/Lookup.java
+P4
+Backport
+core-libs
+JDK-8343363
+Reading from an input stream backed by a closed ZipFile has no test coverage
+P4
+Backport
+core-libs
+JDK-8343368
+Add some additional diagnostic output to java/net/ipv6tests/UdpTest.java
+P4
+Backport
+core-libs
+JDK-8343464
+ClassicFormat::parseObject (from DateTimeFormatter) does not conform to the javadoc and may leak DateTimeException
+P4
+Backport
+core-libs
+JDK-8343611
+Acknowledge case insensitive unambiguous keywords in tzdata files
+P4
+Backport
+core-libs
+JDK-8344296
+java/net/httpclient/ManyRequests2.java fails intermittently on Linux
+P4
+Backport
+core-libs
+JDK-8344574
+ThreadLocal.nextHashCode can be static final
+P4
+Backport
+core-libs
+JDK-8344679
+Several tests from corelibs areas ignore VM flags
+P4
+Bug
+core-libs
+JDK-8344993
+[21u] [REDO] Backport JDK-8327501 and JDK-8328366 to JDK 21
+P4
+Backport
+core-libs
+JDK-8345417
+Thread.setContextClassloader from thread in FJP commonPool task no longer works after JDK-8327501 redux
+P4
+Backport
+core-svc
+JDK-8340152
+3 JDI tests timed out with UT enabled
+P4
+Backport
+core-svc
+JDK-8340153
+NSK tests should listen on loopback addresses only
+P4
+Backport
+core-svc
+JDK-8343602
+java/lang/management/ThreadMXBean/Locks.java transient failures
+P4
+Backport
+core-svc
+JDK-8343912
+JDI stopListening/stoplis001 "FAILED: listening is successfully stopped without starting listening"
+P4
+Backport
+core-svc
+JDK-8343919
+vmTestbase/nsk/jdb/kill/kill001/kill001.java fails with C1
+P4
+Backport
+core-svc
+JDK-8344677
+sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.java failed with BindException: Address already in use
+P4
+Backport
+hotspot
+JDK-8339146
+Exclude Fingerprinter::do_type from ubsan checks
+P4
+Backport
+hotspot
+JDK-8339147
+SeenThread::print_action_queue called on a null pointer
+P4
+Backport
+hotspot
+JDK-8339272
+AArch64: enable tests compiler/intrinsics/Test(Long|Integer)UnsignedDivMod.java on aarch64
+P4
+Backport
+hotspot
+JDK-8339273
+RISC-V: compiler/intrinsics/TestInteger/LongUnsignedDivMod.java failed with "counts: Graph contains wrong number of nodes"
+P4
+Backport
+hotspot
+JDK-8339315
+[test] runtime/os/TestTracePageSizes move ppc handling
+P4
+Backport
+hotspot
+JDK-8339323
+map_or_reserve_memory_aligned Windows enhance remap assertion
+P4
+Backport
+hotspot
+JDK-8339397
+RISC-V: C2: Change C calling convention for sp to NS
+P4
+Backport
+hotspot
+JDK-8339585
+remove old remap assertion in map_or_reserve_memory_aligned after JDK-8338058
+P4
+Backport
+hotspot
+JDK-8339589
+RISC-V: Remove li64 macro assembler routine and related code
+P4
+Backport
+hotspot
+JDK-8339814
+Clean up vmTestbase/nsk/stress/stack tests
+P4
+Backport
+hotspot
+JDK-8339841
+AArch64: u32 _partial_subtype_ctr loaded/stored as 64
+P4
+Backport
+hotspot
+JDK-8340136
+serviceability/jvmti/vthread/PopFrameTest failed with a timeout
+P4
+Backport
+hotspot
+JDK-8340154
+Update several runtime/cds tests to use vm flags or mark as flagless
+P4
+Backport
+hotspot
+JDK-8340155
+TestCDSVMCrash fails on libgraal
+P4
+Backport
+hotspot
+JDK-8340157
+Add JavacBench as a test case for CDS
+P4
+Backport
+hotspot
+JDK-8340159
+Update vmTestbase/nsk/share/DebugeeProcess.java to don't use finalization
+P4
+Backport
+hotspot
+JDK-8340356
+ubsan: bytecodeInfo.cpp:318:59: runtime error: division by zero
+P4
+Backport
+hotspot
+JDK-8340430
+MethodExitTest may fail with stack buffer overrun
+P4
+Backport
+hotspot
+JDK-8340500
+TestAutoCreateSharedArchiveUpgrade.java should be updated with JDK 21
+P4
+Backport
+hotspot
+JDK-8340502
+Make 5 compiler tests use ProcessTools.executeProcess
+P4
+Backport
+hotspot
+JDK-8340607
+Exceptions::wrap_dynamic_exception() doesn't have ResourceMark
+P4
+Backport
+hotspot
+JDK-8340615
+Update JCStress test suite
+P4
+Backport
+hotspot
+JDK-8340626
+[s390x] Provide implementation for resolve_global_jobject
+P4
+Backport
+hotspot
+JDK-8340630
+vmTestbase/gc/g1/unloading/tests/unloading_keepRef_rootClass_inMemoryCompilation_keep_cl failed with Full gc happened. Test was useless.
+P4
+Backport
+hotspot
+JDK-8341259
+Improve CDSHeapVerifier in handling of interned strings
+P4
+Backport
+hotspot
+JDK-8341322
+C1: assert(0 <= i && i < _len) failed: illegal index 5 for length 5
+P4
+Backport
+hotspot
+JDK-8341323
+Parsing jsr broken: assert(bci>= 0 && bci < c->method()->code_size()) failed: index out of bounds
+P4
+Backport
+hotspot
+JDK-8341479
+[PPC64] SA determines wrong unextendedSP
+P4
+Backport
+hotspot
+JDK-8341821
+The class LogSelection copies uninitialized memory
+P4
+Backport
+hotspot
+JDK-8341823
+ZGC: Division by zero in rule_major_allocation_rate
+P4
+Backport
+hotspot
+JDK-8341943
+Exclude two compiler/rtm/locking tests on ppc64le
+P4
+Backport
+hotspot
+JDK-8341960
+RISC-V: Generate comments in -XX:+PrintInterpreter to link to source code
+P4
+Backport
+hotspot
+JDK-8341962
+ubsan : dependencies.cpp:906:3: runtime error: load of value 4294967295, which is not a valid value for type 'DepType'
+P4
+Backport
+hotspot
+JDK-8341973
+RISC-V: C2: Small improvement to vector gather load and scatter store
+P4
+Backport
+hotspot
+JDK-8342020
+[IR Framework] Add support for IR tests with @Stable
+P4
+Backport
+hotspot
+JDK-8342021
+Test testlibrary_tests/ir_framework/tests/TestPrivilegedMode.java fails with release build
+P4
+Backport
+hotspot
+JDK-8342048
+runtime/logging/ClassLoadUnloadTest.java doesn't reliably trigger class unloading
+P4
+Backport
+hotspot
+JDK-8342050
+Test runtime/classFileParserBug/Bad_NCDFE_Msg.java won't compile
+
+
+P4
+Backport
+hotspot
+JDK-8342056
+C2: Fix UB of jlong overflow in PhaseIdealLoop::is_counted_loop()
+P4
+Backport
+hotspot
+JDK-8342391
+RISC-V: Unnecessary fences used for load-acquire in template interpreter
+P4
+Backport
+hotspot
+JDK-8342395
+Assertion on AIX - original PC must be in the main code section of the compiled method
+P4
+Backport
+hotspot
+JDK-8342396
+RISC-V: Avoid passing t0 as temp register to MacroAssembler:: cmpxchg_obj_header/cmpxchgptr
+P4
+Backport
+hotspot
+JDK-8342527
+Ubsan: ciEnv.cpp:1660:65: runtime error: member call on null pointer of type 'struct CompileTask'
+P4
+Backport
+hotspot
+JDK-8342532
+RISC-V: ZStoreBarrierStubC2 clobbers rflags
+P4
+Backport
+hotspot
+JDK-8342551
+Tests assume UnlockExperimentalVMOptions is disabled by default
+P4
+Backport
+hotspot
+JDK-8342572
+Aarch64: Generate comments in -XX:+PrintInterpreter to link to source code
+P4
+Backport
+hotspot
+JDK-8342710
+CTW: Add StressIncrementalInlining to stress options
+P4
+Backport
+hotspot
+JDK-8342722
+[JVMCI] Unintuitive behavior of UseJVMCICompiler option
+P4
+Bug
+hotspot
+JDK-8342669
+[21u] Fix TestArrayAllocatorMallocLimit after backport of JDK-8315097
+P4
+Backport
+hotspot
+JDK-8342851
+Shenandoah: Unused ShenandoahSATBAndRemarkThreadsClosure::_claim_token
+P4
+Backport
+hotspot
+JDK-8343028
+G1: Nmethod count statistics only count last code root set iterated
+P4
+Backport
+hotspot
+JDK-8343203
+[PPC64]: postalloc_expand_java_dynamic_call_sched does not copy all fields
+P4
+Enhancement
+hotspot
+JDK-8342765
+[21u] RTM tests assume UnlockExperimentalVMOptions is disabled by default
+P4
+Backport
+hotspot
+JDK-8343591
+ubsan: shenandoahFreeSet.cpp:1347:24: runtime error: division by zero
+P4
+Backport
+hotspot
+JDK-8343908
+jvmti/StopThread/stopthrd007 failed with "NoClassDefFoundError: Could not initialize class jdk.internal.misc.VirtualThreads"
+P4
+Backport
+hotspot
+JDK-8343909
+runtime/cds/appcds/ProhibitedPackage.java can fail with UseLargePages
+P4
+Backport
+hotspot
+JDK-8343914
+Update nsk.share.Log to don't print summary during VM shutdown hook
+P4
+Backport
+hotspot
+JDK-8344290
+The makefiles should set problemlist and adjust timeout basing on the given VM flags
+P4
+Backport
+hotspot
+JDK-8344404
+[s390x] multiple test failures with ubsan
+P4
+Backport
+hotspot
+JDK-8344405
+Enhance register printing on x86_64 platforms
+P4
+Backport
+hotspot
+JDK-8344406
+[PPC64] Disallow OptoScheduling
+P4
+Backport
+hotspot
+JDK-8344407
+[s390x] ProblemList hotspot/jtreg/runtime/NMT/VirtualAllocCommitMerge.java
+P4
+Backport
+hotspot
+JDK-8344408
+ZGC: Division by zero in heuristics after JDK-8332717
+P4
+Backport
+hotspot
+JDK-8344409
+ubsan: division by zero in sharedRuntimeTrans.cpp
+P4
+Backport
+hotspot
+JDK-8344410
+Ubsan: ciEnv.cpp:1614:65: runtime error: member call on null pointer of type 'struct CompileTask'
+P4
+Backport
+hotspot
+JDK-8344591
+Shenandoah: Parallel worker use in parallel_heap_region_iterate
+P4
+Backport
+hotspot
+JDK-8344605
+docker tests do not work when ubsan is configured
+P4
+Backport
+hotspot
+JDK-8344623
+Do libubsan1 installation in test container only if requested
+P4
+Backport
+hotspot
+JDK-8344676
+Fix some warnings as errors when building on Linux with toolchain clang
+P4
+Backport
+hotspot
+JDK-8344803
+VectorGatherMaskFoldingTest.java failed when maximum vector bits is 64
+P4
+Backport
+hotspot
+JDK-8344805
+[s390x] Disallow OptoScheduling
+P4
+Backport
+hotspot
+JDK-8344864
+Fix nonnull-compare warnings
+P4
+Backport
+hotspot
+JDK-8344962
+Test TestPrivilegedMode.java intermittent fails java.lang.NoClassDefFoundError: jdk/test/lib/Platform
+P4
+Backport
+hotspot
+JDK-8345180
+Problemlist vmTestbase/vm/mlvm/meth/stress/compiler/deoptimize/Test.java#id1 until JDK-8320865 is fixed
+P4
+Sub-task
+hotspot
+JDK-8345055
+[21u] ProblemList failing rtm tests on ppc platforms
+P4
+Backport
+hotspot
+JDK-8345227
+[s390x] C1 unwind_handler fails to unlock synchronized methods with LM_MONITOR
+P4
+Backport
+hotspot
+JDK-8345228
+UnsafeIntrinsicsTest.java#ZGenerationalDebug assert(!assert_on_failure) failed: Has low-order bits set
+P4
+Backport
+hotspot
+JDK-8345311
+Test TestEnableJVMCIProduct.java run with virtual thread intermittent fails
+P4
+Enhancement
+infrastructure
+JDK-8339080
+Bump update version for OpenJDK: jdk-21.0.6
+P4
+Backport
+infrastructure
+JDK-8339839
+GHA: some of bundles may not get removed
+P4
+Backport
+infrastructure
+JDK-8339991
+GHA: RISC-V: Use Debian snapshot archive for bootstrap
+P4
+Backport
+infrastructure
+JDK-8340513
+Mark jdk/jshell/ExceptionMessageTest.java intermittent
+P4
+Backport
+infrastructure
+JDK-8341092
+Add SECURITY.md file
+P4
+Backport
+infrastructure
+JDK-8341537
+GHA: MacOS AArch64 bundles can be removed prematurely
+P4
+Backport
+infrastructure
+JDK-8341583
+doc/building.md update Xcode instructions to note that full install is required
+P4
+Backport
+infrastructure
+JDK-8342491
+[test] build/AbsPathsInImage.java fails with OOM when using ubsan-enabled binaries
+P4
+Backport
+infrastructure
+JDK-8342573
+Gcc version detection failure on Alinux3
+P4
+Backport
+infrastructure
+JDK-8343253
+--enable-ccache's CCACHE_BASEDIR breaks builds
+P4
+Backport
+infrastructure
+JDK-8343425
+GHA: RISC-V: Bootstrap using Debian snapshot is still failing
+P4
+Bug
+infrastructure
+JDK-8343474
+[updates] Customize README.md to specifics of update project
+P4
+Backport
+infrastructure
+JDK-8344421
+GHA: Switch to Xcode 15 on MacOS AArch64 runners
+P4
+Backport
+infrastructure
+JDK-8344961
+Compile without -fno-delete-null-pointer-checks
+P4
+Bug
+infrastructure
+JDK-8347010
+[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.6
+P4
+Backport
+security-libs
+JDK-8339254
+CAInterop.java#actalisauthenticationrootca conflicted with /manual and /timeout
+P4
+Backport
+security-libs
+JDK-8340151
+Unify debug printing format of X.509 cert serial numbers
+P4
+Backport
+security-libs
+JDK-8340503
+Automate com/sun/security/auth/callback/TextCallbackHandler/Default.java test
+P4
+Backport
+security-libs
+JDK-8340611
+[jmh] the test java.security.HSS failed with 2 active threads
+P4
+Backport
+security-libs
+JDK-8340781
+Add manual steps to run security/auth/callback/TextCallbackHandler/Password.java test
+P4
+Backport
+security-libs
+JDK-8341017
+Enhance the keytool code by invoking the buildTrustedCerts method for essential options
+P4
+Backport
+security-libs
+JDK-8341320
+PKCS11 tests still skip execution
+P4
+Backport
+security-libs
+JDK-8341620
+Unaddressed comments during code review of JDK-8337664
+P4
+Backport
+security-libs
+JDK-8341698
+Update TLSCommon/interop/AbstractServer to specify an interface to listen for connections
+P4
+Backport
+security-libs
+JDK-8343046
+Ensure randomness is only read from provided SecureRandom object
+P4
+Backport
+security-libs
+JDK-8343913
+Have SSLSocketTemplate.doClientSide use loopback address
+P4
+Backport
+security-libs
+JDK-8344292
+Several security shell tests don't set TESTJAVAOPTS
+P4
+Backport
+security-libs
+JDK-8344390
+Few security tests ignore VM flags
+P4
+Backport
+tools
+JDK-8343302
+Some tests have name which confuse jtreg
+P4
+Backport
+tools
+JDK-8343515
+JLinkReproducibleTest.java support receive test.tool.vm.opts
+P4
+Backport
+tools
+JDK-8344613
+Create jtreg test case for JDK-8325203
+P4
+Backport
+tools
+JDK-8344614
+tools/jpackage/windows/WinChildProcessTest.java Failed: Check is calculator process is alive
+P4
+Backport
+tools
+JDK-8345174
+langtools/tools/javac/newlines/NewLineTest.java is failing on Japanese Windows
+P5
+Backport
+client-libs
+JDK-8343348
+Hide PassFailJFrame.Builder constructor
+P5
+Backport
+client-libs
+JDK-8343910
+Simplify TrayIconScalingTest.java
+
+
+P5
+Backport
+core-libs
+JDK-8342942
+Unused ClassValue in VarHandles
+P5
+Backport
+core-libs
+JDK-8345437
+Add an operation mode to the jar command when extracting to not overwriting existing files
+P5
+Backport
+hotspot
+JDK-8339624
+AArch64: C2_MacroAssembler::fast_lock uses rscratch1 for cmpxchg result
+P5
+Backport
+hotspot
+JDK-8340158
+x86 MacroAssembler may over-align code
+P5
+Backport
+hotspot
+JDK-8340782
+Unintentional IOException in jdk.jdi module when JDWP end of stream occurs
+P5
+Backport
+hotspot
+JDK-8343920
+compiler/c1/TestTraceLinearScanLevel.java occasionally times out with -Xcomp
+P5
+Backport
+infrastructure
+JDK-8344958
+Harden TzdbZoneRulesCompiler against missing zone names
+P5
+Backport
+security-libs
+JDK-8340779
+Test com/sun/crypto/provider/Cipher/DES/PerformanceTest.java fails with java.lang.ArithmeticException
+P5
+Backport
+security-libs
+JDK-8343928
+Fix typo of property name in TestOAEPPadding after 8341927
+P?
+Hidden
+JDK-8330045
+Enhance array handling
+P?
+Hidden
+JDK-8335428
+Enhanced Building of Processes
+P?
+Hidden
+JDK-8336564
+Enhance mask blit functionality redux
+P?
+Hidden
+JDK-8339180
+Enhanced Building of Processes: Follow-on Issue

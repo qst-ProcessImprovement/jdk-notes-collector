@@ -1,0 +1,15 @@
+release,feature_area,impact_status,count
+21.0.8,classlib,excluded,81
+21.0.8,classlib,needs_review,65
+21.0.8,compiler_tools,needs_review,7
+21.0.8,gc,excluded,12
+21.0.8,interop,excluded,5
+21.0.8,interop,needs_review,26
+21.0.8,runtime_core,excluded,6
+21.0.8,runtime_core,needs_review,60
+21.0.8,security,needs_review,10
+21.0.8,test_infra,needs_review,1
+21.0.x,classlib,excluded,1
+21.0.x,compiler_tools,needs_review,2
+21.0.x,runtime_core,excluded,2
+21.0.x,runtime_core,needs_review,1

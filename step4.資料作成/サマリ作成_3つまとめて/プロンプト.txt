@@ -1,0 +1,20 @@
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.6+7
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
+リリースノートのサマリ資料を作成して下さい。
+
+■背景
+案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
+非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
+
+目的は既存アプリケーションにクリティカルな影響がでるかを調査することです。
+このため、以下の情報は不要です。
+
+- ドキュメントまたはテストコードのみの変更。	・サマリーに "open source"、"problemlist"、"jtreg"、"doc" などのキーワードが複数含まれる。<br>・ラベルに noreg-* や hgupdate-sync が付与されている。<br>・ただし、"crash" や "exception" などの単語が含まれる場合は除外対象から外れる。
+- 新機能のバックポート。	・Issueタイプが Enhancement または New Feature である修正のバックポート。<br>・サマリーに "Add"、"Support"、"Implement" などが含まれ、"test" や "doc" を含まない。
+- Windows 11以外のプラットフォームに限定された修正。	・サマリーや説明に "Linux"、"macOS"、"AIX" などのOS名が明記されている。<br>・OSフィールドでWindows 11が指定されていない。
+- ガベージコレクション（GC）関連の修正。	・コンポーネントが hotspot/gc である。<br>・サマリーに "GC"、"Shenandoah"、"ZGC"、"G1" などが含まれる。<br>・ラベルが gc-* である。
+- パフォーマンス改善対応
+- JVMの安定性およびクラッシュに関する修正。既存バグの改善は記載不要です。
+
+動作影響のある修正に絞ってサマリを作成して下さい。

@@ -1,0 +1,5 @@
+release,impact_status,count
+21.0.8,excluded,104
+21.0.8,needs_review,169
+21.0.x,excluded,3
+21.0.x,needs_review,3

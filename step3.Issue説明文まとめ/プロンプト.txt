@@ -1,0 +1,9 @@
+jdk.txtの一件ごとに以下のURLからXMLを取得し、ローカルに保存するPythonモジュールを作成して下さい。
+保存する際はフォルダを作成し、その中にjdk-xx.拡張子のファイル名で内容を保存してください。一部の JDK には URL が参照できないものが存在します。そのようなものはスキップをしてください。スキップした JDK の一覧をテキストに残してください。
+https://bugs.openjdk.org/si/jira.issueviews:issue-xml/JDK-8325937/JDK-8325937.xml
+
+
+使い方：
+python jdk_issue_extractor.py jdklist_jdk-21.0.6+7.txt > output.txt
+python jdk_issue_extractor.py jdklist_jdk-21.0.7+6.txt > output_jdk-21.0.7+6.txt
+python jdk_issue_extractor.py jdklist_jdk-21.0.8+9.txt > output_jdk-21.0.8+9.txt

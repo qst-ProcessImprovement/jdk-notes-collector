@@ -17,9 +17,9 @@ https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
 
 ===
 
-OpenJDK 21.0.6+7の変更点を詳細に説明して下さい
-OpenJDK 21.0.7+6の変更点を詳細に説明して下さい
-OpenJDK 21.0.8+9の変更点を詳細に説明して下さい
+OpenJDK 21.0.6+7の変更点を説明して下さい
+OpenJDK 21.0.7+6の変更点を説明して下さい
+OpenJDK 21.0.8+9の変更点を説明して下さい
 
 ===
 

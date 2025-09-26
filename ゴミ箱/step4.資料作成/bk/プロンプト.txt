@@ -1,0 +1,43 @@
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.6+7
+リリースノートのサマリ資料をpptxで作成して下さい。
+
+■背景
+案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
+非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
+
+■参考資料
+
+- csv/jdk_issues_summary_detail.csv
+    - 個別 Issue の一覧です。影響判定（除外／要確認）、機能領域、適用ルール、ラベル、対象リリースなどを横持ちで記載しています。要確認 Issue の深掘りや資料化の根拠として参照してください。
+- csv/jdk_issues_summary_release.csv
+    - リリース別 × 影響判定（除外／要確認）の件数サマリです。21.0.6〜21.0.8 の要確認ボリュームを俯瞰する際に利用してください。
+- csv/jdk_issues_summary_area.csv
+    - リリース別 × 機能領域 × 影響判定の件数サマリです。どの領域（runtime_core / classlib / interop 等）を重点的に調査・説明するか判断する材料になります。
+
+あなたが最適だと考えるレイアウトで作成をお願いします。
+
+===
+
+添付は以下のリリースノートとそのIssueをまとめた資料です。
+jdk-21.0.8+9
+jdk-21.0.7+6
+jdk-21.0.6+7
+
+添付の資料からリリースノートのサマリ資料をpptxで作成して下さい。
+
+■背景
+案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
+非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
+
+■参考資料
+
+- csv/jdk_issues_summary_detail.csv
+    - 個別 Issue の一覧です。影響判定（除外／要確認）、機能領域、適用ルール、ラベル、対象リリースなどを横持ちで記載しています。要確認 Issue の深掘りや資料化の根拠として参照してください。
+- csv/jdk_issues_summary_release.csv
+    - リリース別 × 影響判定（除外／要確認）の件数サマリです。21.0.6〜21.0.8 の要確認ボリュームを俯瞰する際に利用してください。
+- csv/jdk_issues_summary_area.csv
+    - リリース別 × 機能領域 × 影響判定の件数サマリです。どの領域（runtime_core / classlib / interop 等）を重点的に調査・説明するか判断する材料になります。
+
+あなたが最適だと考えるレイアウトで作成をお願いします。
