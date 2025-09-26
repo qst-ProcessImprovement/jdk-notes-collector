@@ -277,7 +277,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--source-dir",
         type=Path,
-        default=Path("step4.非互換抽出/jdk_issues"),
+        default=Path("jdk_issues"),
         help="Directory containing classified issue XML files",
     )
     parser.add_argument(
