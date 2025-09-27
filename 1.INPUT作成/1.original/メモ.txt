@@ -1,17 +1,17 @@
 temurinのリリースノート。Backportが含まれている。
-https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
-https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
 https://adoptium.net/temurin/release-notes?version=jdk-21.0.6+7
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
+https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
 
 oracle。こちらはサマリとして纏められている。
-https://www.oracle.com/java/technologies/javase/21-0-8-relnotes.html
-https://www.oracle.com/java/technologies/javase/21-0-7-relnotes.html
 https://www.oracle.com/java/technologies/javase/21-0-6-relnotes.html
+https://www.oracle.com/java/technologies/javase/21-0-7-relnotes.html
+https://www.oracle.com/java/technologies/javase/21-0-8-relnotes.html
 
 OpenJDKのmaillist。Backportは含まれない。
-https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-July/045617.html
-https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-April/043308.html
-https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-January/040828.html
+https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-January/040828.html   # jdk-21.0.6
+https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-April/043308.html     # jdk-21.0.7
+https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-July/045617.html      # jdk-21.0.8
 
 今回はリリースノートのサマリ作成が目的なので、maillistをINPUTとして利用する。
 temurin版と差異がある可能性はあるが、サマリ作成には問題なしと判断した。

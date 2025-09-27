@@ -54,7 +54,7 @@ def normalize_description(raw_description: str | None) -> str | None:
     decoded = html.unescape(raw_description).replace("\r", "")
     decoded = re.sub(r"<br\s*/?>", "\n", decoded, flags=re.IGNORECASE)
 
-    cleaned = []
+    cleaned: List[str] = []
     in_tag = False
     for char in decoded:
         if char == "<":
@@ -65,8 +65,15 @@ def normalize_description(raw_description: str | None) -> str | None:
             continue
         if not in_tag:
             cleaned.append(char)
-    description = "".join(cleaned).strip()
-    return description or None
+    description = "".join(cleaned)
+
+    normalized_lines: List[str] = []
+    for line in description.splitlines():
+        stripped_line = line.strip()
+        if stripped_line:
+            normalized_lines.append(stripped_line)
+
+    return "\n".join(normalized_lines) or None
 
 
 def extract_components(item: ET.Element) -> str:
@@ -164,6 +171,15 @@ def write_output(blocks: Iterable[str], output_path: Path) -> None:
     output_path.write_text(output_text + "\n", encoding="utf-8")
 
 
+def write_skipped(skipped: Iterable[str], skipped_path: Path) -> None:
+    """Write skipped issue IDs (one per line) to a companion file."""
+    data = "\n".join(skipped)
+    if data:
+        skipped_path.write_text(data + "\n", encoding="utf-8")
+    else:
+        skipped_path.write_text("", encoding="utf-8")
+
+
 def main() -> None:
     args = parse_args()
     base_dir = Path.cwd() / ISSUES_DIR_NAME
@@ -172,12 +188,20 @@ def main() -> None:
     issue_ids = read_issue_ids(args.input_file)
 
     blocks: List[str] = []
+    skipped: List[str] = []
     for issue_id in issue_ids:
+        issue_dir = base_dir / issue_id
+        if not issue_dir.exists():
+            skipped.append(issue_id)
+            continue
         issue_data = load_issue_data(base_dir, issue_id)
         blocks.append(build_block(issue_data))
 
     output_path = Path(f"{args.input_file}_output.txt")
     write_output(blocks, output_path)
+
+    skipped_path = Path(f"{args.input_file}_skipped.txt")
+    write_skipped(skipped, skipped_path)
 
 
 if __name__ == "__main__":
