@@ -1,9 +1,0 @@
-temurinのリリースノートに関連Issue番号が記載されているので、まずはIssueの内容をまとめる。
-
-やること。
-temurinのサイトからIssue番号を取得。サイトから直接コピペ -> list.txt
-
-list.txtを整形し、Descriptionを追加。
-https://bugs.openjdk.org/browse/JDK-8354893
-
-リリースVerごとにファイルを分割。
