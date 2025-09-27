@@ -11,7 +11,7 @@ import html
 import re
 import sys
 from pathlib import Path
-from typing import Iterable, List
+from typing import Iterable, List, Tuple
 import xml.etree.ElementTree as ET
 
 ISSUES_DIR_NAME = "jdk_issues"
@@ -180,6 +180,90 @@ def write_skipped(skipped: Iterable[str], skipped_path: Path) -> None:
         skipped_path.write_text("", encoding="utf-8")
 
 
+# ===== 除外ルール（機械フィルタ） =====
+# SOW のルールに基づき、タイトル/説明/OS/種別から除外判定を行う。
+
+# ドキュメント/テストのみを示す強キーワード
+_RE_DOC_TEST = re.compile(r"(regtest|jtreg|TEST:|javadoc|man page|docs?\b|typo\b)", re.IGNORECASE)
+
+# パフォーマンス改善を示すキーワード
+_RE_PERF = re.compile(r"(performance|\bperf\b|optimi[sz]e|microbench|\bbenchmark\b|speed up|faster)", re.IGNORECASE)
+
+# JVM 安定性/クラッシュに関するキーワード
+_RE_STABILITY = re.compile(r"(\bcrash|\bhang\b|hs_err|core dump|SIG(SEGV|BUS|ILL)\b|\bassert(ion)?\b)", re.IGNORECASE)
+
+# メタ作業（バージョンバンプ等）
+_RE_META = re.compile(r"(Bump update version|Remove designator DEFAULT_PROMOTED_VERSION_PRE)", re.IGNORECASE)
+
+# Type による除外（注: JBS の Backport は type=Backport になるため、
+# Enhancement などがそのまま出るケースのみを安全側で除外）
+_NON_BUG_TYPES = {"Enhancement", "New Feature", "Task", "Sub-Task"}
+
+# 非 Windows 系 OS 候補（OS: フィールドの値を小文字で前方一致）
+_NON_WINDOWS_OS_PREFIXES = (
+    "os_x",
+    "mac",
+    "macos",
+    "linux",
+    "solaris",
+    "aix",
+    "bsd",
+)
+
+
+def _text_for_scan(issue_data: dict[str, str | None]) -> str:
+    """タイトルと説明を結合してスキャン対象のテキストを生成。"""
+    title = issue_data.get("Title") or ""
+    desc = issue_data.get("Description") or ""
+    return f"{title}\n{desc}"
+
+
+def exclusion_reason(issue_data: dict[str, str | None]) -> str | None:
+    """除外に該当する場合は理由（正準文言）を返す。該当しなければ None。"""
+    # 1) Type による一括除外
+    issue_type = (issue_data.get("Type") or "").strip()
+    if issue_type in _NON_BUG_TYPES:
+        return f"Excluded: non-bug type '{issue_type}'"
+
+    text = _text_for_scan(issue_data)
+
+    # 2) ドキュメント/テスト
+    if _RE_DOC_TEST.search(text):
+        return "Excluded: documentation/test-only change"
+
+    # 3) パフォーマンス改善
+    if _RE_PERF.search(text):
+        return "Excluded: performance-only change"
+
+    # 4) JVM 安定性/クラッシュ
+    if _RE_STABILITY.search(text):
+        return "Excluded: JVM stability/crash fix"
+
+    # 5) 非 Windows 限定（OS フィールドが存在し、Windows/generic を含まない）
+    os_value = (issue_data.get("OS") or "").strip()
+    if os_value:
+        low = os_value.lower()
+        has_windows = "windows" in low
+        has_generic = "generic" in low
+        if not has_windows and not has_generic:
+            # 1つでも非 Windows 系の値だけで構成されていれば除外
+            pieces = [p.strip() for p in re.split(r"[,/;\s]+", low) if p.strip()]
+            if pieces and all(any(p.startswith(prefix) for prefix in _NON_WINDOWS_OS_PREFIXES) for p in pieces):
+                return f"Excluded: non-Windows platform(s): {os_value}"
+
+    # 6) メタ作業（バージョンバンプ等）
+    if _RE_META.search(text):
+        return "Excluded: meta change (version bump/designator)"
+
+    return None
+
+
+def write_excluded(excluded: Iterable[Tuple[str, str, str]], excluded_path: Path) -> None:
+    """除外対象 (issue_id, reason, title) をタブ区切りで出力する。"""
+    lines = [f"{issue_id}\t{reason}\t{title}" for issue_id, reason, title in excluded]
+    excluded_path.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
+
+
 def main() -> None:
     args = parse_args()
     base_dir = Path.cwd() / ISSUES_DIR_NAME
@@ -189,12 +273,17 @@ def main() -> None:
 
     blocks: List[str] = []
     skipped: List[str] = []
+    excluded: List[Tuple[str, str, str]] = []  # (issue_id, reason, title)
     for issue_id in issue_ids:
         issue_dir = base_dir / issue_id
         if not issue_dir.exists():
             skipped.append(issue_id)
             continue
         issue_data = load_issue_data(base_dir, issue_id)
+        reason = exclusion_reason(issue_data)
+        if reason:
+            excluded.append((issue_id, reason, issue_data.get("Title") or ""))
+            continue
         blocks.append(build_block(issue_data))
 
     output_path = Path(f"{args.input_file}_output.txt")
@@ -202,6 +291,9 @@ def main() -> None:
 
     skipped_path = Path(f"{args.input_file}_skipped.txt")
     write_skipped(skipped, skipped_path)
+
+    excluded_path = Path(f"{args.input_file}_excluded.txt")
+    write_excluded(excluded, excluded_path)
 
 
 if __name__ == "__main__":
