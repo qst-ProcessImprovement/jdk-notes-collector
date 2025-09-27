@@ -17,7 +17,8 @@ https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-January/040828.html
 temurin版と差異がある可能性はあるが、サマリ作成には問題なしと判断した。
 
 maillistに記載されているのは、元課題のタイトル一覧と、いくつかの課題のピックアップ説明のみ。
-
+流石に情報不足だと思うので、IssueのDescriptionを追加で取得する。
+https://bugs.openjdk.org/browse/JDK-6942632
 
 ＝＝＝
 
