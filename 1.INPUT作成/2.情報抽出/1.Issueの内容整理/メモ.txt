@@ -6,3 +6,4 @@ temurinのサイトからIssue番号を取得。サイトから直接コピペ -
 list.txtを整形し、Descriptionを追加。
 https://bugs.openjdk.org/browse/JDK-8354893
 
+リリースVerごとにファイルを分割。
