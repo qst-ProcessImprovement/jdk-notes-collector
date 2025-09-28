@@ -23,7 +23,21 @@ class IssueFormatterError(Exception):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Format JDK issues listed in a release note file.")
-    parser.add_argument("input_file", type=Path, help="Release note file containing one JDK issue ID per line")
+    parser.add_argument(
+        "input_file",
+        type=Path,
+        help="Release note file containing one JDK issue ID per line",
+    )
+    parser.add_argument(
+        "--apply-excludes",
+        type=int,
+        choices=(0, 1),
+        default=1,
+        help=(
+            "除外ルールの適用有無を指定 (1=適用, 0=不適用)。"
+            "デフォルトは 1。"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -280,7 +294,7 @@ def main() -> None:
             skipped.append(issue_id)
             continue
         issue_data = load_issue_data(base_dir, issue_id)
-        reason = exclusion_reason(issue_data)
+        reason = exclusion_reason(issue_data) if args.apply_excludes == 1 else None
         if reason:
             excluded.append((issue_id, reason, issue_data.get("Title") or ""))
             continue
