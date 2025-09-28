@@ -1,4 +1,4 @@
-pptxを作成。
+notebooklm_summary.mdからpptxを作成。
 
 ```ChatGPT/Claude
 以下3つのJDKの修正内容からリリースノートのサマリ資料をpptx作成して下さい。
