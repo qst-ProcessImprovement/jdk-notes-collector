@@ -1,7 +1,5 @@
 1.INPUT作成\3.INPUT
-上記３ファイルをNotebookLMに登録し、サマリを作成。
-
-JDK 21.0.6-8の修正概要。一部除外済み
+上記３ファイルをNotebookLMに登録し、サマリを作る。
 https://notebooklm.google.com/notebook/a0d43f25-33c6-4bb9-80c1-64b4765d6e3e
 
 notebooklm_summary.md
