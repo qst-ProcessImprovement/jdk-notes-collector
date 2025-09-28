@@ -3,52 +3,23 @@ https://adoptium.net/temurin/release-notes?version=jdk-21.0.6+7
 https://adoptium.net/temurin/release-notes?version=jdk-21.0.7+6
 https://adoptium.net/temurin/release-notes?version=jdk-21.0.8+9
 
-oracle。こちらはサマリとして纏められている。
+oracle。こちらはサマリになっているっぽい。
 https://www.oracle.com/java/technologies/javase/21-0-6-relnotes.html
 https://www.oracle.com/java/technologies/javase/21-0-7-relnotes.html
 https://www.oracle.com/java/technologies/javase/21-0-8-relnotes.html
 
-OpenJDKのmaillist。Backportは含まれない。
+OpenJDKの開発mailinglist。Backportなし
 https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-January/040828.html   # jdk-21.0.6
 https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-April/043308.html     # jdk-21.0.7
 https://mail.openjdk.org/pipermail/jdk-updates-dev/2025-July/045617.html      # jdk-21.0.8
 
-今回はリリースノートのサマリ作成が目的なので、maillistをINPUTとして利用する。
-temurin版と差異がある可能性はあるが、サマリ作成には問題なしと判断した。
+今回は上記3つのリリースのサマリ作成が目的なので、maillistをINPUTにするのが良さそう。
+temurinはBackport含まれるので件数が多く、AIで概要まとめる際にノイズが多くなりそう。
 
-maillistに記載されているのは、元課題のタイトル一覧と、いくつかの課題のピックアップ説明のみ。
-流石に情報不足だと思うので、IssueのDescriptionを追加で取得する。
+＝＝＝
+
+mailinglistに記載されているのは、元課題のタイトルと、数件の課題のピックアップ説明のみ。
+流石に情報不足だと思うので、IssueのDescriptionを取得する。
 https://bugs.openjdk.org/browse/JDK-6942632
-
-＝＝＝
-
-上記のIssueの一覧から、今回の修正と関係のないIssueを除外
-
-```
-■背景
-案件開始時点のOpenJDKバージョンを使用するのが案件の前提条件となっている。
-非互換調査時点のバージョンは21.0.5、案件開始時点のバージョンは21.0.8のためその差分分の非互換を確認する必要がある。
-
-目的は既存アプリケーションにクリティカルな影響がでるかを調査することです。
-現在正常に動作している機能が、動かなくなるIssueがあるかを特定したい。
-まず、以下の情報は不要だと思っています。
-
-- ドキュメントまたはテストコードのみの変更。
-- 新機能の追加
-- 既存機能へのパラメータ追加（既存APIには動作変更なし）
-- Windows 11以外のプラットフォームに限定された修正。アプリケーションはWindows11のみ動作保証対象です
-- パフォーマンス改善対応。既存機能に影響がない
-- JVMの安定性およびクラッシュに関する修正。既存機能に影響のない、バグ改善は不要です。
-```
-
-上記で除外プログラムを作成
-
-＝＝＝
-
-集計結果。
-jdk_OpenJDK 21.0.6 Released.txt                # jdk番号
-jdk_OpenJDK 21.0.6 Released.txt_excluded.txt   # 除外ルールにHit
-jdk_OpenJDK 21.0.6 Released.txt_output.txt     # サマリ対象
-jdk_OpenJDK 21.0.6 Released.txt_skipped.txt    # 対象ページなし
 
 ＝＝＝
