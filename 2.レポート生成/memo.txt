@@ -1,6 +1,6 @@
 1.INPUT作成\3.INPUT
 上記３ファイルをNotebookLMに登録し、サマリを作成。
-
+https://notebooklm.google.com/notebook/6888edcf-aab0-47db-80fa-5eae8896eda9
 
 notebooklm_summary.md
 
