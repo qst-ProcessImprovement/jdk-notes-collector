@@ -12,18 +12,19 @@ from typing import Iterable, Sequence
 from xml.etree import ElementTree as ET
 
 # 取得対象のビルド番号（正準表現として b1〜b35 を列挙）。
-BUILD_NUMBERS: tuple[str, ...] = tuple(f"b{index}" for index in range(1, 36))
+BUILD_NUMBERS: tuple[str, ...] = tuple(f"b{index:02d}" for index in range(1, 36))
 FIX_VERSION = "21"
 
 # JIRA 検索結果 XML のリクエスト URL テンプレート。
+# https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+AND+%22resolved+in+build%22+%3D+{build_number}
 JIRA_SEARCH_URL_TEMPLATE = (
     "https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml"
     "?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+"
     "AND+%22resolved+in+build%22+%3D+{build_number}"
 )
 
-# 出力先ディレクトリ（実行時カレントディレクトリ直下）。
-OUTPUT_DIRECTORY = Path("output") / "resolved_in_build"
+# 出力先は実行時カレントディレクトリ配下。
+OUTPUT_DIRECTORY = Path(".")
 BUILD_SUBDIRECTORY = Path("builds")
 AGGREGATE_FILENAME = "all_builds.xml"
 
