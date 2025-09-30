@@ -107,7 +107,14 @@ def render_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
     widths = [max(len(str(cell)) for cell in column) for column in columns]
 
     def render_line(cells: Sequence[str]) -> str:
-        return " | ".join(str(cell).ljust(width) for cell, width in zip(cells, widths))
+        padded_cells = []
+        for index, (cell, width) in enumerate(zip(cells, widths)):
+            cell_str = str(cell)
+            if index == len(widths) - 1:
+                padded_cells.append(cell_str)
+            else:
+                padded_cells.append(cell_str.ljust(width))
+        return " | ".join(padded_cells).rstrip()
 
     lines = [render_line(headers)]
     lines.append("-+-".join("-" * width for width in widths))
@@ -163,17 +170,22 @@ def main() -> None:
     table_text, diff_count, matched_count, non_21_count = build_report()
 
     output_path = Path.cwd() / OUTPUT_FILENAME
+    description = (
+        "このファイルは OpenJDK・OracleJDK・Temurin の issue_ids.txt を比較し、三製品で一致しない JDK 番号と各 Fix Version/s を一覧化したものです。"
+    )
     output_lines = [
+        description,
+        "",
         table_text,
         "",
-        f"差分件数: {diff_count}",
+        f"プロダクト差分JDK件数: {diff_count}",
         f"全てのプロダクトで一致したJDK件数: {matched_count}",
         f"Fix Version/sが21以外のJDK件数: {non_21_count}",
         "",
     ]
     output_path.write_text("\n".join(output_lines), encoding="utf-8")
 
-    print(f"差分件数: {diff_count}")
+    print(f"プロダクト差分JDK件数: {diff_count}")
     print(f"出力ファイル: {output_path}")
 
 

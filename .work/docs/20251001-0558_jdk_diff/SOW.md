@@ -15,7 +15,7 @@ Phage2/run/mapping 配下の openjdk・oraclejdk・temurin の各 issue_ids.txt 
 - 自動テストの追加。
 
 ## 想定成果物
-- Phage2/run/mapping/jdk_diff_report.py: 差分テーブルに Fix Version/s 列を追加したテキストファイルを出力し、標準出力では件数情報とファイルパスを表示する Python モジュール。
+- Phage2/run/mapping/jdk_diff_report.py: 差分テーブルに Fix Version/s 列を追加したテキストファイルを出力し、冒頭に説明文を挿入したうえで、標準出力では件数情報とファイルパスを表示する Python モジュール。
 - 実行結果が記録されたテキストファイル（例: jdk_diff_report.txt）。
 
 ## 作業手順 (AT)
@@ -30,6 +30,6 @@ Phage2/run/mapping 配下の openjdk・oraclejdk・temurin の各 issue_ids.txt 
 - 新規モジュール追加のため既存シンボルへの影響なし。
 
 ## 検証計画
-- `python jdk_diff_report.py` を Phage2/run/mapping をカレントディレクトリとして実行し、生成されたファイルの内容が差分テーブルになっていること、および標準出力の差分件数・ファイルパス表示、およびファイル末尾に記録された差分件数・全てのプロダクトで一致したJDK件数・Fix Version/s が21以外である件数と突合することを検証する。
+- `python jdk_diff_report.py` を Phage2/run/mapping をカレントディレクトリとして実行し、生成されたファイルの内容が差分テーブルになっていること、および標準出力のプロダクト差分JDK件数・ファイルパス表示、およびファイル冒頭の説明文と末尾に記録されたプロダクト差分JDK件数・全てのプロダクトで一致したJDK件数・Fix Version/s が21以外である件数と突合することを検証する。
 - 追加でリポジトリルートから `python Phage2/run/mapping/jdk_diff_report.py` を実行し、同等の結果となることを確認する。
 
