@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pathlib
 import re
-from typing import Iterable, List
+from typing import Iterable, List, Tuple
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent
 INPUT_DIR = BASE_DIR / "OpenJDK"
@@ -26,32 +26,50 @@ def iter_input_files(directory: pathlib.Path) -> List[pathlib.Path]:
     return sorted(path for path in directory.iterdir() if path.is_file())
 
 
+def deduplicate_issue_ids(issue_ids: Iterable[str]) -> Tuple[List[str], List[str]]:
+    seen = set()
+    unique: List[str] = []
+    duplicates: List[str] = []
+    for issue_id in issue_ids:
+        if issue_id in seen:
+            duplicates.append(issue_id)
+        else:
+            seen.add(issue_id)
+            unique.append(issue_id)
+    return unique, duplicates
+
+
+def sort_issue_ids(issue_ids: Iterable[str]) -> List[str]:
+    return sorted(issue_ids, key=lambda issue_id: int(issue_id.split("-", 1)[1]))
+
+
+def format_duplicates(duplicates: Iterable[str]) -> str:
+    sorted_unique = sort_issue_ids({*duplicates})
+    return "\n".join(f"    {issue_id}" for issue_id in sorted_unique)
+
+
 def main() -> None:
     output_dir = pathlib.Path.cwd() / "issue_ids"
-    print(f"[INFO] Input directory: {INPUT_DIR}")
-    print(f"[INFO] Output directory: {output_dir}")
 
-    try:
-        input_files = iter_input_files(INPUT_DIR)
-    except FileNotFoundError as exc:
-        print(f"[ERROR] {exc}")
-        raise
-
+    input_files = iter_input_files(INPUT_DIR)
     if not input_files:
-        print("[WARN] No files found in input directory.")
         return
 
     output_dir.mkdir(parents=True, exist_ok=True)
     for markdown_path in input_files:
-        print(f"[INFO] Processing: {markdown_path}")
         markdown_text = markdown_path.read_text(encoding="utf-8")
         issue_ids = extract_jdk_issue_ids(markdown_text)
-        print(f"[INFO] Found {len(issue_ids)} issue IDs")
-        output_path = output_dir / markdown_path.name
-        write_issue_ids(issue_ids, output_path)
-        print(f"[INFO] Wrote: {output_path}")
 
-    print("[INFO] Extraction completed.")
+        unique_issue_ids, duplicates = deduplicate_issue_ids(issue_ids)
+        if duplicates:
+            duplicate_summary = format_duplicates(duplicates)
+            print(
+                f"[WARN] Duplicated IDs ({len(duplicates)}) in {markdown_path.name}:\n{duplicate_summary}"
+            )
+
+        sorted_issue_ids = sort_issue_ids(unique_issue_ids)
+        output_path = output_dir / markdown_path.name
+        write_issue_ids(sorted_issue_ids, output_path)
 
 
 if __name__ == "__main__":
