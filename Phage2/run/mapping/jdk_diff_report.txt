@@ -1,2660 +1,1007 @@
-JDK         | OpenJDK | OracleJDK | Temurin
-------------+---------+-----------+--------
-JDK-4200096 | N       | N         | Y      
-JDK-4512626 | N       | N         | Y      
-JDK-4737887 | N       | N         | Y      
-JDK-4825182 | N       | N         | Y      
-JDK-4842457 | N       | N         | Y      
-JDK-4912623 | N       | N         | Y      
-JDK-4934362 | N       | N         | Y      
-JDK-4958969 | N       | N         | Y      
-JDK-6176679 | N       | N         | Y      
-JDK-6187113 | N       | N         | Y      
-JDK-6218123 | N       | N         | Y      
-JDK-6241286 | N       | N         | Y      
-JDK-6245410 | N       | N         | Y      
-JDK-6257207 | N       | N         | Y      
-JDK-6355999 | N       | Y         | N      
-JDK-6381945 | N       | N         | Y      
-JDK-6441827 | N       | N         | Y      
-JDK-6453901 | N       | N         | Y      
-JDK-6513512 | N       | N         | Y      
-JDK-6557145 | N       | N         | Y      
-JDK-6595142 | N       | N         | Y      
-JDK-6603771 | N       | N         | Y      
-JDK-6714245 | N       | N         | Y      
-JDK-6753661 | N       | N         | Y      
-JDK-6788475 | N       | N         | Y      
-JDK-6817009 | N       | N         | Y      
-JDK-6914801 | N       | N         | Y      
-JDK-6928542 | Y       | N         | Y      
-JDK-6995195 | N       | N         | Y      
-JDK-7016187 | N       | N         | Y      
-JDK-7026262 | N       | N         | Y      
-JDK-7030853 | N       | N         | Y      
-JDK-7033677 | N       | N         | Y      
-JDK-7065228 | N       | N         | Y      
-JDK-7093322 | N       | N         | Y      
-JDK-7093691 | N       | N         | Y      
-JDK-7124527 | N       | N         | Y      
-JDK-7154070 | N       | N         | Y      
-JDK-7167356 | N       | N         | Y      
-JDK-7169951 | N       | N         | Y      
-JDK-7176515 | N       | N         | Y      
-JDK-8014021 | N       | N         | Y      
-JDK-8015831 | N       | N         | Y      
-JDK-8026369 | N       | N         | Y      
-JDK-8027682 | N       | N         | Y      
-JDK-8029301 | N       | N         | Y      
-JDK-8029370 | N       | N         | Y      
-JDK-8038146 | N       | N         | Y      
-JDK-8040793 | N       | N         | Y      
-JDK-8041447 | N       | N         | Y      
-JDK-8041676 | N       | N         | Y      
-JDK-8043179 | N       | N         | Y      
-JDK-8043251 | N       | N         | Y      
-JDK-8051725 | N       | N         | Y      
-JDK-8054022 | N       | N         | Y      
-JDK-8057586 | N       | N         | Y      
-JDK-8064931 | N       | N         | Y      
-JDK-8068824 | N       | N         | Y      
-JDK-8068925 | N       | N         | Y      
-JDK-8071693 | N       | N         | Y      
-JDK-8081474 | N       | N         | Y      
-JDK-8081507 | N       | N         | Y      
-JDK-8132995 | N       | N         | Y      
-JDK-8133773 | N       | N         | Y      
-JDK-8143900 | N       | N         | Y      
-JDK-8144891 | N       | N         | Y      
-JDK-8146132 | N       | N         | Y      
-JDK-8151413 | N       | N         | Y      
-JDK-8151531 | N       | N         | Y      
-JDK-8153837 | N       | N         | Y      
-JDK-8155191 | N       | N         | Y      
-JDK-8155259 | N       | N         | Y      
-JDK-8159023 | N       | N         | Y      
-JDK-8159337 | N       | N         | Y      
-JDK-8160404 | N       | N         | Y      
-JDK-8163229 | N       | N         | Y      
-JDK-8168469 | N       | N         | Y      
-JDK-8170945 | N       | N         | Y      
-JDK-8171156 | N       | N         | Y      
-JDK-8171221 | N       | N         | Y      
-JDK-8172106 | N       | N         | Y      
-JDK-8173709 | N       | N         | Y      
-JDK-8177352 | N       | N         | Y      
-JDK-8177418 | N       | N         | Y      
-JDK-8178806 | N       | N         | Y      
-JDK-8179502 | N       | N         | Y      
-JDK-8180266 | N       | N         | Y      
-JDK-8180387 | N       | N         | Y      
-JDK-8182621 | N       | N         | Y      
-JDK-8184444 | N       | N         | Y      
-JDK-8189338 | N       | N         | Y      
-JDK-8191565 | N       | N         | Y      
-JDK-8193547 | N       | N         | Y      
-JDK-8194048 | N       | N         | Y      
-JDK-8200610 | N       | N         | Y      
-JDK-8201516 | N       | N         | Y      
-JDK-8202110 | N       | N         | Y      
-JDK-8202931 | N       | N         | Y      
-JDK-8204550 | N       | N         | Y      
-JDK-8205129 | N       | N         | Y      
-JDK-8205592 | N       | N         | Y      
-JDK-8207017 | N       | N         | Y      
-JDK-8208077 | N       | N         | Y      
-JDK-8208470 | N       | N         | Y      
-JDK-8213562 | N       | N         | Y      
-JDK-8217496 | N       | N         | Y      
-JDK-8217920 | N       | N         | Y      
-JDK-8218474 | N       | N         | Y      
-JDK-8219083 | N       | N         | Y      
-JDK-8219810 | N       | N         | Y      
-JDK-8221580 | N       | N         | Y      
-JDK-8221633 | Y       | Y         | N      
-JDK-8221785 | N       | N         | Y      
-JDK-8224980 | N       | N         | Y      
-JDK-8225409 | N       | N         | Y      
-JDK-8225641 | N       | N         | Y      
-JDK-8227257 | N       | N         | Y      
-JDK-8228604 | N       | N         | Y      
-JDK-8229147 | N       | N         | Y      
-JDK-8231349 | N       | N         | Y      
-JDK-8233725 | N       | N         | Y      
-JDK-8235297 | N       | N         | Y      
-JDK-8238170 | N       | N         | Y      
-JDK-8240774 | N       | N         | Y      
-JDK-8241293 | N       | N         | Y      
-JDK-8241613 | N       | N         | Y      
-JDK-8244400 | N       | N         | Y      
-JDK-8245654 | N       | N         | Y      
-JDK-8249826 | N       | N         | Y      
-JDK-8250596 | N       | N         | Y      
-JDK-8252255 | N       | N         | Y      
-JDK-8255119 | N       | N         | Y      
-JDK-8255548 | N       | N         | Y      
-JDK-8256302 | N       | N         | Y      
-JDK-8257197 | N       | N         | Y      
-JDK-8257967 | N       | N         | Y      
-JDK-8258776 | N       | N         | Y      
-JDK-8260943 | N       | N         | Y      
-JDK-8262294 | N       | N         | Y      
-JDK-8262895 | N       | N         | Y      
-JDK-8262994 | N       | N         | Y      
-JDK-8264684 | N       | N         | Y      
-JDK-8265688 | N       | N         | Y      
-JDK-8266571 | N       | N         | Y      
-JDK-8267140 | N       | N         | Y      
-JDK-8267582 | N       | N         | Y      
-JDK-8267935 | N       | N         | Y      
-JDK-8269736 | N       | N         | Y      
-JDK-8269843 | N       | N         | Y      
-JDK-8270865 | N       | N         | Y      
-JDK-8272119 | N       | N         | Y      
-JDK-8272288 | N       | N         | Y      
-JDK-8272613 | N       | N         | Y      
-JDK-8273131 | Y       | Y         | N      
-JDK-8273986 | N       | N         | Y      
-JDK-8274166 | N       | N         | Y      
-JDK-8274264 | N       | N         | Y      
-JDK-8274400 | N       | N         | Y      
-JDK-8277074 | N       | N         | Y      
-JDK-8277501 | N       | N         | Y      
-JDK-8277573 | N       | N         | Y      
-JDK-8278268 | N       | N         | Y      
-JDK-8278326 | N       | N         | Y      
-JDK-8278349 | N       | N         | Y      
-JDK-8278411 | N       | N         | Y      
-JDK-8278583 | N       | N         | Y      
-JDK-8278965 | N       | N         | Y      
-JDK-8279216 | N       | N         | Y      
-JDK-8279619 | N       | N         | Y      
-JDK-8279993 | N       | N         | Y      
-JDK-8280031 | N       | N         | Y      
-JDK-8280113 | N       | N         | Y      
-JDK-8280126 | N       | N         | Y      
-JDK-8280419 | N       | N         | Y      
-JDK-8280982 | N       | N         | Y      
-JDK-8280993 | N       | N         | Y      
-JDK-8280994 | N       | N         | Y      
-JDK-8281103 | N       | N         | Y      
-JDK-8281149 | N       | N         | Y      
-JDK-8281213 | N       | N         | Y      
-JDK-8281715 | N       | N         | Y      
-JDK-8281941 | N       | N         | Y      
-JDK-8281946 | N       | N         | Y      
-JDK-8282201 | N       | N         | Y      
-JDK-8282232 | N       | N         | Y      
-JDK-8282319 | N       | N         | Y      
-JDK-8282379 | N       | N         | Y      
-JDK-8282383 | N       | N         | Y      
-JDK-8282384 | N       | N         | Y      
-JDK-8282651 | N       | N         | Y      
-JDK-8282664 | N       | N         | Y      
-JDK-8283203 | N       | N         | Y      
-JDK-8283400 | N       | N         | Y      
-JDK-8283404 | N       | N         | Y      
-JDK-8283740 | N       | N         | Y      
-JDK-8284047 | N       | N         | Y      
-JDK-8284236 | N       | N         | Y      
-JDK-8284825 | N       | N         | Y      
-JDK-8284871 | N       | N         | Y      
-JDK-8285416 | N       | N         | Y      
-JDK-8285850 | N       | N         | Y      
-JDK-8285932 | N       | N         | Y      
-JDK-8286070 | N       | N         | Y      
-JDK-8286311 | N       | N         | Y      
-JDK-8286470 | N       | N         | Y      
-JDK-8286496 | N       | N         | Y      
-JDK-8286503 | N       | N         | Y      
-JDK-8286510 | N       | N         | Y      
-JDK-8286581 | N       | N         | Y      
-JDK-8286597 | N       | N         | Y      
-JDK-8286775 | N       | N         | Y      
-JDK-8286781 | N       | N         | Y      
-JDK-8286876 | N       | N         | Y      
-JDK-8286907 | N       | N         | Y      
-JDK-8287087 | N       | N         | Y      
-JDK-8287134 | N       | N         | Y      
-JDK-8287404 | N       | N         | Y      
-JDK-8287411 | N       | N         | Y      
-JDK-8287699 | N       | N         | Y      
-JDK-8287812 | N       | N         | Y      
-JDK-8287834 | N       | N         | Y      
-JDK-8287873 | N       | N         | Y      
-JDK-8287885 | N       | N         | Y      
-JDK-8287925 | N       | N         | Y      
-JDK-8288050 | N       | N         | Y      
-JDK-8288109 | N       | N         | Y      
-JDK-8288158 | Y       | Y         | N      
-JDK-8288204 | N       | N         | Y      
-JDK-8288287 | N       | N         | Y      
-JDK-8288415 | N       | N         | Y      
-JDK-8288436 | N       | N         | Y      
-JDK-8288516 | N       | N         | Y      
-JDK-8288619 | N       | N         | Y      
-JDK-8288730 | N       | N         | Y      
-JDK-8288783 | N       | N         | Y      
-JDK-8288912 | N       | N         | Y      
-JDK-8289077 | N       | N         | Y      
-JDK-8289547 | N       | N         | Y      
-JDK-8289735 | N       | N         | Y      
-JDK-8289748 | N       | N         | Y      
-JDK-8289765 | N       | N         | Y      
-JDK-8290200 | N       | N         | Y      
-JDK-8290499 | N       | N         | Y      
-JDK-8290822 | N       | N         | Y      
-JDK-8290899 | N       | N         | Y      
-JDK-8290918 | N       | N         | Y      
-JDK-8290919 | N       | N         | Y      
-JDK-8291154 | N       | N         | Y      
-JDK-8291302 | N       | N         | Y      
-JDK-8291550 | N       | N         | Y      
-JDK-8291555 | N       | N         | Y      
-JDK-8291569 | N       | N         | Y      
-JDK-8291598 | N       | N         | Y      
-JDK-8291735 | N       | N         | Y      
-JDK-8291966 | N       | N         | Y      
-JDK-8292059 | N       | N         | Y      
-JDK-8292157 | N       | N         | Y      
-JDK-8292170 | N       | N         | Y      
-JDK-8292206 | N       | N         | Y      
-JDK-8292265 | N       | N         | Y      
-JDK-8292269 | N       | N         | Y      
-JDK-8292275 | N       | N         | Y      
-JDK-8292289 | N       | N         | Y      
-JDK-8292583 | N       | N         | Y      
-JDK-8292588 | N       | N         | Y      
-JDK-8292635 | N       | N         | Y      
-JDK-8292674 | N       | N         | Y      
-JDK-8292741 | N       | N         | Y      
-JDK-8292818 | N       | N         | Y      
-JDK-8292914 | N       | N         | Y      
-JDK-8293117 | N       | N         | Y      
-JDK-8293198 | N       | N         | Y      
-JDK-8293292 | N       | N         | Y      
-JDK-8293313 | N       | N         | Y      
-JDK-8293324 | N       | N         | Y      
-JDK-8293410 | N       | N         | Y      
-JDK-8293519 | N       | N         | Y      
-JDK-8293547 | N       | N         | Y      
-JDK-8293554 | N       | N         | Y      
-JDK-8293598 | N       | N         | Y      
-JDK-8293667 | N       | N         | Y      
-JDK-8293717 | N       | N         | Y      
-JDK-8293734 | N       | N         | Y      
-JDK-8293742 | N       | N         | Y      
-JDK-8293786 | N       | N         | Y      
-JDK-8293824 | N       | N         | Y      
-JDK-8293841 | N       | N         | Y      
-JDK-8293862 | N       | N         | Y      
-JDK-8294066 | N       | N         | Y      
-JDK-8294137 | N       | N         | Y      
-JDK-8294194 | N       | N         | Y      
-JDK-8294266 | N       | N         | Y      
-JDK-8294323 | N       | N         | Y      
-JDK-8294402 | N       | N         | Y      
-JDK-8294403 | N       | N         | Y      
-JDK-8294474 | N       | N         | Y      
-JDK-8294484 | N       | N         | Y      
-JDK-8294526 | N       | N         | Y      
-JDK-8294527 | N       | N         | Y      
-JDK-8294677 | N       | N         | Y      
-JDK-8294680 | N       | N         | Y      
-JDK-8294693 | N       | N         | Y      
-JDK-8294715 | N       | N         | Y      
-JDK-8294744 | N       | N         | Y      
-JDK-8294806 | N       | N         | Y      
-JDK-8294902 | N       | N         | Y      
-JDK-8294959 | N       | N         | Y      
-JDK-8294962 | N       | N         | Y      
-JDK-8294966 | N       | N         | Y      
-JDK-8294971 | N       | N         | Y      
-JDK-8294972 | N       | N         | Y      
-JDK-8294974 | N       | N         | Y      
-JDK-8294982 | N       | N         | Y      
-JDK-8294983 | N       | N         | Y      
-JDK-8295019 | N       | N         | Y      
-JDK-8295071 | N       | N         | Y      
-JDK-8295087 | N       | N         | Y      
-JDK-8295304 | N       | N         | Y      
-JDK-8295344 | N       | N         | Y      
-JDK-8295406 | N       | N         | Y      
-JDK-8295425 | N       | N         | Y      
-JDK-8295486 | N       | N         | Y      
-JDK-8295661 | N       | N         | Y      
-JDK-8295687 | N       | N         | Y      
-JDK-8295723 | N       | N         | Y      
-JDK-8295737 | N       | N         | Y      
-JDK-8295857 | N       | N         | Y      
-JDK-8295859 | N       | N         | Y      
-JDK-8295884 | N       | N         | Y      
-JDK-8295944 | N       | N         | Y      
-JDK-8295951 | N       | N         | Y      
-JDK-8295974 | N       | N         | Y      
-JDK-8295976 | N       | N         | Y      
-JDK-8295979 | N       | N         | Y      
-JDK-8296010 | N       | N         | Y      
-JDK-8296149 | N       | N         | Y      
-JDK-8296150 | N       | N         | Y      
-JDK-8296151 | N       | N         | Y      
-JDK-8296153 | N       | N         | Y      
-JDK-8296158 | N       | N         | Y      
-JDK-8296248 | N       | N         | Y      
-JDK-8296275 | N       | N         | Y      
-JDK-8296318 | N       | N         | Y      
-JDK-8296322 | N       | N         | Y      
-JDK-8296343 | N       | N         | Y      
-JDK-8296344 | N       | N         | Y      
-JDK-8296374 | N       | N         | Y      
-JDK-8296389 | N       | N         | Y      
-JDK-8296400 | N       | N         | Y      
-JDK-8296401 | N       | N         | Y      
-JDK-8296403 | N       | N         | Y      
-JDK-8296410 | N       | N         | Y      
-JDK-8296411 | N       | N         | Y      
-JDK-8296412 | N       | N         | Y      
-JDK-8296420 | N       | N         | Y      
-JDK-8296454 | N       | N         | Y      
-JDK-8296469 | N       | N         | Y      
-JDK-8296478 | N       | N         | Y      
-JDK-8296565 | N       | N         | Y      
-JDK-8296581 | N       | N         | Y      
-JDK-8296610 | N       | N         | Y      
-JDK-8296646 | N       | N         | Y      
-JDK-8296656 | N       | N         | Y      
-JDK-8296661 | N       | N         | Y      
-JDK-8296676 | N       | N         | Y      
-JDK-8296684 | N       | N         | Y      
-JDK-8296692 | N       | N         | Y      
-JDK-8296789 | N       | N         | Y      
-JDK-8296812 | N       | N         | Y      
-JDK-8296832 | N       | N         | Y      
-JDK-8296920 | N       | N         | Y      
-JDK-8296934 | N       | N         | Y      
-JDK-8296935 | N       | N         | Y      
-JDK-8296955 | N       | N         | Y      
-JDK-8296999 | N       | N         | Y      
-JDK-8297031 | N       | N         | Y      
-JDK-8297036 | N       | N         | Y      
-JDK-8297092 | N       | N         | Y      
-JDK-8297158 | N       | N         | Y      
-JDK-8297235 | N       | N         | Y      
-JDK-8297286 | N       | N         | Y      
-JDK-8297288 | N       | N         | Y      
-JDK-8297292 | N       | N         | Y      
-JDK-8297295 | N       | N         | Y      
-JDK-8297296 | N       | N         | Y      
-JDK-8297302 | N       | N         | Y      
-JDK-8297305 | N       | N         | Y      
-JDK-8297306 | N       | N         | Y      
-JDK-8297371 | N       | N         | Y      
-JDK-8297437 | N       | N         | Y      
-JDK-8297454 | N       | N         | Y      
-JDK-8297487 | N       | N         | Y      
-JDK-8297505 | N       | N         | Y      
-JDK-8297539 | N       | N         | Y      
-JDK-8297572 | N       | N         | Y      
-JDK-8297582 | N       | N         | Y      
-JDK-8297587 | N       | N         | Y      
-JDK-8297605 | N       | N         | Y      
-JDK-8297611 | N       | N         | Y      
-JDK-8297632 | N       | N         | Y      
-JDK-8297638 | N       | N         | Y      
-JDK-8297639 | N       | N         | Y      
-JDK-8297657 | N       | N         | Y      
-JDK-8297679 | N       | N         | Y      
-JDK-8297682 | N       | N         | Y      
-JDK-8297724 | N       | N         | Y      
-JDK-8297730 | N       | N         | Y      
-JDK-8297753 | N       | N         | Y      
-JDK-8297757 | N       | N         | Y      
-JDK-8297778 | N       | N         | Y      
-JDK-8297791 | N       | N         | Y      
-JDK-8297798 | N       | N         | Y      
-JDK-8297801 | N       | N         | Y      
-JDK-8297822 | N       | N         | Y      
-JDK-8297851 | N       | N         | Y      
-JDK-8297856 | N       | N         | Y      
-JDK-8297874 | N       | N         | Y      
-JDK-8297877 | N       | N         | Y      
-JDK-8297878 | N       | N         | Y      
-JDK-8297885 | N       | N         | Y      
-JDK-8297887 | N       | N         | Y      
-JDK-8297912 | N       | N         | Y      
-JDK-8297914 | N       | N         | Y      
-JDK-8297923 | N       | N         | Y      
-JDK-8297933 | N       | N         | Y      
-JDK-8297936 | N       | N         | Y      
-JDK-8297955 | N       | N         | Y      
-JDK-8297960 | N       | N         | Y      
-JDK-8297972 | N       | N         | Y      
-JDK-8297977 | N       | N         | Y      
-JDK-8297979 | N       | N         | Y      
-JDK-8297988 | N       | N         | Y      
-JDK-8298038 | N       | N         | Y      
-JDK-8298047 | N       | N         | Y      
-JDK-8298048 | N       | N         | Y      
-JDK-8298050 | N       | N         | Y      
-JDK-8298059 | N       | N         | Y      
-JDK-8298061 | N       | N         | Y      
-JDK-8298065 | N       | N         | Y      
-JDK-8298066 | N       | N         | Y      
-JDK-8298073 | N       | N         | Y      
-JDK-8298081 | N       | N         | Y      
-JDK-8298083 | N       | N         | Y      
-JDK-8298084 | N       | N         | Y      
-JDK-8298087 | N       | N         | Y      
-JDK-8298088 | N       | N         | Y      
-JDK-8298090 | N       | N         | Y      
-JDK-8298093 | N       | N         | Y      
-JDK-8298118 | N       | N         | Y      
-JDK-8298126 | N       | N         | Y      
-JDK-8298127 | N       | N         | Y      
-JDK-8298128 | N       | N         | Y      
-JDK-8298133 | N       | N         | Y      
-JDK-8298138 | N       | N         | Y      
-JDK-8298144 | N       | N         | Y      
-JDK-8298162 | N       | N         | Y      
-JDK-8298176 | N       | N         | Y      
-JDK-8298187 | N       | N         | Y      
-JDK-8298189 | N       | N         | Y      
-JDK-8298190 | N       | N         | Y      
-JDK-8298215 | N       | N         | Y      
-JDK-8298217 | N       | N         | Y      
-JDK-8298225 | N       | N         | Y      
-JDK-8298240 | N       | N         | Y      
-JDK-8298241 | N       | N         | Y      
-JDK-8298244 | N       | N         | Y      
-JDK-8298249 | N       | N         | Y      
-JDK-8298264 | N       | N         | Y      
-JDK-8298271 | N       | N         | Y      
-JDK-8298276 | N       | N         | Y      
-JDK-8298277 | N       | N         | Y      
-JDK-8298278 | N       | N         | Y      
-JDK-8298281 | N       | N         | Y      
-JDK-8298293 | N       | N         | Y      
-JDK-8298296 | N       | N         | Y      
-JDK-8298298 | N       | N         | Y      
-JDK-8298310 | N       | N         | Y      
-JDK-8298320 | N       | N         | Y      
-JDK-8298321 | N       | N         | Y      
-JDK-8298324 | N       | N         | Y      
-JDK-8298340 | N       | N         | Y      
-JDK-8298343 | N       | N         | Y      
-JDK-8298345 | N       | N         | Y      
-JDK-8298353 | N       | N         | Y      
-JDK-8298371 | N       | N         | Y      
-JDK-8298376 | N       | N         | Y      
-JDK-8298377 | N       | N         | Y      
-JDK-8298380 | N       | N         | Y      
-JDK-8298381 | N       | N         | Y      
-JDK-8298400 | N       | N         | Y      
-JDK-8298402 | N       | N         | Y      
-JDK-8298413 | N       | N         | Y      
-JDK-8298414 | N       | N         | Y      
-JDK-8298416 | N       | N         | Y      
-JDK-8298417 | N       | N         | Y      
-JDK-8298419 | N       | N         | Y      
-JDK-8298424 | N       | N         | Y      
-JDK-8298425 | N       | N         | Y      
-JDK-8298445 | N       | N         | Y      
-JDK-8298447 | N       | N         | Y      
-JDK-8298448 | N       | N         | Y      
-JDK-8298449 | N       | N         | Y      
-JDK-8298455 | N       | N         | Y      
-JDK-8298457 | N       | N         | Y      
-JDK-8298459 | N       | N         | Y      
-JDK-8298463 | N       | N         | Y      
-JDK-8298468 | N       | N         | Y      
-JDK-8298469 | N       | N         | Y      
-JDK-8298470 | N       | N         | Y      
-JDK-8298471 | N       | N         | Y      
-JDK-8298472 | N       | N         | Y      
-JDK-8298475 | N       | N         | Y      
-JDK-8298478 | N       | N         | Y      
-JDK-8298480 | N       | N         | Y      
-JDK-8298482 | N       | N         | Y      
-JDK-8298488 | N       | N         | Y      
-JDK-8298498 | N       | N         | Y      
-JDK-8298513 | N       | N         | Y      
-JDK-8298514 | N       | N         | Y      
-JDK-8298520 | N       | N         | Y      
-JDK-8298521 | N       | N         | Y      
-JDK-8298524 | N       | N         | Y      
-JDK-8298525 | N       | N         | Y      
-JDK-8298526 | N       | N         | Y      
-JDK-8298527 | N       | N         | Y      
-JDK-8298567 | N       | N         | Y      
-JDK-8298568 | N       | N         | Y      
-JDK-8298576 | N       | N         | Y      
-JDK-8298588 | N       | N         | Y      
-JDK-8298589 | N       | N         | Y      
-JDK-8298590 | N       | N         | Y      
-JDK-8298592 | N       | N         | Y      
-JDK-8298596 | N       | N         | Y      
-JDK-8298601 | N       | N         | Y      
-JDK-8298610 | N       | N         | Y      
-JDK-8298612 | N       | N         | Y      
-JDK-8298618 | N       | N         | Y      
-JDK-8298619 | N       | N         | Y      
-JDK-8298632 | N       | N         | Y      
-JDK-8298636 | N       | N         | Y      
-JDK-8298639 | N       | N         | Y      
-JDK-8298642 | N       | N         | Y      
-JDK-8298643 | N       | N         | Y      
-JDK-8298644 | N       | N         | Y      
-JDK-8298645 | N       | N         | Y      
-JDK-8298649 | N       | N         | Y      
-JDK-8298651 | N       | N         | Y      
-JDK-8298652 | N       | N         | Y      
-JDK-8298667 | N       | N         | Y      
-JDK-8298692 | N       | N         | Y      
-JDK-8298699 | N       | N         | Y      
-JDK-8298700 | N       | N         | Y      
-JDK-8298701 | N       | N         | Y      
-JDK-8298709 | N       | N         | Y      
-JDK-8298710 | N       | N         | Y      
-JDK-8298720 | N       | N         | Y      
-JDK-8298725 | N       | N         | Y      
-JDK-8298726 | N       | N         | Y      
-JDK-8298727 | N       | N         | Y      
-JDK-8298730 | N       | N         | Y      
-JDK-8298735 | N       | N         | Y      
-JDK-8298736 | N       | N         | Y      
-JDK-8298784 | N       | N         | Y      
-JDK-8298785 | N       | N         | Y      
-JDK-8298794 | N       | N         | Y      
-JDK-8298797 | N       | N         | Y      
-JDK-8298808 | N       | N         | Y      
-JDK-8298809 | N       | N         | Y      
-JDK-8298813 | N       | N         | Y      
-JDK-8298824 | N       | N         | Y      
-JDK-8298848 | N       | N         | Y      
-JDK-8298852 | N       | N         | Y      
-JDK-8298853 | N       | N         | Y      
-JDK-8298859 | N       | N         | Y      
-JDK-8298865 | N       | N         | Y      
-JDK-8298867 | N       | N         | Y      
-JDK-8298868 | N       | N         | Y      
-JDK-8298869 | N       | N         | Y      
-JDK-8298872 | N       | N         | Y      
-JDK-8298873 | N       | N         | Y      
-JDK-8298874 | N       | N         | Y      
-JDK-8298875 | N       | N         | Y      
-JDK-8298876 | N       | N         | Y      
-JDK-8298880 | N       | N         | Y      
-JDK-8298887 | N       | N         | Y      
-JDK-8298888 | N       | N         | Y      
-JDK-8298889 | N       | N         | Y      
-JDK-8298891 | N       | N         | Y      
-JDK-8298892 | N       | N         | Y      
-JDK-8298893 | N       | N         | Y      
-JDK-8298894 | N       | N         | Y      
-JDK-8298905 | N       | N         | Y      
-JDK-8298907 | N       | N         | Y      
-JDK-8298908 | N       | N         | Y      
-JDK-8298913 | N       | N         | Y      
-JDK-8298919 | N       | N         | Y      
-JDK-8298921 | N       | N         | Y      
-JDK-8298931 | N       | N         | Y      
-JDK-8298935 | N       | N         | Y      
-JDK-8298939 | N       | N         | Y      
-JDK-8298943 | N       | N         | Y      
-JDK-8298947 | N       | N         | Y      
-JDK-8298952 | N       | N         | Y      
-JDK-8298966 | N       | N         | Y      
-JDK-8298968 | N       | N         | Y      
-JDK-8298970 | N       | N         | Y      
-JDK-8298971 | N       | N         | Y      
-JDK-8298974 | N       | N         | Y      
-JDK-8298976 | N       | N         | Y      
-JDK-8298977 | N       | N         | Y      
-JDK-8298978 | N       | N         | Y      
-JDK-8298979 | N       | N         | Y      
-JDK-8298987 | N       | N         | Y      
-JDK-8298989 | N       | N         | Y      
-JDK-8298990 | N       | N         | Y      
-JDK-8298993 | N       | N         | Y      
-JDK-8298995 | N       | N         | Y      
-JDK-8299015 | N       | N         | Y      
-JDK-8299018 | N       | N         | Y      
-JDK-8299022 | N       | N         | Y      
-JDK-8299025 | N       | N         | Y      
-JDK-8299030 | N       | N         | Y      
-JDK-8299031 | N       | N         | Y      
-JDK-8299032 | N       | N         | Y      
-JDK-8299034 | N       | N         | Y      
-JDK-8299038 | N       | N         | Y      
-JDK-8299043 | N       | N         | Y      
-JDK-8299044 | N       | N         | Y      
-JDK-8299045 | N       | N         | Y      
-JDK-8299061 | N       | N         | Y      
-JDK-8299072 | N       | N         | Y      
-JDK-8299074 | N       | N         | Y      
-JDK-8299075 | N       | N         | Y      
-JDK-8299077 | N       | N         | Y      
-JDK-8299079 | N       | N         | Y      
-JDK-8299088 | N       | N         | Y      
-JDK-8299089 | N       | N         | Y      
-JDK-8299090 | N       | N         | Y      
-JDK-8299123 | N       | N         | Y      
-JDK-8299125 | N       | N         | Y      
-JDK-8299127 | N       | N         | Y      
-JDK-8299128 | N       | N         | Y      
-JDK-8299129 | N       | N         | Y      
-JDK-8299146 | N       | N         | Y      
-JDK-8299147 | N       | N         | Y      
-JDK-8299155 | N       | N         | Y      
-JDK-8299156 | N       | N         | Y      
-JDK-8299158 | N       | N         | Y      
-JDK-8299162 | N       | N         | Y      
-JDK-8299168 | N       | N         | Y      
-JDK-8299172 | N       | N         | Y      
-JDK-8299179 | N       | N         | Y      
-JDK-8299183 | N       | N         | Y      
-JDK-8299187 | N       | N         | Y      
-JDK-8299191 | N       | N         | Y      
-JDK-8299193 | N       | N         | Y      
-JDK-8299194 | N       | N         | Y      
-JDK-8299199 | N       | N         | Y      
-JDK-8299207 | N       | N         | Y      
-JDK-8299213 | N       | N         | Y      
-JDK-8299224 | N       | N         | Y      
-JDK-8299227 | N       | N         | Y      
-JDK-8299229 | N       | N         | Y      
-JDK-8299230 | N       | N         | Y      
-JDK-8299234 | N       | N         | Y      
-JDK-8299235 | N       | N         | Y      
-JDK-8299237 | N       | N         | Y      
-JDK-8299240 | N       | N         | Y      
-JDK-8299241 | N       | N         | Y      
-JDK-8299254 | N       | N         | Y      
-JDK-8299255 | N       | N         | Y      
-JDK-8299259 | N       | N         | Y      
-JDK-8299260 | N       | N         | Y      
-JDK-8299261 | N       | N         | Y      
-JDK-8299274 | N       | N         | Y      
-JDK-8299275 | N       | N         | Y      
-JDK-8299278 | N       | N         | Y      
-JDK-8299292 | N       | N         | Y      
-JDK-8299296 | N       | N         | Y      
-JDK-8299306 | N       | N         | Y      
-JDK-8299309 | N       | N         | Y      
-JDK-8299312 | N       | N         | Y      
-JDK-8299323 | N       | N         | Y      
-JDK-8299324 | N       | N         | Y      
-JDK-8299325 | N       | N         | Y      
-JDK-8299326 | N       | N         | Y      
-JDK-8299327 | N       | N         | Y      
-JDK-8299329 | N       | N         | Y      
-JDK-8299330 | N       | N         | Y      
-JDK-8299333 | N       | N         | Y      
-JDK-8299336 | N       | N         | Y      
-JDK-8299337 | N       | N         | Y      
-JDK-8299338 | N       | N         | Y      
-JDK-8299340 | N       | N         | Y      
-JDK-8299343 | N       | N         | Y      
-JDK-8299375 | N       | N         | Y      
-JDK-8299378 | N       | N         | Y      
-JDK-8299387 | N       | N         | Y      
-JDK-8299388 | N       | N         | Y      
-JDK-8299395 | N       | N         | Y      
-JDK-8299396 | N       | N         | Y      
-JDK-8299397 | N       | N         | Y      
-JDK-8299398 | N       | N         | Y      
-JDK-8299399 | N       | N         | Y      
-JDK-8299402 | N       | N         | Y      
-JDK-8299412 | N       | N         | Y      
-JDK-8299414 | N       | N         | Y      
-JDK-8299424 | N       | N         | Y      
-JDK-8299425 | N       | N         | Y      
-JDK-8299430 | N       | N         | Y      
-JDK-8299437 | N       | N         | Y      
-JDK-8299439 | N       | N         | Y      
-JDK-8299441 | N       | N         | Y      
-JDK-8299444 | N       | N         | Y      
-JDK-8299470 | N       | N         | Y      
-JDK-8299475 | N       | N         | Y      
-JDK-8299476 | N       | N         | Y      
-JDK-8299479 | N       | N         | Y      
-JDK-8299481 | N       | N         | Y      
-JDK-8299482 | N       | N         | Y      
-JDK-8299483 | N       | N         | Y      
-JDK-8299494 | N       | N         | Y      
-JDK-8299497 | N       | N         | Y      
-JDK-8299498 | N       | N         | Y      
-JDK-8299499 | N       | N         | Y      
-JDK-8299500 | N       | N         | Y      
-JDK-8299501 | N       | N         | Y      
-JDK-8299502 | N       | N         | Y      
-JDK-8299505 | N       | N         | Y      
-JDK-8299518 | N       | N         | Y      
-JDK-8299520 | N       | N         | Y      
-JDK-8299522 | N       | N         | Y      
-JDK-8299525 | N       | N         | Y      
-JDK-8299528 | N       | N         | Y      
-JDK-8299544 | N       | N         | Y      
-JDK-8299546 | N       | N         | Y      
-JDK-8299553 | N       | N         | Y      
-JDK-8299561 | N       | N         | Y      
-JDK-8299563 | N       | N         | Y      
-JDK-8299570 | N       | N         | Y      
-JDK-8299571 | N       | N         | Y      
-JDK-8299576 | N       | N         | Y      
-JDK-8299592 | N       | N         | Y      
-JDK-8299593 | N       | N         | Y      
-JDK-8299600 | N       | N         | Y      
-JDK-8299608 | N       | N         | Y      
-JDK-8299617 | N       | N         | Y      
-JDK-8299635 | N       | N         | Y      
-JDK-8299657 | N       | N         | Y      
-JDK-8299665 | N       | N         | Y      
-JDK-8299671 | N       | N         | Y      
-JDK-8299672 | N       | N         | Y      
-JDK-8299673 | N       | N         | Y      
-JDK-8299677 | N       | N         | Y      
-JDK-8299683 | N       | N         | Y      
-JDK-8299684 | N       | N         | Y      
-JDK-8299689 | N       | N         | Y      
-JDK-8299692 | N       | N         | Y      
-JDK-8299693 | N       | N         | Y      
-JDK-8299699 | N       | N         | Y      
-JDK-8299701 | N       | N         | Y      
-JDK-8299705 | N       | N         | Y      
-JDK-8299713 | N       | N         | Y      
-JDK-8299715 | N       | N         | Y      
-JDK-8299718 | N       | N         | Y      
-JDK-8299721 | N       | N         | Y      
-JDK-8299726 | N       | N         | Y      
-JDK-8299733 | N       | N         | Y      
-JDK-8299739 | N       | N         | Y      
-JDK-8299740 | N       | N         | Y      
-JDK-8299746 | N       | N         | Y      
-JDK-8299748 | N       | N         | Y      
-JDK-8299757 | N       | N         | Y      
-JDK-8299760 | N       | N         | Y      
-JDK-8299772 | N       | N         | Y      
-JDK-8299774 | N       | N         | Y      
-JDK-8299777 | N       | N         | Y      
-JDK-8299779 | N       | N         | Y      
-JDK-8299789 | N       | N         | Y      
-JDK-8299795 | N       | N         | Y      
-JDK-8299807 | N       | N         | Y      
-JDK-8299817 | N       | N         | Y      
-JDK-8299827 | N       | N         | Y      
-JDK-8299829 | N       | N         | Y      
-JDK-8299835 | N       | N         | Y      
-JDK-8299836 | N       | N         | Y      
-JDK-8299844 | N       | N         | Y      
-JDK-8299845 | N       | N         | Y      
-JDK-8299847 | N       | N         | Y      
-JDK-8299849 | N       | N         | Y      
-JDK-8299853 | N       | N         | Y      
-JDK-8299858 | N       | N         | Y      
-JDK-8299862 | N       | N         | Y      
-JDK-8299863 | N       | N         | Y      
-JDK-8299864 | N       | N         | Y      
-JDK-8299865 | N       | N         | Y      
-JDK-8299879 | N       | N         | Y      
-JDK-8299891 | N       | N         | Y      
-JDK-8299896 | N       | N         | Y      
-JDK-8299918 | N       | N         | Y      
-JDK-8299953 | N       | N         | Y      
-JDK-8299956 | N       | N         | Y      
-JDK-8299957 | N       | N         | Y      
-JDK-8299959 | N       | N         | Y      
-JDK-8299960 | N       | N         | Y      
-JDK-8299962 | N       | N         | Y      
-JDK-8299970 | N       | N         | Y      
-JDK-8299971 | N       | N         | Y      
-JDK-8299972 | N       | N         | Y      
-JDK-8299973 | N       | N         | Y      
-JDK-8299974 | N       | N         | Y      
-JDK-8299975 | N       | N         | Y      
-JDK-8299976 | N       | N         | Y      
-JDK-8299978 | N       | N         | Y      
-JDK-8299982 | N       | N         | Y      
-JDK-8299994 | N       | N         | Y      
-JDK-8300001 | N       | N         | Y      
-JDK-8300002 | N       | N         | Y      
-JDK-8300010 | N       | N         | Y      
-JDK-8300011 | N       | N         | Y      
-JDK-8300012 | N       | N         | Y      
-JDK-8300024 | N       | N         | Y      
-JDK-8300032 | N       | N         | Y      
-JDK-8300038 | N       | N         | Y      
-JDK-8300040 | N       | N         | Y      
-JDK-8300042 | N       | N         | Y      
-JDK-8300052 | N       | N         | Y      
-JDK-8300053 | N       | N         | Y      
-JDK-8300054 | N       | N         | Y      
-JDK-8300055 | N       | N         | Y      
-JDK-8300068 | N       | N         | Y      
-JDK-8300069 | N       | N         | Y      
-JDK-8300077 | N       | N         | Y      
-JDK-8300079 | N       | N         | Y      
-JDK-8300081 | N       | N         | Y      
-JDK-8300084 | N       | N         | Y      
-JDK-8300086 | N       | N         | Y      
-JDK-8300087 | N       | N         | Y      
-JDK-8300093 | N       | N         | Y      
-JDK-8300098 | N       | N         | Y      
-JDK-8300099 | N       | N         | Y      
-JDK-8300109 | N       | N         | Y      
-JDK-8300110 | N       | N         | Y      
-JDK-8300111 | N       | N         | Y      
-JDK-8300113 | N       | N         | Y      
-JDK-8300117 | N       | N         | Y      
-JDK-8300119 | N       | N         | Y      
-JDK-8300120 | N       | N         | Y      
-JDK-8300124 | N       | N         | Y      
-JDK-8300125 | N       | N         | Y      
-JDK-8300127 | N       | N         | Y      
-JDK-8300133 | N       | N         | Y      
-JDK-8300139 | N       | N         | Y      
-JDK-8300140 | N       | N         | Y      
-JDK-8300141 | N       | N         | Y      
-JDK-8300144 | N       | N         | Y      
-JDK-8300147 | N       | N         | Y      
-JDK-8300166 | N       | N         | Y      
-JDK-8300167 | N       | N         | Y      
-JDK-8300168 | N       | N         | Y      
-JDK-8300169 | N       | N         | Y      
-JDK-8300172 | N       | N         | Y      
-JDK-8300176 | N       | N         | Y      
-JDK-8300177 | N       | N         | Y      
-JDK-8300184 | N       | N         | Y      
-JDK-8300195 | N       | N         | Y      
-JDK-8300197 | N       | N         | Y      
-JDK-8300204 | N       | N         | Y      
-JDK-8300205 | N       | N         | Y      
-JDK-8300207 | N       | N         | Y      
-JDK-8300208 | N       | N         | Y      
-JDK-8300222 | N       | N         | Y      
-JDK-8300227 | N       | N         | Y      
-JDK-8300228 | N       | N         | Y      
-JDK-8300235 | N       | N         | Y      
-JDK-8300236 | N       | N         | Y      
-JDK-8300237 | N       | N         | Y      
-JDK-8300240 | N       | N         | Y      
-JDK-8300241 | N       | N         | Y      
-JDK-8300242 | N       | N         | Y      
-JDK-8300243 | N       | N         | Y      
-JDK-8300244 | N       | N         | Y      
-JDK-8300245 | N       | N         | Y      
-JDK-8300247 | N       | N         | Y      
-JDK-8300253 | N       | N         | Y      
-JDK-8300254 | N       | N         | Y      
-JDK-8300255 | N       | N         | Y      
-JDK-8300256 | N       | N         | Y      
-JDK-8300257 | N       | N         | Y      
-JDK-8300258 | N       | N         | Y      
-JDK-8300259 | N       | N         | Y      
-JDK-8300260 | N       | N         | Y      
-JDK-8300264 | N       | N         | Y      
-JDK-8300265 | N       | N         | Y      
-JDK-8300266 | N       | N         | Y      
-JDK-8300267 | N       | N         | Y      
-JDK-8300268 | N       | N         | Y      
-JDK-8300269 | N       | N         | Y      
-JDK-8300272 | N       | N         | Y      
-JDK-8300273 | N       | N         | Y      
-JDK-8300275 | N       | N         | Y      
-JDK-8300279 | N       | N         | Y      
-JDK-8300285 | N       | N         | Y      
-JDK-8300295 | N       | N         | Y      
-JDK-8300307 | N       | N         | Y      
-JDK-8300308 | N       | N         | Y      
-JDK-8300317 | N       | N         | Y      
-JDK-8300321 | N       | N         | Y      
-JDK-8300356 | N       | N         | Y      
-JDK-8300357 | N       | N         | Y      
-JDK-8300399 | N       | N         | Y      
-JDK-8300400 | N       | N         | Y      
-JDK-8300405 | N       | N         | Y      
-JDK-8300416 | N       | N         | Y      
-JDK-8300447 | N       | N         | Y      
-JDK-8300463 | N       | N         | Y      
-JDK-8300488 | N       | N         | Y      
-JDK-8300489 | N       | N         | Y      
-JDK-8300490 | N       | N         | Y      
-JDK-8300491 | N       | N         | Y      
-JDK-8300493 | N       | N         | Y      
-JDK-8300517 | N       | N         | Y      
-JDK-8300526 | N       | N         | Y      
-JDK-8300540 | N       | N         | Y      
-JDK-8300543 | N       | N         | Y      
-JDK-8300545 | N       | N         | Y      
-JDK-8300549 | N       | N         | Y      
-JDK-8300550 | N       | N         | Y      
-JDK-8300575 | N       | N         | Y      
-JDK-8300584 | N       | N         | Y      
-JDK-8300586 | N       | N         | Y      
-JDK-8300587 | N       | N         | Y      
-JDK-8300589 | N       | N         | Y      
-JDK-8300590 | N       | N         | Y      
-JDK-8300591 | N       | N         | Y      
-JDK-8300592 | N       | N         | Y      
-JDK-8300594 | N       | N         | Y      
-JDK-8300595 | N       | N         | Y      
-JDK-8300596 | N       | N         | Y      
-JDK-8300623 | N       | N         | Y      
-JDK-8300638 | N       | N         | Y      
-JDK-8300644 | N       | N         | Y      
-JDK-8300645 | N       | N         | Y      
-JDK-8300647 | N       | N         | Y      
-JDK-8300651 | N       | N         | Y      
-JDK-8300652 | N       | N         | Y      
-JDK-8300653 | N       | N         | Y      
-JDK-8300654 | N       | N         | Y      
-JDK-8300657 | N       | N         | Y      
-JDK-8300658 | N       | N         | Y      
-JDK-8300659 | N       | N         | Y      
-JDK-8300682 | N       | N         | Y      
-JDK-8300692 | N       | N         | Y      
-JDK-8300693 | N       | N         | Y      
-JDK-8300696 | N       | N         | Y      
-JDK-8300698 | N       | N         | Y      
-JDK-8300706 | N       | N         | Y      
-JDK-8300719 | N       | N         | Y      
-JDK-8300721 | N       | N         | Y      
-JDK-8300725 | N       | N         | Y      
-JDK-8300727 | N       | N         | Y      
-JDK-8300731 | N       | N         | Y      
-JDK-8300769 | N       | N         | Y      
-JDK-8300783 | N       | N         | Y      
-JDK-8300784 | N       | N         | Y      
-JDK-8300792 | N       | N         | Y      
-JDK-8300794 | N       | N         | Y      
-JDK-8300805 | N       | N         | Y      
-JDK-8300806 | N       | N         | Y      
-JDK-8300808 | N       | N         | Y      
-JDK-8300810 | N       | N         | Y      
-JDK-8300811 | N       | N         | Y      
-JDK-8300817 | N       | N         | Y      
-JDK-8300818 | N       | N         | Y      
-JDK-8300821 | N       | N         | Y      
-JDK-8300823 | N       | N         | Y      
-JDK-8300828 | N       | N         | Y      
-JDK-8300829 | N       | N         | Y      
-JDK-8300830 | N       | N         | Y      
-JDK-8300857 | N       | N         | Y      
-JDK-8300862 | N       | N         | Y      
-JDK-8300863 | N       | N         | Y      
-JDK-8300864 | N       | N         | Y      
-JDK-8300865 | N       | N         | Y      
-JDK-8300866 | N       | N         | Y      
-JDK-8300867 | N       | N         | Y      
-JDK-8300868 | N       | N         | Y      
-JDK-8300869 | N       | N         | Y      
-JDK-8300891 | N       | N         | Y      
-JDK-8300909 | N       | N         | Y      
-JDK-8300910 | N       | N         | Y      
-JDK-8300912 | N       | N         | Y      
-JDK-8300913 | N       | N         | Y      
-JDK-8300914 | N       | N         | Y      
-JDK-8300915 | N       | N         | Y      
-JDK-8300916 | N       | N         | Y      
-JDK-8300924 | N       | N         | Y      
-JDK-8300926 | N       | N         | Y      
-JDK-8300929 | N       | N         | Y      
-JDK-8300939 | N       | N         | Y      
-JDK-8300942 | N       | N         | Y      
-JDK-8300946 | N       | N         | Y      
-JDK-8300953 | N       | N         | Y      
-JDK-8300958 | N       | N         | Y      
-JDK-8300962 | N       | N         | Y      
-JDK-8300968 | N       | N         | Y      
-JDK-8300977 | N       | N         | Y      
-JDK-8300979 | N       | N         | Y      
-JDK-8300981 | N       | N         | Y      
-JDK-8300997 | N       | N         | Y      
-JDK-8301004 | N       | N         | Y      
-JDK-8301005 | N       | N         | Y      
-JDK-8301012 | N       | N         | Y      
-JDK-8301025 | N       | N         | Y      
-JDK-8301033 | N       | N         | Y      
-JDK-8301036 | N       | N         | Y      
-JDK-8301047 | N       | N         | Y      
-JDK-8301050 | N       | N         | Y      
-JDK-8301063 | N       | N         | Y      
-JDK-8301065 | N       | N         | Y      
-JDK-8301067 | N       | N         | Y      
-JDK-8301068 | N       | N         | Y      
-JDK-8301069 | N       | N         | Y      
-JDK-8301070 | N       | N         | Y      
-JDK-8301072 | N       | N         | Y      
-JDK-8301074 | N       | N         | Y      
-JDK-8301076 | N       | N         | Y      
-JDK-8301077 | N       | N         | Y      
-JDK-8301086 | N       | N         | Y      
-JDK-8301088 | N       | N         | Y      
-JDK-8301092 | N       | N         | Y      
-JDK-8301093 | N       | N         | Y      
-JDK-8301095 | N       | N         | Y      
-JDK-8301097 | N       | N         | Y      
-JDK-8301098 | N       | N         | Y      
-JDK-8301106 | N       | N         | Y      
-JDK-8301116 | N       | N         | Y      
-JDK-8301117 | N       | N         | Y      
-JDK-8301119 | N       | N         | Y      
-JDK-8301120 | N       | N         | Y      
-JDK-8301123 | N       | N         | Y      
-JDK-8301129 | N       | N         | Y      
-JDK-8301132 | N       | N         | Y      
-JDK-8301133 | N       | N         | Y      
-JDK-8301148 | N       | N         | Y      
-JDK-8301149 | N       | N         | Y      
-JDK-8301153 | N       | N         | Y      
-JDK-8301154 | N       | N         | Y      
-JDK-8301163 | N       | N         | Y      
-JDK-8301164 | N       | N         | Y      
-JDK-8301167 | N       | N         | Y      
-JDK-8301169 | N       | N         | Y      
-JDK-8301170 | N       | N         | Y      
-JDK-8301171 | N       | N         | Y      
-JDK-8301178 | N       | N         | Y      
-JDK-8301179 | N       | N         | Y      
-JDK-8301180 | N       | N         | Y      
-JDK-8301187 | N       | N         | Y      
-JDK-8301189 | N       | N         | Y      
-JDK-8301190 | N       | N         | Y      
-JDK-8301200 | N       | N         | Y      
-JDK-8301201 | N       | N         | Y      
-JDK-8301202 | N       | N         | Y      
-JDK-8301205 | N       | N         | Y      
-JDK-8301206 | N       | N         | Y      
-JDK-8301207 | N       | N         | Y      
-JDK-8301214 | N       | N         | Y      
-JDK-8301217 | N       | N         | Y      
-JDK-8301222 | N       | N         | Y      
-JDK-8301223 | N       | N         | Y      
-JDK-8301224 | N       | N         | Y      
-JDK-8301225 | N       | N         | Y      
-JDK-8301226 | N       | N         | Y      
-JDK-8301229 | N       | N         | Y      
-JDK-8301243 | N       | N         | Y      
-JDK-8301244 | N       | N         | Y      
-JDK-8301248 | N       | N         | Y      
-JDK-8301254 | N       | N         | Y      
-JDK-8301255 | N       | N         | Y      
-JDK-8301260 | N       | N         | Y      
-JDK-8301267 | N       | N         | Y      
-JDK-8301269 | N       | N         | Y      
-JDK-8301274 | N       | N         | Y      
-JDK-8301279 | N       | N         | Y      
-JDK-8301299 | N       | N         | Y      
-JDK-8301306 | N       | N         | Y      
-JDK-8301308 | N       | N         | Y      
-JDK-8301313 | N       | N         | Y      
-JDK-8301326 | N       | N         | Y      
-JDK-8301337 | N       | N         | Y      
-JDK-8301338 | N       | N         | Y      
-JDK-8301340 | N       | N         | Y      
-JDK-8301342 | N       | N         | Y      
-JDK-8301344 | N       | N         | Y      
-JDK-8301346 | N       | N         | Y      
-JDK-8301367 | N       | N         | Y      
-JDK-8301371 | N       | N         | Y      
-JDK-8301374 | N       | N         | Y      
-JDK-8301377 | N       | N         | Y      
-JDK-8301378 | N       | N         | Y      
-JDK-8301380 | N       | N         | Y      
-JDK-8301381 | N       | N         | Y      
-JDK-8301392 | N       | N         | Y      
-JDK-8301393 | N       | N         | Y      
-JDK-8301396 | N       | N         | Y      
-JDK-8301402 | N       | N         | Y      
-JDK-8301443 | N       | N         | Y      
-JDK-8301444 | N       | N         | Y      
-JDK-8301446 | N       | N         | Y      
-JDK-8301447 | N       | N         | Y      
-JDK-8301448 | N       | N         | Y      
-JDK-8301455 | N       | N         | Y      
-JDK-8301459 | N       | N         | Y      
-JDK-8301460 | N       | N         | Y      
-JDK-8301462 | N       | N         | Y      
-JDK-8301463 | N       | N         | Y      
-JDK-8301465 | N       | N         | Y      
-JDK-8301477 | N       | N         | Y      
-JDK-8301478 | N       | N         | Y      
-JDK-8301479 | N       | N         | Y      
-JDK-8301480 | N       | N         | Y      
-JDK-8301481 | N       | N         | Y      
-JDK-8301491 | N       | N         | Y      
-JDK-8301493 | N       | N         | Y      
-JDK-8301494 | N       | N         | Y      
-JDK-8301495 | N       | N         | Y      
-JDK-8301496 | N       | N         | Y      
-JDK-8301497 | N       | N         | Y      
-JDK-8301498 | N       | N         | Y      
-JDK-8301499 | N       | N         | Y      
-JDK-8301500 | N       | N         | Y      
-JDK-8301501 | N       | N         | Y      
-JDK-8301502 | N       | N         | Y      
-JDK-8301503 | N       | N         | Y      
-JDK-8301504 | N       | N         | Y      
-JDK-8301505 | N       | N         | Y      
-JDK-8301506 | N       | N         | Y      
-JDK-8301507 | N       | N         | Y      
-JDK-8301508 | N       | N         | Y      
-JDK-8301509 | N       | N         | Y      
-JDK-8301511 | N       | N         | Y      
-JDK-8301512 | N       | N         | Y      
-JDK-8301513 | N       | N         | Y      
-JDK-8301549 | N       | N         | Y      
-JDK-8301553 | N       | N         | Y      
-JDK-8301555 | N       | N         | Y      
-JDK-8301564 | N       | N         | Y      
-JDK-8301567 | N       | N         | Y      
-JDK-8301570 | N       | N         | Y      
-JDK-8301578 | N       | N         | Y      
-JDK-8301580 | N       | N         | Y      
-JDK-8301599 | N       | N         | Y      
-JDK-8301612 | N       | N         | Y      
-JDK-8301616 | N       | N         | Y      
-JDK-8301618 | N       | N         | Y      
-JDK-8301622 | N       | N         | Y      
-JDK-8301627 | N       | N         | Y      
-JDK-8301628 | N       | N         | Y      
-JDK-8301630 | N       | N         | Y      
-JDK-8301636 | N       | N         | Y      
-JDK-8301637 | N       | N         | Y      
-JDK-8301638 | N       | N         | Y      
-JDK-8301641 | N       | N         | Y      
-JDK-8301644 | N       | N         | Y      
-JDK-8301655 | N       | N         | Y      
-JDK-8301659 | N       | N         | Y      
-JDK-8301661 | N       | N         | Y      
-JDK-8301684 | N       | N         | Y      
-JDK-8301697 | N       | N         | Y      
-JDK-8301700 | N       | N         | Y      
-JDK-8301701 | N       | N         | Y      
-JDK-8301703 | N       | N         | Y      
-JDK-8301704 | N       | N         | Y      
-JDK-8301715 | N       | N         | Y      
-JDK-8301717 | N       | N         | Y      
-JDK-8301721 | N       | N         | Y      
-JDK-8301736 | N       | N         | Y      
-JDK-8301737 | N       | N         | Y      
-JDK-8301739 | N       | N         | Y      
-JDK-8301740 | N       | N         | Y      
-JDK-8301743 | N       | N         | Y      
-JDK-8301744 | N       | N         | Y      
-JDK-8301749 | N       | N         | Y      
-JDK-8301752 | N       | N         | Y      
-JDK-8301753 | N       | N         | Y      
-JDK-8301756 | N       | N         | Y      
-JDK-8301760 | N       | N         | Y      
-JDK-8301767 | N       | N         | Y      
-JDK-8301768 | N       | N         | Y      
-JDK-8301787 | N       | N         | Y      
-JDK-8301788 | N       | N         | Y      
-JDK-8301793 | N       | N         | Y      
-JDK-8301798 | N       | N         | Y      
-JDK-8301810 | N       | N         | Y      
-JDK-8301813 | N       | N         | Y      
-JDK-8301818 | N       | N         | Y      
-JDK-8301819 | N       | N         | Y      
-JDK-8301822 | N       | N         | Y      
-JDK-8301828 | N       | N         | Y      
-JDK-8301833 | N       | N         | Y      
-JDK-8301838 | N       | N         | Y      
-JDK-8301842 | N       | N         | Y      
-JDK-8301843 | N       | N         | Y      
-JDK-8301852 | N       | N         | Y      
-JDK-8301853 | N       | N         | Y      
-JDK-8301858 | N       | N         | Y      
-JDK-8301862 | N       | N         | Y      
-JDK-8301863 | N       | N         | Y      
-JDK-8301873 | N       | N         | Y      
-JDK-8301874 | N       | N         | Y      
-JDK-8301876 | N       | N         | Y      
-JDK-8301942 | N       | N         | Y      
-JDK-8301958 | N       | N         | Y      
-JDK-8301959 | N       | N         | Y      
-JDK-8301964 | N       | N         | Y      
-JDK-8301988 | N       | N         | Y      
-JDK-8301989 | N       | N         | Y      
-JDK-8301992 | N       | N         | Y      
-JDK-8301995 | N       | N         | Y      
-JDK-8301998 | N       | N         | Y      
-JDK-8302004 | N       | N         | Y      
-JDK-8302026 | N       | N         | Y      
-JDK-8302027 | N       | N         | Y      
-JDK-8302028 | N       | N         | Y      
-JDK-8302040 | N       | N         | Y      
-JDK-8302043 | N       | N         | Y      
-JDK-8302047 | N       | N         | Y      
-JDK-8302066 | N       | N         | Y      
-JDK-8302067 | N       | N         | Y      
-JDK-8302068 | N       | N         | Y      
-JDK-8302069 | N       | N         | Y      
-JDK-8302070 | N       | N         | Y      
-JDK-8302072 | N       | N         | Y      
-JDK-8302102 | N       | N         | Y      
-JDK-8302108 | N       | N         | Y      
-JDK-8302109 | N       | N         | Y      
-JDK-8302113 | N       | N         | Y      
-JDK-8302114 | N       | N         | Y      
-JDK-8302117 | N       | N         | Y      
-JDK-8302120 | N       | N         | Y      
-JDK-8302121 | N       | N         | Y      
-JDK-8302122 | N       | N         | Y      
-JDK-8302124 | N       | N         | Y      
-JDK-8302125 | N       | N         | Y      
-JDK-8302127 | N       | N         | Y      
-JDK-8302129 | N       | N         | Y      
-JDK-8302144 | N       | N         | Y      
-JDK-8302145 | N       | N         | Y      
-JDK-8302146 | N       | N         | Y      
-JDK-8302147 | N       | N         | Y      
-JDK-8302149 | N       | N         | Y      
-JDK-8302150 | N       | N         | Y      
-JDK-8302151 | N       | N         | Y      
-JDK-8302152 | N       | N         | Y      
-JDK-8302155 | N       | N         | Y      
-JDK-8302158 | N       | N         | Y      
-JDK-8302161 | N       | N         | Y      
-JDK-8302163 | N       | N         | Y      
-JDK-8302167 | N       | N         | Y      
-JDK-8302172 | N       | N         | Y      
-JDK-8302173 | N       | N         | Y      
-JDK-8302182 | N       | N         | Y      
-JDK-8302189 | N       | N         | Y      
-JDK-8302191 | N       | N         | Y      
-JDK-8302202 | N       | N         | Y      
-JDK-8302203 | N       | N         | Y      
-JDK-8302206 | N       | N         | Y      
-JDK-8302214 | N       | N         | Y      
-JDK-8302215 | N       | N         | Y      
-JDK-8302218 | N       | N         | Y      
-JDK-8302225 | N       | N         | Y      
-JDK-8302226 | N       | N         | Y      
-JDK-8302260 | N       | N         | Y      
-JDK-8302262 | N       | N         | Y      
-JDK-8302268 | N       | N         | Y      
-JDK-8302289 | N       | N         | Y      
-JDK-8302312 | N       | N         | Y      
-JDK-8302315 | N       | N         | Y      
-JDK-8302320 | N       | N         | Y      
-JDK-8302323 | N       | N         | Y      
-JDK-8302324 | N       | N         | Y      
-JDK-8302325 | N       | N         | Y      
-JDK-8302328 | N       | N         | Y      
-JDK-8302335 | N       | N         | Y      
-JDK-8302337 | N       | N         | Y      
-JDK-8302344 | N       | N         | Y      
-JDK-8302354 | N       | N         | Y      
-JDK-8302358 | N       | N         | Y      
-JDK-8302360 | N       | N         | Y      
-JDK-8302368 | N       | N         | Y      
-JDK-8302369 | N       | N         | Y      
-JDK-8302385 | N       | N         | Y      
-JDK-8302452 | N       | N         | Y      
-JDK-8302453 | N       | N         | Y      
-JDK-8302455 | N       | N         | Y      
-JDK-8302462 | N       | N         | Y      
-JDK-8302464 | N       | N         | Y      
-JDK-8302475 | N       | N         | Y      
-JDK-8302483 | N       | N         | Y      
-JDK-8302491 | N       | N         | Y      
-JDK-8302495 | N       | N         | Y      
-JDK-8302496 | N       | N         | Y      
-JDK-8302508 | N       | N         | Y      
-JDK-8302512 | N       | N         | Y      
-JDK-8302513 | N       | N         | Y      
-JDK-8302514 | N       | N         | Y      
-JDK-8302516 | N       | N         | Y      
-JDK-8302518 | N       | N         | Y      
-JDK-8302525 | N       | N         | Y      
-JDK-8302558 | N       | N         | Y      
-JDK-8302590 | N       | N         | Y      
-JDK-8302594 | N       | N         | Y      
-JDK-8302595 | N       | N         | Y      
-JDK-8302599 | N       | N         | Y      
-JDK-8302603 | N       | N         | Y      
-JDK-8302607 | N       | N         | Y      
-JDK-8302615 | N       | N         | Y      
-JDK-8302623 | N       | N         | Y      
-JDK-8302625 | N       | N         | Y      
-JDK-8302635 | N       | N         | Y      
-JDK-8302644 | N       | N         | Y      
-JDK-8302652 | N       | N         | Y      
-JDK-8302656 | N       | N         | Y      
-JDK-8302659 | N       | N         | Y      
-JDK-8302661 | N       | N         | Y      
-JDK-8302664 | N       | N         | Y      
-JDK-8302666 | N       | N         | Y      
-JDK-8302667 | N       | N         | Y      
-JDK-8302668 | N       | N         | Y      
-JDK-8302670 | N       | N         | Y      
-JDK-8302671 | N       | N         | Y      
-JDK-8302673 | N       | N         | Y      
-JDK-8302674 | N       | N         | Y      
-JDK-8302677 | N       | N         | Y      
-JDK-8302678 | N       | N         | Y      
-JDK-8302681 | N       | N         | Y      
-JDK-8302685 | N       | N         | Y      
-JDK-8302696 | N       | N         | Y      
-JDK-8302709 | N       | N         | Y      
-JDK-8302732 | N       | N         | Y      
-JDK-8302734 | N       | N         | Y      
-JDK-8302736 | N       | N         | Y      
-JDK-8302738 | N       | N         | Y      
-JDK-8302741 | N       | N         | Y      
-JDK-8302760 | N       | N         | Y      
-JDK-8302776 | N       | N         | Y      
-JDK-8302777 | N       | N         | Y      
-JDK-8302779 | N       | N         | Y      
-JDK-8302780 | N       | N         | Y      
-JDK-8302781 | N       | N         | Y      
-JDK-8302783 | N       | N         | Y      
-JDK-8302789 | N       | N         | Y      
-JDK-8302791 | N       | N         | Y      
-JDK-8302795 | N       | N         | Y      
-JDK-8302798 | N       | N         | Y      
-JDK-8302799 | N       | N         | Y      
-JDK-8302800 | N       | N         | Y      
-JDK-8302801 | N       | N         | Y      
-JDK-8302810 | N       | N         | Y      
-JDK-8302811 | N       | N         | Y      
-JDK-8302812 | N       | N         | Y      
-JDK-8302814 | N       | N         | Y      
-JDK-8302815 | N       | N         | Y      
-JDK-8302819 | N       | N         | Y      
-JDK-8302820 | N       | N         | Y      
-JDK-8302821 | N       | N         | Y      
-JDK-8302822 | N       | N         | Y      
-JDK-8302830 | N       | N         | Y      
-JDK-8302831 | N       | N         | Y      
-JDK-8302837 | N       | N         | Y      
-JDK-8302838 | N       | N         | Y      
-JDK-8302845 | N       | N         | Y      
-JDK-8302846 | N       | N         | Y      
-JDK-8302849 | N       | N         | Y      
-JDK-8302856 | N       | N         | Y      
-JDK-8302858 | N       | N         | Y      
-JDK-8302863 | N       | N         | Y      
-JDK-8302864 | N       | N         | Y      
-JDK-8302867 | N       | N         | Y      
-JDK-8302868 | N       | N         | Y      
-JDK-8302870 | N       | N         | Y      
-JDK-8302871 | N       | N         | Y      
-JDK-8302873 | N       | N         | Y      
-JDK-8302877 | N       | N         | Y      
-JDK-8302878 | N       | N         | Y      
-JDK-8302879 | N       | N         | Y      
-JDK-8302880 | N       | N         | Y      
-JDK-8302882 | N       | N         | Y      
-JDK-8302883 | N       | N         | Y      
-JDK-8302886 | N       | N         | Y      
-JDK-8302888 | N       | N         | Y      
-JDK-8302899 | N       | N         | Y      
-JDK-8302905 | N       | N         | Y      
-JDK-8302906 | N       | N         | Y      
-JDK-8302907 | N       | N         | Y      
-JDK-8302908 | N       | N         | Y      
-JDK-8302927 | N       | N         | Y      
-JDK-8302975 | N       | N         | Y      
-JDK-8302976 | N       | N         | Y      
-JDK-8302977 | N       | N         | Y      
-JDK-8302979 | N       | N         | Y      
-JDK-8302981 | N       | N         | Y      
-JDK-8302983 | N       | N         | Y      
-JDK-8303001 | N       | N         | Y      
-JDK-8303002 | N       | N         | Y      
-JDK-8303010 | N       | N         | Y      
-JDK-8303013 | N       | N         | Y      
-JDK-8303016 | N       | N         | Y      
-JDK-8303018 | N       | N         | Y      
-JDK-8303020 | N       | N         | Y      
-JDK-8303022 | N       | N         | Y      
-JDK-8303024 | N       | N         | Y      
-JDK-8303033 | N       | N         | Y      
-JDK-8303039 | N       | N         | Y      
-JDK-8303040 | N       | N         | Y      
-JDK-8303045 | N       | N         | Y      
-JDK-8303047 | N       | N         | Y      
-JDK-8303051 | N       | N         | Y      
-JDK-8303054 | N       | N         | Y      
-JDK-8303067 | N       | N         | Y      
-JDK-8303068 | N       | N         | Y      
-JDK-8303069 | N       | N         | Y      
-JDK-8303070 | N       | N         | Y      
-JDK-8303071 | N       | N         | Y      
-JDK-8303072 | N       | N         | Y      
-JDK-8303073 | N       | N         | Y      
-JDK-8303077 | N       | N         | Y      
-JDK-8303078 | N       | N         | Y      
-JDK-8303081 | N       | N         | Y      
-JDK-8303082 | N       | N         | Y      
-JDK-8303083 | N       | N         | Y      
-JDK-8303084 | N       | N         | Y      
-JDK-8303085 | N       | N         | Y      
-JDK-8303089 | N       | N         | Y      
-JDK-8303102 | N       | N         | Y      
-JDK-8303105 | N       | N         | Y      
-JDK-8303123 | N       | N         | Y      
-JDK-8303125 | N       | N         | Y      
-JDK-8303130 | N       | N         | Y      
-JDK-8303131 | N       | N         | Y      
-JDK-8303133 | N       | N         | Y      
-JDK-8303135 | N       | N         | Y      
-JDK-8303136 | N       | N         | Y      
-JDK-8303147 | N       | N         | Y      
-JDK-8303150 | N       | N         | Y      
-JDK-8303151 | N       | N         | Y      
-JDK-8303153 | N       | N         | Y      
-JDK-8303154 | N       | N         | Y      
-JDK-8303161 | N       | N         | Y      
-JDK-8303169 | N       | N         | Y      
-JDK-8303175 | N       | N         | Y      
-JDK-8303181 | N       | N         | Y      
-JDK-8303183 | N       | N         | Y      
-JDK-8303186 | N       | N         | Y      
-JDK-8303198 | N       | N         | Y      
-JDK-8303208 | N       | N         | Y      
-JDK-8303210 | N       | N         | Y      
-JDK-8303213 | N       | N         | Y      
-JDK-8303214 | N       | N         | Y      
-JDK-8303215 | N       | N         | Y      
-JDK-8303216 | N       | N         | Y      
-JDK-8303227 | N       | N         | Y      
-JDK-8303229 | N       | N         | Y      
-JDK-8303232 | N       | N         | Y      
-JDK-8303238 | N       | N         | Y      
-JDK-8303242 | N       | N         | Y      
-JDK-8303244 | N       | N         | Y      
-JDK-8303249 | N       | N         | Y      
-JDK-8303250 | N       | N         | Y      
-JDK-8303252 | N       | N         | Y      
-JDK-8303253 | N       | N         | Y      
-JDK-8303260 | N       | N         | Y      
-JDK-8303261 | N       | N         | Y      
-JDK-8303264 | N       | N         | Y      
-JDK-8303266 | N       | N         | Y      
-JDK-8303267 | N       | N         | Y      
-JDK-8303275 | N       | N         | Y      
-JDK-8303276 | N       | N         | Y      
-JDK-8303278 | N       | N         | Y      
-JDK-8303334 | N       | N         | Y      
-JDK-8303344 | N       | N         | Y      
-JDK-8303349 | N       | N         | Y      
-JDK-8303350 | N       | N         | Y      
-JDK-8303351 | N       | N         | Y      
-JDK-8303354 | N       | N         | Y      
-JDK-8303355 | N       | N         | Y      
-JDK-8303357 | N       | N         | Y      
-JDK-8303362 | N       | N         | Y      
-JDK-8303376 | N       | N         | Y      
-JDK-8303392 | N       | N         | Y      
-JDK-8303401 | N       | N         | Y      
-JDK-8303405 | N       | N         | Y      
-JDK-8303409 | N       | N         | Y      
-JDK-8303410 | N       | N         | Y      
-JDK-8303411 | N       | N         | Y      
-JDK-8303412 | N       | N         | Y      
-JDK-8303413 | N       | N         | Y      
-JDK-8303415 | N       | N         | Y      
-JDK-8303417 | N       | N         | Y      
-JDK-8303418 | N       | N         | Y      
-JDK-8303421 | N       | N         | Y      
-JDK-8303422 | N       | N         | Y      
-JDK-8303431 | N       | N         | Y      
-JDK-8303440 | N       | N         | Y      
-JDK-8303442 | N       | N         | Y      
-JDK-8303443 | N       | N         | Y      
-JDK-8303457 | N       | N         | Y      
-JDK-8303465 | N       | N         | Y      
-JDK-8303466 | N       | N         | Y      
-JDK-8303467 | N       | N         | Y      
-JDK-8303472 | N       | N         | Y      
-JDK-8303473 | N       | N         | Y      
-JDK-8303475 | N       | N         | Y      
-JDK-8303476 | N       | N         | Y      
-JDK-8303480 | N       | N         | Y      
-JDK-8303481 | N       | N         | Y      
-JDK-8303482 | N       | N         | Y      
-JDK-8303485 | N       | N         | Y      
-JDK-8303486 | N       | N         | Y      
-JDK-8303489 | N       | N         | Y      
-JDK-8303495 | N       | N         | Y      
-JDK-8303497 | N       | N         | Y      
-JDK-8303499 | N       | N         | Y      
-JDK-8303508 | N       | N         | Y      
-JDK-8303509 | N       | N         | Y      
-JDK-8303511 | N       | N         | Y      
-JDK-8303512 | N       | N         | Y      
-JDK-8303513 | N       | N         | Y      
-JDK-8303516 | N       | N         | Y      
-JDK-8303523 | N       | N         | Y      
-JDK-8303524 | N       | N         | Y      
-JDK-8303526 | N       | N         | Y      
-JDK-8303527 | N       | N         | Y      
-JDK-8303530 | N       | N         | Y      
-JDK-8303534 | N       | N         | Y      
-JDK-8303539 | N       | N         | Y      
-JDK-8303540 | N       | N         | Y      
-JDK-8303548 | N       | N         | Y      
-JDK-8303562 | N       | N         | Y      
-JDK-8303563 | N       | N         | Y      
-JDK-8303564 | N       | N         | Y      
-JDK-8303575 | N       | N         | Y      
-JDK-8303576 | N       | N         | Y      
-JDK-8303577 | N       | N         | Y      
-JDK-8303582 | N       | N         | Y      
-JDK-8303587 | N       | N         | Y      
-JDK-8303588 | N       | N         | Y      
-JDK-8303604 | N       | N         | Y      
-JDK-8303605 | N       | N         | Y      
-JDK-8303606 | N       | N         | Y      
-JDK-8303607 | N       | N         | Y      
-JDK-8303609 | N       | N         | Y      
-JDK-8303617 | N       | N         | Y      
-JDK-8303621 | N       | N         | Y      
-JDK-8303622 | N       | N         | Y      
-JDK-8303623 | N       | N         | Y      
-JDK-8303624 | N       | N         | Y      
-JDK-8303630 | N       | N         | Y      
-JDK-8303646 | N       | N         | Y      
-JDK-8303648 | N       | N         | Y      
-JDK-8303669 | N       | N         | Y      
-JDK-8303674 | N       | N         | Y      
-JDK-8303678 | N       | N         | Y      
-JDK-8303681 | N       | N         | Y      
-JDK-8303682 | N       | N         | Y      
-JDK-8303684 | N       | N         | Y      
-JDK-8303690 | N       | N         | Y      
-JDK-8303691 | N       | N         | Y      
-JDK-8303697 | N       | N         | Y      
-JDK-8303702 | N       | N         | Y      
-JDK-8303703 | N       | N         | Y      
-JDK-8303705 | N       | N         | Y      
-JDK-8303742 | N       | N         | Y      
-JDK-8303749 | N       | N         | Y      
-JDK-8303760 | N       | N         | Y      
-JDK-8303784 | N       | N         | Y      
-JDK-8303798 | N       | N         | Y      
-JDK-8303799 | N       | N         | Y      
-JDK-8303804 | N       | N         | Y      
-JDK-8303805 | N       | N         | Y      
-JDK-8303809 | N       | N         | Y      
-JDK-8303814 | N       | N         | Y      
-JDK-8303820 | N       | N         | Y      
-JDK-8303822 | N       | N         | Y      
-JDK-8303824 | N       | N         | Y      
-JDK-8303830 | N       | N         | Y      
-JDK-8303833 | N       | N         | Y      
-JDK-8303839 | N       | N         | Y      
-JDK-8303853 | N       | N         | Y      
-JDK-8303861 | N       | N         | Y      
-JDK-8303863 | N       | N         | Y      
-JDK-8303881 | N       | N         | Y      
-JDK-8303882 | N       | N         | Y      
-JDK-8303883 | N       | N         | Y      
-JDK-8303895 | N       | N         | Y      
-JDK-8303900 | N       | N         | Y      
-JDK-8303908 | N       | N         | Y      
-JDK-8303910 | N       | N         | Y      
-JDK-8303912 | N       | N         | Y      
-JDK-8303915 | N       | N         | Y      
-JDK-8303917 | N       | N         | Y      
-JDK-8303919 | N       | N         | Y      
-JDK-8303921 | N       | N         | Y      
-JDK-8303922 | N       | N         | Y      
-JDK-8303923 | N       | N         | Y      
-JDK-8303924 | N       | N         | Y      
-JDK-8303930 | N       | N         | Y      
-JDK-8303937 | N       | N         | Y      
-JDK-8303942 | N       | N         | Y      
-JDK-8303948 | N       | N         | Y      
-JDK-8303949 | N       | N         | Y      
-JDK-8303951 | N       | N         | Y      
-JDK-8303955 | N       | N         | Y      
-JDK-8303963 | N       | N         | Y      
-JDK-8303965 | N       | N         | Y      
-JDK-8303969 | N       | N         | Y      
-JDK-8303973 | N       | N         | Y      
-JDK-8304005 | N       | N         | Y      
-JDK-8304013 | N       | N         | Y      
-JDK-8304014 | N       | N         | Y      
-JDK-8304015 | N       | N         | Y      
-JDK-8304016 | N       | N         | Y      
-JDK-8304017 | N       | N         | Y      
-JDK-8304018 | N       | N         | Y      
-JDK-8304019 | N       | N         | Y      
-JDK-8304028 | N       | N         | Y      
-JDK-8304030 | N       | N         | Y      
-JDK-8304031 | N       | N         | Y      
-JDK-8304033 | N       | N         | Y      
-JDK-8304036 | N       | N         | Y      
-JDK-8304042 | N       | N         | Y      
-JDK-8304054 | N       | N         | Y      
-JDK-8304055 | N       | N         | Y      
-JDK-8304059 | N       | N         | Y      
-JDK-8304063 | N       | N         | Y      
-JDK-8304069 | N       | N         | Y      
-JDK-8304074 | N       | N         | Y      
-JDK-8304089 | N       | N         | Y      
-JDK-8304130 | N       | N         | Y      
-JDK-8304134 | N       | N         | Y      
-JDK-8304136 | N       | N         | Y      
-JDK-8304138 | N       | N         | Y      
-JDK-8304139 | N       | N         | Y      
-JDK-8304144 | N       | N         | Y      
-JDK-8304146 | N       | N         | Y      
-JDK-8304147 | N       | N         | Y      
-JDK-8304148 | N       | N         | Y      
-JDK-8304161 | N       | N         | Y      
-JDK-8304163 | N       | N         | Y      
-JDK-8304164 | N       | N         | Y      
-JDK-8304171 | N       | N         | Y      
-JDK-8304172 | N       | N         | Y      
-JDK-8304174 | N       | N         | Y      
-JDK-8304175 | N       | N         | Y      
-JDK-8304180 | N       | N         | Y      
-JDK-8304225 | N       | N         | Y      
-JDK-8304230 | N       | N         | Y      
-JDK-8304242 | N       | N         | Y      
-JDK-8304258 | N       | N         | Y      
-JDK-8304264 | N       | N         | Y      
-JDK-8304265 | N       | N         | Y      
-JDK-8304267 | N       | N         | Y      
-JDK-8304283 | N       | N         | Y      
-JDK-8304286 | N       | N         | Y      
-JDK-8304287 | N       | N         | Y      
-JDK-8304291 | N       | N         | Y      
-JDK-8304293 | N       | N         | Y      
-JDK-8304295 | N       | N         | Y      
-JDK-8304301 | N       | N         | Y      
-JDK-8304303 | N       | N         | Y      
-JDK-8304314 | N       | N         | Y      
-JDK-8304334 | N       | N         | Y      
-JDK-8304350 | N       | N         | Y      
-JDK-8304353 | N       | N         | Y      
-JDK-8304360 | N       | N         | Y      
-JDK-8304364 | N       | N         | Y      
-JDK-8304367 | N       | N         | Y      
-JDK-8304375 | N       | N         | Y      
-JDK-8304376 | N       | N         | Y      
-JDK-8304387 | N       | N         | Y      
-JDK-8304393 | N       | N         | Y      
-JDK-8304411 | N       | N         | Y      
-JDK-8304412 | N       | N         | Y      
-JDK-8304420 | N       | N         | Y      
-JDK-8304423 | N       | N         | Y      
-JDK-8304425 | N       | N         | Y      
-JDK-8304433 | N       | N         | Y      
-JDK-8304434 | N       | N         | Y      
-JDK-8304436 | N       | N         | Y      
-JDK-8304437 | N       | N         | Y      
-JDK-8304438 | N       | N         | Y      
-JDK-8304443 | N       | N         | Y      
-JDK-8304444 | N       | N         | Y      
-JDK-8304445 | N       | N         | Y      
-JDK-8304448 | N       | N         | Y      
-JDK-8304449 | N       | N         | Y      
-JDK-8304450 | N       | N         | Y      
-JDK-8304460 | N       | N         | Y      
-JDK-8304468 | N       | N         | Y      
-JDK-8304498 | N       | N         | Y      
-JDK-8304501 | N       | N         | Y      
-JDK-8304502 | N       | N         | Y      
-JDK-8304537 | N       | N         | Y      
-JDK-8304541 | N       | N         | Y      
-JDK-8304542 | N       | N         | Y      
-JDK-8304543 | N       | N         | Y      
-JDK-8304547 | N       | N         | Y      
-JDK-8304557 | N       | N         | Y      
-JDK-8304585 | N       | N         | Y      
-JDK-8304591 | N       | N         | Y      
-JDK-8304657 | N       | N         | Y      
-JDK-8304671 | N       | N         | Y      
-JDK-8304676 | N       | N         | Y      
-JDK-8304680 | N       | N         | Y      
-JDK-8304681 | N       | N         | Y      
-JDK-8304683 | N       | N         | Y      
-JDK-8304685 | N       | N         | Y      
-JDK-8304687 | N       | N         | Y      
-JDK-8304689 | N       | N         | Y      
-JDK-8304691 | N       | N         | Y      
-JDK-8304694 | N       | N         | Y      
-JDK-8304696 | N       | N         | Y      
-JDK-8304711 | N       | N         | Y      
-JDK-8304712 | N       | N         | Y      
-JDK-8304716 | N       | N         | Y      
-JDK-8304717 | N       | N         | Y      
-JDK-8304718 | N       | N         | Y      
-JDK-8304720 | N       | N         | Y      
-JDK-8304723 | N       | N         | Y      
-JDK-8304725 | N       | N         | Y      
-JDK-8304736 | N       | N         | Y      
-JDK-8304738 | N       | N         | Y      
-JDK-8304743 | N       | N         | Y      
-JDK-8304745 | N       | N         | Y      
-JDK-8304759 | N       | N         | Y      
-JDK-8304760 | N       | N         | Y      
-JDK-8304761 | N       | N         | Y      
-JDK-8304802 | N       | N         | Y      
-JDK-8304803 | N       | N         | Y      
-JDK-8304804 | N       | N         | Y      
-JDK-8304809 | N       | N         | Y      
-JDK-8304815 | N       | N         | Y      
-JDK-8304818 | N       | N         | Y      
-JDK-8304820 | N       | N         | Y      
-JDK-8304825 | N       | N         | Y      
-JDK-8304828 | N       | N         | Y      
-JDK-8304833 | N       | N         | Y      
-JDK-8304834 | N       | N         | Y      
-JDK-8304836 | N       | N         | Y      
-JDK-8304837 | N       | N         | Y      
-JDK-8304840 | N       | N         | Y      
-JDK-8304844 | N       | N         | Y      
-JDK-8304845 | N       | N         | Y      
-JDK-8304846 | N       | N         | Y      
-JDK-8304867 | N       | N         | Y      
-JDK-8304871 | N       | N         | Y      
-JDK-8304878 | N       | N         | Y      
-JDK-8304880 | N       | N         | Y      
-JDK-8304883 | N       | N         | Y      
-JDK-8304884 | N       | N         | Y      
-JDK-8304888 | N       | N         | Y      
-JDK-8304893 | N       | N         | Y      
-JDK-8304896 | N       | N         | Y      
-JDK-8304898 | N       | N         | Y      
-JDK-8304911 | N       | N         | Y      
-JDK-8304912 | N       | N         | Y      
-JDK-8304913 | N       | N         | Y      
-JDK-8304914 | N       | N         | Y      
-JDK-8304915 | N       | N         | Y      
-JDK-8304918 | N       | N         | Y      
-JDK-8304919 | N       | N         | Y      
-JDK-8304927 | N       | N         | Y      
-JDK-8304928 | N       | N         | Y      
-JDK-8304930 | N       | N         | Y      
-JDK-8304931 | N       | N         | Y      
-JDK-8304932 | N       | N         | Y      
-JDK-8304937 | N       | N         | Y      
-JDK-8304945 | N       | N         | Y      
-JDK-8304948 | N       | N         | Y      
-JDK-8304962 | N       | N         | Y      
-JDK-8304963 | N       | N         | Y      
-JDK-8304976 | N       | N         | Y      
-JDK-8304982 | N       | N         | Y      
-JDK-8304988 | N       | N         | Y      
-JDK-8304989 | N       | N         | Y      
-JDK-8304990 | N       | N         | Y      
-JDK-8304991 | N       | N         | Y      
-JDK-8304993 | N       | N         | Y      
-JDK-8304996 | N       | N         | Y      
-JDK-8305004 | N       | N         | Y      
-JDK-8305008 | N       | N         | Y      
-JDK-8305055 | N       | N         | Y      
-JDK-8305056 | N       | N         | Y      
-JDK-8305060 | N       | N         | Y      
-JDK-8305062 | N       | N         | Y      
-JDK-8305066 | N       | N         | Y      
-JDK-8305073 | N       | N         | Y      
-JDK-8305079 | N       | N         | Y      
-JDK-8305080 | N       | N         | Y      
-JDK-8305081 | N       | N         | Y      
-JDK-8305082 | N       | N         | Y      
-JDK-8305083 | N       | N         | Y      
-JDK-8305084 | N       | N         | Y      
-JDK-8305085 | N       | N         | Y      
-JDK-8305086 | N       | N         | Y      
-JDK-8305089 | N       | N         | Y      
-JDK-8305091 | N       | N         | Y      
-JDK-8305092 | N       | N         | Y      
-JDK-8305093 | N       | N         | Y      
-JDK-8305094 | N       | N         | Y      
-JDK-8305095 | N       | N         | Y      
-JDK-8305098 | N       | N         | Y      
-JDK-8305100 | N       | N         | Y      
-JDK-8305107 | N       | N         | Y      
-JDK-8305111 | N       | N         | Y      
-JDK-8305112 | N       | N         | Y      
-JDK-8305113 | N       | N         | Y      
-JDK-8305118 | N       | N         | Y      
-JDK-8305142 | N       | N         | Y      
-JDK-8305157 | N       | N         | Y      
-JDK-8305169 | N       | N         | Y      
-JDK-8305171 | N       | N         | Y      
-JDK-8305174 | N       | N         | Y      
-JDK-8305189 | N       | N         | Y      
-JDK-8305192 | N       | N         | Y      
-JDK-8305201 | N       | N         | Y      
-JDK-8305202 | N       | N         | Y      
-JDK-8305203 | N       | N         | Y      
-JDK-8305206 | N       | N         | Y      
-JDK-8305207 | N       | N         | Y      
-JDK-8305209 | N       | N         | Y      
-JDK-8305222 | N       | N         | Y      
-JDK-8305223 | N       | N         | Y      
-JDK-8305225 | N       | N         | Y      
-JDK-8305227 | N       | N         | Y      
-JDK-8305233 | N       | N         | Y      
-JDK-8305236 | N       | N         | Y      
-JDK-8305237 | N       | N         | Y      
-JDK-8305242 | N       | N         | Y      
-JDK-8305247 | N       | N         | Y      
-JDK-8305252 | N       | N         | Y      
-JDK-8305310 | N       | N         | Y      
-JDK-8305312 | N       | N         | Y      
-JDK-8305320 | N       | N         | Y      
-JDK-8305323 | N       | N         | Y      
-JDK-8305324 | N       | N         | Y      
-JDK-8305336 | N       | N         | Y      
-JDK-8305343 | N       | N         | Y      
-JDK-8305351 | N       | N         | Y      
-JDK-8305352 | N       | N         | Y      
-JDK-8305356 | N       | N         | Y      
-JDK-8305368 | N       | N         | Y      
-JDK-8305370 | N       | N         | Y      
-JDK-8305387 | N       | N         | Y      
-JDK-8305400 | N       | N         | Y      
-JDK-8305403 | N       | N         | Y      
-JDK-8305404 | N       | N         | Y      
-JDK-8305405 | N       | N         | Y      
-JDK-8305407 | N       | N         | Y      
-JDK-8305414 | N       | N         | Y      
-JDK-8305416 | N       | N         | Y      
-JDK-8305417 | N       | N         | Y      
-JDK-8305419 | N       | N         | Y      
-JDK-8305421 | N       | N         | Y      
-JDK-8305425 | N       | N         | Y      
-JDK-8305442 | N       | N         | Y      
-JDK-8305461 | N       | N         | Y      
-JDK-8305478 | N       | N         | Y      
-JDK-8305480 | N       | N         | Y      
-JDK-8305481 | N       | N         | Y      
-JDK-8305484 | N       | N         | Y      
-JDK-8305485 | N       | N         | Y      
-JDK-8305486 | N       | N         | Y      
-JDK-8305490 | N       | N         | Y      
-JDK-8305500 | N       | N         | Y      
-JDK-8305502 | N       | N         | Y      
-JDK-8305504 | N       | N         | Y      
-JDK-8305505 | N       | N         | Y      
-JDK-8305509 | N       | N         | Y      
-JDK-8305511 | N       | N         | Y      
-JDK-8305520 | N       | N         | Y      
-JDK-8305524 | N       | N         | Y      
-JDK-8305525 | N       | N         | Y      
-JDK-8305529 | N       | N         | Y      
-JDK-8305543 | N       | N         | Y      
-JDK-8305566 | N       | N         | Y      
-JDK-8305578 | N       | N         | Y      
-JDK-8305582 | N       | N         | Y      
-JDK-8305590 | N       | N         | Y      
-JDK-8305591 | N       | N         | Y      
-JDK-8305596 | N       | N         | Y      
-JDK-8305599 | N       | N         | Y      
-JDK-8305600 | N       | N         | Y      
-JDK-8305602 | N       | N         | Y      
-JDK-8305607 | N       | N         | Y      
-JDK-8305608 | N       | N         | Y      
-JDK-8305618 | N       | N         | Y      
-JDK-8305620 | N       | N         | Y      
-JDK-8305622 | N       | N         | Y      
-JDK-8305625 | N       | N         | Y      
-JDK-8305632 | N       | N         | Y      
-JDK-8305634 | N       | N         | Y      
-JDK-8305635 | N       | N         | Y      
-JDK-8305644 | N       | N         | Y      
-JDK-8305646 | N       | N         | Y      
-JDK-8305659 | N       | N         | Y      
-JDK-8305663 | N       | N         | Y      
-JDK-8305664 | N       | N         | Y      
-JDK-8305666 | N       | N         | Y      
-JDK-8305668 | N       | N         | Y      
-JDK-8305670 | N       | N         | Y      
-JDK-8305672 | N       | N         | Y      
-JDK-8305673 | N       | N         | Y      
-JDK-8305678 | N       | N         | Y      
-JDK-8305679 | N       | N         | Y      
-JDK-8305680 | N       | N         | Y      
-JDK-8305688 | N       | N         | Y      
-JDK-8305690 | N       | N         | Y      
-JDK-8305696 | N       | N         | Y      
-JDK-8305710 | N       | N         | Y      
-JDK-8305711 | N       | N         | Y      
-JDK-8305712 | N       | N         | Y      
-JDK-8305714 | N       | N         | Y      
-JDK-8305716 | N       | N         | Y      
-JDK-8305721 | N       | N         | Y      
-JDK-8305728 | N       | N         | Y      
-JDK-8305740 | N       | N         | Y      
-JDK-8305746 | N       | N         | Y      
-JDK-8305748 | N       | N         | Y      
-JDK-8305755 | N       | N         | Y      
-JDK-8305757 | N       | N         | Y      
-JDK-8305758 | N       | N         | Y      
-JDK-8305761 | N       | N         | Y      
-JDK-8305762 | N       | N         | Y      
-JDK-8305763 | N       | N         | Y      
-JDK-8305766 | N       | N         | Y      
-JDK-8305770 | N       | N         | Y      
-JDK-8305771 | N       | N         | Y      
-JDK-8305778 | N       | N         | Y      
-JDK-8305780 | N       | N         | Y      
-JDK-8305781 | N       | N         | Y      
-JDK-8305783 | N       | N         | Y      
-JDK-8305785 | N       | N         | Y      
-JDK-8305787 | N       | N         | Y      
-JDK-8305794 | N       | N         | Y      
-JDK-8305807 | N       | N         | Y      
-JDK-8305808 | N       | N         | Y      
-JDK-8305809 | N       | N         | Y      
-JDK-8305811 | N       | N         | Y      
-JDK-8305815 | N       | N         | Y      
-JDK-8305819 | N       | N         | Y      
-JDK-8305846 | N       | N         | Y      
-JDK-8305847 | N       | N         | Y      
-JDK-8305853 | N       | N         | Y      
-JDK-8305858 | N       | N         | Y      
-JDK-8305874 | N       | N         | Y      
-JDK-8305875 | N       | N         | Y      
-JDK-8305880 | N       | N         | Y      
-JDK-8305892 | N       | N         | Y      
-JDK-8305900 | N       | N         | Y      
-JDK-8305902 | N       | N         | Y      
-JDK-8305906 | N       | N         | Y      
-JDK-8305919 | N       | N         | Y      
-JDK-8305922 | N       | N         | Y      
-JDK-8305934 | N       | N         | Y      
-JDK-8305935 | N       | N         | Y      
-JDK-8305936 | N       | N         | Y      
-JDK-8305937 | N       | N         | Y      
-JDK-8305942 | N       | N         | Y      
-JDK-8305943 | N       | N         | Y      
-JDK-8305944 | N       | N         | Y      
-JDK-8305945 | N       | N         | Y      
-JDK-8305950 | N       | N         | Y      
-JDK-8305958 | N       | N         | Y      
-JDK-8305959 | N       | N         | Y      
-JDK-8305963 | N       | N         | Y      
-JDK-8305966 | N       | N         | Y      
-JDK-8305972 | N       | N         | Y      
-JDK-8305975 | N       | N         | Y      
-JDK-8305977 | Y       | Y         | N      
-JDK-8305990 | N       | N         | Y      
-JDK-8305993 | N       | N         | Y      
-JDK-8305994 | N       | N         | Y      
-JDK-8305995 | N       | N         | Y      
-JDK-8306006 | N       | N         | Y      
-JDK-8306008 | N       | N         | Y      
-JDK-8306014 | N       | N         | Y      
-JDK-8306015 | N       | N         | Y      
-JDK-8306027 | N       | N         | Y      
-JDK-8306028 | N       | N         | Y      
-JDK-8306029 | N       | N         | Y      
-JDK-8306031 | N       | N         | Y      
-JDK-8306033 | N       | N         | Y      
-JDK-8306034 | N       | N         | Y      
-JDK-8306036 | N       | N         | Y      
-JDK-8306038 | N       | N         | Y      
-JDK-8306042 | N       | N         | Y      
-JDK-8306057 | N       | N         | Y      
-JDK-8306059 | N       | N         | Y      
-JDK-8306060 | N       | N         | Y      
-JDK-8306067 | N       | N         | Y      
-JDK-8306072 | N       | N         | Y      
-JDK-8306075 | N       | N         | Y      
-JDK-8306076 | N       | N         | Y      
-JDK-8306077 | N       | N         | Y      
-JDK-8306111 | N       | N         | Y      
-JDK-8306112 | N       | N         | Y      
-JDK-8306119 | N       | N         | Y      
-JDK-8306123 | N       | N         | Y      
-JDK-8306133 | N       | N         | Y      
-JDK-8306134 | N       | N         | Y      
-JDK-8306135 | N       | N         | Y      
-JDK-8306137 | N       | N         | Y      
-JDK-8306278 | N       | N         | Y      
-JDK-8306279 | N       | N         | Y      
-JDK-8306280 | N       | N         | Y      
-JDK-8306282 | N       | N         | Y      
-JDK-8306284 | N       | N         | Y      
-JDK-8306285 | N       | N         | Y      
-JDK-8306289 | N       | N         | Y      
-JDK-8306302 | N       | N         | Y      
-JDK-8306304 | N       | N         | Y      
-JDK-8306310 | N       | N         | Y      
-JDK-8306320 | N       | N         | Y      
-JDK-8306321 | N       | N         | Y      
-JDK-8306323 | N       | N         | Y      
-JDK-8306326 | N       | N         | Y      
-JDK-8306331 | N       | N         | Y      
-JDK-8306372 | N       | N         | Y      
-JDK-8306374 | N       | N         | Y      
-JDK-8306408 | N       | N         | Y      
-JDK-8306409 | N       | N         | Y      
-JDK-8306428 | N       | N         | Y      
-JDK-8306430 | N       | N         | Y      
-JDK-8306431 | N       | N         | Y      
-JDK-8306432 | N       | N         | Y      
-JDK-8306435 | N       | N         | Y      
-JDK-8306436 | N       | N         | Y      
-JDK-8306440 | N       | N         | Y      
-JDK-8306444 | N       | N         | Y      
-JDK-8306452 | N       | N         | Y      
-JDK-8306456 | N       | N         | Y      
-JDK-8306457 | N       | N         | Y      
-JDK-8306459 | N       | N         | Y      
-JDK-8306460 | N       | N         | Y      
-JDK-8306461 | N       | N         | Y      
-JDK-8306466 | N       | N         | Y      
-JDK-8306467 | N       | N         | Y      
-JDK-8306471 | N       | N         | Y      
-JDK-8306474 | N       | N         | Y      
-JDK-8306476 | N       | N         | Y      
-JDK-8306482 | N       | N         | Y      
-JDK-8306483 | N       | N         | Y      
-JDK-8306484 | N       | N         | Y      
-JDK-8306489 | N       | N         | Y      
-JDK-8306507 | N       | N         | Y      
-JDK-8306510 | N       | N         | Y      
-JDK-8306538 | N       | N         | Y      
-JDK-8306541 | N       | N         | Y      
-JDK-8306543 | N       | N         | Y      
-JDK-8306560 | N       | N         | Y      
-JDK-8306566 | N       | N         | Y      
-JDK-8306572 | N       | N         | Y      
-JDK-8306575 | N       | N         | Y      
-JDK-8306578 | N       | N         | Y      
-JDK-8306581 | N       | N         | Y      
-JDK-8306583 | N       | N         | Y      
-JDK-8306593 | N       | N         | Y      
-JDK-8306597 | N       | N         | Y      
-JDK-8306607 | N       | N         | Y      
-JDK-8306623 | N       | N         | Y      
-JDK-8306634 | N       | N         | Y      
-JDK-8306636 | N       | N         | Y      
-JDK-8306638 | N       | N         | Y      
-JDK-8306640 | N       | N         | Y      
-JDK-8306647 | N       | N         | Y      
-JDK-8306652 | N       | N         | Y      
-JDK-8306654 | N       | N         | Y      
-JDK-8306658 | N       | N         | Y      
-JDK-8306667 | N       | N         | Y      
-JDK-8306672 | N       | N         | Y      
-JDK-8306678 | N       | N         | Y      
-JDK-8306681 | N       | N         | Y      
-JDK-8306682 | N       | N         | Y      
-JDK-8306683 | N       | N         | Y      
-JDK-8306687 | N       | N         | Y      
-JDK-8306695 | N       | N         | Y      
-JDK-8306696 | N       | N         | Y      
-JDK-8306698 | N       | N         | Y      
-JDK-8306703 | N       | N         | Y      
-JDK-8306705 | N       | N         | Y      
-JDK-8306706 | N       | N         | Y      
-JDK-8306711 | N       | N         | Y      
-JDK-8306712 | N       | N         | Y      
-JDK-8306714 | N       | N         | Y      
-JDK-8306718 | N       | N         | Y      
-JDK-8306729 | N       | N         | Y      
-JDK-8306732 | N       | N         | Y      
-JDK-8306733 | N       | N         | Y      
-JDK-8306734 | N       | N         | Y      
-JDK-8306735 | N       | N         | Y      
-JDK-8306738 | N       | N         | Y      
-JDK-8306740 | N       | N         | Y      
-JDK-8306749 | N       | N         | Y      
-JDK-8306752 | N       | N         | Y      
-JDK-8306753 | N       | N         | Y      
-JDK-8306755 | N       | N         | Y      
-JDK-8306758 | N       | N         | Y      
-JDK-8306765 | N       | N         | Y      
-JDK-8306766 | N       | N         | Y      
-JDK-8306770 | N       | N         | Y      
-JDK-8306772 | N       | N         | Y      
-JDK-8306773 | N       | N         | Y      
-JDK-8306774 | N       | N         | Y      
-JDK-8306775 | N       | N         | Y      
-JDK-8306780 | N       | N         | Y      
-JDK-8306806 | N       | N         | Y      
-JDK-8306812 | N       | N         | Y      
-JDK-8306823 | N       | N         | Y      
-JDK-8306825 | N       | N         | Y      
-JDK-8306833 | N       | N         | Y      
-JDK-8306836 | N       | N         | Y      
-JDK-8306838 | N       | N         | Y      
-JDK-8306841 | N       | N         | Y      
-JDK-8306842 | N       | N         | Y      
-JDK-8306843 | N       | N         | Y      
-JDK-8306850 | N       | N         | Y      
-JDK-8306851 | N       | N         | Y      
-JDK-8306855 | N       | N         | Y      
-JDK-8306858 | N       | N         | Y      
-JDK-8306860 | N       | N         | Y      
-JDK-8306871 | N       | N         | Y      
-JDK-8306872 | N       | N         | Y      
-JDK-8306881 | N       | N         | Y      
-JDK-8306883 | N       | N         | Y      
-JDK-8306901 | N       | N         | Y      
-JDK-8306927 | N       | N         | Y      
-JDK-8306929 | N       | N         | Y      
-JDK-8306930 | N       | N         | Y      
-JDK-8306933 | N       | N         | Y      
-JDK-8306940 | N       | N         | Y      
-JDK-8306941 | N       | N         | Y      
-JDK-8306943 | N       | N         | Y      
-JDK-8306946 | N       | N         | Y      
-JDK-8306949 | N       | N         | Y      
-JDK-8306950 | N       | N         | Y      
-JDK-8306951 | N       | N         | Y      
-JDK-8306952 | N       | N         | Y      
-JDK-8306954 | N       | N         | Y      
-JDK-8306955 | N       | N         | Y      
-JDK-8306959 | N       | N         | Y      
-JDK-8306965 | N       | N         | Y      
-JDK-8306966 | N       | N         | Y      
-JDK-8306976 | N       | N         | Y      
-JDK-8306983 | N       | N         | Y      
-JDK-8306992 | N       | N         | Y      
-JDK-8306996 | N       | N         | Y      
-JDK-8306997 | N       | N         | Y      
-JDK-8307005 | N       | N         | Y      
-JDK-8307006 | N       | N         | Y      
-JDK-8307007 | N       | N         | Y      
-JDK-8307058 | N       | N         | Y      
-JDK-8307063 | N       | N         | Y      
-JDK-8307067 | N       | N         | Y      
-JDK-8307068 | N       | N         | Y      
-JDK-8307077 | N       | N         | Y      
-JDK-8307078 | N       | N         | Y      
-JDK-8307079 | N       | N         | Y      
-JDK-8307080 | N       | N         | Y      
-JDK-8307083 | N       | N         | Y      
-JDK-8307088 | N       | N         | Y      
-JDK-8307091 | N       | N         | Y      
-JDK-8307100 | N       | N         | Y      
-JDK-8307103 | N       | N         | Y      
-JDK-8307104 | N       | N         | Y      
-JDK-8307105 | N       | N         | Y      
-JDK-8307106 | N       | N         | Y      
-JDK-8307110 | N       | N         | Y      
-JDK-8307123 | N       | N         | Y      
-JDK-8307125 | N       | N         | Y      
-JDK-8307128 | N       | N         | Y      
-JDK-8307130 | N       | N         | Y      
-JDK-8307131 | N       | N         | Y      
-JDK-8307132 | N       | N         | Y      
-JDK-8307133 | N       | N         | Y      
-JDK-8307134 | N       | N         | Y      
-JDK-8307135 | N       | N         | Y      
-JDK-8307139 | N       | N         | Y      
-JDK-8307147 | N       | N         | Y      
-JDK-8307150 | N       | N         | Y      
-JDK-8307153 | N       | N         | Y      
-JDK-8307156 | N       | N         | Y      
-JDK-8307163 | N       | N         | Y      
-JDK-8307164 | N       | N         | Y      
-JDK-8307165 | N       | N         | Y      
-JDK-8307181 | N       | N         | Y      
-JDK-8307190 | N       | N         | Y      
-JDK-8307194 | N       | N         | Y      
-JDK-8307196 | N       | N         | Y      
-JDK-8307236 | N       | N         | Y      
-JDK-8307244 | N       | N         | Y      
-JDK-8307295 | N       | N         | Y      
-JDK-8307297 | N       | N         | Y      
-JDK-8307298 | N       | N         | Y      
-JDK-8307299 | N       | N         | Y      
-JDK-8307301 | N       | N         | Y      
-JDK-8307305 | N       | N         | Y      
-JDK-8307306 | N       | N         | Y      
-JDK-8307307 | N       | N         | Y      
-JDK-8307308 | N       | N         | Y      
-JDK-8307311 | N       | N         | Y      
-JDK-8307315 | N       | N         | Y      
-JDK-8307326 | N       | N         | Y      
-JDK-8307331 | N       | N         | Y      
-JDK-8307346 | N       | N         | Y      
-JDK-8307347 | N       | N         | Y      
-JDK-8307348 | N       | N         | Y      
-JDK-8307349 | N       | N         | Y      
-JDK-8307351 | N       | N         | Y      
-JDK-8307362 | N       | N         | Y      
-JDK-8307365 | N       | N         | Y      
-JDK-8307369 | N       | N         | Y      
-JDK-8307370 | N       | N         | Y      
-JDK-8307374 | N       | N         | Y      
-JDK-8307375 | N       | N         | Y      
-JDK-8307377 | N       | N         | Y      
-JDK-8307378 | N       | N         | Y      
-JDK-8307381 | N       | N         | Y      
-JDK-8307383 | N       | N         | Y      
-JDK-8307395 | N       | N         | Y      
-JDK-8307399 | N       | N         | Y      
-JDK-8307403 | N       | N         | Y      
-JDK-8307409 | N       | N         | Y      
-JDK-8307411 | N       | N         | Y      
-JDK-8307421 | N       | N         | Y      
-JDK-8307423 | N       | N         | Y      
-JDK-8307425 | N       | N         | Y      
-JDK-8307428 | N       | N         | Y      
-JDK-8307444 | N       | N         | Y      
-JDK-8307446 | N       | N         | Y      
-JDK-8307448 | N       | N         | Y      
-JDK-8307458 | N       | N         | Y      
-JDK-8307466 | N       | N         | Y      
-JDK-8307478 | N       | N         | Y      
-JDK-8307480 | N       | N         | Y      
-JDK-8307482 | N       | N         | Y      
-JDK-8307483 | N       | N         | Y      
-JDK-8307486 | N       | N         | Y      
-JDK-8307488 | N       | N         | Y      
-JDK-8307489 | N       | N         | Y      
-JDK-8307490 | N       | N         | Y      
-JDK-8307491 | N       | N         | Y      
-JDK-8307508 | N       | N         | Y      
-JDK-8307517 | N       | N         | Y      
-JDK-8307518 | N       | N         | Y      
-JDK-8307520 | N       | N         | Y      
-JDK-8307521 | N       | N         | Y      
-JDK-8307523 | N       | N         | Y      
-JDK-8307533 | N       | N         | Y      
-JDK-8307535 | N       | N         | Y      
-JDK-8307547 | N       | N         | Y      
-JDK-8307553 | N       | N         | Y      
-JDK-8307555 | N       | N         | Y      
-JDK-8307559 | N       | N         | Y      
-JDK-8307563 | N       | N         | Y      
-JDK-8307567 | N       | N         | Y      
-JDK-8307569 | N       | N         | Y      
-JDK-8307571 | N       | N         | Y      
-JDK-8307572 | N       | N         | Y      
-JDK-8307573 | N       | N         | Y      
-JDK-8307588 | N       | N         | Y      
-JDK-8307603 | N       | N         | Y      
-JDK-8307604 | N       | N         | Y      
-JDK-8307609 | N       | N         | Y      
-JDK-8307610 | N       | N         | Y      
-JDK-8307619 | N       | N         | Y      
-JDK-8307626 | N       | N         | Y      
-JDK-8307629 | N       | N         | Y      
-JDK-8307648 | N       | N         | Y      
-JDK-8307651 | N       | N         | Y      
-JDK-8307652 | N       | N         | Y      
-JDK-8307653 | N       | N         | Y      
-JDK-8307683 | N       | N         | Y      
-JDK-8307732 | N       | N         | Y      
-JDK-8307738 | N       | N         | Y      
-JDK-8307758 | N       | N         | Y      
-JDK-8307765 | N       | N         | Y      
-JDK-8307779 | N       | N         | Y      
-JDK-8307783 | N       | N         | Y      
-JDK-8307794 | N       | N         | Y      
-JDK-8307795 | N       | N         | Y      
-JDK-8307799 | N       | N         | Y      
-JDK-8307804 | N       | N         | Y      
-JDK-8307806 | N       | N         | Y      
-JDK-8307808 | N       | N         | Y      
-JDK-8307810 | N       | N         | Y      
-JDK-8307813 | N       | N         | Y      
-JDK-8307814 | N       | N         | Y      
-JDK-8307840 | N       | N         | Y      
-JDK-8307848 | N       | N         | Y      
-JDK-8307850 | N       | N         | Y      
-JDK-8307855 | N       | N         | Y      
-JDK-8307857 | N       | N         | Y      
-JDK-8307860 | N       | N         | Y      
-JDK-8307865 | N       | N         | Y      
-JDK-8307869 | N       | N         | Y      
-JDK-8307885 | N       | N         | Y      
-JDK-8307887 | N       | N         | Y      
-JDK-8307891 | N       | N         | Y      
-JDK-8307908 | N       | N         | Y      
-JDK-8307911 | N       | N         | Y      
-JDK-8307926 | N       | N         | Y      
-JDK-8307935 | N       | N         | Y      
-JDK-8307944 | N       | N         | Y      
-JDK-8307945 | N       | N         | Y      
-JDK-8307953 | N       | N         | Y      
-JDK-8307954 | N       | N         | Y      
-JDK-8307955 | N       | N         | Y      
-JDK-8307958 | N       | N         | Y      
-JDK-8307959 | N       | N         | Y      
-JDK-8307961 | N       | N         | Y      
-JDK-8307962 | N       | N         | Y      
-JDK-8307966 | N       | N         | Y      
-JDK-8307968 | N       | N         | Y      
-JDK-8307969 | N       | N         | Y      
-JDK-8307976 | N       | N         | Y      
-JDK-8307990 | N       | N         | Y      
-JDK-8307997 | N       | N         | Y      
-JDK-8308000 | N       | N         | Y      
-JDK-8308009 | N       | N         | Y      
-JDK-8308010 | N       | N         | Y      
-JDK-8308015 | N       | N         | Y      
-JDK-8308016 | N       | N         | Y      
-JDK-8308021 | N       | N         | Y      
-JDK-8308022 | N       | N         | Y      
-JDK-8308024 | N       | N         | Y      
-JDK-8308031 | N       | N         | Y      
-JDK-8308034 | N       | N         | Y      
-JDK-8308038 | N       | N         | Y      
-JDK-8308040 | N       | N         | Y      
-JDK-8308041 | N       | N         | Y      
-JDK-8308043 | N       | N         | Y      
-JDK-8308046 | N       | N         | Y      
-JDK-8308049 | N       | N         | Y      
-JDK-8308072 | N       | N         | Y      
-JDK-8308073 | N       | N         | Y      
-JDK-8308084 | N       | N         | Y      
-JDK-8308086 | N       | N         | Y      
-JDK-8308088 | N       | N         | Y      
-JDK-8308090 | N       | N         | Y      
-JDK-8308091 | N       | N         | Y      
-JDK-8308092 | N       | N         | Y      
-JDK-8308093 | N       | N         | Y      
-JDK-8308097 | N       | N         | Y      
-JDK-8308098 | N       | N         | Y      
-JDK-8308108 | N       | N         | Y      
-JDK-8308110 | N       | N         | Y      
-JDK-8308116 | N       | N         | Y      
-JDK-8308118 | N       | N         | Y      
-JDK-8308151 | N       | N         | Y      
-JDK-8308152 | N       | N         | Y      
-JDK-8308156 | N       | N         | Y      
-JDK-8308167 | N       | N         | Y      
-JDK-8308181 | N       | N         | Y      
-JDK-8308185 | N       | N         | Y      
-JDK-8308187 | N       | N         | Y      
-JDK-8308188 | N       | N         | Y      
-JDK-8308192 | N       | N         | Y      
-JDK-8308204 | N       | N         | Y      
-JDK-8308223 | N       | N         | Y      
-JDK-8308232 | N       | N         | Y      
-JDK-8308235 | N       | N         | Y      
-JDK-8308236 | N       | N         | Y      
-JDK-8308237 | N       | N         | Y      
-JDK-8308239 | N       | N         | Y      
-JDK-8308245 | N       | N         | Y      
-JDK-8308246 | N       | N         | Y      
-JDK-8308248 | N       | N         | Y      
-JDK-8308270 | N       | N         | Y      
-JDK-8308276 | N       | N         | Y      
-JDK-8308277 | N       | N         | Y      
-JDK-8308281 | N       | N         | Y      
-JDK-8308283 | N       | N         | Y      
-JDK-8308285 | N       | N         | Y      
-JDK-8308288 | N       | N         | Y      
-JDK-8308290 | N       | N         | Y      
-JDK-8308291 | N       | N         | Y      
-JDK-8308292 | N       | N         | Y      
-JDK-8308300 | N       | N         | Y      
-JDK-8308309 | N       | N         | Y      
-JDK-8308310 | N       | N         | Y      
-JDK-8308312 | N       | N         | Y      
-JDK-8308316 | N       | N         | Y      
-JDK-8308335 | N       | N         | Y      
-JDK-8308341 | N       | N         | Y      
-JDK-8308342 | N       | N         | Y      
-JDK-8308347 | N       | N         | Y      
-JDK-8308350 | N       | N         | Y      
-JDK-8308370 | N       | N         | Y      
-JDK-8308387 | N       | N         | Y      
-JDK-8308388 | N       | N         | Y      
-JDK-8308396 | N       | N         | Y      
-JDK-8308400 | N       | N         | Y      
-JDK-8308403 | N       | N         | Y      
-JDK-8308407 | N       | N         | Y      
-JDK-8308408 | N       | N         | Y      
-JDK-8308410 | N       | N         | Y      
-JDK-8308445 | N       | N         | Y      
-JDK-8308456 | Y       | Y         | N      
-JDK-8308458 | N       | N         | Y      
-JDK-8308465 | N       | N         | Y      
-JDK-8308468 | N       | N         | Y      
-JDK-8308469 | N       | N         | Y      
-JDK-8308470 | N       | N         | Y      
-JDK-8308471 | N       | N         | Y      
-JDK-8308472 | N       | N         | Y      
-JDK-8308473 | N       | N         | Y      
-JDK-8308475 | N       | N         | Y      
-JDK-8308481 | N       | N         | Y      
-JDK-8308500 | N       | N         | Y      
-JDK-8308503 | N       | N         | Y      
-JDK-8308506 | N       | N         | Y      
-JDK-8308544 | N       | N         | Y      
-JDK-8308545 | N       | N         | Y      
-JDK-8308549 | N       | N         | Y      
-JDK-8308565 | N       | N         | Y      
-JDK-8308583 | N       | N         | Y      
-JDK-8308589 | N       | N         | Y      
-JDK-8308594 | N       | N         | Y      
-JDK-8308613 | N       | N         | Y      
-JDK-8308645 | N       | N         | Y      
-JDK-8308655 | N       | N         | Y      
-JDK-8308656 | N       | N         | Y      
-JDK-8308657 | N       | N         | Y      
-JDK-8308672 | N       | N         | Y      
-JDK-8308678 | N       | N         | Y      
-JDK-8308682 | N       | N         | Y      
-JDK-8308711 | N       | N         | Y      
-JDK-8308716 | N       | N         | Y      
-JDK-8308718 | N       | N         | Y      
-JDK-8308720 | N       | N         | Y      
-JDK-8308726 | N       | N         | Y      
-JDK-8308727 | N       | N         | Y      
-JDK-8308735 | N       | N         | Y      
-JDK-8308746 | N       | N         | Y      
-JDK-8308748 | N       | N         | Y      
-JDK-8308752 | N       | N         | Y      
-JDK-8308758 | N       | N         | Y      
-JDK-8308761 | N       | N         | Y      
-JDK-8308764 | N       | N         | Y      
-JDK-8308765 | N       | N         | Y      
-JDK-8308766 | N       | N         | Y      
-JDK-8308801 | N       | N         | Y      
-JDK-8308803 | N       | N         | Y      
-JDK-8308812 | N       | N         | Y      
-JDK-8308814 | N       | N         | Y      
-JDK-8308817 | N       | N         | Y      
-JDK-8308819 | N       | N         | Y      
-JDK-8308842 | N       | N         | Y      
-JDK-8308844 | N       | N         | Y      
-JDK-8308856 | N       | N         | Y      
-JDK-8308872 | N       | N         | Y      
-JDK-8308875 | N       | N         | Y      
-JDK-8308876 | N       | N         | Y      
-JDK-8308881 | N       | N         | Y      
-JDK-8308891 | N       | N         | Y      
-JDK-8308892 | N       | N         | Y      
-JDK-8308906 | N       | N         | Y      
-JDK-8308907 | N       | N         | Y      
-JDK-8308908 | N       | N         | Y      
-JDK-8308909 | N       | N         | Y      
-JDK-8308910 | N       | N         | Y      
-JDK-8308913 | N       | N         | Y      
-JDK-8308915 | N       | N         | Y      
-JDK-8308917 | N       | N         | Y      
-JDK-8308930 | N       | N         | Y      
-JDK-8308931 | N       | N         | Y      
-JDK-8308935 | N       | N         | Y      
-JDK-8308943 | N       | N         | Y      
-JDK-8308948 | N       | N         | Y      
-JDK-8308954 | N       | N         | Y      
-JDK-8308960 | N       | N         | Y      
-JDK-8308969 | N       | N         | Y      
-JDK-8308975 | N       | N         | Y      
-JDK-8308977 | N       | N         | Y      
-JDK-8308978 | N       | N         | Y      
-JDK-8308986 | N       | N         | Y      
-JDK-8308987 | N       | N         | Y      
-JDK-8308988 | Y       | Y         | N      
-JDK-8308992 | N       | N         | Y      
-JDK-8308997 | N       | N         | Y      
-JDK-8309042 | N       | N         | Y      
-JDK-8309044 | N       | N         | Y      
-JDK-8309048 | N       | N         | Y      
-JDK-8309054 | N       | N         | Y      
-JDK-8309060 | N       | N         | Y      
-JDK-8309077 | N       | N         | Y      
-JDK-8309093 | N       | N         | Y      
-JDK-8309095 | N       | N         | Y      
-JDK-8309104 | N       | N         | Y      
-JDK-8309110 | N       | N         | Y      
-JDK-8309111 | N       | N         | Y      
-JDK-8309120 | N       | N         | Y      
-JDK-8309129 | N       | N         | Y      
-JDK-8309134 | N       | N         | Y      
-JDK-8309136 | N       | N         | Y      
-JDK-8309138 | N       | N         | Y      
-JDK-8309146 | N       | N         | Y      
-JDK-8309150 | N       | N         | Y      
-JDK-8309159 | N       | N         | Y      
-JDK-8309170 | N       | N         | Y      
-JDK-8309171 | N       | N         | Y      
-JDK-8309200 | N       | N         | Y      
-JDK-8309210 | N       | N         | Y      
-JDK-8309216 | N       | N         | Y      
-JDK-8309219 | N       | N         | Y      
-JDK-8309224 | N       | N         | Y      
-JDK-8309225 | N       | N         | Y      
-JDK-8309230 | N       | N         | Y      
-JDK-8309231 | N       | N         | Y      
-JDK-8309235 | N       | N         | Y      
-JDK-8309236 | N       | N         | Y      
-JDK-8309241 | N       | N         | Y      
-JDK-8309254 | N       | N         | Y      
-JDK-8309265 | N       | N         | Y      
-JDK-8309268 | N       | N         | Y      
-JDK-8309286 | N       | N         | Y      
-JDK-8309287 | N       | N         | Y      
-JDK-8309295 | N       | N         | Y      
-JDK-8309297 | N       | N         | Y      
-JDK-8309303 | N       | N         | Y      
-JDK-8309329 | N       | N         | Y      
-JDK-8309332 | N       | N         | Y      
-JDK-8309334 | N       | N         | Y      
-JDK-8309336 | N       | N         | Y      
-JDK-8309340 | N       | N         | Y      
-JDK-8309346 | N       | N         | Y      
-JDK-8309391 | N       | N         | Y      
-JDK-8309396 | N       | N         | Y      
-JDK-8309398 | N       | N         | Y      
-JDK-8309405 | N       | N         | Y      
-JDK-8309406 | N       | N         | Y      
-JDK-8309409 | N       | N         | Y      
-JDK-8309413 | N       | N         | Y      
-JDK-8309416 | N       | N         | Y      
-JDK-8309418 | N       | N         | Y      
-JDK-8309419 | N       | N         | Y      
-JDK-8309420 | N       | N         | Y      
-JDK-8309462 | N       | N         | Y      
-JDK-8309467 | N       | N         | Y      
-JDK-8309472 | N       | N         | Y      
-JDK-8309474 | N       | N         | Y      
-JDK-8309501 | N       | N         | Y      
-JDK-8309503 | N       | N         | Y      
-JDK-8309505 | N       | N         | Y      
-JDK-8309506 | N       | N         | Y      
-JDK-8309509 | N       | N         | Y      
-JDK-8309510 | N       | N         | Y      
-JDK-8309515 | N       | N         | Y      
-JDK-8309527 | N       | N         | Y      
-JDK-8309532 | N       | N         | Y      
-JDK-8309534 | N       | N         | Y      
-JDK-8309542 | N       | N         | Y      
-JDK-8309543 | N       | N         | Y      
-JDK-8309550 | N       | N         | Y      
-JDK-8309554 | N       | N         | Y      
-JDK-8309562 | N       | N         | Y      
-JDK-8309568 | N       | N         | Y      
-JDK-8309569 | N       | N         | Y      
-JDK-8309570 | N       | N         | Y      
-JDK-8309574 | N       | N         | Y      
-JDK-8309594 | N       | N         | Y      
-JDK-8309602 | N       | N         | Y      
-JDK-8309613 | N       | N         | Y      
-JDK-8309614 | N       | N         | Y      
-JDK-8309630 | N       | N         | Y      
-JDK-8309675 | N       | N         | Y      
-JDK-8309702 | N       | N         | Y      
-JDK-8309703 | N       | N         | Y      
-JDK-8309727 | N       | N         | Y      
-JDK-8309760 | N       | N         | Y      
-JDK-8309862 | N       | N         | Y      
-JDK-8309870 | N       | N         | Y      
-JDK-8309882 | N       | N         | Y      
-JDK-8309955 | N       | N         | Y      
-JDK-8309956 | N       | N         | Y      
-JDK-8309966 | N       | N         | Y      
-JDK-8310067 | Y       | Y         | N      
-JDK-8310200 | Y       | Y         | N      
-JDK-8311208 | N       | N         | Y      
-JDK-8311565 | Y       | Y         | N      
-JDK-8311680 | N       | N         | Y      
-JDK-8311681 | N       | N         | Y      
-JDK-8311682 | N       | N         | Y      
-JDK-8312082 | Y       | Y         | N      
-JDK-8312248 | N       | N         | Y      
-JDK-8312401 | N       | N         | Y      
-JDK-8313215 | Y       | Y         | N      
-JDK-8313742 | Y       | Y         | N      
-JDK-8314295 | N       | N         | Y      
-JDK-8314307 | N       | N         | Y      
-JDK-8314468 | N       | N         | Y      
-JDK-8314649 | N       | N         | Y      
-JDK-8314794 | N       | N         | Y      
-JDK-8314976 | Y       | Y         | N      
-JDK-8315230 | Y       | Y         | N      
-JDK-8315708 | N       | N         | Y      
-JDK-8316336 | Y       | Y         | N      
-JDK-8316976 | N       | N         | Y      
-JDK-8317121 | N       | N         | Y      
-JDK-8317259 | Y       | Y         | N      
-JDK-8317331 | N       | N         | Y      
-JDK-8317439 | N       | N         | Y      
-JDK-8317547 | N       | N         | Y      
-JDK-8318137 | N       | N         | Y      
-JDK-8318340 | N       | N         | Y      
-JDK-8318472 | Y       | Y         | N      
-JDK-8318618 | Y       | Y         | N      
-JDK-8319243 | Y       | Y         | N      
-JDK-8319851 | N       | N         | Y      
-JDK-8319859 | N       | N         | Y      
-JDK-8320097 | N       | N         | Y      
-JDK-8320105 | Y       | Y         | N      
-JDK-8320548 | N       | N         | Y      
-JDK-8320871 | Y       | Y         | N      
-JDK-8321530 | Y       | Y         | N      
-JDK-8322122 | N       | N         | Y      
-JDK-8322338 | Y       | Y         | N      
-JDK-8322339 | Y       | Y         | N      
-JDK-8322345 | Y       | Y         | N      
-JDK-8323231 | N       | N         | Y      
-JDK-8323390 | N       | N         | Y      
-JDK-8324559 | N       | N         | Y      
-JDK-8325600 | N       | N         | Y      
-JDK-8327413 | N       | N         | Y      
-JDK-8328286 | N       | N         | Y      
-JDK-8328544 | N       | N         | Y      
-JDK-8328726 | N       | N         | Y      
-JDK-8330045 | N       | N         | Y      
-JDK-8331446 | N       | N         | Y      
-JDK-8331874 | Y       | Y         | N      
-JDK-8332644 | N       | N         | Y      
-JDK-8335428 | N       | N         | Y      
-JDK-8335713 | N       | N         | Y      
-JDK-8336564 | N       | N         | Y      
-JDK-8337494 | N       | N         | Y      
-JDK-8337692 | N       | N         | Y      
-JDK-8338430 | N       | N         | Y      
-JDK-8339180 | N       | N         | Y      
-JDK-8342562 | N       | N         | Y      
-JDK-8343007 | N       | N         | Y      
-JDK-8345625 | N       | N         | Y      
-JDK-8347847 | N       | N         | Y      
-JDK-8348989 | N       | N         | Y      
-JDK-8349111 | N       | N         | Y      
-JDK-8349594 | N       | N         | Y      
-JDK-8350991 | N       | N         | Y      
-JDK-8360147 | N       | N         | Y      
+JDK         | OpenJDK | OracleJDK | Temurin | Fix Version/s
+------------+---------+-----------+---------+--------------
+JDK-4512626 | N       | N         | Y       | 20           
+JDK-4741194 | Y       | Y         | N       | 21           
+JDK-4912623 | N       | N         | Y       | 21           
+JDK-4934362 | N       | N         | Y       | 21           
+JDK-4958969 | N       | N         | Y       | 20           
+JDK-6187113 | N       | N         | Y       | 21           
+JDK-6257207 | N       | N         | Y       | 21           
+JDK-6381945 | N       | N         | Y       | 21           
+JDK-6603771 | N       | N         | Y       | 21           
+JDK-6914801 | N       | N         | Y       | 21           
+JDK-7030853 | N       | N         | Y       | 21           
+JDK-7093322 | N       | N         | Y       | 21           
+JDK-7101667 | Y       | Y         | N       | 21           
+JDK-7167356 | N       | N         | Y       | 21           
+JDK-8038146 | N       | N         | Y       | 21           
+JDK-8043251 | N       | N         | Y       | 21           
+JDK-8064931 | N       | N         | Y       | 21           
+JDK-8081507 | N       | N         | Y       | 21           
+JDK-8146132 | N       | N         | Y       | 21           
+JDK-8151413 | N       | N         | Y       | 21           
+JDK-8153837 | N       | N         | Y       | 21           
+JDK-8155259 | N       | N         | Y       | 21           
+JDK-8160404 | N       | N         | Y       | 21           
+JDK-8163229 | N       | N         | Y       | 21           
+JDK-8172106 | N       | N         | Y       | 21           
+JDK-8177418 | N       | N         | Y       | 21           
+JDK-8180266 | N       | N         | Y       | 21           
+JDK-8189338 | N       | N         | Y       | 21           
+JDK-8193547 | N       | N         | Y       | 21           
+JDK-8194048 | N       | N         | Y       | 20           
+JDK-8200610 | N       | N         | Y       | 21           
+JDK-8202931 | N       | N         | Y       | 21           
+JDK-8208077 | N       | N         | Y       | 21           
+JDK-8213059 | Y       | Y         | N       | 21           
+JDK-8213562 | N       | N         | Y       | 20           
+JDK-8217920 | N       | N         | Y       | 21           
+JDK-8218474 | N       | N         | Y       | 21           
+JDK-8219810 | N       | N         | Y       | 21           
+JDK-8221580 | N       | N         | Y       | 21           
+JDK-8221633 | Y       | Y         | N       | 22           
+JDK-8221785 | N       | N         | Y       | 21           
+JDK-8227257 | N       | N         | Y       | 21           
+JDK-8235297 | N       | N         | Y       | 21           
+JDK-8238170 | N       | N         | Y       | 21           
+JDK-8241293 | N       | N         | Y       | 21           
+JDK-8244400 | N       | N         | Y       | 21           
+JDK-8249826 | N       | N         | Y       | 21           
+JDK-8255119 | N       | N         | Y       | 21           
+JDK-8257197 | N       | N         | Y       | 21           
+JDK-8258776 | N       | N         | Y       | 21           
+JDK-8262994 | N       | N         | Y       | 21           
+JDK-8264684 | N       | N         | Y       | 21           
+JDK-8265688 | N       | N         | Y       | 21           
+JDK-8267582 | N       | N         | Y       | 21           
+JDK-8267935 | N       | N         | Y       | 21           
+JDK-8269736 | N       | N         | Y       | 21           
+JDK-8273131 | Y       | Y         | N       | 22           
+JDK-8277074 | N       | N         | Y       | 20           
+JDK-8278326 | N       | N         | Y       | 21           
+JDK-8278349 | N       | N         | Y       | 21           
+JDK-8280126 | N       | N         | Y       | 21           
+JDK-8281213 | N       | N         | Y       | 21           
+JDK-8281946 | N       | N         | Y       | 21           
+JDK-8282383 | N       | N         | Y       | 21           
+JDK-8282651 | N       | N         | Y       | 21           
+JDK-8282664 | N       | N         | Y       | 21           
+JDK-8283203 | N       | N         | Y       | 21           
+JDK-8283740 | N       | N         | Y       | 21           
+JDK-8284236 | N       | N         | Y       | 21           
+JDK-8284825 | N       | N         | Y       | 21           
+JDK-8285416 | N       | N         | Y       | 21           
+JDK-8285850 | N       | N         | Y       | 21           
+JDK-8285944 | Y       | Y         | N       | 21           
+JDK-8286070 | N       | N         | Y       | N/A          
+JDK-8286311 | N       | N         | Y       | 21           
+JDK-8286496 | N       | N         | Y       | N/A          
+JDK-8286503 | N       | N         | Y       | N/A          
+JDK-8286510 | N       | N         | Y       | 21           
+JDK-8286581 | N       | N         | Y       | 21           
+JDK-8286775 | N       | N         | Y       | 21           
+JDK-8286876 | N       | N         | Y       | 21           
+JDK-8286907 | N       | N         | Y       | 21           
+JDK-8287134 | N       | N         | Y       | 21           
+JDK-8287404 | N       | N         | Y       | N/A          
+JDK-8287411 | N       | N         | Y       | N/A          
+JDK-8287699 | N       | N         | Y       | 20           
+JDK-8287812 | N       | N         | Y       | 21           
+JDK-8287873 | N       | N         | Y       | 21           
+JDK-8287925 | N       | N         | Y       | 21           
+JDK-8288050 | N       | N         | Y       | 21           
+JDK-8288158 | Y       | Y         | N       | 22           
+JDK-8288204 | N       | N         | Y       | 21           
+JDK-8288287 | N       | N         | Y       | 21           
+JDK-8288415 | N       | N         | Y       | 21           
+JDK-8288436 | N       | N         | Y       | N/A          
+JDK-8288516 | N       | N         | Y       | N/A          
+JDK-8289077 | N       | N         | Y       | 21           
+JDK-8289748 | N       | N         | Y       | 21           
+JDK-8290626 | Y       | Y         | N       | 21           
+JDK-8290899 | N       | N         | Y       | 21           
+JDK-8290918 | N       | N         | Y       | 21           
+JDK-8290919 | N       | N         | Y       | 20           
+JDK-8291302 | N       | N         | Y       | 21           
+JDK-8291569 | N       | N         | Y       | 21           
+JDK-8292170 | N       | N         | Y       | 21           
+JDK-8292206 | N       | N         | Y       | 21           
+JDK-8292265 | N       | N         | Y       | 21           
+JDK-8292289 | N       | N         | Y       | 21           
+JDK-8292588 | N       | N         | Y       | 21           
+JDK-8292635 | N       | N         | Y       | 21           
+JDK-8292674 | N       | N         | Y       | 21           
+JDK-8292741 | N       | N         | Y       | 21           
+JDK-8293410 | N       | N         | Y       | 21           
+JDK-8293519 | N       | N         | Y       | 21           
+JDK-8293554 | N       | N         | Y       | N/A          
+JDK-8293598 | N       | N         | Y       | N/A          
+JDK-8293717 | N       | N         | Y       | N/A          
+JDK-8293734 | N       | N         | Y       | N/A          
+JDK-8293742 | N       | N         | Y       | N/A          
+JDK-8293824 | N       | N         | Y       | 20           
+JDK-8293841 | N       | N         | Y       | 21           
+JDK-8293862 | N       | N         | Y       | 21           
+JDK-8294066 | N       | N         | Y       | 21           
+JDK-8294323 | N       | N         | Y       | N/A          
+JDK-8294403 | N       | N         | Y       | 21           
+JDK-8294474 | N       | N         | Y       | N/A          
+JDK-8294526 | N       | N         | Y       | 21           
+JDK-8294527 | N       | N         | Y       | 21           
+JDK-8294677 | N       | N         | Y       | 21           
+JDK-8294680 | N       | N         | Y       | 21           
+JDK-8294693 | N       | N         | Y       | 21           
+JDK-8294735 | Y       | Y         | N       | 21           
+JDK-8294744 | N       | N         | Y       | 20           
+JDK-8294902 | N       | N         | Y       | 20           
+JDK-8295019 | N       | N         | Y       | 21           
+JDK-8295087 | N       | N         | Y       | 21           
+JDK-8295304 | N       | N         | Y       | N/A          
+JDK-8295406 | N       | N         | Y       | 21           
+JDK-8295486 | N       | N         | Y       | 21           
+JDK-8295661 | N       | N         | Y       | 21           
+JDK-8295687 | N       | N         | Y       | N/A          
+JDK-8295723 | N       | N         | Y       | N/A          
+JDK-8295857 | N       | N         | Y       | 20           
+JDK-8295944 | N       | N         | Y       | 21           
+JDK-8295951 | N       | N         | Y       | 21           
+JDK-8295974 | N       | N         | Y       | 21           
+JDK-8296149 | N       | N         | Y       | 21           
+JDK-8296150 | N       | N         | Y       | 21           
+JDK-8296151 | N       | N         | Y       | 21           
+JDK-8296275 | N       | N         | Y       | 21           
+JDK-8296318 | N       | N         | Y       | 21           
+JDK-8296343 | N       | N         | Y       | 21           
+JDK-8296374 | N       | N         | Y       | 21           
+JDK-8296389 | N       | N         | Y       | 21           
+JDK-8296401 | N       | N         | Y       | 21           
+JDK-8296403 | N       | N         | Y       | 21           
+JDK-8296412 | N       | N         | Y       | 21           
+JDK-8296478 | N       | N         | Y       | 21           
+JDK-8296565 | N       | N         | Y       | N/A          
+JDK-8296581 | N       | N         | Y       | N/A          
+JDK-8296610 | N       | N         | Y       | 21           
+JDK-8296646 | N       | N         | Y       | 21           
+JDK-8296661 | N       | N         | Y       | 21           
+JDK-8296676 | N       | N         | Y       | N/A          
+JDK-8296684 | N       | N         | Y       | N/A          
+JDK-8296692 | N       | N         | Y       | N/A          
+JDK-8296789 | N       | N         | Y       | 21           
+JDK-8296812 | N       | N         | Y       | 21           
+JDK-8296832 | N       | N         | Y       | N/A          
+JDK-8296934 | N       | N         | Y       | 21           
+JDK-8296955 | N       | N         | Y       | 20           
+JDK-8296999 | N       | N         | Y       | 21           
+JDK-8297036 | N       | N         | Y       | 21           
+JDK-8297092 | N       | N         | Y       | 21           
+JDK-8297158 | N       | N         | Y       | 21           
+JDK-8297235 | N       | N         | Y       | 21           
+JDK-8297288 | N       | N         | Y       | 20           
+JDK-8297295 | N       | N         | Y       | 21           
+JDK-8297296 | N       | N         | Y       | 21           
+JDK-8297305 | N       | N         | Y       | 20           
+JDK-8297306 | N       | N         | Y       | 21           
+JDK-8297371 | N       | N         | Y       | N/A          
+JDK-8297437 | N       | N         | Y       | 21           
+JDK-8297487 | N       | N         | Y       | 21           
+JDK-8297505 | N       | N         | Y       | 21           
+JDK-8297572 | N       | N         | Y       | 21           
+JDK-8297582 | N       | N         | Y       | 21           
+JDK-8297639 | N       | N         | Y       | 21           
+JDK-8297679 | N       | N         | Y       | 21           
+JDK-8297682 | N       | N         | Y       | 21           
+JDK-8297724 | N       | N         | Y       | 21           
+JDK-8297730 | N       | N         | Y       | 21           
+JDK-8297757 | N       | N         | Y       | 21           
+JDK-8297778 | N       | N         | Y       | 21           
+JDK-8297791 | N       | N         | Y       | 21           
+JDK-8297798 | N       | N         | Y       | 21           
+JDK-8297801 | N       | N         | Y       | 21           
+JDK-8297822 | N       | N         | Y       | 21           
+JDK-8297851 | N       | N         | Y       | 21           
+JDK-8297856 | N       | N         | Y       | N/A          
+JDK-8297874 | N       | N         | Y       | 21           
+JDK-8297877 | N       | N         | Y       | 21           
+JDK-8297912 | N       | N         | Y       | 21           
+JDK-8297914 | N       | N         | Y       | 21           
+JDK-8297933 | N       | N         | Y       | 21           
+JDK-8297960 | N       | N         | Y       | 21           
+JDK-8297972 | N       | N         | Y       | 21           
+JDK-8297979 | N       | N         | Y       | 20           
+JDK-8297988 | N       | N         | Y       | 20           
+JDK-8298038 | N       | N         | Y       | 21           
+JDK-8298047 | N       | N         | Y       | 21           
+JDK-8298050 | N       | N         | Y       | 20           
+JDK-8298059 | N       | N         | Y       | 21           
+JDK-8298061 | N       | N         | Y       | 20           
+JDK-8298065 | N       | N         | Y       | 21           
+JDK-8298073 | N       | N         | Y       | 21           
+JDK-8298081 | N       | N         | Y       | 21           
+JDK-8298083 | N       | N         | Y       | 20           
+JDK-8298084 | N       | N         | Y       | 20           
+JDK-8298088 | N       | N         | Y       | 21           
+JDK-8298090 | N       | N         | Y       | 21           
+JDK-8298093 | N       | N         | Y       | 21           
+JDK-8298118 | N       | N         | Y       | 21           
+JDK-8298126 | N       | N         | Y       | 21           
+JDK-8298128 | N       | N         | Y       | 21           
+JDK-8298133 | N       | N         | Y       | 20           
+JDK-8298138 | N       | N         | Y       | 21           
+JDK-8298144 | N       | N         | Y       | 21           
+JDK-8298162 | N       | N         | Y       | 20           
+JDK-8298176 | N       | N         | Y       | 20           
+JDK-8298187 | N       | N         | Y       | 21           
+JDK-8298190 | N       | N         | Y       | 21           
+JDK-8298215 | N       | N         | Y       | 20           
+JDK-8298217 | N       | N         | Y       | 20           
+JDK-8298225 | N       | N         | Y       | 20           
+JDK-8298240 | N       | N         | Y       | 21           
+JDK-8298241 | N       | N         | Y       | 21           
+JDK-8298244 | N       | N         | Y       | 21           
+JDK-8298249 | N       | N         | Y       | 21           
+JDK-8298264 | N       | N         | Y       | 21           
+JDK-8298271 | N       | N         | Y       | 20           
+JDK-8298277 | N       | N         | Y       | 20           
+JDK-8298281 | N       | N         | Y       | 21           
+JDK-8298296 | N       | N         | Y       | 20           
+JDK-8298298 | N       | N         | Y       | 21           
+JDK-8298310 | N       | N         | Y       | N/A          
+JDK-8298320 | N       | N         | Y       | 21           
+JDK-8298321 | N       | N         | Y       | 21           
+JDK-8298324 | N       | N         | Y       | 20           
+JDK-8298340 | N       | N         | Y       | 20           
+JDK-8298343 | N       | N         | Y       | 21           
+JDK-8298345 | N       | N         | Y       | 21           
+JDK-8298353 | N       | N         | Y       | 20           
+JDK-8298371 | N       | N         | Y       | 21           
+JDK-8298376 | N       | N         | Y       | 21           
+JDK-8298377 | N       | N         | Y       | 21           
+JDK-8298380 | N       | N         | Y       | 21           
+JDK-8298381 | N       | N         | Y       | 21           
+JDK-8298400 | N       | N         | Y       | 20           
+JDK-8298402 | N       | N         | Y       | 20           
+JDK-8298413 | N       | N         | Y       | 21           
+JDK-8298414 | N       | N         | Y       | 20           
+JDK-8298416 | N       | N         | Y       | 21           
+JDK-8298417 | N       | N         | Y       | 20           
+JDK-8298419 | N       | N         | Y       | 20           
+JDK-8298424 | N       | N         | Y       | 21           
+JDK-8298425 | N       | N         | Y       | 20           
+JDK-8298445 | N       | N         | Y       | 21           
+JDK-8298447 | N       | N         | Y       | 21           
+JDK-8298448 | N       | N         | Y       | 21           
+JDK-8298449 | N       | N         | Y       | 21           
+JDK-8298455 | N       | N         | Y       | 20           
+JDK-8298457 | N       | N         | Y       | 21           
+JDK-8298459 | N       | N         | Y       | 20           
+JDK-8298463 | N       | N         | Y       | 20           
+JDK-8298468 | N       | N         | Y       | 21           
+JDK-8298470 | N       | N         | Y       | 21           
+JDK-8298471 | N       | N         | Y       | 21           
+JDK-8298472 | N       | N         | Y       | 21           
+JDK-8298475 | N       | N         | Y       | 21           
+JDK-8298478 | N       | N         | Y       | 21           
+JDK-8298480 | N       | N         | Y       | 21           
+JDK-8298482 | N       | N         | Y       | 21           
+JDK-8298488 | N       | N         | Y       | 20           
+JDK-8298498 | N       | N         | Y       | 21           
+JDK-8298513 | N       | N         | Y       | 21           
+JDK-8298514 | N       | N         | Y       | 21           
+JDK-8298520 | N       | N         | Y       | 20           
+JDK-8298521 | N       | N         | Y       | 21           
+JDK-8298524 | N       | N         | Y       | 21           
+JDK-8298525 | N       | N         | Y       | 20           
+JDK-8298526 | N       | N         | Y       | 21           
+JDK-8298527 | N       | N         | Y       | 20           
+JDK-8298567 | N       | N         | Y       | 21           
+JDK-8298568 | N       | N         | Y       | 21           
+JDK-8298576 | N       | N         | Y       | 21           
+JDK-8298588 | N       | N         | Y       | 21           
+JDK-8298589 | N       | N         | Y       | 21           
+JDK-8298590 | N       | N         | Y       | 21           
+JDK-8298592 | N       | N         | Y       | 20           
+JDK-8298596 | N       | N         | Y       | 21           
+JDK-8298601 | N       | N         | Y       | 21           
+JDK-8298610 | N       | N         | Y       | 21           
+JDK-8298612 | N       | N         | Y       | 21           
+JDK-8298618 | N       | N         | Y       | 21           
+JDK-8298632 | N       | N         | Y       | 21           
+JDK-8298636 | N       | N         | Y       | 21           
+JDK-8298639 | N       | N         | Y       | 21           
+JDK-8298642 | N       | N         | Y       | 20           
+JDK-8298643 | N       | N         | Y       | 21           
+JDK-8298644 | N       | N         | Y       | 21           
+JDK-8298645 | N       | N         | Y       | 21           
+JDK-8298649 | N       | N         | Y       | 20           
+JDK-8298651 | N       | N         | Y       | 21           
+JDK-8298652 | N       | N         | Y       | 21           
+JDK-8298667 | N       | N         | Y       | N/A          
+JDK-8298692 | N       | N         | Y       | 21           
+JDK-8298699 | N       | N         | Y       | 20           
+JDK-8298700 | N       | N         | Y       | 20           
+JDK-8298701 | N       | N         | Y       | 21           
+JDK-8298709 | N       | N         | Y       | 21           
+JDK-8298710 | N       | N         | Y       | 21           
+JDK-8298720 | N       | N         | Y       | 21           
+JDK-8298726 | N       | N         | Y       | 21           
+JDK-8298727 | N       | N         | Y       | 20           
+JDK-8298730 | N       | N         | Y       | 21           
+JDK-8298735 | N       | N         | Y       | 21           
+JDK-8298736 | N       | N         | Y       | 21           
+JDK-8298784 | N       | N         | Y       | 20           
+JDK-8298785 | N       | N         | Y       | 20           
+JDK-8298794 | N       | N         | Y       | 21           
+JDK-8298797 | N       | N         | Y       | 20           
+JDK-8298808 | N       | N         | Y       | 21           
+JDK-8298809 | N       | N         | Y       | 21           
+JDK-8298813 | N       | N         | Y       | 21           
+JDK-8298824 | N       | N         | Y       | 21           
+JDK-8298848 | N       | N         | Y       | 21           
+JDK-8298852 | N       | N         | Y       | 21           
+JDK-8298859 | N       | N         | Y       | 21           
+JDK-8298865 | N       | N         | Y       | 21           
+JDK-8298867 | N       | N         | Y       | 21           
+JDK-8298869 | N       | N         | Y       | 21           
+JDK-8298872 | N       | N         | Y       | 21           
+JDK-8298873 | N       | N         | Y       | 21           
+JDK-8298874 | N       | N         | Y       | 21           
+JDK-8298875 | N       | N         | Y       | 21           
+JDK-8298876 | N       | N         | Y       | 21           
+JDK-8298880 | N       | N         | Y       | 21           
+JDK-8298887 | N       | N         | Y       | 21           
+JDK-8298888 | N       | N         | Y       | 20           
+JDK-8298889 | N       | N         | Y       | 20           
+JDK-8298891 | N       | N         | Y       | 20           
+JDK-8298892 | N       | N         | Y       | 20           
+JDK-8298893 | N       | N         | Y       | 20           
+JDK-8298894 | N       | N         | Y       | 20           
+JDK-8298905 | N       | N         | Y       | 20           
+JDK-8298907 | N       | N         | Y       | 21           
+JDK-8298908 | N       | N         | Y       | 21           
+JDK-8298913 | N       | N         | Y       | 21           
+JDK-8298919 | N       | N         | Y       | 20           
+JDK-8298921 | N       | N         | Y       | 21           
+JDK-8298931 | N       | N         | Y       | 21           
+JDK-8298943 | N       | N         | Y       | 21           
+JDK-8298947 | N       | N         | Y       | 20           
+JDK-8298952 | N       | N         | Y       | 21           
+JDK-8298968 | N       | N         | Y       | 20           
+JDK-8298970 | N       | N         | Y       | 20           
+JDK-8298971 | N       | N         | Y       | 21           
+JDK-8298974 | N       | N         | Y       | 21           
+JDK-8298976 | N       | N         | Y       | 20           
+JDK-8298977 | N       | N         | Y       | 20           
+JDK-8298978 | N       | N         | Y       | 20           
+JDK-8298979 | N       | N         | Y       | 21           
+JDK-8298987 | N       | N         | Y       | 20           
+JDK-8298989 | N       | N         | Y       | 20           
+JDK-8298990 | N       | N         | Y       | 20           
+JDK-8299015 | N       | N         | Y       | 21           
+JDK-8299018 | N       | N         | Y       | 21           
+JDK-8299022 | N       | N         | Y       | 21           
+JDK-8299025 | N       | N         | Y       | 21           
+JDK-8299030 | N       | N         | Y       | 21           
+JDK-8299031 | N       | N         | Y       | 21           
+JDK-8299032 | N       | N         | Y       | 21           
+JDK-8299034 | N       | N         | Y       | 20           
+JDK-8299038 | N       | N         | Y       | 21           
+JDK-8299043 | N       | N         | Y       | 21           
+JDK-8299044 | N       | N         | Y       | 21           
+JDK-8299045 | N       | N         | Y       | 21           
+JDK-8299061 | N       | N         | Y       | 21           
+JDK-8299072 | N       | N         | Y       | 21           
+JDK-8299074 | N       | N         | Y       | 21           
+JDK-8299077 | N       | N         | Y       | 20           
+JDK-8299079 | N       | N         | Y       | 21           
+JDK-8299089 | N       | N         | Y       | 21           
+JDK-8299090 | N       | N         | Y       | 20           
+JDK-8299123 | N       | N         | Y       | 20           
+JDK-8299125 | N       | N         | Y       | 21           
+JDK-8299127 | N       | N         | Y       | 20           
+JDK-8299128 | N       | N         | Y       | 20           
+JDK-8299129 | N       | N         | Y       | N/A          
+JDK-8299146 | N       | N         | Y       | 21           
+JDK-8299147 | N       | N         | Y       | 20           
+JDK-8299155 | N       | N         | Y       | 21           
+JDK-8299156 | N       | N         | Y       | 20           
+JDK-8299158 | N       | N         | Y       | 21           
+JDK-8299162 | N       | N         | Y       | 21           
+JDK-8299168 | N       | N         | Y       | 21           
+JDK-8299172 | N       | N         | Y       | 21           
+JDK-8299179 | N       | N         | Y       | 21           
+JDK-8299183 | N       | N         | Y       | 21           
+JDK-8299187 | N       | N         | Y       | 21           
+JDK-8299191 | N       | N         | Y       | 21           
+JDK-8299193 | N       | N         | Y       | 21           
+JDK-8299194 | N       | N         | Y       | 21           
+JDK-8299199 | N       | N         | Y       | 21           
+JDK-8299207 | N       | N         | Y       | 20           
+JDK-8299213 | N       | N         | Y       | 21           
+JDK-8299224 | N       | N         | Y       | 21           
+JDK-8299227 | N       | N         | Y       | 20           
+JDK-8299230 | N       | N         | Y       | 20           
+JDK-8299235 | N       | N         | Y       | 20           
+JDK-8299237 | N       | N         | Y       | 20           
+JDK-8299241 | N       | N         | Y       | 20           
+JDK-8299254 | N       | N         | Y       | 21           
+JDK-8299255 | N       | N         | Y       | 21           
+JDK-8299259 | N       | N         | Y       | 21           
+JDK-8299260 | N       | N         | Y       | 21           
+JDK-8299261 | N       | N         | Y       | 21           
+JDK-8299274 | N       | N         | Y       | 21           
+JDK-8299275 | N       | N         | Y       | 21           
+JDK-8299278 | N       | N         | Y       | 21           
+JDK-8299292 | N       | N         | Y       | 21           
+JDK-8299296 | N       | N         | Y       | 21           
+JDK-8299306 | N       | N         | Y       | 21           
+JDK-8299309 | N       | N         | Y       | 21           
+JDK-8299312 | N       | N         | Y       | 21           
+JDK-8299323 | N       | N         | Y       | 21           
+JDK-8299324 | N       | N         | Y       | 21           
+JDK-8299325 | N       | N         | Y       | 21           
+JDK-8299326 | N       | N         | Y       | 21           
+JDK-8299327 | N       | N         | Y       | 21           
+JDK-8299329 | N       | N         | Y       | 21           
+JDK-8299330 | N       | N         | Y       | 21           
+JDK-8299336 | N       | N         | Y       | 21           
+JDK-8299337 | N       | N         | Y       | 21           
+JDK-8299343 | N       | N         | Y       | 21           
+JDK-8299378 | N       | N         | Y       | 21           
+JDK-8299387 | N       | N         | Y       | 21           
+JDK-8299388 | N       | N         | Y       | 21           
+JDK-8299395 | N       | N         | Y       | 21           
+JDK-8299396 | N       | N         | Y       | 21           
+JDK-8299397 | N       | N         | Y       | 21           
+JDK-8299398 | N       | N         | Y       | 21           
+JDK-8299399 | N       | N         | Y       | 21           
+JDK-8299402 | N       | N         | Y       | 21           
+JDK-8299412 | N       | N         | Y       | 21           
+JDK-8299424 | N       | N         | Y       | 21           
+JDK-8299425 | N       | N         | Y       | 21           
+JDK-8299430 | N       | N         | Y       | 21           
+JDK-8299437 | N       | N         | Y       | 21           
+JDK-8299439 | N       | N         | Y       | 21           
+JDK-8299441 | N       | N         | Y       | 21           
+JDK-8299444 | N       | N         | Y       | 21           
+JDK-8299470 | N       | N         | Y       | 21           
+JDK-8299475 | N       | N         | Y       | 21           
+JDK-8299476 | N       | N         | Y       | 20           
+JDK-8299479 | N       | N         | Y       | 21           
+JDK-8299481 | N       | N         | Y       | 21           
+JDK-8299482 | N       | N         | Y       | 21           
+JDK-8299483 | N       | N         | Y       | 21           
+JDK-8299497 | N       | N         | Y       | 21           
+JDK-8299498 | N       | N         | Y       | 21           
+JDK-8299499 | N       | N         | Y       | 21           
+JDK-8299500 | N       | N         | Y       | 21           
+JDK-8299501 | N       | N         | Y       | 21           
+JDK-8299502 | N       | N         | Y       | 21           
+JDK-8299520 | N       | N         | Y       | 21           
+JDK-8299525 | N       | N         | Y       | 21           
+JDK-8299528 | N       | N         | Y       | 20           
+JDK-8299544 | N       | N         | Y       | 21           
+JDK-8299553 | N       | N         | Y       | 21           
+JDK-8299561 | N       | N         | Y       | 20           
+JDK-8299563 | N       | N         | Y       | 21           
+JDK-8299571 | N       | N         | Y       | 21           
+JDK-8299576 | N       | N         | Y       | 21           
+JDK-8299593 | N       | N         | Y       | 21           
+JDK-8299600 | N       | N         | Y       | 21           
+JDK-8299608 | N       | N         | Y       | 21           
+JDK-8299617 | N       | N         | Y       | 21           
+JDK-8299635 | N       | N         | Y       | 21           
+JDK-8299657 | N       | N         | Y       | 21           
+JDK-8299671 | N       | N         | Y       | 21           
+JDK-8299672 | N       | N         | Y       | 21           
+JDK-8299673 | N       | N         | Y       | 21           
+JDK-8299677 | N       | N         | Y       | 21           
+JDK-8299683 | N       | N         | Y       | 21           
+JDK-8299684 | N       | N         | Y       | 21           
+JDK-8299689 | N       | N         | Y       | 20           
+JDK-8299692 | N       | N         | Y       | 21           
+JDK-8299693 | N       | N         | Y       | 21           
+JDK-8299699 | N       | N         | Y       | 21           
+JDK-8299701 | N       | N         | Y       | 21           
+JDK-8299705 | N       | N         | Y       | 20           
+JDK-8299715 | N       | N         | Y       | 20           
+JDK-8299721 | N       | N         | Y       | 21           
+JDK-8299726 | N       | N         | Y       | 21           
+JDK-8299733 | N       | N         | Y       | 20           
+JDK-8299740 | N       | N         | Y       | 20           
+JDK-8299746 | N       | N         | Y       | 21           
+JDK-8299757 | N       | N         | Y       | 21           
+JDK-8299772 | N       | N         | Y       | 21           
+JDK-8299774 | N       | N         | Y       | 21           
+JDK-8299789 | N       | N         | Y       | 21           
+JDK-8299795 | N       | N         | Y       | 21           
+JDK-8299827 | N       | N         | Y       | 21           
+JDK-8299829 | N       | N         | Y       | 21           
+JDK-8299835 | N       | N         | Y       | 21           
+JDK-8299836 | N       | N         | Y       | 21           
+JDK-8299844 | N       | N         | Y       | 21           
+JDK-8299845 | N       | N         | Y       | 21           
+JDK-8299847 | N       | N         | Y       | 21           
+JDK-8299849 | N       | N         | Y       | 20           
+JDK-8299853 | N       | N         | Y       | 21           
+JDK-8299858 | N       | N         | Y       | 21           
+JDK-8299862 | N       | N         | Y       | 20           
+JDK-8299863 | N       | N         | Y       | 21           
+JDK-8299864 | N       | N         | Y       | 21           
+JDK-8299865 | N       | N         | Y       | 21           
+JDK-8299879 | N       | N         | Y       | 21           
+JDK-8299891 | N       | N         | Y       | 20           
+JDK-8299896 | N       | N         | Y       | 21           
+JDK-8299918 | N       | N         | Y       | 21           
+JDK-8299953 | N       | N         | Y       | 21           
+JDK-8299956 | N       | N         | Y       | 21           
+JDK-8299957 | N       | N         | Y       | 21           
+JDK-8299959 | N       | N         | Y       | 21           
+JDK-8299960 | N       | N         | Y       | 21           
+JDK-8299962 | N       | N         | Y       | 21           
+JDK-8299971 | N       | N         | Y       | 21           
+JDK-8299972 | N       | N         | Y       | 21           
+JDK-8299973 | N       | N         | Y       | 21           
+JDK-8299975 | N       | N         | Y       | 21           
+JDK-8299976 | N       | N         | Y       | 21           
+JDK-8299978 | N       | N         | Y       | 21           
+JDK-8299982 | N       | N         | Y       | 21           
+JDK-8299994 | N       | N         | Y       | 21           
+JDK-8300001 | N       | N         | Y       | 21           
+JDK-8300002 | N       | N         | Y       | 21           
+JDK-8300010 | N       | N         | Y       | 21           
+JDK-8300011 | N       | N         | Y       | 21           
+JDK-8300012 | N       | N         | Y       | 21           
+JDK-8300024 | N       | N         | Y       | 21           
+JDK-8300032 | N       | N         | Y       | 21           
+JDK-8300040 | N       | N         | Y       | 21           
+JDK-8300042 | N       | N         | Y       | 21           
+JDK-8300052 | N       | N         | Y       | 21           
+JDK-8300053 | N       | N         | Y       | 21           
+JDK-8300054 | N       | N         | Y       | 21           
+JDK-8300055 | N       | N         | Y       | 20           
+JDK-8300068 | N       | N         | Y       | 21           
+JDK-8300069 | N       | N         | Y       | 21           
+JDK-8300077 | N       | N         | Y       | 21           
+JDK-8300079 | N       | N         | Y       | 21           
+JDK-8300084 | N       | N         | Y       | 21           
+JDK-8300087 | N       | N         | Y       | 21           
+JDK-8300093 | N       | N         | Y       | 21           
+JDK-8300098 | N       | N         | Y       | 21           
+JDK-8300099 | N       | N         | Y       | 21           
+JDK-8300109 | N       | N         | Y       | 21           
+JDK-8300110 | N       | N         | Y       | 21           
+JDK-8300111 | N       | N         | Y       | 21           
+JDK-8300113 | N       | N         | Y       | 21           
+JDK-8300117 | N       | N         | Y       | 21           
+JDK-8300119 | N       | N         | Y       | 21           
+JDK-8300120 | N       | N         | Y       | 21           
+JDK-8300124 | N       | N         | Y       | 21           
+JDK-8300125 | N       | N         | Y       | 21           
+JDK-8300127 | N       | N         | Y       | 21           
+JDK-8300133 | N       | N         | Y       | 21           
+JDK-8300140 | N       | N         | Y       | 21           
+JDK-8300141 | N       | N         | Y       | 20           
+JDK-8300144 | N       | N         | Y       | 20           
+JDK-8300147 | N       | N         | Y       | 20           
+JDK-8300166 | N       | N         | Y       | 21           
+JDK-8300167 | N       | N         | Y       | 21           
+JDK-8300168 | N       | N         | Y       | 21           
+JDK-8300169 | N       | N         | Y       | 21           
+JDK-8300172 | N       | N         | Y       | 21           
+JDK-8300176 | N       | N         | Y       | 21           
+JDK-8300177 | N       | N         | Y       | 21           
+JDK-8300184 | N       | N         | Y       | 21           
+JDK-8300195 | N       | N         | Y       | 20           
+JDK-8300205 | N       | N         | Y       | 21           
+JDK-8300207 | N       | N         | Y       | 21           
+JDK-8300208 | N       | N         | Y       | 21           
+JDK-8300222 | N       | N         | Y       | 21           
+JDK-8300227 | N       | N         | Y       | 21           
+JDK-8300228 | N       | N         | Y       | 21           
+JDK-8300235 | N       | N         | Y       | 21           
+JDK-8300236 | N       | N         | Y       | 21           
+JDK-8300237 | N       | N         | Y       | 21           
+JDK-8300240 | N       | N         | Y       | 21           
+JDK-8300241 | N       | N         | Y       | 21           
+JDK-8300242 | N       | N         | Y       | 21           
+JDK-8300243 | N       | N         | Y       | 21           
+JDK-8300244 | N       | N         | Y       | 21           
+JDK-8300247 | N       | N         | Y       | 21           
+JDK-8300253 | N       | N         | Y       | 21           
+JDK-8300254 | N       | N         | Y       | 21           
+JDK-8300256 | N       | N         | Y       | 21           
+JDK-8300259 | N       | N         | Y       | 21           
+JDK-8300260 | N       | N         | Y       | 21           
+JDK-8300264 | N       | N         | Y       | 21           
+JDK-8300265 | N       | N         | Y       | 21           
+JDK-8300266 | N       | N         | Y       | 21           
+JDK-8300267 | N       | N         | Y       | 21           
+JDK-8300269 | N       | N         | Y       | 20           
+JDK-8300272 | N       | N         | Y       | 21           
+JDK-8300273 | N       | N         | Y       | 21           
+JDK-8300275 | N       | N         | Y       | 20           
+JDK-8300279 | N       | N         | Y       | 21           
+JDK-8300285 | N       | N         | Y       | N/A          
+JDK-8300295 | N       | N         | Y       | 21           
+JDK-8300307 | N       | N         | Y       | 21           
+JDK-8300308 | N       | N         | Y       | 21           
+JDK-8300321 | N       | N         | Y       | 21           
+JDK-8300356 | N       | N         | Y       | 21           
+JDK-8300357 | N       | N         | Y       | 21           
+JDK-8300399 | N       | N         | Y       | 21           
+JDK-8300400 | N       | N         | Y       | 21           
+JDK-8300405 | N       | N         | Y       | 21           
+JDK-8300416 | N       | N         | Y       | 21           
+JDK-8300447 | N       | N         | Y       | 21           
+JDK-8300463 | N       | N         | Y       | 21           
+JDK-8300488 | N       | N         | Y       | 21           
+JDK-8300489 | N       | N         | Y       | 21           
+JDK-8300490 | N       | N         | Y       | 20           
+JDK-8300493 | N       | N         | Y       | 21           
+JDK-8300526 | N       | N         | Y       | 21           
+JDK-8300540 | N       | N         | Y       | 21           
+JDK-8300544 | Y       | Y         | N       | 21           
+JDK-8300546 | Y       | Y         | N       | 21           
+JDK-8300550 | N       | N         | Y       | 21           
+JDK-8300584 | N       | N         | Y       | 21           
+JDK-8300586 | N       | N         | Y       | 21           
+JDK-8300587 | N       | N         | Y       | 21           
+JDK-8300589 | N       | N         | Y       | 21           
+JDK-8300590 | N       | N         | Y       | 21           
+JDK-8300591 | N       | N         | Y       | 20           
+JDK-8300592 | N       | N         | Y       | 21           
+JDK-8300594 | N       | N         | Y       | 21           
+JDK-8300595 | N       | N         | Y       | 21           
+JDK-8300596 | N       | N         | Y       | N/A          
+JDK-8300623 | N       | N         | Y       | 20           
+JDK-8300638 | N       | N         | Y       | 21           
+JDK-8300644 | N       | N         | Y       | 21           
+JDK-8300647 | N       | N         | Y       | 21           
+JDK-8300651 | N       | N         | Y       | 21           
+JDK-8300652 | N       | N         | Y       | 21           
+JDK-8300653 | N       | N         | Y       | 21           
+JDK-8300657 | N       | N         | Y       | 21           
+JDK-8300659 | N       | N         | Y       | 21           
+JDK-8300682 | N       | N         | Y       | 21           
+JDK-8300692 | N       | N         | Y       | 21           
+JDK-8300693 | N       | N         | Y       | 21           
+JDK-8300696 | N       | N         | Y       | 21           
+JDK-8300698 | N       | N         | Y       | 21           
+JDK-8300706 | N       | N         | Y       | 21           
+JDK-8300719 | N       | N         | Y       | 20           
+JDK-8300721 | N       | N         | Y       | 21           
+JDK-8300725 | N       | N         | Y       | 21           
+JDK-8300731 | N       | N         | Y       | 21           
+JDK-8300769 | N       | N         | Y       | 21           
+JDK-8300805 | N       | N         | Y       | 21           
+JDK-8300806 | N       | N         | Y       | 21           
+JDK-8300810 | N       | N         | Y       | 21           
+JDK-8300811 | N       | N         | Y       | 21           
+JDK-8300817 | N       | N         | Y       | 21           
+JDK-8300823 | N       | N         | Y       | 21           
+JDK-8300828 | N       | N         | Y       | 21           
+JDK-8300830 | N       | N         | Y       | 21           
+JDK-8300857 | N       | N         | Y       | 21           
+JDK-8300862 | N       | N         | Y       | 21           
+JDK-8300863 | N       | N         | Y       | 21           
+JDK-8300864 | N       | N         | Y       | 21           
+JDK-8300866 | N       | N         | Y       | 21           
+JDK-8300867 | N       | N         | Y       | 21           
+JDK-8300868 | N       | N         | Y       | 21           
+JDK-8300869 | N       | N         | Y       | 21           
+JDK-8300891 | N       | N         | Y       | 21           
+JDK-8300909 | N       | N         | Y       | 21           
+JDK-8300910 | N       | N         | Y       | 21           
+JDK-8300913 | N       | N         | Y       | 21           
+JDK-8300915 | N       | N         | Y       | 21           
+JDK-8300916 | N       | N         | Y       | 21           
+JDK-8300924 | N       | N         | Y       | 21           
+JDK-8300929 | N       | N         | Y       | 21           
+JDK-8300942 | N       | N         | Y       | 21           
+JDK-8300946 | N       | N         | Y       | 21           
+JDK-8300953 | N       | N         | Y       | 20           
+JDK-8300958 | N       | N         | Y       | 21           
+JDK-8300962 | N       | N         | Y       | 21           
+JDK-8300968 | N       | N         | Y       | 21           
+JDK-8300981 | N       | N         | Y       | 21           
+JDK-8300997 | N       | N         | Y       | 21           
+JDK-8301004 | N       | N         | Y       | 21           
+JDK-8301005 | N       | N         | Y       | 21           
+JDK-8301025 | N       | N         | Y       | 21           
+JDK-8301033 | N       | N         | Y       | 21           
+JDK-8301036 | N       | N         | Y       | 21           
+JDK-8301047 | N       | N         | Y       | 21           
+JDK-8301050 | N       | N         | Y       | 21           
+JDK-8301063 | N       | N         | Y       | 21           
+JDK-8301067 | N       | N         | Y       | 21           
+JDK-8301068 | N       | N         | Y       | 21           
+JDK-8301069 | N       | N         | Y       | 21           
+JDK-8301070 | N       | N         | Y       | 21           
+JDK-8301076 | N       | N         | Y       | 21           
+JDK-8301077 | N       | N         | Y       | 21           
+JDK-8301086 | N       | N         | Y       | 21           
+JDK-8301088 | N       | N         | Y       | 21           
+JDK-8301092 | N       | N         | Y       | 21           
+JDK-8301093 | N       | N         | Y       | 21           
+JDK-8301095 | N       | N         | Y       | 21           
+JDK-8301097 | N       | N         | Y       | 21           
+JDK-8301098 | N       | N         | Y       | 21           
+JDK-8301120 | N       | N         | Y       | 21           
+JDK-8301123 | N       | N         | Y       | 21           
+JDK-8301129 | N       | N         | Y       | 21           
+JDK-8301132 | N       | N         | Y       | 21           
+JDK-8301133 | N       | N         | Y       | 21           
+JDK-8301148 | N       | N         | Y       | 21           
+JDK-8301149 | N       | N         | Y       | 21           
+JDK-8301153 | N       | N         | Y       | 21           
+JDK-8301163 | N       | N         | Y       | 21           
+JDK-8301164 | N       | N         | Y       | 21           
+JDK-8301167 | N       | N         | Y       | 21           
+JDK-8301170 | N       | N         | Y       | 21           
+JDK-8301171 | N       | N         | Y       | 21           
+JDK-8301178 | N       | N         | Y       | 21           
+JDK-8301179 | N       | N         | Y       | 21           
+JDK-8301180 | N       | N         | Y       | 21           
+JDK-8301187 | N       | N         | Y       | 21           
+JDK-8301189 | N       | N         | Y       | 21           
+JDK-8301190 | N       | N         | Y       | 21           
+JDK-8301201 | N       | N         | Y       | 21           
+JDK-8301205 | N       | N         | Y       | 21           
+JDK-8301206 | N       | N         | Y       | 20           
+JDK-8301207 | N       | N         | Y       | 21           
+JDK-8301214 | N       | N         | Y       | 21           
+JDK-8301217 | N       | N         | Y       | 21           
+JDK-8301229 | N       | N         | Y       | 21           
+JDK-8301248 | N       | N         | Y       | 21           
+JDK-8301255 | N       | N         | Y       | 21           
+JDK-8301267 | N       | N         | Y       | 21           
+JDK-8301299 | N       | N         | Y       | 21           
+JDK-8301306 | N       | N         | Y       | 21           
+JDK-8301313 | N       | N         | Y       | 21           
+JDK-8301326 | N       | N         | Y       | 21           
+JDK-8301337 | N       | N         | Y       | 21           
+JDK-8301338 | N       | N         | Y       | 21           
+JDK-8301340 | N       | N         | Y       | 21           
+JDK-8301342 | N       | N         | Y       | 21           
+JDK-8301344 | N       | N         | Y       | 21           
+JDK-8301346 | N       | N         | Y       | 21           
+JDK-8301367 | N       | N         | Y       | 21           
+JDK-8301371 | N       | N         | Y       | 21           
+JDK-8301378 | N       | N         | Y       | 21           
+JDK-8301380 | N       | N         | Y       | 21           
+JDK-8301392 | N       | N         | Y       | 21           
+JDK-8301393 | N       | N         | Y       | 21           
+JDK-8301396 | N       | N         | Y       | 21           
+JDK-8301402 | N       | N         | Y       | 21           
+JDK-8301446 | N       | N         | Y       | 21           
+JDK-8301447 | N       | N         | Y       | 21           
+JDK-8301448 | N       | N         | Y       | 21           
+JDK-8301459 | N       | N         | Y       | 21           
+JDK-8301462 | N       | N         | Y       | 21           
+JDK-8301465 | N       | N         | Y       | 21           
+JDK-8301478 | N       | N         | Y       | 21           
+JDK-8301479 | N       | N         | Y       | 21           
+JDK-8301500 | N       | N         | Y       | 21           
+JDK-8301501 | N       | N         | Y       | 21           
+JDK-8301502 | N       | N         | Y       | 21           
+JDK-8301503 | N       | N         | Y       | 21           
+JDK-8301504 | N       | N         | Y       | 21           
+JDK-8301505 | N       | N         | Y       | 21           
+JDK-8301506 | N       | N         | Y       | 21           
+JDK-8301507 | N       | N         | Y       | 21           
+JDK-8301508 | N       | N         | Y       | 21           
+JDK-8301509 | N       | N         | Y       | 21           
+JDK-8301511 | N       | N         | Y       | 21           
+JDK-8301512 | N       | N         | Y       | 21           
+JDK-8301513 | N       | N         | Y       | 21           
+JDK-8301549 | N       | N         | Y       | 21           
+JDK-8301555 | N       | N         | Y       | 21           
+JDK-8301564 | N       | N         | Y       | 21           
+JDK-8301570 | N       | N         | Y       | 21           
+JDK-8301580 | N       | N         | Y       | 21           
+JDK-8301599 | N       | N         | Y       | 21           
+JDK-8301612 | N       | N         | Y       | 21           
+JDK-8301618 | N       | N         | Y       | 21           
+JDK-8301628 | N       | N         | Y       | 21           
+JDK-8301636 | N       | N         | Y       | 21           
+JDK-8301637 | N       | N         | Y       | 21           
+JDK-8301641 | N       | N         | Y       | 21           
+JDK-8301644 | N       | N         | Y       | 21           
+JDK-8301655 | N       | N         | Y       | 21           
+JDK-8301659 | N       | N         | Y       | 21           
+JDK-8301736 | N       | N         | Y       | 21           
+JDK-8301740 | N       | N         | Y       | 21           
+JDK-8301743 | N       | N         | Y       | 21           
+JDK-8301744 | N       | N         | Y       | 21           
+JDK-8301752 | N       | N         | Y       | 21           
+JDK-8301756 | N       | N         | Y       | 21           
+JDK-8301760 | N       | N         | Y       | 21           
+JDK-8301767 | N       | N         | Y       | 21           
+JDK-8301768 | N       | N         | Y       | 21           
+JDK-8301787 | N       | N         | Y       | 21           
+JDK-8301788 | N       | N         | Y       | 21           
+JDK-8301798 | N       | N         | Y       | 21           
+JDK-8301810 | N       | N         | Y       | 21           
+JDK-8301813 | N       | N         | Y       | 21           
+JDK-8301818 | N       | N         | Y       | 21           
+JDK-8301828 | N       | N         | Y       | 21           
+JDK-8301862 | N       | N         | Y       | 21           
+JDK-8301998 | N       | N         | Y       | 21           
+JDK-8302047 | N       | N         | Y       | 21           
+JDK-8302072 | N       | N         | Y       | 21           
+JDK-8302345 | Y       | Y         | N       | 21           
+JDK-8302462 | N       | N         | Y       | 21           
+JDK-8302475 | N       | N         | Y       | N/A          
+JDK-8302483 | N       | N         | Y       | N/A          
+JDK-8302927 | N       | N         | Y       | 21           
+JDK-8303376 | N       | N         | Y       | N/A          
+JDK-8303841 | Y       | Y         | N       | 21           
+JDK-8303912 | N       | N         | Y       | 21           
+JDK-8303928 | Y       | Y         | N       | 21           
+JDK-8304294 | Y       | Y         | N       | 21           
+JDK-8304460 | N       | N         | Y       | N/A          
+JDK-8304468 | N       | N         | Y       | N/A          
+JDK-8305312 | N       | N         | Y       | N/A          
+JDK-8305977 | Y       | Y         | N       | 22           
+JDK-8306607 | N       | N         | Y       | 22           
+JDK-8306764 | Y       | Y         | N       | 21           
+JDK-8307319 | Y       | Y         | N       | 21           
+JDK-8307383 | N       | N         | Y       | N/A          
+JDK-8308111 | Y       | Y         | N       | 21           
+JDK-8308113 | Y       | Y         | N       | 21           
+JDK-8308204 | N       | N         | Y       | N/A          
+JDK-8308240 | Y       | Y         | N       | 21           
+JDK-8308456 | Y       | Y         | N       | 21           
+JDK-8308682 | N       | N         | Y       | N/A          
+JDK-8308988 | Y       | Y         | N       | 21           
+JDK-8309070 | N       | Y         | N       | N/A          
+JDK-8309105 | Y       | Y         | N       | 21           
+JDK-8309859 | Y       | Y         | N       | 22           
+JDK-8309966 | N       | N         | Y       | N/A          
+JDK-8310067 | Y       | Y         | N       | 22           
+JDK-8310200 | Y       | Y         | N       | 21           
+JDK-8311198 | N       | Y         | N       | N/A          
+JDK-8311208 | N       | N         | Y       | N/A          
+JDK-8311565 | Y       | Y         | N       | 22           
+JDK-8311680 | N       | N         | Y       | N/A          
+JDK-8311681 | N       | N         | Y       | N/A          
+JDK-8311682 | N       | N         | Y       | N/A          
+JDK-8312081 | N       | Y         | N       | N/A          
+JDK-8312082 | Y       | Y         | N       | 22           
+JDK-8312248 | N       | N         | Y       | N/A          
+JDK-8312401 | N       | N         | Y       | N/A          
+JDK-8312459 | N       | Y         | N       | N/A          
+JDK-8313215 | Y       | Y         | N       | 22           
+JDK-8313742 | Y       | Y         | N       | 22           
+JDK-8314295 | N       | N         | Y       | N/A          
+JDK-8314307 | N       | N         | Y       | N/A          
+JDK-8314468 | N       | N         | Y       | N/A          
+JDK-8314649 | N       | N         | Y       | N/A          
+JDK-8314794 | N       | N         | Y       | N/A          
+JDK-8314976 | Y       | Y         | N       | 22           
+JDK-8315052 | N       | Y         | N       | N/A          
+JDK-8315230 | Y       | Y         | N       | 21.0.3       
+JDK-8315708 | N       | N         | Y       | N/A          
+JDK-8316336 | Y       | Y         | N       | 21.0.2       
+JDK-8316976 | N       | N         | Y       | N/A          
+JDK-8317121 | N       | N         | Y       | N/A          
+JDK-8317259 | Y       | Y         | N       | 22           
+JDK-8317331 | N       | N         | Y       | N/A          
+JDK-8317439 | N       | N         | Y       | N/A          
+JDK-8317547 | N       | N         | Y       | N/A          
+JDK-8318038 | N       | Y         | N       | N/A          
+JDK-8318137 | N       | N         | Y       | N/A          
+JDK-8318340 | N       | N         | Y       | N/A          
+JDK-8318472 | Y       | Y         | N       | 22           
+JDK-8318618 | Y       | Y         | N       | 22           
+JDK-8318825 | N       | Y         | N       | N/A          
+JDK-8319243 | Y       | Y         | N       | 22           
+JDK-8319570 | N       | Y         | N       | N/A          
+JDK-8319851 | N       | N         | Y       | N/A          
+JDK-8319859 | N       | N         | Y       | N/A          
+JDK-8320097 | N       | N         | Y       | N/A          
+JDK-8320105 | Y       | Y         | N       | 22           
+JDK-8320265 | N       | Y         | N       | N/A          
+JDK-8320548 | N       | N         | Y       | N/A          
+JDK-8320871 | Y       | Y         | N       | 21.0.3, 22   
+JDK-8321530 | Y       | Y         | N       | 21.0.1       
+JDK-8321532 | N       | Y         | N       | N/A          
+JDK-8322122 | N       | N         | Y       | N/A          
+JDK-8322338 | Y       | Y         | N       | 22           
+JDK-8322339 | Y       | Y         | N       | 22           
+JDK-8322345 | Y       | Y         | N       | 22           
+JDK-8322415 | N       | Y         | N       | N/A          
+JDK-8322467 | N       | Y         | N       | N/A          
+JDK-8322474 | N       | Y         | N       | N/A          
+JDK-8322645 | N       | Y         | N       | N/A          
+JDK-8322972 | N       | Y         | N       | N/A          
+JDK-8323231 | N       | N         | Y       | N/A          
+JDK-8323390 | N       | N         | Y       | N/A          
+JDK-8324559 | N       | N         | Y       | N/A          
+JDK-8324655 | N       | Y         | N       | N/A          
+JDK-8325600 | N       | N         | Y       | N/A          
+JDK-8325730 | N       | Y         | N       | N/A          
+JDK-8325903 | N       | Y         | N       | N/A          
+JDK-8325999 | N       | Y         | N       | N/A          
+JDK-8326373 | N       | Y         | N       | N/A          
+JDK-8327055 | N       | Y         | N       | N/A          
+JDK-8327413 | N       | N         | Y       | N/A          
+JDK-8328286 | N       | N         | Y       | N/A          
+JDK-8328544 | N       | N         | Y       | N/A          
+JDK-8328726 | N       | N         | Y       | N/A          
+JDK-8328857 | N       | Y         | N       | N/A          
+JDK-8329111 | N       | Y         | N       | N/A          
+JDK-8329337 | N       | Y         | N       | N/A          
+JDK-8329427 | N       | Y         | N       | N/A          
+JDK-8329524 | N       | Y         | N       | N/A          
+JDK-8329530 | N       | Y         | N       | N/A          
+JDK-8330045 | N       | N         | Y       | N/A          
+JDK-8330732 | N       | Y         | N       | N/A          
+JDK-8331053 | N       | Y         | N       | N/A          
+JDK-8331090 | N       | Y         | N       | N/A          
+JDK-8331446 | N       | N         | Y       | N/A          
+JDK-8331872 | N       | Y         | N       | N/A          
+JDK-8331874 | Y       | Y         | N       | 22           
+JDK-8331979 | N       | Y         | N       | N/A          
+JDK-8332644 | N       | N         | Y       | N/A          
+JDK-8334260 | N       | Y         | N       | N/A          
+JDK-8335291 | N       | Y         | N       | N/A          
+JDK-8335428 | N       | N         | Y       | N/A          
+JDK-8335713 | N       | N         | Y       | N/A          
+JDK-8336564 | N       | N         | Y       | N/A          
+JDK-8336799 | N       | Y         | N       | N/A          
+JDK-8337494 | N       | N         | Y       | N/A          
+JDK-8337692 | N       | N         | Y       | N/A          
+JDK-8337884 | N       | Y         | N       | N/A          
+JDK-8338103 | N       | Y         | N       | N/A          
+JDK-8338430 | N       | N         | Y       | N/A          
+JDK-8338592 | N       | Y         | N       | N/A          
+JDK-8338621 | N       | Y         | N       | N/A          
+JDK-8338879 | N       | Y         | N       | N/A          
+JDK-8338920 | N       | Y         | N       | N/A          
+JDK-8339101 | N       | Y         | N       | N/A          
+JDK-8339180 | N       | N         | Y       | N/A          
+JDK-8339233 | N       | Y         | N       | N/A          
+JDK-8339495 | N       | Y         | N       | N/A          
+JDK-8339962 | N       | Y         | N       | N/A          
+JDK-8340337 | N       | Y         | N       | N/A          
+JDK-8341062 | N       | Y         | N       | N/A          
+JDK-8341905 | N       | Y         | N       | N/A          
+JDK-8342562 | N       | N         | Y       | N/A          
+JDK-8342843 | N       | Y         | N       | N/A          
+JDK-8343007 | N       | N         | Y       | N/A          
+JDK-8343127 | N       | Y         | N       | N/A          
+JDK-8343545 | N       | Y         | N       | N/A          
+JDK-8343567 | N       | Y         | N       | N/A          
+JDK-8344145 | N       | Y         | N       | N/A          
+JDK-8345625 | N       | N         | Y       | N/A          
+JDK-8345967 | N       | Y         | N       | N/A          
+JDK-8346285 | N       | Y         | N       | N/A          
+JDK-8346837 | N       | Y         | N       | N/A          
+JDK-8347612 | N       | Y         | N       | N/A          
+JDK-8347847 | N       | N         | Y       | N/A          
+JDK-8347928 | N       | Y         | N       | N/A          
+JDK-8348690 | N       | Y         | N       | N/A          
+JDK-8348989 | N       | N         | Y       | N/A          
+JDK-8349111 | N       | N         | Y       | N/A          
+JDK-8349210 | N       | Y         | N       | N/A          
+JDK-8349213 | N       | Y         | N       | N/A          
+JDK-8349286 | N       | Y         | N       | N/A          
+JDK-8349594 | N       | N         | Y       | N/A          
+JDK-8349913 | N       | Y         | N       | N/A          
+JDK-8350430 | N       | Y         | N       | N/A          
+JDK-8350991 | N       | N         | Y       | N/A          
+JDK-8351686 | N       | Y         | N       | N/A          
+JDK-8353962 | N       | Y         | N       | N/A          
+JDK-8354965 | N       | Y         | N       | N/A          
+JDK-8355325 | N       | Y         | N       | N/A          
+JDK-8357147 | N       | Y         | N       | N/A          
+JDK-8358764 | N       | Y         | N       | N/A          
+JDK-8359171 | N       | Y         | N       | N/A          
+JDK-8360147 | N       | N         | Y       | N/A          
+JDK-8361537 | N       | Y         | N       | N/A          
+JDK-8367892 | N       | Y         | N       | N/A          
+
+差分件数: 1001
+全てのプロダクトで一致したJDK件数: 4067
+Fix Version/sが21以外のJDK件数: 134
