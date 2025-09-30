@@ -1,0 +1,1826 @@
+{
+    "id": "RE_kwDOI-qQc84KvtIq",
+    "release_name": "jdk-21.0.5+11",
+    "release_notes": [
+        {
+            "id": "JDK-8331266",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331266",
+            "title": "Bump update version for OpenJDK: jdk-21.0.5"
+        },
+        {
+            "id": "JDK-8332490",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332490",
+            "title": "JMH org.openjdk.bench.java.util.zip.InflaterInputStreams.inflaterInputStreamRead OOM"
+        },
+        {
+            "id": "JDK-8318479",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8318479",
+            "title": "[jmh] the test security.CacheBench  failed for multiple threads run"
+        },
+        {
+            "id": "JDK-8330576",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330576",
+            "title": "ZYoungCompactionLimit should have range check"
+        },
+        {
+            "id": "JDK-8331714",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331714",
+            "title": "Make OopMapCache installation lock-free"
+        },
+        {
+            "id": "JDK-8333093",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333093",
+            "title": "Incorrect comment in zAddress_aarch64.cpp"
+        },
+        {
+            "id": "JDK-8331746",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331746",
+            "title": "Create a test to verify that the cmm id is not ignored"
+        },
+        {
+            "id": "JDK-8316328",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316328",
+            "title": "Test jdk/jfr/event/oldobject/TestSanityDefault.java times out for some heap sizes"
+        },
+        {
+            "id": "JDK-8311666",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8311666",
+            "title": "Disabled tests in test/jdk/sun/java2d/marlin"
+        },
+        {
+            "id": "JDK-8310108",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310108",
+            "title": "Skip ReplaceCriticalClassesForSubgraphs when EnableJVMCI is specified"
+        },
+        {
+            "id": "JDK-8317288",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317288",
+            "title": "[macos] java/awt/Window/Grab/GrabTest.java: Press on the outside area didn't cause ungrab"
+        },
+        {
+            "id": "JDK-8307788",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8307788",
+            "title": "vmTestbase/gc/gctests/LargeObjects/large003/TestDescription.java timed out"
+        },
+        {
+            "id": "JDK-8328075",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328075",
+            "title": "Shenandoah: Avoid forwarding when objects don't move in full-GC"
+        },
+        {
+            "id": "JDK-8331164",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331164",
+            "title": "createJMHBundle.sh download jars fail when url needed to be redirected"
+        },
+        {
+            "id": "JDK-8331573",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331573",
+            "title": "Rename CollectedHeap::is_gc_active to be explicitly about STW GCs"
+        },
+        {
+            "id": "JDK-8312229",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8312229",
+            "title": "Crash involving yield, switch and anonymous classes"
+        },
+        {
+            "id": "JDK-8326106",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8326106",
+            "title": "Write and clear stack trace table outside of safepoint"
+        },
+        {
+            "id": "JDK-8319773",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319773",
+            "title": "Avoid inflating monitors when installing hash codes for LM_LIGHTWEIGHT"
+        },
+        {
+            "id": "JDK-8323670",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323670",
+            "title": "A few client tests intermittently throw ConcurrentModificationException"
+        },
+        {
+            "id": "JDK-8324668",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324668",
+            "title": "JDWP process management needs more efficient file descriptor handling"
+        },
+        {
+            "id": "JDK-8323552",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323552",
+            "title": "AbstractMemorySegmentImpl#mismatch returns -1 when comparing distinct areas of the same instance of MemorySegment"
+        },
+        {
+            "id": "JDK-8310072",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310072",
+            "title": "JComboBox/DisabledComboBoxFontTestAuto: Enabled and disabled ComboBox does not match in these LAFs: GTK+"
+        },
+        {
+            "id": "JDK-8305825",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8305825",
+            "title": "getBounds API returns wrong value resulting in multiple Regression Test Failures on Ubuntu 23.04"
+        },
+        {
+            "id": "JDK-8325763",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325763",
+            "title": "Revert properties: vm.opt.x.*"
+        },
+        {
+            "id": "JDK-8327040",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327040",
+            "title": "Problemlist ActionListenerCalledTwiceTest.java test failing in macos14"
+        },
+        {
+            "id": "JDK-8331771",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331771",
+            "title": "ZGC: Remove OopMapCacheAlloc_lock ordering workaround"
+        },
+        {
+            "id": "JDK-8329134",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329134",
+            "title": "Reconsider TLAB zapping"
+        },
+        {
+            "id": "JDK-8329126",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329126",
+            "title": "No native wrappers generated anymore with -XX:-TieredCompilation after JDK-8251462"
+        },
+        {
+            "id": "JDK-8325382",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325382",
+            "title": "(fc) FileChannel.transferTo throws IOException when position equals size"
+        },
+        {
+            "id": "JDK-8325179",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325179",
+            "title": "Race in BasicDirectoryModel.validateFileCache"
+        },
+        {
+            "id": "JDK-8238169",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8238169",
+            "title": "BasicDirectoryModel getDirectories and DoChangeContents.run can deadlock"
+        },
+        {
+            "id": "JDK-8328953",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328953",
+            "title": "JEditorPane.read throws ChangedCharSetException"
+        },
+        {
+            "id": "JDK-8329004",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329004",
+            "title": "Update Libpng to 1.6.43"
+        },
+        {
+            "id": "JDK-8305072",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8305072",
+            "title": "Win32ShellFolder2.compareTo is inconsistent"
+        },
+        {
+            "id": "JDK-8324577",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324577",
+            "title": "[REDO] - [IMPROVE] OPEN_MAX is no longer the max limit on macOS >= 10.6 for RLIMIT_NOFILE"
+        },
+        {
+            "id": "JDK-8328999",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328999",
+            "title": "Update GIFlib to 5.2.2"
+        },
+        {
+            "id": "JDK-8330748",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330748",
+            "title": "ByteArrayOutputStream.writeTo(OutputStream) pins carrier"
+        },
+        {
+            "id": "JDK-8331077",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331077",
+            "title": "nroff man page update for jar tool"
+        },
+        {
+            "id": "JDK-8314225",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8314225",
+            "title": "SIGSEGV in JavaThread::is_lock_owned"
+        },
+        {
+            "id": "JDK-8261433",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8261433",
+            "title": "Better pkcs11 performance for libpkcs11:C_EncryptInit/libpkcs11:C_DecryptInit"
+        },
+        {
+            "id": "JDK-8328785",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328785",
+            "title": "IOException: Symbol not found: C_GetInterface for PKCS11 interface prior to V3.0"
+        },
+        {
+            "id": "JDK-8315031",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315031",
+            "title": "YoungPLABSize and OldPLABSize not aligned by ObjectAlignmentInBytes"
+        },
+        {
+            "id": "JDK-8322330",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322330",
+            "title": "JavadocHelperTest.java OOMEs with Parallel GC and ZGC"
+        },
+        {
+            "id": "JDK-8323577",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323577",
+            "title": "C2 SuperWord: remove AlignVector restrictions on IR tests added in JDK-8305055"
+        },
+        {
+            "id": "JDK-8310201",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310201",
+            "title": "Reduce verbose locale output in -XshowSettings launcher option"
+        },
+        {
+            "id": "JDK-8322008",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322008",
+            "title": "Exclude some CDS tests from running with -Xshare:off"
+        },
+        {
+            "id": "JDK-8320945",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320945",
+            "title": "problemlist tests failing on latest Windows 11 update"
+        },
+        {
+            "id": "JDK-8315804",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315804",
+            "title": "Open source several Swing JTabbedPane JTextArea JTextField tests"
+        },
+        {
+            "id": "JDK-8311989",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8311989",
+            "title": "Test java/lang/Thread/virtual/Reflection.java timed out"
+        },
+        {
+            "id": "JDK-8332431",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332431",
+            "title": "NullPointerException in JTable of SwingSet2"
+        },
+        {
+            "id": "JDK-8317240",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317240",
+            "title": "Promptly free OopMapEntry after fail to insert the entry to OopMapCache"
+        },
+        {
+            "id": "JDK-8328561",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328561",
+            "title": "test java/awt/Robot/ManualInstructions/ManualInstructions.java isn't used"
+        },
+        {
+            "id": "JDK-8328218",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328218",
+            "title": "Delete test java/awt/Window/FindOwner/FindOwner.html"
+        },
+        {
+            "id": "JDK-8328234",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328234",
+            "title": "Remove unused nativeUtils files"
+        },
+        {
+            "id": "JDK-8323801",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323801",
+            "title": "<s> tag doesn't strikethrough the text"
+        },
+        {
+            "id": "JDK-8332898",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332898",
+            "title": "failure_handler: log directory of commands"
+        },
+        {
+            "id": "JDK-8322726",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322726",
+            "title": "C2: Unloaded signature class kills argument value"
+        },
+        {
+            "id": "JDK-8329995",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329995",
+            "title": "Restricted access to `/proc` can cause JFR initialization to crash"
+        },
+        {
+            "id": "JDK-8320602",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320602",
+            "title": "Lock contention in SchemaDVFactory.getInstance()"
+        },
+        {
+            "id": "JDK-8325616",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325616",
+            "title": "JFR ZGC Allocation Stall events should record stack traces"
+        },
+        {
+            "id": "JDK-8316104",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316104",
+            "title": "Open source several Swing SplitPane and RadioButton related tests"
+        },
+        {
+            "id": "JDK-8294148",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8294148",
+            "title": "Support JSplitPane for instructions and test UI"
+        },
+        {
+            "id": "JDK-8332885",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332885",
+            "title": "Clarify failure_handler self-tests"
+        },
+        {
+            "id": "JDK-8331789",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331789",
+            "title": "ubsan: deoptimization.cpp:403:29: runtime error: load of value 208, which is not a valid value for type 'bool'"
+        },
+        {
+            "id": "JDK-8332499",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332499",
+            "title": "Gtest codestrings.validate_vm fail on linux x64 when hsdis is present"
+        },
+        {
+            "id": "JDK-8326734",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8326734",
+            "title": "text-decoration applied to <span> lost when mixed with <u> or <s>"
+        },
+        {
+            "id": "JDK-8325620",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325620",
+            "title": "HTMLReader uses ConvertAction instead of specified CharacterAction for <b>, <i>, <u>"
+        },
+        {
+            "id": "JDK-8331885",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331885",
+            "title": "C2: meet between unloaded and speculative types is not symmetric"
+        },
+        {
+            "id": "JDK-8329665",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329665",
+            "title": "fatal error: memory leak: allocating without ResourceMark"
+        },
+        {
+            "id": "JDK-8331931",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331931",
+            "title": "JFR: Avoid loading regex classes during startup"
+        },
+        {
+            "id": "JDK-8313983",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8313983",
+            "title": "jmod create --target-platform should replace existing ModuleTarget attribute"
+        },
+        {
+            "id": "JDK-8323782",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323782",
+            "title": "Race: Thread::interrupt vs. AbstractInterruptibleChannel.begin"
+        },
+        {
+            "id": "JDK-8327990",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327990",
+            "title": "[macosx-aarch64] Various tests fail with -XX:+AssertWXAtThreadSync"
+        },
+        {
+            "id": "JDK-8287325",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8287325",
+            "title": "AArch64: fix virtual threads with -XX:UseBranchProtection=pac-ret"
+        },
+        {
+            "id": "JDK-8332589",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332589",
+            "title": "ubsan: unix/native/libjava/ProcessImpl_md.c:562:5: runtime error: null pointer passed as argument 2, which is declared to never be null"
+        },
+        {
+            "id": "JDK-8332720",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332720",
+            "title": "ubsan: instanceKlass.cpp:3550:76: runtime error: member call on null pointer of type 'struct Array'"
+        },
+        {
+            "id": "JDK-8332675",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332675",
+            "title": "test/hotspot/jtreg/gc/testlibrary/Helpers.java compileClass javadoc does not match after 8321812"
+        },
+        {
+            "id": "JDK-8332473",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332473",
+            "title": "ubsan: growableArray.hpp:290:10: runtime error: null pointer passed as argument 1, which is declared to never be null"
+        },
+        {
+            "id": "JDK-8333477",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333477",
+            "title": "Delete extra empty spaces in Makefiles"
+        },
+        {
+            "id": "JDK-8332894",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332894",
+            "title": "ubsan: vmError.cpp:2090:26: runtime error: division by zero"
+        },
+        {
+            "id": "JDK-8332904",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332904",
+            "title": "ubsan ppc64le: c1_LIRGenerator_ppc.cpp:581:21: runtime error: signed integer overflow: 9223372036854775807 + 1 cannot be represented in type 'long int'"
+        },
+        {
+            "id": "JDK-8332154",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332154",
+            "title": "Memory leak in SynchronousQueue"
+        },
+        {
+            "id": "JDK-8324755",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324755",
+            "title": "Enable parallelism in vmTestbase/gc/gctests/LargeObjects tests"
+        },
+        {
+            "id": "JDK-8331626",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331626",
+            "title": "unsafe.cpp:162:38: runtime error in index_oop_from_field_offset_long - applying non-zero offset 4563897424 to null pointer"
+        },
+        {
+            "id": "JDK-8307193",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8307193",
+            "title": "Several Swing jtreg tests use class.forName on L&F classes"
+        },
+        {
+            "id": "JDK-8329510",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329510",
+            "title": "Update ProblemList for JFileChooser/8194044/FileSystemRootTest.java"
+        },
+        {
+            "id": "JDK-8316240",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316240",
+            "title": "Open source several add/remove MenuBar manual tests"
+        },
+        {
+            "id": "JDK-8280392",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8280392",
+            "title": "java/awt/Focus/NonFocusableWindowTest/NonfocusableOwnerTest.java failed with \"RuntimeException: Test failed.\""
+        },
+        {
+            "id": "JDK-8325469",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325469",
+            "title": "Freeze/Thaw code can crash in the presence of OSR frames"
+        },
+        {
+            "id": "JDK-8307352",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8307352",
+            "title": "AARCH64: Improve itable_stub"
+        },
+        {
+            "id": "JDK-8333716",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333716",
+            "title": "Shenandoah: Check for disarmed method before taking the nmethod lock"
+        },
+        {
+            "id": "JDK-8320379",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320379",
+            "title": "C2: Sort spilling/unspilling sequence for better ld/st merging into ldp/stp on AArch64"
+        },
+        {
+            "id": "JDK-8330611",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330611",
+            "title": "AES-CTR vector intrinsic may read out of bounds (x86_64, AVX-512)"
+        },
+        {
+            "id": "JDK-8331421",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331421",
+            "title": "ubsan: vmreg.cpp checking error member call on misaligned address"
+        },
+        {
+            "id": "JDK-8324983",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324983",
+            "title": "Race in CompileBroker::possibly_add_compiler_threads"
+        },
+        {
+            "id": "JDK-8329258",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329258",
+            "title": "TailCall should not use frame pointer register for jump target"
+        },
+        {
+            "id": "JDK-8331863",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331863",
+            "title": "DUIterator_Fast used before it is constructed"
+        },
+        {
+            "id": "JDK-8323682",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323682",
+            "title": "C2: guard check is not generated in Arrays.copyOfRange intrinsic when allocation is eliminated by EA"
+        },
+        {
+            "id": "JDK-8332959",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332959",
+            "title": "C2: ZGC fails with 'Incorrect load shift' when invoking Object.clone() reflectively on an array"
+        },
+        {
+            "id": "JDK-8333366",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333366",
+            "title": "C2: CmpU3Nodes are not pushed back to worklist in PhaseCCP leading to non-fixpoint assertion failure"
+        },
+        {
+            "id": "JDK-8324969",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324969",
+            "title": "C2: prevent elimination of unbalanced coarsened locking regions"
+        },
+        {
+            "id": "JDK-8327423",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327423",
+            "title": "C2 remove_main_post_loops: check if main-loop belongs to pre-loop, not just assert"
+        },
+        {
+            "id": "JDK-8332905",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332905",
+            "title": "C2 SuperWord: bad AD file, with RotateRightV and first operand not a pack"
+        },
+        {
+            "id": "JDK-8324174",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324174",
+            "title": "assert(m->is_entered(current)) failed: invariant"
+        },
+        {
+            "id": "JDK-8316756",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316756",
+            "title": "C2 EA fails with \"missing memory path\" when encountering unsafe_arraycopy stub call"
+        },
+        {
+            "id": "JDK-8323122",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323122",
+            "title": "AArch64: Increase itable stub size estimate"
+        },
+        {
+            "id": "JDK-8330814",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330814",
+            "title": "Cleanups for KeepAliveCache tests"
+        },
+        {
+            "id": "JDK-8333724",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333724",
+            "title": "Problem list security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java#teliasonerarootcav1"
+        },
+        {
+            "id": "JDK-8332935",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332935",
+            "title": "Crash:  assert(*lastPtr != 0) failed: Mismatched JNINativeInterface tables, check for new entries"
+        },
+        {
+            "id": "JDK-8319793",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319793",
+            "title": "C2 compilation fails with \"Bad graph detected in build_loop_late\" after JDK-8279888"
+        },
+        {
+            "id": "JDK-8321278",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321278",
+            "title": "C2: Partial peeling fails with assert \"last_peel <- first_not_peeled\""
+        },
+        {
+            "id": "JDK-8323972",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323972",
+            "title": "C2 compilation fails with assert(!x->as_Loop()->is_loop_nest_inner_loop()) failed: loop was transformed"
+        },
+        {
+            "id": "JDK-8317299",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317299",
+            "title": "safepoint scalarization doesn't keep track of the depth of the JVM state"
+        },
+        {
+            "id": "JDK-8322996",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322996",
+            "title": "BoxLockNode creation fails with assert(reg < CHUNK_SIZE) failed: sanity"
+        },
+        {
+            "id": "JDK-8331575",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331575",
+            "title": "C2: crash when ConvL2I is split thru phi at LongCountedLoop"
+        },
+        {
+            "id": "JDK-8327787",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327787",
+            "title": "Convert javax/swing/border/Test4129681.java applet test to main"
+        },
+        {
+            "id": "JDK-8269428",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8269428",
+            "title": "java/util/concurrent/ConcurrentHashMap/ToArray.java timed out"
+        },
+        {
+            "id": "JDK-8317831",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317831",
+            "title": "compiler/codecache/CheckLargePages.java fails on OL 8.8 with unexpected memory string"
+        },
+        {
+            "id": "JDK-8332825",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332825",
+            "title": "ubsan: guardedMemory.cpp:35:11: runtime error: null pointer passed as argument 2, which is declared to never be null"
+        },
+        {
+            "id": "JDK-8323274",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323274",
+            "title": "C2: array load may float above range check"
+        },
+        {
+            "id": "JDK-8318071",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8318071",
+            "title": "IgnoreUnrecognizedVMOptions flag still causes failure in ArchiveHeapTestClass"
+        },
+        {
+            "id": "JDK-8317635",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317635",
+            "title": "Improve GetClassFields test to verify correctness of field order"
+        },
+        {
+            "id": "JDK-8327650",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327650",
+            "title": "Test java/nio/channels/DatagramChannel/StressNativeSignal.java timed out"
+        },
+        {
+            "id": "JDK-8328011",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328011",
+            "title": "Convert java/awt/Frame/GetBoundsResizeTest/GetBoundsResizeTest.java applet test to main"
+        },
+        {
+            "id": "JDK-8327137",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327137",
+            "title": "Add test for ConcurrentModificationException in BasicDirectoryModel"
+        },
+        {
+            "id": "JDK-8328115",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328115",
+            "title": "Convert java/awt/font/TextLayout/TestJustification.html applet test to main"
+        },
+        {
+            "id": "JDK-8331142",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331142",
+            "title": "Add test for number of loader threads in BasicDirectoryModel"
+        },
+        {
+            "id": "JDK-8331495",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331495",
+            "title": "Limit BasicDirectoryModel/LoaderThreadCount.java to Windows only"
+        },
+        {
+            "id": "JDK-8329088",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329088",
+            "title": "Stack chunk thawing races with concurrent GC stack iteration"
+        },
+        {
+            "id": "JDK-8322743",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322743",
+            "title": "C2: prevent lock region elimination in OSR compilation"
+        },
+        {
+            "id": "JDK-8308660",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8308660",
+            "title": "C2 compilation hits 'node must be dead' assert"
+        },
+        {
+            "id": "JDK-8301686",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8301686",
+            "title": "TLS 1.3 handshake fails if server_name doesn't match resuming session"
+        },
+        {
+            "id": "JDK-8313697",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8313697",
+            "title": "[XWayland][Screencast] consequent getPixelColor calls are slow"
+        },
+        {
+            "id": "JDK-8310334",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310334",
+            "title": "[XWayland][Screencast] screen capture error message in debug"
+        },
+        {
+            "id": "JDK-8321025",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321025",
+            "title": "Enable Neoverse N1 optimizations for Neoverse V2"
+        },
+        {
+            "id": "JDK-8320079",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320079",
+            "title": "The ArabicBox.java test has no control buttons"
+        },
+        {
+            "id": "JDK-8328560",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328560",
+            "title": "java/awt/event/MouseEvent/ClickDuringKeypress/ClickDuringKeypress.java imports Applet"
+        },
+        {
+            "id": "JDK-8309621",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8309621",
+            "title": "[XWayland][Screencast] screen capture failure with sun.java2d.uiScale other than 1"
+        },
+        {
+            "id": "JDK-8330819",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330819",
+            "title": "C2 SuperWord: bad dominance after pre-loop limit adjustment with base that has CastLL after pre-loop"
+        },
+        {
+            "id": "JDK-8330133",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330133",
+            "title": "libj2pkcs11.so crashes on some pkcs#11 v3.0 libraries"
+        },
+        {
+            "id": "JDK-8325083",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325083",
+            "title": "jdk/incubator/vector/Double512VectorTests.java crashes in Assembler::vex_prefix_and_encode"
+        },
+        {
+            "id": "JDK-8331999",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331999",
+            "title": "BasicDirectoryModel/LoaderThreadCount.java frequently fails on Windows in CI"
+        },
+        {
+            "id": "JDK-8331063",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331063",
+            "title": "Some HttpClient tests don't report leaks"
+        },
+        {
+            "id": "JDK-8332936",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332936",
+            "title": "Test vmTestbase/metaspace/gc/watermark_70_80/TestDescription.java fails with no GC's recorded"
+        },
+        {
+            "id": "JDK-8334332",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334332",
+            "title": "TestIOException.java fails if run by root"
+        },
+        {
+            "id": "JDK-8309685",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8309685",
+            "title": "Fix -Wconversion warnings in assembler and register code"
+        },
+        {
+            "id": "JDK-8318605",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8318605",
+            "title": "Enable parallelism in vmTestbase/nsk/stress/stack tests"
+        },
+        {
+            "id": "JDK-8327840",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327840",
+            "title": "Automate javax/swing/border/Test4129681.java"
+        },
+        {
+            "id": "JDK-8332174",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332174",
+            "title": "Remove 2 (unpaired) RLO Unicode characters in ff_Adlm.xml"
+        },
+        {
+            "id": "JDK-8314515",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8314515",
+            "title": "java/util/concurrent/SynchronousQueue/Fairness.java failed with \"Error: fair=false i=8 j=0\""
+        },
+        {
+            "id": "JDK-8241550",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8241550",
+            "title": "[macOS] SSLSocketImpl/ReuseAddr.java failed due to \"BindException: Address already in use\""
+        },
+        {
+            "id": "JDK-8321933",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321933",
+            "title": "TestCDSVMCrash.java spawns two processes"
+        },
+        {
+            "id": "JDK-8315024",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315024",
+            "title": "Vector API FP reduction tests should not test for exact equality"
+        },
+        {
+            "id": "JDK-8325384",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325384",
+            "title": "sun/security/ssl/SSLSessionImpl/ResumptionUpdateBoundValues.java failing intermittently when main thread is a virtual thread"
+        },
+        {
+            "id": "JDK-8314614",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8314614",
+            "title": "jdk/jshell/ImportTest.java failed with \"InternalError: Failed remote listen\""
+        },
+        {
+            "id": "JDK-8312140",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8312140",
+            "title": "jdk/jshell tests failed with JDI socket timeouts"
+        },
+        {
+            "id": "JDK-8315576",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315576",
+            "title": "compiler/codecache/CodeCacheFullCountTest.java fails after JDK-8314837"
+        },
+        {
+            "id": "JDK-8313674",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8313674",
+            "title": "(fc) java/nio/channels/FileChannel/BlockDeviceSize.java should test for more block devices"
+        },
+        {
+            "id": "JDK-8316389",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316389",
+            "title": "Open source few AWT applet tests"
+        },
+        {
+            "id": "JDK-8328110",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328110",
+            "title": "Allow simultaneous use of PassFailJFrame with split UI and additional windows"
+        },
+        {
+            "id": "JDK-8333398",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333398",
+            "title": "Uncomment the commented test in test/jdk/java/util/jar/JarFile/mrjar/MultiReleaseJarAPI.java"
+        },
+        {
+            "id": "JDK-7022325",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-7022325",
+            "title": "TEST_BUG: test/java/util/zip/ZipFile/ReadLongZipFileName.java leaks files if it fails"
+        },
+        {
+            "id": "JDK-8283223",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8283223",
+            "title": "gc/stringdedup/TestStringDeduplicationFullGC.java#Parallel failed with \"RuntimeException: String verification failed\""
+        },
+        {
+            "id": "JDK-8316211",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316211",
+            "title": "Open source several manual applet tests"
+        },
+        {
+            "id": "JDK-8317360",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317360",
+            "title": "Missing null checks in JfrCheckpointManager and JfrStringPool initialization routines"
+        },
+        {
+            "id": "JDK-8321220",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321220",
+            "title": "JFR: RecordedClass reports incorrect modifiers"
+        },
+        {
+            "id": "JDK-8325754",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325754",
+            "title": "Dead AbstractQueuedSynchronizer$ConditionNodes survive minor garbage collections"
+        },
+        {
+            "id": "JDK-8316306",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316306",
+            "title": "Open source and convert manual Swing test"
+        },
+        {
+            "id": "JDK-8299487",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8299487",
+            "title": "Test java/net/httpclient/whitebox/SSLTubeTestDriver.java timed out"
+        },
+        {
+            "id": "JDK-8307778",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8307778",
+            "title": "com/sun/jdi/cds tests fail with jtreg's Virtual test thread factory"
+        },
+        {
+            "id": "JDK-8319197",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319197",
+            "title": "Exclude hb-subset and hb-style from compilation"
+        },
+        {
+            "id": "JDK-8334333",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334333",
+            "title": "MissingResourceCauseTestRun.java fails if run by root"
+        },
+        {
+            "id": "JDK-8331011",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331011",
+            "title": "[XWayland] TokenStorage fails under Security Manager"
+        },
+        {
+            "id": "JDK-8320655",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320655",
+            "title": "awt screencast robot spin and sync issues with native libpipewire api"
+        },
+        {
+            "id": "JDK-8332920",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332920",
+            "title": "C2: Partial Peeling is wrongly applied for CmpU with negative limit"
+        },
+        {
+            "id": "JDK-8325494",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325494",
+            "title": "C2: Broken graph after not skipping CastII node anymore for Assertion Predicates after JDK-8309902"
+        },
+        {
+            "id": "JDK-8325520",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325520",
+            "title": "Vector loads and stores with indices and masks incorrectly compiled"
+        },
+        {
+            "id": "JDK-8310906",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310906",
+            "title": "Fix -Wconversion warnings in runtime, oops and some code header files."
+        },
+        {
+            "id": "JDK-8328697",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328697",
+            "title": "SubMenuShowTest and SwallowKeyEvents tests stabilization"
+        },
+        {
+            "id": "JDK-8322062",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322062",
+            "title": "com/sun/jdi/JdwpAllowTest.java does not performs negative testing with prefix length"
+        },
+        {
+            "id": "JDK-8328647",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328647",
+            "title": "TestGarbageCollectorMXBean.java fails with C1-only and -Xcomp"
+        },
+        {
+            "id": "JDK-8222884",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8222884",
+            "title": "ConcurrentClassDescLookup.java times out intermittently"
+        },
+        {
+            "id": "JDK-8317372",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317372",
+            "title": "Refactor some NumberFormat tests to use JUnit"
+        },
+        {
+            "id": "JDK-8332248",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332248",
+            "title": "(fc) java/nio/channels/FileChannel/BlockDeviceSize.java failed with RuntimeException"
+        },
+        {
+            "id": "JDK-8330849",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330849",
+            "title": "Add test to verify memory usage with recursive locking"
+        },
+        {
+            "id": "JDK-8329103",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329103",
+            "title": "assert(!thread->in_asgct()) failed during multi-mode profiling"
+        },
+        {
+            "id": "JDK-8320608",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320608",
+            "title": "Many jtreg printing tests are missing the @printer keyword"
+        },
+        {
+            "id": "JDK-8315969",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315969",
+            "title": "compiler/rangechecks/TestRangeCheckHoistingScaledIV.java: make flagless"
+        },
+        {
+            "id": "JDK-8321176",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321176",
+            "title": "[Screencast] make a second attempt on screencast failure"
+        },
+        {
+            "id": "JDK-8051959",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8051959",
+            "title": "Add thread and timestamp options to java.security.debug system property"
+        },
+        {
+            "id": "JDK-8328896",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328896",
+            "title": "Fontmetrics for large Fonts has zero width"
+        },
+        {
+            "id": "JDK-8334867",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334867",
+            "title": "Add back assertion from JDK-8325494"
+        },
+        {
+            "id": "JDK-8333099",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333099",
+            "title": "Missing check for is_LoadVector in StoreNode::Identity"
+        },
+        {
+            "id": "JDK-8325587",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325587",
+            "title": "Shenandoah: ShenandoahLock should allow blocking in VM"
+        },
+        {
+            "id": "JDK-8323584",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323584",
+            "title": "AArch64: Unnecessary ResourceMark in NativeCall::set_destination_mt_safe"
+        },
+        {
+            "id": "JDK-8330027",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330027",
+            "title": "Identity hashes of archived objects must be based on a reproducible random seed"
+        },
+        {
+            "id": "JDK-8319406",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319406",
+            "title": "x86: Shorter movptr(reg, imm) for 32-bit immediates"
+        },
+        {
+            "id": "JDK-8170817",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8170817",
+            "title": "G1: Returning MinTLABSize from unsafe_max_tlab_alloc causes TLAB flapping"
+        },
+        {
+            "id": "JDK-8211847",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8211847",
+            "title": "[aix] java/lang/ProcessHandle/InfoTest.java fails: \"reported cputime less than expected\""
+        },
+        {
+            "id": "JDK-8333462",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333462",
+            "title": "Performance regression of new DecimalFormat() when compare to jdk11"
+        },
+        {
+            "id": "JDK-8319818",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319818",
+            "title": "Address GCC 13.2.0 warnings (stringop-overflow and dangling-pointer)"
+        },
+        {
+            "id": "JDK-8320212",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320212",
+            "title": "Disable GCC stringop-overflow warning for affected files"
+        },
+        {
+            "id": "JDK-8326717",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8326717",
+            "title": "Disable stringop-overflow in shenandoahLock.cpp"
+        },
+        {
+            "id": "JDK-8334421",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334421",
+            "title": "assert(!oldbox->is_unbalanced()) failed: this should not be called for unbalanced region"
+        },
+        {
+            "id": "JDK-8327007",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327007",
+            "title": "javax/swing/JSpinner/8008657/bug8008657.java fails"
+        },
+        {
+            "id": "JDK-8280990",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8280990",
+            "title": "[XWayland] XTest emulated mouse click does not bring window to front"
+        },
+        {
+            "id": "JDK-8260633",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8260633",
+            "title": "[macos] java/awt/dnd/MouseEventAfterStartDragTest/MouseEventAfterStartDragTest.html test failed"
+        },
+        {
+            "id": "JDK-8316285",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316285",
+            "title": "Opensource JButton manual tests"
+        },
+        {
+            "id": "JDK-8330063",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330063",
+            "title": "Upgrade jQuery to 3.7.1"
+        },
+        {
+            "id": "JDK-8333652",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333652",
+            "title": "RISC-V: compiler/vectorapi/VectorGatherMaskFoldingTest.java fails when using RVV"
+        },
+        {
+            "id": "JDK-8331605",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331605",
+            "title": "jdk/test/lib/TestMutuallyExclusivePlatformPredicates.java test failure"
+        },
+        {
+            "id": "JDK-8328238",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328238",
+            "title": "Convert few closed manual applet tests to main"
+        },
+        {
+            "id": "JDK-8320675",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8320675",
+            "title": "PrinterJob/SecurityDialogTest.java hangs"
+        },
+        {
+            "id": "JDK-8280988",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8280988",
+            "title": "[XWayland] Click on title to request focus test failures"
+        },
+        {
+            "id": "JDK-8333270",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333270",
+            "title": "HandlersOnComplexResetUpdate and HandlersOnComplexUpdate tests fail with \"Unexpected reference\" if timeoutFactor is less than 1/3"
+        },
+        {
+            "id": "JDK-8332524",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332524",
+            "title": "Instead of printing \"TLSv1.3,\" it is showing \"TLS13\""
+        },
+        {
+            "id": "JDK-6967482",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-6967482",
+            "title": "TAB-key does not work in JTables after selecting details-view in JFileChooser"
+        },
+        {
+            "id": "JDK-8166352",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8166352",
+            "title": "FilePane.createDetailsView() removes JTable TAB, SHIFT-TAB functionality"
+        },
+        {
+            "id": "JDK-8334600",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334600",
+            "title": "TEST java/net/MulticastSocket/IPMulticastIF.java fails on linux-aarch64"
+        },
+        {
+            "id": "JDK-8333353",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333353",
+            "title": "Delete extra empty line in CodeBlob.java"
+        },
+        {
+            "id": "JDK-8334653",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334653",
+            "title": "ISO 4217 Amendment 177 Update"
+        },
+        {
+            "id": "JDK-8331798",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331798",
+            "title": "Remove unused arg of checkErgonomics() in TestMaxHeapSizeTools.java"
+        },
+        {
+            "id": "JDK-8333804",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333804",
+            "title": "java/net/httpclient/ForbiddenHeadTest.java threw an exception with 0 failures"
+        },
+        {
+            "id": "JDK-8316361",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316361",
+            "title": "C2: assert(!failure) failed: Missed optimization opportunity in PhaseIterGVN with -XX:VerifyIterativeGVN=10"
+        },
+        {
+            "id": "JDK-8327401",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327401",
+            "title": "Some jtreg tests fail on Wayland without any tracking bug"
+        },
+        {
+            "id": "JDK-8312111",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8312111",
+            "title": "open/test/jdk/java/awt/Robot/ModifierRobotKey/ModifierRobotKeyTest.java fails on ubuntu 23.04"
+        },
+        {
+            "id": "JDK-8334297",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334297",
+            "title": "(so) java/nio/channels/SocketChannel/OpenLeak.java should not depend on SecurityManager"
+        },
+        {
+            "id": "JDK-8211854",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8211854",
+            "title": "[aix] java/net/ServerSocket/AcceptInheritHandle.java fails: read times out"
+        },
+        {
+            "id": "JDK-8329559",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329559",
+            "title": "Test javax/swing/JFrame/bug4419914.java failed because The End and Start buttons are not placed correctly and Tab focus does not move as expected"
+        },
+        {
+            "id": "JDK-8335536",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335536",
+            "title": "Fix assertion failure in IdealGraphPrinter when append is true"
+        },
+        {
+            "id": "JDK-8317446",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317446",
+            "title": "ProblemList gc/arguments/TestNewSizeFlags.java on macosx-aarch64 in Xcomp"
+        },
+        {
+            "id": "JDK-8317449",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317449",
+            "title": "ProblemList serviceability/jvmti/stress/StackTrace/NotSuspended/GetStackTraceNotSuspendedStressTest.java on several platforms"
+        },
+        {
+            "id": "JDK-8334592",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334592",
+            "title": "ProblemList serviceability/jvmti/stress/StackTrace/NotSuspended/GetStackTraceNotSuspendedStressTest.java in jdk21 on all platforms"
+        },
+        {
+            "id": "JDK-8328158",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328158",
+            "title": "Convert java/awt/Choice/NonFocusablePopupMenuTest to automatic main test"
+        },
+        {
+            "id": "JDK-8328269",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328269",
+            "title": "NonFocusablePopupMenuTest.java should be marked as headful"
+        },
+        {
+            "id": "JDK-8331518",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331518",
+            "title": "Tests should not use the \"Classpath\" exception form of the legal header"
+        },
+        {
+            "id": "JDK-8315923",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315923",
+            "title": "pretouch_memory by atomic-add-0 fragments huge pages unexpectedly"
+        },
+        {
+            "id": "JDK-8324781",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324781",
+            "title": "runtime/Thread/TestAlwaysPreTouchStacks.java failed with Expected a higher ratio between stack committed and reserved"
+        },
+        {
+            "id": "JDK-8325218",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325218",
+            "title": "gc/parallel/TestAlwaysPreTouchBehavior.java fails"
+        },
+        {
+            "id": "JDK-8335775",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335775",
+            "title": "Remove extraneous 's' in comment of rawmonitor.cpp test file"
+        },
+        {
+            "id": "JDK-8299058",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8299058",
+            "title": "AssertionError in sun.net.httpserver.ServerImpl when connection is idle"
+        },
+        {
+            "id": "JDK-8326129",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8326129",
+            "title": "Java Record Pattern Match leads to infinite loop"
+        },
+        {
+            "id": "JDK-8315505",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315505",
+            "title": "CompileTask timestamp printed can overflow"
+        },
+        {
+            "id": "JDK-8332424",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332424",
+            "title": "Update IANA Language Subtag Registry to Version 2024-05-16"
+        },
+        {
+            "id": "JDK-8322766",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322766",
+            "title": "Micro bench SSLHandshake should use default algorithms"
+        },
+        {
+            "id": "JDK-8328273",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328273",
+            "title": "sun/management/jmxremote/bootstrap/RmiRegistrySslTest.java failed with java.rmi.server.ExportException: Port already in use"
+        },
+        {
+            "id": "JDK-8327424",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327424",
+            "title": "ProblemList serviceability/sa/TestJmapCore.java on all platforms with ZGC"
+        },
+        {
+            "id": "JDK-8333887",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333887",
+            "title": "ubsan: unsafe.cpp:247:13: runtime error: store to null pointer of type 'volatile int'"
+        },
+        {
+            "id": "JDK-8334123",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334123",
+            "title": "log the opening of Type 1 fonts"
+        },
+        {
+            "id": "JDK-8334418",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334418",
+            "title": "Update IANA Language Subtag Registry to Version 2024-06-14"
+        },
+        {
+            "id": "JDK-8332818",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332818",
+            "title": "ubsan: archiveHeapLoader.cpp:70:27: runtime error: applying non-zero offset 18446744073707454464 to null pointer"
+        },
+        {
+            "id": "JDK-8333542",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333542",
+            "title": "Breakpoint in parallel code does not work"
+        },
+        {
+            "id": "JDK-8315422",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315422",
+            "title": "getSoTimeout() would be in try block in SSLSocketImpl"
+        },
+        {
+            "id": "JDK-8312200",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8312200",
+            "title": "Fix Parse::catch_call_exceptions memory leak"
+        },
+        {
+            "id": "JDK-8331405",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331405",
+            "title": "Shenandoah: Optimize ShenandoahLock with TTAS"
+        },
+        {
+            "id": "JDK-8299790",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8299790",
+            "title": "os::print_hex_dump is racy"
+        },
+        {
+            "id": "JDK-8314163",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8314163",
+            "title": "os::print_hex_dump prints incorrectly for big endian platforms and unit sizes larger than 1"
+        },
+        {
+            "id": "JDK-8332717",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332717",
+            "title": "ZGC: Division by zero in heuristics"
+        },
+        {
+            "id": "JDK-8331411",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331411",
+            "title": "Shenandoah: Reconsider spinning duration in ShenandoahLock"
+        },
+        {
+            "id": "JDK-8334239",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334239",
+            "title": "Introduce macro for ubsan method/function exclusions"
+        },
+        {
+            "id": "JDK-8325542",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325542",
+            "title": "CTW: Runner can produce negative StressSeed"
+        },
+        {
+            "id": "JDK-8334339",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334339",
+            "title": "Test java/nio/file/attribute/BasicFileAttributeView/CreationTime.java fails on alinux3"
+        },
+        {
+            "id": "JDK-8316131",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316131",
+            "title": "runtime/cds/appcds/TestParallelGCWithCDS.java fails with JNI error"
+        },
+        {
+            "id": "JDK-8310628",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310628",
+            "title": "GcInfoBuilder.c missing JNI Exception checks"
+        },
+        {
+            "id": "JDK-8334769",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334769",
+            "title": "Shenandoah: Move CodeCache_lock close to its use in ShenandoahConcurrentNMethodIterator"
+        },
+        {
+            "id": "JDK-8333361",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333361",
+            "title": "ubsan,test : libHeapMonitorTest.cpp:518:9: runtime error: null pointer passed as argument 2, which is declared to never be null"
+        },
+        {
+            "id": "JDK-8326332",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8326332",
+            "title": "Unclosed inline tags cause misalignment in summary tables"
+        },
+        {
+            "id": "JDK-8269657",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8269657",
+            "title": "Test java/nio/channels/DatagramChannel/Loopback.java failed: Unexpected message"
+        },
+        {
+            "id": "JDK-8332903",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332903",
+            "title": "ubsan: opto/output.cpp:1002:18: runtime error: load of value 171, which is not a valid value for type 'bool'"
+        },
+        {
+            "id": "JDK-8335283",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335283",
+            "title": "Build failure due to 'no_sanitize' attribute directive ignored"
+        },
+        {
+            "id": "JDK-8337038",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337038",
+            "title": "Test java/nio/file/attribute/BasicFileAttributeView/CreationTime.java shoud set as /native"
+        },
+        {
+            "id": "JDK-8317696",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317696",
+            "title": "Fix compilation with clang-16"
+        },
+        {
+            "id": "JDK-8308286",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8308286",
+            "title": "Fix clang warnings in linux code"
+        },
+        {
+            "id": "JDK-8335904",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335904",
+            "title": "Fix invalid comment in ShenandoahLock"
+        },
+        {
+            "id": "JDK-8335134",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335134",
+            "title": "Test com/sun/jdi/BreakpointOnClassPrepare.java timeout"
+        },
+        {
+            "id": "JDK-8325037",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325037",
+            "title": "x86: enable and fix hotspot/jtreg/compiler/vectorization/TestRoundVectFloat.java"
+        },
+        {
+            "id": "JDK-8291809",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8291809",
+            "title": "Convert compiler/c2/cr7200264/TestSSE2IntVect.java to IR verification test"
+        },
+        {
+            "id": "JDK-8333363",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333363",
+            "title": "ubsan: instanceKlass.cpp: runtime error: member call on null pointer of type 'struct AnnotationArray'"
+        },
+        {
+            "id": "JDK-8333277",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333277",
+            "title": "ubsan: mlib_ImageScanPoly.c:292:43: runtime error: division by zero"
+        },
+        {
+            "id": "JDK-8334482",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334482",
+            "title": "Shenandoah: Deadlock when safepoint is pending during nmethods iteration"
+        },
+        {
+            "id": "JDK-8333178",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333178",
+            "title": "ubsan: jvmti_tools.cpp:149:16: runtime error: null pointer passed as argument 2, which is declared to never be null"
+        },
+        {
+            "id": "JDK-8332699",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332699",
+            "title": "ubsan: jfrEventSetting.inline.hpp:31:43: runtime error: index 163 out of bounds for type 'jfrNativeEventSetting [162]'"
+        },
+        {
+            "id": "JDK-8324580",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324580",
+            "title": "SIGFPE on THP initialization on kernels < 4.10"
+        },
+        {
+            "id": "JDK-8335967",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335967",
+            "title": "\"text-decoration: none\" does not work with \"A\" HTML tags"
+        },
+        {
+            "id": "JDK-8317112",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317112",
+            "title": "Add screenshot for Frame/DefaultSizeTest.java"
+        },
+        {
+            "id": "JDK-8324808",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324808",
+            "title": "Manual printer tests have no Pass/Fail buttons, instructions close set 3"
+        },
+        {
+            "id": "JDK-8336301",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336301",
+            "title": "test/jdk/java/nio/channels/AsyncCloseAndInterrupt.java leaves around a FIFO file upon test completion"
+        },
+        {
+            "id": "JDK-8331854",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331854",
+            "title": "ubsan: copy.hpp:218:10: runtime error: addition of unsigned offset to 0x7fc2b4024518 overflowed to 0x7fc2b4024510"
+        },
+        {
+            "id": "JDK-8335493",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335493",
+            "title": "check_gc_overhead_limit should reset SoftRefPolicy::_should_clear_all_soft_refs"
+        },
+        {
+            "id": "JDK-8331731",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331731",
+            "title": "ubsan: relocInfo.cpp:155:30: runtime error: applying non-zero offset to null pointer"
+        },
+        {
+            "id": "JDK-8321509",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321509",
+            "title": "False positive in get_trampoline fast path causes crash"
+        },
+        {
+            "id": "JDK-8333622",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333622",
+            "title": "ubsan: relocInfo_x86.cpp:101:56: runtime error: pointer index expression with base (-1) overflowed"
+        },
+        {
+            "id": "JDK-8335237",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335237",
+            "title": "ubsan: vtableStubs.hpp  is_vtable_stub exclude from ubsan checks"
+        },
+        {
+            "id": "JDK-8322971",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322971",
+            "title": "KEM.getInstance() should check if a 3rd-party security provider is signed"
+        },
+        {
+            "id": "JDK-8333639",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333639",
+            "title": "ubsan: cppVtables.cpp:81:55: runtime error: index 14 out of bounds for type 'long int [1]'"
+        },
+        {
+            "id": "JDK-8334618",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334618",
+            "title": "ubsan: support setting additional ubsan check options"
+        },
+        {
+            "id": "JDK-8328642",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328642",
+            "title": "Convert applet test MouseDraggedOutCauseScrollingTest.html to main"
+        },
+        {
+            "id": "JDK-8330146",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330146",
+            "title": "assert(!_thread->is_in_any_VTMS_transition()) failed"
+        },
+        {
+            "id": "JDK-8327501",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8327501",
+            "title": "Common ForkJoinPool prevents class unloading in some cases"
+        },
+        {
+            "id": "JDK-8328366",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328366",
+            "title": "Thread.setContextClassloader from thread in FJP commonPool task no longer works after JDK-8327501"
+        },
+        {
+            "id": "JDK-8337283",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337283",
+            "title": "configure.log is truncated when build dir is on different filesystem"
+        },
+        {
+            "id": "JDK-8336342",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336342",
+            "title": "Fix known X11 library locations in sysroot"
+        },
+        {
+            "id": "JDK-8336928",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336928",
+            "title": "GHA: Bundle artifacts removal broken"
+        },
+        {
+            "id": "JDK-8336343",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336343",
+            "title": "Add more known sysroot library locations for ALSA"
+        },
+        {
+            "id": "JDK-8324641",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8324641",
+            "title": "[IR Framework] Add Setup method to provide custom arguments and set fields"
+        },
+        {
+            "id": "JDK-8242564",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8242564",
+            "title": "javadoc crashes:: class cast exception com.sun.tools.javac.code.Symtab$6"
+        },
+        {
+            "id": "JDK-8312049",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8312049",
+            "title": "runtime/logging/ClassLoadUnloadTest can be improved"
+        },
+        {
+            "id": "JDK-8315965",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8315965",
+            "title": "Open source various AWT applet tests"
+        },
+        {
+            "id": "JDK-8332113",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332113",
+            "title": "Update nsk.share.Log to be always verbose"
+        },
+        {
+            "id": "JDK-6355567",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-6355567",
+            "title": "AdobeMarkerSegment causes failure to read valid JPEG"
+        },
+        {
+            "id": "JDK-8334166",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334166",
+            "title": "Enable binary check"
+        },
+        {
+            "id": "JDK-8332008",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332008",
+            "title": "Enable issuestitle check"
+        },
+        {
+            "id": "JDK-8073061",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8073061",
+            "title": "(fs) Files.copy(foo, bar, REPLACE_EXISTING) deletes bar even if foo is not readable"
+        },
+        {
+            "id": "JDK-8317128",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317128",
+            "title": "java/nio/file/Files/CopyAndMove.java failed with AccessDeniedException"
+        },
+        {
+            "id": "JDK-8319817",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8319817",
+            "title": "Charset constructor should make defensive copy of aliases"
+        },
+        {
+            "id": "JDK-8303920",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8303920",
+            "title": "Avoid calling out to python in DataDescriptorSignatureMissing test"
+        },
+        {
+            "id": "JDK-8321206",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8321206",
+            "title": "Make Locale related system properties `StaticProperty`"
+        },
+        {
+            "id": "JDK-8331153",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331153",
+            "title": "JFR: Improve logging of jdk/jfr/api/consumer/filestream/TestOrdered.java"
+        },
+        {
+            "id": "JDK-8325022",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8325022",
+            "title": "Incorrect error message on client authentication"
+        },
+        {
+            "id": "JDK-8317738",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8317738",
+            "title": "CodeCacheFullCountTest failed with \"VirtualMachineError: Out of space in CodeCache for method handle intrinsic\""
+        },
+        {
+            "id": "JDK-8310683",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8310683",
+            "title": "Refactor StandardCharset/standard.java to use JUnit"
+        },
+        {
+            "id": "JDK-8330520",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330520",
+            "title": "linux clang build fails in os_linux.cpp with static_assert with no message is a C++17 extension"
+        },
+        {
+            "id": "JDK-8331572",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331572",
+            "title": "Allow using OopMapCache outside of STW GC phases"
+        },
+        {
+            "id": "JDK-8334594",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334594",
+            "title": "Generational ZGC: Deadlock after OopMap rewrites in 8331572"
+        },
+        {
+            "id": "JDK-8309067",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8309067",
+            "title": "gtest/AsyncLogGtest.java fails again in stderrOutput_vm"
+        },
+        {
+            "id": "JDK-8299813",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8299813",
+            "title": "java/nio/channels/DatagramChannel/Disconnect.java fails with jtreg test timeout due to lost datagram"
+        },
+        {
+            "id": "JDK-8334078",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8334078",
+            "title": "RISC-V: TestIntVect.java fails after JDK-8332153 when running without RVV"
+        },
+        {
+            "id": "JDK-8336926",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336926",
+            "title": "jdk/internal/util/ReferencedKeyTest.java can fail with ConcurrentModificationException"
+        },
+        {
+            "id": "JDK-8335007",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335007",
+            "title": "Inline OopMapCache table"
+        },
+        {
+            "id": "JDK-8330981",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8330981",
+            "title": "ZGC: Should not dedup strings in the finalizer graph"
+        },
+        {
+            "id": "JDK-8333354",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333354",
+            "title": "ubsan: frame.inline.hpp:91:25: and src/hotspot/share/runtime/frame.inline.hpp:88:29: runtime error: member call on null pointer of type 'const struct SmallRegisterMap'"
+        },
+        {
+            "id": "JDK-8333088",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333088",
+            "title": "ubsan: shenandoahAdaptiveHeuristics.cpp:245:44: runtime error: division by zero"
+        },
+        {
+            "id": "JDK-8333149",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8333149",
+            "title": "ubsan : memset on nullptr target detected in jvmtiEnvBase.cpp get_object_monitor_usage"
+        },
+        {
+            "id": "JDK-8323196",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8323196",
+            "title": "jdk/jfr/api/consumer/filestream/TestOrdered.java failed with \"Events are not ordered! Reuse = false\""
+        },
+        {
+            "id": "JDK-8335743",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335743",
+            "title": "jhsdb jstack cannot print some information on the waiting thread"
+        },
+        {
+            "id": "JDK-8316193",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8316193",
+            "title": "jdk/jfr/event/oldobject/TestListenerLeak.java java.lang.Exception: Could not find leak"
+        },
+        {
+            "id": "JDK-8309894",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8309894",
+            "title": "compiler/vectorapi/VectorLogicalOpIdentityTest.java fails on SVE system with UseSVE=0"
+        },
+        {
+            "id": "JDK-8336284",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8336284",
+            "title": "Test TestClhsdbJstackLock.java/TestJhsdbJstackLock.java fails with -Xcomp after JDK-8335743"
+        },
+        {
+            "id": "JDK-8335150",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335150",
+            "title": "Test LogGeneratedClassesTest.java fails on rpmbuild mock enviroment"
+        },
+        {
+            "id": "JDK-8322881",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8322881",
+            "title": "java/nio/file/Files/CopyMoveVariations.java fails with AccessDeniedException due to permissions of files in /tmp"
+        },
+        {
+            "id": "JDK-8311306",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8311306",
+            "title": "Test com/sun/management/ThreadMXBean/ThreadCpuTimeArray.java failed: out of expected range"
+        },
+        {
+            "id": "JDK-8338286",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8338286",
+            "title": "GHA: Demote x86_32 to hotspot build only"
+        },
+        {
+            "id": "JDK-8335409",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335409",
+            "title": "Can't allocate and retain memory from resource area in frame::oops_interpreted_do oop closure after 8329665"
+        },
+        {
+            "id": "JDK-8280120",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8280120",
+            "title": "[IR Framework] Add attribute to @IR to enable/disable IR matching based on the architecture"
+        },
+        {
+            "id": "JDK-8338139",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8338139",
+            "title": "{ClassLoading,Memory}MXBean::isVerbose methods are inconsistent with their setVerbose methods"
+        },
+        {
+            "id": "JDK-8337664",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337664",
+            "title": "Distrust TLS server certificates issued after Oct 2024 and anchored by Entrust Root CAs"
+        },
+        {
+            "id": "JDK-8338696",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8338696",
+            "title": "(fs) BasicFileAttributes.creationTime() falls back to epoch if birth time is unavailable (Linux)"
+        },
+        {
+            "id": "JDK-8339869",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8339869",
+            "title": "[21u] Test CreationTime.java fails with UnsatisfiedLinkError after 8334339"
+        },
+        {
+            "id": "JDK-8329667",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8329667",
+            "title": "[macos] Issue with JTree related fix for JDK-8317771"
+        },
+        {
+            "id": "JDK-8337622",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337622",
+            "title": "IllegalArgumentException in java.lang.reflect.Field.get"
+        },
+        {
+            "id": "JDK-8341057",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8341057",
+            "title": "Add 2 SSL.com TLS roots"
+        },
+        {
+            "id": "JDK-8341059",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8341059",
+            "title": "Change Entrust TLS distrust date to November 12, 2024"
+        },
+        {
+            "id": "JDK-8307383",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8307383",
+            "title": "Enhance DTLS connections"
+        },
+        {
+            "id": "JDK-8311208",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8311208",
+            "title": "Improve CDS Support"
+        },
+        {
+            "id": "JDK-8328286",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328286",
+            "title": "Enhance HTTP client"
+        },
+        {
+            "id": "JDK-8328544",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328544",
+            "title": "Improve handling of vectorization"
+        },
+        {
+            "id": "JDK-8335713",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8335713",
+            "title": "Enhance vectorization analysis"
+        },
+        {
+            "id": "JDK-8328726",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8328726",
+            "title": "Better Kerberos support"
+        },
+        {
+            "id": "JDK-8331446",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8331446",
+            "title": "Improve deserialization support"
+        },
+        {
+            "id": "JDK-8332644",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8332644",
+            "title": "Improve graph optimizations"
+        },
+        {
+            "id": "JDK-8341674",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8341674",
+            "title": "[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.5"
+        },
+        {
+            "id": "JDK-8341989",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8341989",
+            "title": "[21u] Back out JDK-8327501 and JDK-8328366"
+        }
+    ],
+    "vendor": "eclipse",
+    "version_data": {
+        "build": 11,
+        "major": 21,
+        "minor": 0,
+        "openjdk_version": "21.0.5+11-LTS",
+        "optional": "LTS",
+        "security": 5,
+        "semver": "21.0.5+11.0.LTS"
+    }
+}

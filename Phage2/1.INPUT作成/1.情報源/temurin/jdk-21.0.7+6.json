@@ -1,0 +1,2399 @@
+{
+    "id": "RE_kwDOI-qQc84Mr3wU",
+    "release_name": "jdk-21.0.7+6",
+    "release_notes": [
+        {
+            "component": "infrastructure",
+            "id": "JDK-8345370",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345370",
+            "priority": "4",
+            "subcomponent": "infrastructure/release_eng",
+            "title": "Bump update version for OpenJDK: jdk-21.0.7",
+            "type": "Enhancement"
+        },
+        {
+            "backportOf": "JDK-8327390",
+            "component": "hotspot",
+            "id": "JDK-8345494",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345494",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "JitTester: Implement temporary folder functionality",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8331993",
+            "component": "hotspot",
+            "id": "JDK-8345495",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345495",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "Add counting leading/trailing zero tests for Integer ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8336012",
+            "component": "core-libs",
+            "id": "JDK-8345496",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345496",
+            "priority": "4",
+            "subcomponent": "core-libs",
+            "title": "Fix usages of jtreg-reserved properties",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8334490",
+            "component": "other-libs",
+            "id": "JDK-8345497",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345497",
+            "priority": "4",
+            "subcomponent": "other-libs/other",
+            "title": "Normalize string with locale invariant `toLowerCase()` ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339154",
+            "component": "core-libs",
+            "id": "JDK-8345498",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345498",
+            "priority": "5",
+            "subcomponent": "core-libs/java.util.jar",
+            "title": "Cleanups and JUnit conversion of test/jdk/java/util/zip/Available.java ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340824",
+            "component": "hotspot",
+            "id": "JDK-8345499",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345499",
+            "priority": "3",
+            "subcomponent": "hotspot/compiler",
+            "title": "C2: Memory for TypeInterfaces not reclaimed by hashcons()",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341862",
+            "component": "hotspot",
+            "id": "JDK-8345508",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345508",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "PPC64: C1 unwind_handler fails to unlock synchronized methods with LM_MONITOR",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327857",
+            "component": "client-libs",
+            "id": "JDK-8345701",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345701",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test4222508",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8335789",
+            "component": "client-libs",
+            "id": "JDK-8345702",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345702",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[TESTBUG] XparColor.java test fails with Error. Parse Exception: Invalid or unrecognized bugid: @",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8333391",
+            "component": "core-svc",
+            "id": "JDK-8345703",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345703",
+            "priority": "4",
+            "subcomponent": "core-svc/debugger",
+            "title": "Test com/sun/jdi/InterruptHangTest.java failed: Thread was never interrupted during sleep",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338668",
+            "component": "client-libs",
+            "id": "JDK-8345707",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345707",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Test javax/swing/JFileChooser/8080628/bug8080628.java doesn't test for GTK L&F",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8337951",
+            "component": "security-libs",
+            "id": "JDK-8345708",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345708",
+            "priority": "3",
+            "subcomponent": "security-libs/java.security",
+            "title": "Test sun/security/validator/samedn.sh CertificateNotYetValidException: NotBefore validation",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339261",
+            "component": "security-libs",
+            "id": "JDK-8345709",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345709",
+            "priority": "4",
+            "subcomponent": "security-libs/javax.net.ssl",
+            "title": "Logs truncated in test javax/net/ssl/DTLS/DTLSRehandshakeTest.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8324672",
+            "component": "core-libs",
+            "id": "JDK-8345710",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345710",
+            "priority": "4",
+            "subcomponent": "core-libs/java.time",
+            "title": "Update jdk/java/time/tck/java/time/TCKInstant.java now() to be more robust",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341715",
+            "component": "hotspot",
+            "id": "JDK-8345771",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345771",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "PPC64: ObjectMonitor::_owner should be reset unconditionally in nmethod unlocking",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340969",
+            "component": "hotspot",
+            "id": "JDK-8345866",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345866",
+            "priority": "4",
+            "subcomponent": "hotspot/jfr",
+            "title": "jdk/jfr/startupargs/TestStartDuration.java should be marked as flagless",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8293345",
+            "component": "security-libs",
+            "id": "JDK-8345884",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345884",
+            "priority": "3",
+            "subcomponent": "security-libs/javax.crypto:pkcs11",
+            "title": "SunPKCS11 provider checks on PKCS11 Mechanism are problematic",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343343",
+            "component": "hotspot",
+            "id": "JDK-8345914",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345914",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Misc crash dump improvements on more platforms after JDK-8294160",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343149",
+            "component": "hotspot",
+            "id": "JDK-8345915",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345915",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Cleanup os::print_tos_pc on AIX",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343205",
+            "component": "hotspot",
+            "id": "JDK-8345983",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8345983",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "CompileBroker::possibly_add_compiler_threads excessively polls available memory",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8337994",
+            "component": "hotspot",
+            "id": "JDK-8346000",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346000",
+            "priority": "3",
+            "subcomponent": "hotspot/jfr",
+            "title": "[REDO] Native memory leak when not recording any events",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8295159",
+            "component": "hotspot",
+            "id": "JDK-8346001",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346001",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "DSO created with -ffast-math breaks Java floating-point arithmetic",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338100",
+            "component": "hotspot",
+            "id": "JDK-8346004",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346004",
+            "priority": "3",
+            "subcomponent": "hotspot/compiler",
+            "title": "C2: assert(!n_loop->is_member(get_loop(lca))) failed: control must not be back in the loop",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341194",
+            "component": "hotspot",
+            "id": "JDK-8346021",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346021",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "[REDO] Implement C2 VectorizedHashCode on AArch64",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316885",
+            "component": "hotspot",
+            "id": "JDK-8346075",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346075",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "jcmd: Compiler.CodeHeap_Analytics cmd does not inform about missing aggregate",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8333116",
+            "component": "tools",
+            "id": "JDK-8346077",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346077",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "test/jdk/tools/jpackage/share/ServiceTest.java test fails",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343102",
+            "component": "tools",
+            "id": "JDK-8346078",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346078",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "Remove `--compress` from jlink command lines from jpackage tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343100",
+            "component": "tools",
+            "id": "JDK-8346079",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346079",
+            "priority": "3",
+            "subcomponent": "tools/jpackage",
+            "title": "Consolidate EmptyFolderTest and EmptyFolderPackageTest jpackage tests into single java file",
+            "type": "Backport"
+        },
+        {
+            "component": "hotspot",
+            "id": "JDK-8346108",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346108",
+            "priority": "4",
+            "subcomponent": "hotspot/jfr",
+            "title": "[21u][BACKOUT] 8337994: [REDO] Native memory leak when not recording any events",
+            "type": "Bug"
+        },
+        {
+            "backportOf": "JDK-8320916",
+            "component": "hotspot",
+            "id": "JDK-8346155",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346155",
+            "priority": "4",
+            "subcomponent": "hotspot/jfr",
+            "title": "jdk/jfr/event/gc/stacktrace/TestParallelMarkSweepAllocationPendingStackTrace.java failed with \"OutOfMemoryError: GC overhead limit exceeded\"",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8314909",
+            "component": "tools",
+            "id": "JDK-8346187",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346187",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "tools/jpackage/windows/Win8282351Test.java fails with java.lang.AssertionError: Expected [0]. Actual [1618]:",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345296",
+            "component": "hotspot",
+            "id": "JDK-8346189",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346189",
+            "priority": "3",
+            "subcomponent": "hotspot/compiler",
+            "title": "AArch64: VM crashes with SIGILL when prctl is disallowed",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341820",
+            "component": "hotspot",
+            "id": "JDK-8346191",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346191",
+            "priority": "4",
+            "subcomponent": "hotspot/svc-agent",
+            "title": "Check return value of hcreate_r",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8336498",
+            "component": "infrastructure",
+            "id": "JDK-8346266",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346266",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "[macos] [build]: install-file macro may run into permission denied error",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342858",
+            "component": "infrastructure",
+            "id": "JDK-8346267",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346267",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "Make target mac-jdk-bundle fails on chmod command",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343129",
+            "component": "hotspot",
+            "id": "JDK-8346286",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346286",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Disable unstable check of ThreadsListHandle.sanity_vm ThreadList values",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328085",
+            "component": "hotspot",
+            "id": "JDK-8346332",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346332",
+            "priority": "3",
+            "subcomponent": "hotspot/compiler",
+            "title": "C2: Use after free in PhaseChaitin::Register_Allocate()",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327859",
+            "component": "client-libs",
+            "id": "JDK-8346395",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346395",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test4319113",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328121",
+            "component": "client-libs",
+            "id": "JDK-8346396",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346396",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test4759306",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328380",
+            "component": "client-libs",
+            "id": "JDK-8346397",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346397",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test6348456",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328719",
+            "component": "client-libs",
+            "id": "JDK-8346398",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346398",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/print/PageFormat/SetOrient.html applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328227",
+            "component": "client-libs",
+            "id": "JDK-8346401",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346401",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test4887836",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328403",
+            "component": "client-libs",
+            "id": "JDK-8346402",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346402",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test6977726",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8317919",
+            "component": "hotspot",
+            "id": "JDK-8346403",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346403",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "pthread_attr_init handle return value and destroy pthread_attr_t object",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328753",
+            "component": "client-libs",
+            "id": "JDK-8346407",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346407",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Open source few Undecorated Frame tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8337886",
+            "component": "client-libs",
+            "id": "JDK-8346408",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346408",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "java/awt/Frame/MaximizeUndecoratedTest.java fails in OEL due to a slight color difference",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8333360",
+            "component": "client-libs",
+            "id": "JDK-8346409",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346409",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "PrintNullString.java doesn't use float arguments",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8334777",
+            "component": "core-svc",
+            "id": "JDK-8346412",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346412",
+            "priority": "4",
+            "subcomponent": "core-svc/javax.management",
+            "title": "Test javax/management/remote/mandatory/notif/NotifReconnectDeadlockTest.java failed with NullPointerException",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8336692",
+            "component": "hotspot",
+            "id": "JDK-8346413",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346413",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "Redo fix for JDK-8284620",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339687",
+            "component": "core-libs",
+            "id": "JDK-8346416",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346416",
+            "priority": "4",
+            "subcomponent": "core-libs/java.lang",
+            "title": "Rearrange reachabilityFence()s in jdk.test.lib.util.ForceGC",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339902",
+            "component": "client-libs",
+            "id": "JDK-8346417",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346417",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Open source couple TextField related tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8331959",
+            "component": "security-libs",
+            "id": "JDK-8346421",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346421",
+            "priority": "4",
+            "subcomponent": "security-libs/javax.crypto:pkcs11",
+            "title": "Update PKCS#11 Cryptographic Token Interface to v3.1",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341978",
+            "component": "client-libs",
+            "id": "JDK-8346425",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346425",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Improve JButton/bug4490179.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343314",
+            "component": "tools",
+            "id": "JDK-8346428",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346428",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "Move common properties from jpackage jtreg test declarations to TEST.properties file",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8315882",
+            "component": "client-libs",
+            "id": "JDK-8346451",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346451",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open some swing tests 2",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316146",
+            "component": "client-libs",
+            "id": "JDK-8346452",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346452",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open some swing tests 4",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316218",
+            "component": "client-libs",
+            "id": "JDK-8346458",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346458",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open some swing tests 5",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316371",
+            "component": "client-libs",
+            "id": "JDK-8346459",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346459",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open some swing tests 6",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328185",
+            "component": "client-libs",
+            "id": "JDK-8346537",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346537",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/image/MemoryLeakTest/MemoryLeakTest.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328370",
+            "component": "client-libs",
+            "id": "JDK-8346539",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346539",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/print/Dialog/PrintApplet.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328717",
+            "component": "client-libs",
+            "id": "JDK-8346540",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346540",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Convert javax/swing/JColorChooser/8065098/bug8065098.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328827",
+            "component": "client-libs",
+            "id": "JDK-8346542",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346542",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/print/PrinterJob/PrinterDialogsModalityTest/PrinterDialogsModalityTest.html applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8344275",
+            "component": "tools",
+            "id": "JDK-8346577",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346577",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "tools/jpackage/windows/Win8301247Test.java fails on localized Windows platform",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8294316",
+            "component": "hotspot",
+            "id": "JDK-8346578",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346578",
+            "priority": "4",
+            "subcomponent": "hotspot/svc-agent",
+            "title": "SA core file support is broken on macosx-x64 starting with macOS 12.x",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341424",
+            "component": "infrastructure",
+            "id": "JDK-8346617",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346617",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "GHA: Collect hs_errs from build time failures",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342704",
+            "component": "infrastructure",
+            "id": "JDK-8346618",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346618",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "GHA: Report truncation is broken after JDK-8341424",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316149",
+            "component": "client-libs",
+            "id": "JDK-8346624",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346624",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open source several Swing JTree JViewport KeyboardManager tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316627",
+            "component": "client-libs",
+            "id": "JDK-8346625",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346625",
+            "priority": "2",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "JViewport Test headless failure",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328130",
+            "component": "client-libs",
+            "id": "JDK-8346626",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346626",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JColorChooser tests Test4759934",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328005",
+            "component": "client-libs",
+            "id": "JDK-8346627",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346627",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/im/JTextFieldTest.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339943",
+            "component": "client-libs",
+            "id": "JDK-8346629",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346629",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Frame not disposed in java/awt/dnd/DropActionChangeTest.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8325937",
+            "component": "hotspot",
+            "id": "JDK-8346630",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346630",
+            "priority": "2",
+            "subcomponent": "hotspot/runtime",
+            "title": "runtime/handshake/HandshakeDirectTest.java causes \"monitor end should be strictly below the frame pointer\" assertion failure on AArch64 ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338426",
+            "component": "core-libs",
+            "id": "JDK-8346631",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346631",
+            "priority": "4",
+            "subcomponent": "core-libs/java.nio",
+            "title": "Test java/nio/channels/Selector/WakeupNow.java failed",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340116",
+            "component": "security-libs",
+            "id": "JDK-8346634",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346634",
+            "priority": "4",
+            "subcomponent": "security-libs/java.security",
+            "title": "test/jdk/sun/security/tools/jarsigner/PreserveRawManifestEntryAndDigest.java can fail due to regex",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343128",
+            "component": "client-libs",
+            "id": "JDK-8346635",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346635",
+            "priority": "4",
+            "subcomponent": "client-libs",
+            "title": "PassFailJFrame.java test result: Error. Bad action for script: build}",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342270",
+            "component": "security-libs",
+            "id": "JDK-8346636",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346636",
+            "priority": "3",
+            "subcomponent": "security-libs/javax.crypto:pkcs11",
+            "title": "Test sun/security/pkcs11/Provider/RequiredMechCheck.java needs write access to src tree",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8277240",
+            "component": "client-libs",
+            "id": "JDK-8346640",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346640",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "java/awt/Graphics2D/ScaledTransform/ScaledTransform.java dialog does not get disposed",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342811",
+            "component": "core-libs",
+            "id": "JDK-8346641",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346641",
+            "priority": "4",
+            "subcomponent": "core-libs/java.net",
+            "title": "java/net/httpclient/PlainProxyConnectionTest.java failed: Unexpected connection count: 5",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342541",
+            "component": "client-libs",
+            "id": "JDK-8346646",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346646",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Exclude List/KeyEventsTest/KeyEventsTest.java from running on macOS",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8344646",
+            "component": "hotspot",
+            "id": "JDK-8346647",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346647",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "The libjsig deprecation warning should go to stderr not stdout",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339475",
+            "component": "tools",
+            "id": "JDK-8346698",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346698",
+            "priority": "4",
+            "subcomponent": "tools/launcher",
+            "title": "Clean up return code handling for pthread calls in library coding",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341135",
+            "component": "tools",
+            "id": "JDK-8346699",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346699",
+            "priority": "3",
+            "subcomponent": "tools/launcher",
+            "title": "Incorrect format string after JDK-8339475",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8315952",
+            "component": "client-libs",
+            "id": "JDK-8346746",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346746",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open source several Swing JToolbar JTooltip JTree tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341881",
+            "component": "core-libs",
+            "id": "JDK-8346748",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346748",
+            "priority": "3",
+            "subcomponent": "core-libs/java.nio",
+            "title": "[REDO] java/nio/file/attribute/BasicFileAttributeView/CreationTime.java#tmp fails on alinux3",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342145",
+            "component": "core-libs",
+            "id": "JDK-8346749",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346749",
+            "priority": "2",
+            "subcomponent": "core-libs/java.nio",
+            "title": "File libCreationTimeHelper.c compile fails on Alpine",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8316056",
+            "component": "client-libs",
+            "id": "JDK-8346804",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346804",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open source several Swing JTree tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8315883",
+            "component": "client-libs",
+            "id": "JDK-8346806",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346806",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open source several Swing JToolbar tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8329210",
+            "component": "client-libs",
+            "id": "JDK-8346807",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346807",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Delete Redundant Printer Dialog Modality Test",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8326421",
+            "component": "hotspot",
+            "id": "JDK-8346808",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346808",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "Add jtreg test for large arrayCopy disjoint case.",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8333647",
+            "component": "hotspot",
+            "id": "JDK-8346809",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346809",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "C2 SuperWord: some additional PopulateIndex tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328553",
+            "component": "client-libs",
+            "id": "JDK-8346812",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346812",
+            "priority": "3",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Get rid of JApplet in test/jdk/sanity/client/lib/SwingSet2/src/DemoModule.java ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8335288",
+            "component": "security-libs",
+            "id": "JDK-8346813",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346813",
+            "priority": "3",
+            "subcomponent": "security-libs/javax.crypto:pkcs11",
+            "title": "SunPKCS11 initialization will call C_GetMechanismInfo on unsupported mechanisms",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343101",
+            "component": "tools",
+            "id": "JDK-8346814",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346814",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "Rework BasicTest.testTemp test cases",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343178",
+            "component": "tools",
+            "id": "JDK-8346815",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346815",
+            "priority": "3",
+            "subcomponent": "tools/jpackage",
+            "title": "Test BasicTest.java javac compile fails cannot find symbol",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342602",
+            "component": "client-libs",
+            "id": "JDK-8346816",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346816",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove JButton/PressedButtonRightClickTest test",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345414",
+            "component": "security-libs",
+            "id": "JDK-8346817",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346817",
+            "priority": "3",
+            "subcomponent": "security-libs/java.security",
+            "title": "Google CAInterop test failures",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8321818",
+            "component": "hotspot",
+            "id": "JDK-8346842",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346842",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "vmTestbase/nsk/stress/strace/strace015.java failed with 'Cannot read the array length because \"<local4>\" is null'",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339883",
+            "component": "client-libs",
+            "id": "JDK-8346851",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346851",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "Open source several AWT/2D related tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342609",
+            "component": "tools",
+            "id": "JDK-8346857",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346857",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "jpackage test helper function incorrectly removes a directory instead of its contents only",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8335468",
+            "component": "client-libs",
+            "id": "JDK-8346858",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346858",
+            "priority": "3",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[XWayland] JavaFX hangs when calling java.awt.Robot.getPixelColor",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8313905",
+            "component": "hotspot",
+            "id": "JDK-8346891",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346891",
+            "priority": "3",
+            "subcomponent": "hotspot/runtime",
+            "title": "Checked_cast assert in CDS compare_by_loader",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8315825",
+            "component": "client-libs",
+            "id": "JDK-8346894",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346894",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Open some swing tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328558",
+            "component": "client-libs",
+            "id": "JDK-8346895",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346895",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Convert javax/swing/JCheckBox/8032667/bug8032667.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8332158",
+            "component": "client-libs",
+            "id": "JDK-8346899",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346899",
+            "priority": "3",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[XWayland] test/jdk/java/awt/Mouse/EnterExitEvents/ResizingFrameTest.java ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340313",
+            "component": "hotspot",
+            "id": "JDK-8346900",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346900",
+            "priority": "2",
+            "subcomponent": "hotspot/compiler",
+            "title": "Crash due to invalid oop in nmethod after C1 patching",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8337660",
+            "component": "hotspot",
+            "id": "JDK-8346973",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8346973",
+            "priority": "2",
+            "subcomponent": "hotspot/compiler",
+            "title": "C2: basic blocks with only BoxLock nodes are wrongly treated as empty",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8344326",
+            "component": "tools",
+            "id": "JDK-8347012",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347012",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "Move jpackage tests from \"jdk.jpackage.tests\" package to the default package",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346847",
+            "component": "hotspot",
+            "id": "JDK-8347028",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347028",
+            "priority": "3",
+            "subcomponent": "hotspot/runtime",
+            "title": "[s390x] minimal build failure",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340480",
+            "component": "client-libs",
+            "id": "JDK-8347095",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347095",
+            "priority": "1",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Bad copyright notices in changes from JDK-8339902",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340719",
+            "component": "client-libs",
+            "id": "JDK-8347096",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347096",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Open source AWT List tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343396",
+            "component": "tools",
+            "id": "JDK-8347100",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347100",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "Use OperatingSystem, Architecture, and OSVersion in jpackage tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339524",
+            "component": "client-libs",
+            "id": "JDK-8347103",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347103",
+            "priority": "4",
+            "subcomponent": "client-libs",
+            "title": "Clean up a few ExtendedRobot tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327460",
+            "component": "infrastructure",
+            "id": "JDK-8347176",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347176",
+            "priority": "3",
+            "subcomponent": "infrastructure/build",
+            "title": "Compile tests with the same visibility rules as product code",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345684",
+            "component": "core-svc",
+            "id": "JDK-8347276",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347276",
+            "priority": "4",
+            "subcomponent": "core-svc/java.lang.management",
+            "title": "OperatingSystemMXBean.getSystemCpuLoad() throws NPE",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8336942",
+            "component": "tools",
+            "id": "JDK-8347317",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347317",
+            "priority": "4",
+            "subcomponent": "tools/javac",
+            "title": "Improve test coverage for class loading elements with annotations of different retentions",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342988",
+            "component": "infrastructure",
+            "id": "JDK-8347403",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347403",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "GHA: Build JTReg in single step",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8314752",
+            "component": "hotspot",
+            "id": "JDK-8347440",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347440",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Use google test string comparison macros",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328368",
+            "component": "client-libs",
+            "id": "JDK-8347442",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347442",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/image/multiresolution/MultiDisplayTest/MultiDisplayTest.java applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8226933",
+            "component": "client-libs",
+            "id": "JDK-8347443",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347443",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "[TEST_BUG]GTK L&F: There is no swatches or RGB tab in JColorChooser",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8312570",
+            "component": "hotspot",
+            "id": "JDK-8347579",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347579",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "[TESTBUG] Jtreg compiler/loopopts/superword/TestDependencyOffsets.java fails on 512-bit SVE",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8317283",
+            "component": "tools",
+            "id": "JDK-8347580",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347580",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "jpackage tests run osx-specific checks on windows and linux",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8320706",
+            "component": "tools",
+            "id": "JDK-8347583",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347583",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "RuntimePackageTest.testUsrInstallDir test fails on Linux",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8317636",
+            "component": "hotspot",
+            "id": "JDK-8347584",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347584",
+            "priority": "4",
+            "subcomponent": "hotspot/jvmti",
+            "title": "Improve heap walking API tests to verify correctness of field indexes",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327994",
+            "component": "core-libs",
+            "id": "JDK-8347587",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347587",
+            "priority": "5",
+            "subcomponent": "core-libs/java.lang.foreign",
+            "title": "Update code gen in CallGeneratorHelper",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327505",
+            "component": "core-svc",
+            "id": "JDK-8347588",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347588",
+            "priority": "4",
+            "subcomponent": "core-svc",
+            "title": "Test com/sun/jmx/remote/NotificationMarshalVersions/TestSerializationMismatch.java fails",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8198237",
+            "component": "client-libs",
+            "id": "JDK-8347589",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347589",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[macos] Test java/awt/Frame/ExceptionOnSetExtendedStateTest/ExceptionOnSetExtendedStateTest.java fails",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8325659",
+            "component": "hotspot",
+            "id": "JDK-8347592",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347592",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "Normalize Random usage by incubator vector tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339542",
+            "component": "hotspot",
+            "id": "JDK-8347593",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347593",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "compiler/codecache/CheckSegmentedCodeCache.java fails",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8325529",
+            "component": "tools",
+            "id": "JDK-8347644",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347644",
+            "priority": "4",
+            "subcomponent": "tools/javadoc(tool)",
+            "title": "Remove unused imports from `ModuleGenerator` test file",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8304701",
+            "component": "core-libs",
+            "id": "JDK-8347876",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347876",
+            "priority": "3",
+            "subcomponent": "core-libs/java.net",
+            "title": "Request with timeout aborts later in-flight request on HTTP/1.1 cxn",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8227529",
+            "component": "tools",
+            "id": "JDK-8347877",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347877",
+            "priority": "4",
+            "subcomponent": "tools/jpackage",
+            "title": "With malformed --app-image the error messages are awful",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328819",
+            "component": "client-libs",
+            "id": "JDK-8347878",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347878",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Remove applet usage from JFileChooser tests bug6698013",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8324807",
+            "component": "client-libs",
+            "id": "JDK-8347879",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347879",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "Manual printer tests have no Pass/Fail buttons, instructions close set 2",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340687",
+            "component": "client-libs",
+            "id": "JDK-8347882",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347882",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Open source closed frame tests #1",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8333403",
+            "component": "client-libs",
+            "id": "JDK-8347883",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347883",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Write a test to check various components events are triggered properly",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342498",
+            "component": "hotspot",
+            "id": "JDK-8347884",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347884",
+            "priority": "2",
+            "subcomponent": "hotspot/compiler",
+            "title": "Add test for Allocation elimination after use as alignment reference by SuperWord",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342508",
+            "component": "client-libs",
+            "id": "JDK-8347892",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347892",
+            "priority": "5",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Use latch in BasicMenuUI/bug4983388.java instead of delay",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346887",
+            "component": "client-libs",
+            "id": "JDK-8347930",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347930",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "DrawFocusRect() may cause an assertion failure",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8313633",
+            "component": "client-libs",
+            "id": "JDK-8348057",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348057",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[macOS] java/awt/dnd/NextDropActionTest/NextDropActionTest.java fails with java.lang.RuntimeException: wrong next drop action!",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8326525",
+            "component": "hotspot",
+            "id": "JDK-8348058",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348058",
+            "priority": "4",
+            "subcomponent": "hotspot/svc",
+            "title": "com/sun/tools/attach/BasicTests.java does not verify AgentLoadException case",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8320676",
+            "component": "client-libs",
+            "id": "JDK-8348059",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348059",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "Manual printer tests have no Pass/Fail buttons, instructions close set 1",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8329322",
+            "component": "client-libs",
+            "id": "JDK-8348060",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348060",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert PageFormat/Orient.java to use PassFailJFrame",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8334305",
+            "component": "hotspot",
+            "id": "JDK-8348061",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348061",
+            "priority": "4",
+            "subcomponent": "hotspot/test",
+            "title": "Remove all code for  nsk.share.Log verbose mode",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8311546",
+            "component": "security-libs",
+            "id": "JDK-8348065",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348065",
+            "priority": "3",
+            "subcomponent": "security-libs/java.security",
+            "title": "Certificate name constraints improperly validated with leading period",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8320372",
+            "component": "security-libs",
+            "id": "JDK-8348066",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348066",
+            "priority": "2",
+            "subcomponent": "security-libs/java.security",
+            "title": "test/jdk/sun/security/x509/DNSName/LeadingPeriod.java validity check failed",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347424",
+            "component": "security-libs",
+            "id": "JDK-8348067",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348067",
+            "priority": "4",
+            "subcomponent": "security-libs/java.security",
+            "title": "Fix and rewrite sun/security/x509/DNSName/LeadingPeriod.java test",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341412",
+            "component": "hotspot",
+            "id": "JDK-8348068",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348068",
+            "priority": "1",
+            "subcomponent": "hotspot/test",
+            "title": "Various test failures after JDK-8334305",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341316",
+            "component": "client-libs",
+            "id": "JDK-8348069",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348069",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "[macos] javax/swing/ProgressMonitor/ProgressMonitorEscapeKeyPress.java fails sometimes in macos",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341453",
+            "component": "client-libs",
+            "id": "JDK-8348070",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348070",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.accessibility",
+            "title": "java/awt/a11y/AccessibleJTableTest.java fails in some cases where the test tables are not visible",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341982",
+            "component": "client-libs",
+            "id": "JDK-8348071",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348071",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "Simplify JButton/bug4323121.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346055",
+            "component": "client-libs",
+            "id": "JDK-8348072",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348072",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "javax/swing/text/StyledEditorKit/4506788/bug4506788.java fails in ubuntu22.04",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8344589",
+            "component": "core-libs",
+            "id": "JDK-8348200",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348200",
+            "priority": "4",
+            "subcomponent": "core-libs/java.util:i18n",
+            "title": "Update IANA Language Subtag Registry to Version 2024-11-19",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343599",
+            "component": "hotspot",
+            "id": "JDK-8348201",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348201",
+            "priority": "3",
+            "subcomponent": "hotspot/runtime",
+            "title": "Kmem limit and max values swapped when printing container information",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8324838",
+            "component": "hotspot",
+            "id": "JDK-8348329",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348329",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "test_nmt_locationprinting.cpp broken in the gcc windows build",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8329320",
+            "component": "client-libs",
+            "id": "JDK-8348331",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348331",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Simplify awt/print/PageFormat/NullPaper.java test",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341037",
+            "component": "client-libs",
+            "id": "JDK-8348332",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348332",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Use standard layouts in DefaultFrameIconTest.java and MenuCrash.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8341111",
+            "component": "client-libs",
+            "id": "JDK-8348333",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348333",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "open source several AWT tests including menu shortcut tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343118",
+            "component": "client-libs",
+            "id": "JDK-8348339",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348339",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "[TESTBUG] java/awt/PrintJob/PrintCheckboxTest/PrintCheckboxManualTest.java fails with rror. Can't find HTML file PrintCheckboxManualTest.html ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345375",
+            "component": "core-libs",
+            "id": "JDK-8348340",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348340",
+            "priority": "4",
+            "subcomponent": "core-libs/java.net",
+            "title": "Improve debuggability of test/jdk/java/net/Socket/CloseAvailable.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8331977",
+            "component": "tools",
+            "id": "JDK-8348341",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348341",
+            "priority": "2",
+            "subcomponent": "tools/jpackage",
+            "title": "Crash: SIGSEGV in dlerror()",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345750",
+            "component": "hotspot",
+            "id": "JDK-8348394",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348394",
+            "priority": "3",
+            "subcomponent": "hotspot/gc",
+            "title": "Shenandoah: Test TestJcmdHeapDump.java#aggressive intermittent assert(gc_cause() == GCCause::_no_gc) failed: Over-writing cause ",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347256",
+            "component": "hotspot",
+            "id": "JDK-8348395",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348395",
+            "priority": "4",
+            "subcomponent": "hotspot/gc",
+            "title": "Epsilon: Demote heap size and AlwaysPreTouch warnings to info level",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345614",
+            "component": "core-libs",
+            "id": "JDK-8348397",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348397",
+            "priority": "4",
+            "subcomponent": "core-libs/java.lang:reflect",
+            "title": "Improve AnnotationFormatError message for duplicate annotation interfaces",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8211851",
+            "component": "core-libs",
+            "id": "JDK-8348676",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348676",
+            "priority": "4",
+            "subcomponent": "core-libs/java.nio",
+            "title": "(ch) java/nio/channels/AsynchronousSocketChannel/StressLoopback.java times out (aix)",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347965",
+            "component": "core-libs",
+            "id": "JDK-8348843",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348843",
+            "priority": "3",
+            "subcomponent": "core-libs/java.time",
+            "title": "(tz) Update Timezone Data to 2025a",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347129",
+            "component": "hotspot",
+            "id": "JDK-8348942",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348942",
+            "priority": "3",
+            "subcomponent": "hotspot/runtime",
+            "title": "cpuset cgroups controller is required for no good reason",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8315486",
+            "component": "core-svc",
+            "id": "JDK-8348944",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348944",
+            "priority": "4",
+            "subcomponent": "core-svc/debugger",
+            "title": "vmTestbase/nsk/jdwp/ThreadReference/ForceEarlyReturn/forceEarlyReturn002/forceEarlyReturn002.java timed out",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327098",
+            "component": "hotspot",
+            "id": "JDK-8348946",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348946",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "GTest needs larger combination limit",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328387",
+            "component": "client-libs",
+            "id": "JDK-8348947",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348947",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/Frame/FrameStateTest/FrameStateTest.html applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8327986",
+            "component": "hotspot",
+            "id": "JDK-8348952",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348952",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "ASAN reports use-after-free in DirectivesParserTest.empty_object_vm",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343378",
+            "component": "core-svc",
+            "id": "JDK-8348953",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348953",
+            "priority": "4",
+            "subcomponent": "core-svc/javax.management",
+            "title": "Exceptions in javax/management DeadLockTest.java do not cause test failure",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8332494",
+            "component": "hotspot",
+            "id": "JDK-8349045",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349045",
+            "priority": "4",
+            "subcomponent": "hotspot/gc",
+            "title": "java/util/zip/EntryCount64k.java failing with java.lang.RuntimeException: '\\\\A\\\\Z' missing from stderr",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347427",
+            "component": "client-libs",
+            "id": "JDK-8349089",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349089",
+            "priority": "2",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "JTabbedPane/8134116/Bug8134116.java has no license header",
+            "type": "Backport"
+        },
+        {
+            "component": "client-libs",
+            "id": "JDK-8348625",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8348625",
+            "priority": "2",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[21u, 17u] Revert JDK-8185862 to restore old java.awt.headless behavior on Windows",
+            "type": "Bug"
+        },
+        {
+            "backportOf": "JDK-8345468",
+            "component": "client-libs",
+            "id": "JDK-8349277",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349277",
+            "priority": "4",
+            "subcomponent": "client-libs",
+            "title": "test/jdk/javax/swing/JScrollBar/4865918/bug4865918.java fails in ubuntu22.04",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8320691",
+            "component": "infrastructure",
+            "id": "JDK-8349426",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349426",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "Timeout handler on Windows takes 2 hours to complete",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8325042",
+            "component": "core-svc",
+            "id": "JDK-8349427",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349427",
+            "priority": "4",
+            "subcomponent": "core-svc/debugger",
+            "title": "Remove unused JVMDITools test files",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8329692",
+            "component": "client-libs",
+            "id": "JDK-8349429",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349429",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Add more details to FrameStateTest.java test instructions",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8330647",
+            "component": "hotspot",
+            "id": "JDK-8349430",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349430",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Two CDS tests fail with -UseCompressedOops and UseSerialGC/UseParallelGC",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8332917",
+            "component": "hotspot",
+            "id": "JDK-8349432",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349432",
+            "priority": "5",
+            "subcomponent": "hotspot/test",
+            "title": "failure_handler should execute gdb \"info threads\" command on linux",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340078",
+            "component": "client-libs",
+            "id": "JDK-8349436",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349436",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "Open source several 2D tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8226938",
+            "component": "client-libs",
+            "id": "JDK-8349437",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349437",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "[TEST_BUG]GTK L&F: There is no Details button in FileChooser Dialog",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343491",
+            "component": "core-svc",
+            "id": "JDK-8349438",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349438",
+            "priority": "4",
+            "subcomponent": "core-svc/javax.management",
+            "title": "javax/management/remote/mandatory/connection/DeadLockTest.java failing with NoSuchObjectException: no such object in table",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338571",
+            "component": "client-libs",
+            "id": "JDK-8349439",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349439",
+            "priority": "3",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "[TestBug] DefaultCloseOperation.java test not working as expected wrt instruction after JDK-8325851 fix",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347911",
+            "component": "client-libs",
+            "id": "JDK-8349443",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349443",
+            "priority": "3",
+            "subcomponent": "client-libs/javax.imageio",
+            "title": "Limit the length of inflated text chunks",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8334371",
+            "component": "hotspot",
+            "id": "JDK-8349453",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349453",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "[AIX] Beginning with AIX 7.3 TL1 mmap() supports 64K memory pages",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8330702",
+            "component": "hotspot",
+            "id": "JDK-8349640",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349640",
+            "priority": "4",
+            "subcomponent": "hotspot/test",
+            "title": "Update failure handler to don't generate Error message if cores actions are empty",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8340411",
+            "component": "client-libs",
+            "id": "JDK-8349642",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349642",
+            "priority": "4",
+            "subcomponent": "client-libs/2d",
+            "title": "open source several 2D imaging tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8348562",
+            "component": "hotspot",
+            "id": "JDK-8349657",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349657",
+            "priority": "2",
+            "subcomponent": "hotspot/compiler",
+            "title": "ZGC: segmentation fault due to missing node type check in barrier elision analysis",
+            "type": "Backport"
+        },
+        {
+            "component": "infrastructure",
+            "id": "JDK-8349603",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349603",
+            "priority": "4",
+            "subcomponent": "infrastructure/build",
+            "title": "[21u, 17u, 11u] Update GHA JDKs after Jan/25 updates",
+            "type": "Bug"
+        },
+        {
+            "backportOf": "JDK-8346671",
+            "component": "core-libs",
+            "id": "JDK-8349827",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349827",
+            "priority": "3",
+            "subcomponent": "core-libs/java.nio",
+            "title": "java/nio/file/Files/probeContentType/Basic.java fails on Windows 2025",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345368",
+            "component": "core-libs",
+            "id": "JDK-8349830",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349830",
+            "priority": "4",
+            "subcomponent": "core-libs/java.io",
+            "title": "java/io/File/createTempFile/SpecialTempFile.java fails on Windows Server 2025",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346713",
+            "component": "hotspot",
+            "id": "JDK-8349856",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349856",
+            "priority": "4",
+            "subcomponent": "hotspot/gc",
+            "title": "[testsuite] NeverActAsServerClassMachine breaks TestPLABAdaptToMinTLABSize.java TestPinnedHumongousFragmentation.java TestPinnedObjectContents.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346587",
+            "component": "security-libs",
+            "id": "JDK-8349870",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349870",
+            "priority": "3",
+            "subcomponent": "security-libs/javax.net.ssl",
+            "title": "Distrust TLS server certificates anchored by Camerfirma Root CAs",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347038",
+            "component": "core-libs",
+            "id": "JDK-8349947",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349947",
+            "priority": "4",
+            "subcomponent": "core-libs",
+            "title": "[JMH] jdk.incubator.vector.SpiltReplicate fails NoClassDefFoundError",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339834",
+            "component": "core-libs",
+            "id": "JDK-8349948",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349948",
+            "priority": "4",
+            "subcomponent": "core-libs",
+            "title": "Replace usages of -mx and -ms in some tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8319233",
+            "component": "hotspot",
+            "id": "JDK-8349983",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349983",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "AArch64: Build failure with clang due to -Wformat-nonliteral warning",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8302111",
+            "component": "security-libs",
+            "id": "JDK-8349986",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349986",
+            "priority": "4",
+            "subcomponent": "security-libs/java.security",
+            "title": "Serialization considerations",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347740",
+            "component": "core-libs",
+            "id": "JDK-8349987",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349987",
+            "priority": "3",
+            "subcomponent": "core-libs/java.io",
+            "title": "java/io/File/createTempFile/SpecialTempFile.java failing",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343882",
+            "component": "tools",
+            "id": "JDK-8349996",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349996",
+            "priority": "4",
+            "subcomponent": "tools/javac",
+            "title": "BasicAnnoTests doesn't handle multiple annotations at the same position",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347171",
+            "component": "core-libs",
+            "id": "JDK-8349998",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349998",
+            "priority": "4",
+            "subcomponent": "core-libs/java.nio",
+            "title": "(dc) java/nio/channels/DatagramChannel/InterruptibleOrNot.java fails with virtual thread factory",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346972",
+            "component": "core-libs",
+            "id": "JDK-8350000",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350000",
+            "priority": "4",
+            "subcomponent": "core-libs/java.nio",
+            "title": "Test java/nio/channels/FileChannel/LoopingTruncate.java fails sometimes with IOException: There is not enough space on the disk",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345569",
+            "component": "hotspot",
+            "id": "JDK-8350001",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350001",
+            "priority": "3",
+            "subcomponent": "hotspot/runtime",
+            "title": "[ubsan] adjustments to filemap.cpp and virtualspace.cpp for macOS aarch64",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346881",
+            "component": "hotspot",
+            "id": "JDK-8350002",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350002",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "[ubsan] logSelection.cpp:154:24  / logSelectionList.cpp:72:94 : runtime error: applying non-zero offset 1 to null pointer",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347576",
+            "component": "client-libs",
+            "id": "JDK-8350003",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350003",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.sound",
+            "title": "Error output in libjsound has non matching format strings",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346880",
+            "component": "core-libs",
+            "id": "JDK-8350183",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350183",
+            "priority": "4",
+            "subcomponent": "core-libs/java.lang",
+            "title": "[aix] java/lang/ProcessHandle/InfoTest.java still fails: \"reported cputime less than expected\"",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338303",
+            "component": "hotspot",
+            "id": "JDK-8350191",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350191",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "Linux ppc64le with toolchain clang - detection failure in early JVM startup",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8322983",
+            "component": "hotspot",
+            "id": "JDK-8350291",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350291",
+            "priority": "4",
+            "subcomponent": "hotspot/test",
+            "title": "Virtual Threads: exclude 2 tests",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8345676",
+            "component": "core-libs",
+            "id": "JDK-8350310",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350310",
+            "priority": "4",
+            "subcomponent": "core-libs",
+            "title": "[ubsan] ProcessImpl_md.c:561:40: runtime error: applying zero offset to null pointer on macOS aarch64",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347268",
+            "component": "hotspot",
+            "id": "JDK-8350311",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350311",
+            "priority": "4",
+            "subcomponent": "hotspot/runtime",
+            "title": "[ubsan] logOutput.cpp:357:21: runtime error: applying non-zero offset 1 to null pointer",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8347267",
+            "component": "core-svc",
+            "id": "JDK-8350312",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350312",
+            "priority": "4",
+            "subcomponent": "core-svc/java.lang.management",
+            "title": "[macOS]: UnixOperatingSystem.c:67:40: runtime error: division by zero",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8328730",
+            "component": "client-libs",
+            "id": "JDK-8350407",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350407",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Convert java/awt/print/bug8023392/bug8023392.html applet test to main",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8283664",
+            "component": "client-libs",
+            "id": "JDK-8350408",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350408",
+            "priority": "4",
+            "subcomponent": "client-libs",
+            "title": "Remove jtreg tag manual=yesno for java/awt/print/PrinterJob/PrintTextTest.java",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342098",
+            "component": "client-libs",
+            "id": "JDK-8350409",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350409",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "Write a test to compare the images",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339728",
+            "component": "client-libs",
+            "id": "JDK-8350505",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350505",
+            "priority": "3",
+            "subcomponent": "client-libs/javax.accessibility",
+            "title": "[Accessibility,Windows,JAWS] Bug in the getKeyChar method of the AccessBridge class",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8337222",
+            "component": "hotspot",
+            "id": "JDK-8350527",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350527",
+            "priority": "4",
+            "subcomponent": "hotspot/gc",
+            "title": "gc/TestDisableExplicitGC.java fails due to unexpected CodeCache GC",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8338595",
+            "component": "hotspot",
+            "id": "JDK-8350528",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350528",
+            "priority": "4",
+            "subcomponent": "hotspot/compiler",
+            "title": "Add more linesize for MIME decoder in macro bench test Base64Decode",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346324",
+            "component": "client-libs",
+            "id": "JDK-8350529",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350529",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "javax/swing/JScrollBar/4865918/bug4865918.java fails in CI",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8346828",
+            "component": "client-libs",
+            "id": "JDK-8350530",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350530",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "javax/swing/JScrollBar/4865918/bug4865918.java still fails in CI",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8348675",
+            "component": "client-libs",
+            "id": "JDK-8350531",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350531",
+            "priority": "3",
+            "subcomponent": "client-libs/java.awt",
+            "title": "TrayIcon tests fail in Ubuntu 24.10 Wayland",
+            "type": "Backport"
+        },
+        {
+            "component": "infrastructure",
+            "id": "JDK-8349729",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8349729",
+            "priority": "3",
+            "subcomponent": "infrastructure/build",
+            "title": "[21u] AIX jtreg tests fail to compile with qvisibility=hidden",
+            "type": "Bug"
+        },
+        {
+            "backportOf": "JDK-8327476",
+            "component": "tools",
+            "id": "JDK-8350568",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350568",
+            "priority": "4",
+            "subcomponent": "tools/jshell",
+            "title": "Upgrade JLine to 3.26.1",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8349039",
+            "component": "hotspot",
+            "id": "JDK-8350658",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350658",
+            "priority": "4",
+            "subcomponent": "hotspot/svc-agent",
+            "title": "Adjust exception No type named <ThreadType> in database",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342635",
+            "component": "client-libs",
+            "id": "JDK-8350669",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350669",
+            "priority": "3",
+            "subcomponent": "client-libs/javax.swing",
+            "title": "javax/swing/JFileChooser/FileSystemView/WindowsDefaultIconSizeTest.java creates tmp file in src dir",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8342634",
+            "component": "client-libs",
+            "id": "JDK-8350670",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350670",
+            "priority": "4",
+            "subcomponent": "client-libs/javax.imageio",
+            "title": "javax/imageio/plugins/wbmp/WBMPStreamTruncateTest.java creates temp file in src dir",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339356",
+            "component": "security-libs",
+            "id": "JDK-8350671",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350671",
+            "priority": "4",
+            "subcomponent": "security-libs/javax.net.ssl",
+            "title": "Test javax/net/ssl/SSLSocket/Tls13PacketSize.java failed with java.net.SocketException: An established connection was aborted by the software in your host machine",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8344581",
+            "component": "client-libs",
+            "id": "JDK-8350677",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350677",
+            "priority": "4",
+            "subcomponent": "client-libs/java.awt",
+            "title": "[TESTBUG] java/awt/Robot/ScreenCaptureRobotTest.java failing on macOS",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8317808",
+            "component": "core-libs",
+            "id": "JDK-8350684",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8350684",
+            "priority": "4",
+            "subcomponent": "core-libs/java.net",
+            "title": "HTTP/2 stream cancelImpl may leave subscriber registered",
+            "type": "Backport"
+        },
+        {
+            "component": "core-libs",
+            "id": "JDK-8352097",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8352097",
+            "priority": "4",
+            "subcomponent": "core-libs/java.time",
+            "title": "(tz) zone.tab update missed in 2025a backport",
+            "type": "Bug"
+        },
+        {
+            "id": "JDK-8337494",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337494",
+            "title": "Clarify JarInputStream behavior"
+        },
+        {
+            "id": "JDK-8337692",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8337692",
+            "title": "Better TLS connection support"
+        },
+        {
+            "id": "JDK-8338430",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8338430",
+            "title": "Improve compiler transformations"
+        },
+        {
+            "id": "JDK-8342562",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8342562",
+            "title": "Enhance Deflater operations"
+        },
+        {
+            "id": "JDK-8343007",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8343007",
+            "title": "Enhance Buffered Image handling"
+        },
+        {
+            "id": "JDK-8347847",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8347847",
+            "title": "Enhance jar file support"
+        },
+        {
+            "backportOf": "JDK-8309841",
+            "component": "security-libs",
+            "id": "JDK-8354709",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8354709",
+            "priority": "3",
+            "subcomponent": "security-libs/java.security",
+            "title": "Jarsigner should print a warning if an entry is removed",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8339810",
+            "component": "tools",
+            "id": "JDK-8354710",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8354710",
+            "priority": "4",
+            "subcomponent": "tools/jar",
+            "title": "Clean up the code in sun.tools.jar.Main to properly close resources and use ZipFile during extract",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8331735",
+            "component": "core-libs",
+            "id": "JDK-8354711",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8354711",
+            "priority": "3",
+            "subcomponent": "core-libs/java.lang.foreign",
+            "title": "UpcallLinker::on_exit races with GC when copying frame anchor",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8343144",
+            "component": "core-libs",
+            "id": "JDK-8354712",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8354712",
+            "priority": "4",
+            "subcomponent": "core-libs/java.lang.foreign",
+            "title": "UpcallLinker::on_entry racingly clears pending exception with GC safepoints",
+            "type": "Backport"
+        },
+        {
+            "backportOf": "JDK-8286875",
+            "component": "core-libs",
+            "id": "JDK-8354713",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8354713",
+            "priority": "4",
+            "subcomponent": "core-libs/java.lang.foreign",
+            "title": "ProgrammableUpcallHandler::on_entry/on_exit access thread fields from native",
+            "type": "Backport"
+        },
+        {
+            "component": "infrastructure",
+            "id": "JDK-8353904",
+            "link": "https://bugs.openjdk.java.net/browse/JDK-8353904",
+            "priority": "4",
+            "subcomponent": "infrastructure/release_eng",
+            "title": "[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.7",
+            "type": "Bug"
+        }
+    ],
+    "vendor": "eclipse",
+    "version_data": {
+        "build": 6,
+        "major": 21,
+        "minor": 0,
+        "openjdk_version": "21.0.7+6-LTS",
+        "optional": "LTS",
+        "security": 7,
+        "semver": "21.0.7+6.0.LTS"
+    }
+}
