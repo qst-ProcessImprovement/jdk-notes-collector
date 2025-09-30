@@ -1,3 +1,17 @@
 JDK-8225377
+summary: type annotations are not visible to javac plugins across compilation boundaries
+status: Resolved
+resolution: Fixed
+link: https://bugs.openjdk.org/browse/JDK-8225377
+
 JDK-8320001
+summary: javac crashes while adding type annotations to the return type of a constructor
+status: Closed
+resolution: Fixed
+link: https://bugs.openjdk.org/browse/JDK-8320001
+
 JDK-8331942
+summary: On Linux aarch64, CDS archives should be using 64K alignment by default
+status: Resolved
+resolution: Fixed
+link: https://bugs.openjdk.org/browse/JDK-8331942
