@@ -97,7 +97,7 @@ def main() -> None:
         if not duplicate_ids:
             continue
 
-        print("skipped: " + json_path.name)
+        print("duplicate ids: " + json_path.name)
         for issue_id in duplicate_ids:
             print(issue_id)
         print()
