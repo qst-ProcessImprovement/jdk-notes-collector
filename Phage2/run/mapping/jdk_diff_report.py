@@ -178,8 +178,8 @@ def main() -> None:
         "",
         table_text,
         "",
-        f"プロダクト差分JDK件数: {diff_count}",
         f"全てのプロダクトで一致したJDK件数: {matched_count}",
+        f"プロダクトごとに差分のあるJDK件数: {diff_count}",
         f"Fix Version/sが21以外のJDK件数: {non_21_count}",
         "",
     ]
