@@ -142,7 +142,7 @@ def build_diff_table(
             fix_versions = list(fix_version_loader(issue_id))
             counted = any(value != "21" for value in fix_versions)
         except JDKDiffError:
-            fix_versions = ["N/A"]
+            fix_versions = ["Issueページなし"]
             counted = False
         if counted:
             non_21_count += 1
