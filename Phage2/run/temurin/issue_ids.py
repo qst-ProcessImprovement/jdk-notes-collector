@@ -6,9 +6,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Iterable, List, Sequence
 
+import re
 _BASE_DIR = Path(__file__).parent
 _TEMURIN_DIR = _BASE_DIR / "temurin"
-_OUTPUT_DIR = _BASE_DIR / "issue_ids"
+_OUTPUT_DIR = _BASE_DIR / "output_temurin"
 
 
 def _iter_release_notes(json_path: Path) -> Iterable[dict]:
@@ -58,10 +59,18 @@ def _sorted_duplicates(values: Sequence[str]) -> List[str]:
     return sorted([value for value, count in counter.items() if count > 1])
 
 
+
+def _canonical_output_filename(json_path: Path) -> str:
+    """JSONファイル名からビルド番号サフィックスを除いた出力ファイル名を得る。"""
+    stem = json_path.stem
+    canonical_stem = re.sub(r"\+\d+$", "", stem)
+    return f"{canonical_stem}.txt"
+
 def _write_unique_ids(json_path: Path, issue_ids: Sequence[str]) -> Path:
     """ユニークなIssue IDをファイルへ書き出し、出力パスを返す。"""
     _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    output_path = _OUTPUT_DIR / json_path.with_suffix(".txt").name
+    output_filename = _canonical_output_filename(json_path)
+    output_path = _OUTPUT_DIR / output_filename
     unique_ids = _sorted_unique(issue_ids)
     output_path.write_text("\n".join(unique_ids) + "\n", encoding="utf-8")
     return output_path

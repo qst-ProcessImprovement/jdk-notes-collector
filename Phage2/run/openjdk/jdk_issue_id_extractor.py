@@ -49,7 +49,7 @@ def format_duplicates(duplicates: Iterable[str]) -> str:
 
 
 def main() -> None:
-    output_dir = pathlib.Path.cwd() / "issue_ids"
+    output_dir = pathlib.Path.cwd() / "output_openjdk"
 
     input_files = iter_input_files(INPUT_DIR)
     if not input_files:
@@ -68,7 +68,8 @@ def main() -> None:
             )
 
         sorted_issue_ids = sort_issue_ids(unique_issue_ids)
-        output_path = output_dir / markdown_path.name
+        output_filename = f"jdk-{markdown_path.stem}.md"
+        output_path = output_dir / output_filename
         write_issue_ids(sorted_issue_ids, output_path)
 
 
