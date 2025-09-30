@@ -9,7 +9,9 @@ from typing import Iterable, List, Sequence
 import re
 _BASE_DIR = Path(__file__).parent
 _TEMURIN_DIR = _BASE_DIR / "temurin"
-_OUTPUT_DIR = _BASE_DIR / "output_temurin"
+_OUTPUT_DIR = _BASE_DIR / "issue_ids_output"
+_PER_FILE_DIR = _OUTPUT_DIR / "per_file"
+_AGGREGATED_FILENAME = "all_issue_ids.txt"
 
 
 def _iter_release_notes(json_path: Path) -> Iterable[dict]:
@@ -66,14 +68,14 @@ def _canonical_output_filename(json_path: Path) -> str:
     canonical_stem = re.sub(r"\+\d+$", "", stem)
     return f"{canonical_stem}.txt"
 
-def _write_unique_ids(json_path: Path, issue_ids: Sequence[str]) -> Path:
-    """ユニークなIssue IDをファイルへ書き出し、出力パスを返す。"""
-    _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+def _write_unique_ids(json_path: Path, issue_ids: Sequence[str]) -> List[str]:
+    """ユニークなIssue IDをファイル別ディレクトリへ書き出し、書き出したIDを返す。"""
+    _PER_FILE_DIR.mkdir(parents=True, exist_ok=True)
     output_filename = _canonical_output_filename(json_path)
-    output_path = _OUTPUT_DIR / output_filename
+    output_path = _PER_FILE_DIR / output_filename
     unique_ids = _sorted_unique(issue_ids)
     output_path.write_text("\n".join(unique_ids) + "\n", encoding="utf-8")
-    return output_path
+    return unique_ids
 
 
 def main() -> None:
@@ -85,17 +87,25 @@ def main() -> None:
     if not json_files:
         raise FileNotFoundError(f"JSONファイルが見つかりません: {_TEMURIN_DIR}")
 
+    aggregate_ids: set[str] = set()
+
     for json_path in json_files:
         issue_ids = collect_issue_ids(json_path)
-        _write_unique_ids(json_path, issue_ids)
+        unique_ids = _write_unique_ids(json_path, issue_ids)
+        aggregate_ids.update(unique_ids)
         duplicate_ids = _sorted_duplicates(issue_ids)
         if not duplicate_ids:
             continue
 
-        print(json_path.name)
+        print("skipped: " + json_path.name)
         for issue_id in duplicate_ids:
             print(issue_id)
         print()
+
+    _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    aggregate_output_path = _OUTPUT_DIR / _AGGREGATED_FILENAME
+    aggregate_output = _sorted_unique(list(aggregate_ids))
+    aggregate_output_path.write_text("\n".join(aggregate_output) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

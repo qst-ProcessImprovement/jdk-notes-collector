@@ -28,7 +28,7 @@ JIRA_SEARCH_URL_TEMPLATE = (
 )
 
 # 出力ディレクトリ名（実行時カレントディレクトリ直下）。
-OUTPUT_DIRECTORY_NAME = "OpenJDK"
+OUTPUT_DIRECTORY_NAME = "output"
 
 REQUEST_TIMEOUT_SECONDS = 60
 USER_AGENT = "jdk-notes-collector/1.0"
