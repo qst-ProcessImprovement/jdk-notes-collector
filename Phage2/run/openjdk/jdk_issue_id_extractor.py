@@ -68,7 +68,7 @@ def main() -> None:
             )
 
         sorted_issue_ids = sort_issue_ids(unique_issue_ids)
-        output_filename = f"jdk-{markdown_path.stem}.md"
+        output_filename = f"jdk-{markdown_path.stem}.txt"
         output_path = output_dir / output_filename
         write_issue_ids(sorted_issue_ids, output_path)
 
