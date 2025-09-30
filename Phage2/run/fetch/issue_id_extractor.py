@@ -1,7 +1,8 @@
 """OpenJDK issue ID extraction module.
 
-対象ディレクトリ配下の XML ファイルから Issue ID を抽出し、Backport 課題は元 Issue ID のみを記録する。
-個別ファイルと集約ファイルを専用ディレクトリに出力し、各ファイル内で重複排除と JDK 番号順ソートを行う。
+実行時カレントディレクトリに存在する OpenJDK フォルダ配下の XML ファイルから Issue ID を抽出し、
+Backport 課題は元 Issue ID のみを記録する。個別ファイルと集約ファイルを専用ディレクトリに出力し、
+各ファイル内で重複排除と JDK 番号順ソートを行う。
 """
 from __future__ import annotations
 
@@ -11,7 +12,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 from typing import Iterable, Iterator, List, Sequence, Tuple
 
-XML_DIR = Path(__file__).resolve().parent
+# 実行時カレントディレクトリ直下の OpenJDK フォルダを対象とする
+XML_DIR = Path.cwd() / "OpenJDK"
 OUTPUT_DIR = XML_DIR / "issue_ids_output"
 OUTPUT_FILENAME = "issue_ids.txt"
 ISSUE_KEY_PATTERN = re.compile(r"^([A-Z]+)-(\d+)$")

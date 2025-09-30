@@ -92,7 +92,7 @@ def build_diff_table(data: Dict[str, set[str]]) -> List[List[str]]:
     return rows
 
 
-def build_report() -> str:
+def build_report() -> tuple[str, int]:
     product_specs = resolve_product_specs()
     product_data: Dict[str, set[str]] = {}
     for product, path in product_specs:
@@ -100,14 +100,17 @@ def build_report() -> str:
 
     diff_rows = build_diff_table(product_data)
     headers = ["JDK", *product_data.keys()]
-    return render_table(headers, diff_rows)
+    table_text = render_table(headers, diff_rows)
+    return table_text, len(diff_rows)
 
 
 def main() -> None:
-    table_text = build_report()
+    table_text, diff_count = build_report()
 
     output_path = Path.cwd() / OUTPUT_FILENAME
     output_path.write_text(table_text + "\n", encoding="utf-8")
+
+    print(diff_count)
 
 
 if __name__ == "__main__":
