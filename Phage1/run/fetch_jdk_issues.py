@@ -10,6 +10,8 @@ from urllib.request import urlopen
 from xml.etree import ElementTree as ET
 import re
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 BASE_URL_TEMPLATE = "https://bugs.openjdk.org/si/jira.issueviews:issue-xml/{issue}/{issue}.xml"
 OUTPUT_ROOT = Path("jdk_issues")
 SKIPPED_FILENAME = "skipped.txt"
@@ -85,6 +87,32 @@ def record_skipped(issue_ids: Iterable[str], destination: Path) -> None:
         destination.write_text("", encoding="utf-8")
 
 
+
+
+def fetch_issue_task(issue_id: str, target_dir: Path, target_file: Path) -> tuple[bool, str | None, str]:
+    """課題の取得・検証・保存を行い、結果とメッセージを返す。"""
+    try:
+        payload = download_issue(issue_id)
+        validate_issue_payload(payload)
+    except HTTPError as exc:
+        message = f"[SKIP] {issue_id}: HTTP {exc.code}"
+        return False, f"{issue_id}\tHTTP {exc.code}", message
+    except URLError as exc:
+        reason = getattr(exc, "reason", exc)
+        message = f"[SKIP] {issue_id}: URLError {reason}"
+        return False, f"{issue_id}\tURLError {reason}", message
+    except InvalidIssuePayloadError as exc:
+        message = f"[SKIP] {issue_id}: {exc}"
+        return False, f"{issue_id}\tINVALID {exc}", message
+    except Exception as exc:  # noqa: BLE001
+        message = f"[SKIP] {issue_id}: {exc}"
+        return False, f"{issue_id}\tERROR {exc}", message
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target_file.write_bytes(payload)
+    message = f"[OK]   {issue_id} -> {target_file}"
+    return True, None, message
+
 def main(argv: list[str] | None = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     if len(args) > 1:
@@ -102,37 +130,23 @@ def main(argv: list[str] | None = None) -> int:
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
     skipped: list[str] = []
 
-    for issue_id in issue_ids:
-        target_dir = issue_directory(issue_id)
-        target_file = build_issue_filename(issue_id)
-        if target_file.exists():
-            print(f"[SKIP] {issue_id}: 出力ファイルが既に存在するためダウンロードを省略します")
-            continue
+    futures = []
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        for issue_id in issue_ids:
+            target_dir = issue_directory(issue_id)
+            target_file = build_issue_filename(issue_id)
+            if target_file.exists():
+                print(f"[SKIP] {issue_id}: 出力ファイルが既に存在するためダウンロードを省略します")
+                continue
 
-        try:
-            payload = download_issue(issue_id)
-            validate_issue_payload(payload)
-        except HTTPError as exc:
-            skipped.append(f"{issue_id}\tHTTP {exc.code}")
-            print(f"[SKIP] {issue_id}: HTTP {exc.code}")
-            continue
-        except URLError as exc:
-            reason = getattr(exc, "reason", exc)
-            skipped.append(f"{issue_id}\tURLError {reason}")
-            print(f"[SKIP] {issue_id}: URLError {reason}")
-            continue
-        except InvalidIssuePayloadError as exc:
-            skipped.append(f"{issue_id}\tINVALID {exc}")
-            print(f"[SKIP] {issue_id}: {exc}")
-            continue
-        except Exception as exc:  # noqa: BLE001
-            skipped.append(f"{issue_id}\tERROR {exc}")
-            print(f"[SKIP] {issue_id}: {exc}")
-            continue
+            future = executor.submit(fetch_issue_task, issue_id, target_dir, target_file)
+            futures.append(future)
 
-        target_dir.mkdir(parents=True, exist_ok=True)
-        target_file.write_bytes(payload)
-        print(f"[OK]   {issue_id} -> {target_file}")
+        for future in as_completed(futures):
+            _, skipped_entry, message = future.result()
+            print(message)
+            if skipped_entry is not None:
+                skipped.append(skipped_entry)
 
     record_skipped(skipped, OUTPUT_ROOT / SKIPPED_FILENAME)
     print(f"完了: 成功 {len(issue_ids) - len(skipped)} 件, スキップ {len(skipped)} 件")
