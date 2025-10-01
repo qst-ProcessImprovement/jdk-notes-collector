@@ -226,9 +226,9 @@ def main() -> None:
         "",
         table_text,
         "",
-        f"全てのプロダクトで一致したJDK件数: {matched_count}",
-        f"プロダクトごとに差分のあるJDK件数: {diff_count}",
-        f"Fix Version/sが21以外のJDK件数: {non_21_count}",
+        f"全てのプロダクトで一致したJDK件数: {matched_count}  ",
+        f"プロダクトごとに差分のあるJDK件数: {diff_count}  ",
+        f"Fix Version/sが21以外のJDK件数: {non_21_count}  ",
         "",
     ]
     output_path.write_text("\n".join(output_lines), encoding="utf-8")
