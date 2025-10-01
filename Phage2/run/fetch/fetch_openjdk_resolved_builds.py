@@ -5,6 +5,8 @@ from __future__ import annotations
 import datetime as _dt
 import re
 import sys
+from collections import Counter
+from dataclasses import dataclass
 from enum import Enum
 import urllib.error
 import urllib.request
@@ -72,6 +74,368 @@ ISSUE_KEY_PATTERN = re.compile(r"^([A-Z]+)-(\d+)$")
 XML_OUTPUT_ROOT = Path("builds") / "xml"
 ISSUE_IDS_OUTPUT_ROOT = Path("builds") / "issue_ids"
 
+TEMURIN_INPUT_ROOT = Path("INPUT") / "temurin"
+TEMURIN_PER_FILE_SUBDIRECTORY = Path("temurin") / "per_file"
+TEMURIN_TMP_SUBDIRECTORY = Path("temurin") / "tmp"
+TEMURIN_AGGREGATED_FILENAME = "all_issue_ids_temurin.txt"
+TEMURIN_TMP_FILENAME = "temurin_jdk_ids.txt"
+TEMURIN_ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
+TEMURIN_JDK_ISSUES_DIR = Path(
+    "/Users/irieryuuhei/Documents/qst-ProcessImprovement/jdk-notes-collector/Phage1/run/jdk_issues"
+)
+
+
+@dataclass(slots=True, frozen=True)
+class TemurinReleaseNoteEntry:
+    priority: str
+    issue_type: str
+    issue_id: str
+    summary: str
+    component: str | None
+
+
+
+
+def iter_temurin_release_notes(text_path: Path) -> Iterable[TemurinReleaseNoteEntry]:
+    """Temurin のリリースノートテキストから項目を抽出する。"""
+    if not text_path.is_file():
+        raise FileNotFoundError(f"入力テキストが見つかりません: {text_path}")
+
+    raw_lines = text_path.read_text(encoding="utf-8").splitlines()
+    lines = [line.strip() for line in raw_lines if line.strip()]
+    index = 0
+
+    while index < len(lines):
+        priority = lines[index]
+        index += 1
+        if not priority.startswith("P"):
+            raise ValueError(f"優先度行の形式が不正です: {text_path} -> '{priority}'")
+
+        if index >= len(lines):
+            raise ValueError(f"タイプ行が欠落しています: {text_path}")
+        issue_type = lines[index]
+        index += 1
+
+        if index >= len(lines):
+            raise ValueError(f"Issue ID行が欠落しています: {text_path}")
+        candidate = lines[index]
+        index += 1
+
+        if TEMURIN_ISSUE_ID_PATTERN.fullmatch(candidate):
+            component: str | None = None
+            issue_id = require_temurin_jdk_issue_id(candidate, source_path=text_path, field_name="id")
+        else:
+            component = candidate
+            if index >= len(lines):
+                raise ValueError(f"Issue ID行が欠落しています: {text_path}")
+            issue_id = require_temurin_jdk_issue_id(lines[index], source_path=text_path, field_name="id")
+            index += 1
+
+        if index >= len(lines):
+            raise ValueError(f"概要行が欠落しています: {text_path}:{issue_id}")
+        summary = lines[index]
+        index += 1
+
+        yield TemurinReleaseNoteEntry(
+            priority=priority,
+            issue_type=issue_type,
+            issue_id=issue_id,
+            summary=summary,
+            component=component,
+        )
+
+
+def require_temurin_jdk_issue_id(
+    value: object, *, source_path: Path, field_name: str
+) -> str:
+    """JDK Issue ID の正準表現を検証し、正当な値を返す。"""
+    if not isinstance(value, str):
+        raise ValueError(f"{source_path}:{field_name} が文字列ではありません: {value!r}")
+    normalized = value.strip()
+    if not normalized:
+        raise ValueError(f"{source_path}:{field_name} が空文字です")
+    if not TEMURIN_ISSUE_ID_PATTERN.fullmatch(normalized):
+        raise ValueError(
+            f"正準表現に合致しないIssue IDを検出しました: {source_path}:{field_name} -> '{normalized}'"
+        )
+    return normalized
+
+
+def lookup_temurin_backport_origin_in_issue_xml(
+    backport_issue_id: str, jdk_issues_dir: Path
+) -> str | None:
+    """jdk_issues ディレクトリ内の XML を解析して Backport 元を取得する。"""
+    issue_dir = jdk_issues_dir / backport_issue_id
+    xml_path = issue_dir / f"{backport_issue_id.lower()}.xml"
+    if not xml_path.is_file():
+        raise FileNotFoundError(f"Backport Issue XMLが存在しません: {xml_path}")
+
+    try:
+        tree = ET.parse(xml_path)
+    except ET.ParseError as exc:
+        raise ValueError(f"Backport Issue XMLの解析に失敗しました: {xml_path}") from exc
+
+    root = tree.getroot()
+    for link_type in root.findall(".//issuelinktype"):
+        if link_type.findtext("name") != "Backport":
+            continue
+        for inwardlinks in link_type.findall("inwardlinks"):
+            if inwardlinks.get("description") != "backport of":
+                continue
+            issue_key = inwardlinks.findtext("issuelink/issuekey")
+            if issue_key and TEMURIN_ISSUE_ID_PATTERN.fullmatch(issue_key):
+                return issue_key
+    return None
+
+
+def resolve_temurin_backport_origin(
+    backport_issue_id: str,
+    reference_backports: dict[str, str],
+    *,
+    release_path: Path,
+    jdk_issues_dir: Path,
+) -> str:
+    """Backport Issue ID の元 Issue ID を既存マップまたは jdk_issues から取得する。"""
+    origin = reference_backports.get(backport_issue_id)
+    if origin is not None:
+        return origin
+
+    origin = lookup_temurin_backport_origin_in_issue_xml(backport_issue_id, jdk_issues_dir)
+    if origin is None:
+        raise ValueError(
+            f"Backport元のIssue IDをjdk_issuesから解決できません: {release_path}:{backport_issue_id}"
+        )
+    reference_backports[backport_issue_id] = origin
+    return origin
+
+
+def update_temurin_reference_mapping_from_file(
+    mapping: dict[str, str], source_path: Path
+) -> None:
+    """既存の Issue ID 出力ファイルから Backport 情報を読み込む。"""
+    for raw_line in source_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        parts = [part.strip() for part in line.split(",") if part.strip()]
+        if not parts:
+            continue
+        original = require_temurin_jdk_issue_id(
+            parts[0], source_path=source_path, field_name="original"
+        )
+        for suffix in parts[1:]:
+            if not suffix.startswith("temurin_"):
+                continue
+            backport_id = suffix[len("temurin_") :]
+            backport_issue_id = require_temurin_jdk_issue_id(
+                backport_id, source_path=source_path, field_name="backport"
+            )
+            existing = mapping.get(backport_issue_id)
+            if existing is not None and existing != original:
+                raise ValueError(
+                    f"Backportの対応関係が衝突しています: {source_path}:{backport_issue_id}"
+                )
+            mapping[backport_issue_id] = original
+
+
+def load_temurin_reference_backports(issue_output_root: Path) -> dict[str, str]:
+    """過去の Temurin 出力から Backport -> 元 Issue ID マップを組み立てる。"""
+    mapping: dict[str, str] = {}
+    aggregate_path = issue_output_root / TEMURIN_AGGREGATED_FILENAME
+    if aggregate_path.is_file():
+        update_temurin_reference_mapping_from_file(mapping, aggregate_path)
+
+    per_file_dir = issue_output_root / TEMURIN_PER_FILE_SUBDIRECTORY
+    if per_file_dir.is_dir():
+        for per_file_path in sorted(per_file_dir.glob("*.txt")):
+            update_temurin_reference_mapping_from_file(mapping, per_file_path)
+
+    return mapping
+
+
+def collect_temurin_issue_ids(
+    release_path: Path,
+    entries: Iterable[TemurinReleaseNoteEntry],
+    reference_backports: dict[str, str],
+    missing_backport_origins: set[str],
+    jdk_issues_dir: Path,
+) -> tuple[list[str], dict[str, set[str]]]:
+    """Backport の元 Issue ID を含む Issue ID 一覧と Backport 対応表を返す。"""
+    issue_ids: list[str] = []
+    backport_map: dict[str, set[str]] = {}
+
+    for entry in entries:
+        if entry.issue_type == "Backport":
+            try:
+                backport_origin = resolve_temurin_backport_origin(
+                    entry.issue_id,
+                    reference_backports,
+                    release_path=release_path,
+                    jdk_issues_dir=jdk_issues_dir,
+                )
+            except (FileNotFoundError, ValueError):
+                missing_backport_origins.add(entry.issue_id)
+                continue
+            backport_of = require_temurin_jdk_issue_id(
+                backport_origin,
+                source_path=release_path,
+                field_name="backportOf",
+            )
+            backport_map.setdefault(backport_of, set()).add(entry.issue_id)
+            issue_ids.append(backport_of)
+            continue
+
+        backport_map.setdefault(entry.issue_id, set())
+        issue_ids.append(entry.issue_id)
+
+    return issue_ids, backport_map
+
+
+def temurin_sorted_unique(values: Iterable[str]) -> list[str]:
+    """重複を排除しつつ辞書順ソートしたリストを返す。"""
+    return sorted(set(values))
+
+
+def temurin_sorted_duplicates(values: Iterable[str]) -> list[str]:
+    """複数回出現した値のみを辞書順で返す。"""
+    counter = Counter(values)
+    return sorted([value for value, count in counter.items() if count > 1])
+
+
+def format_temurin_issue_line(issue_id: str, backport_ids: Iterable[str]) -> str:
+    """元 Issue ID に temurin Backport ID を付与した行を生成する。"""
+    suffixes = [f"temurin_{backport}" for backport in temurin_sorted_unique(backport_ids)]
+    if not suffixes:
+        return issue_id
+    return ",".join([issue_id, *suffixes])
+
+
+def temurin_canonical_output_filename(source_path: Path) -> str:
+    """入力ファイル名からビルド番号サフィックスを除いた出力ファイル名を得る。"""
+    stem = source_path.stem
+    canonical_stem = re.sub(r"\+\d+$", "", stem)
+    return f"{canonical_stem}.txt"
+
+
+def write_temurin_unique_ids(
+    per_file_dir: Path,
+    source_path: Path,
+    issue_ids: Iterable[str],
+    backport_map: dict[str, set[str]],
+) -> list[str]:
+    """ユニークな Issue ID を Temurin 用ディレクトリへ書き出し、書き出した ID を返す。"""
+    per_file_dir.mkdir(parents=True, exist_ok=True)
+    output_filename = temurin_canonical_output_filename(source_path)
+    output_path = per_file_dir / output_filename
+    unique_ids = temurin_sorted_unique(issue_ids)
+    lines = [
+        format_temurin_issue_line(issue_id, backport_map.get(issue_id, ())) for issue_id in unique_ids
+    ]
+    output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return unique_ids
+
+
+def generate_temurin_issue_outputs(
+    input_root: Path,
+    issue_output_root: Path,
+    jdk_issues_dir: Path,
+) -> Path:
+    """Temurin リリースノートから Issue ID 集約ファイルを生成する。"""
+    if not input_root.is_dir():
+        raise FileNotFoundError(f"temurinディレクトリが存在しません: {input_root}")
+    if not jdk_issues_dir.is_dir():
+        raise FileNotFoundError(f"jdk_issuesディレクトリが存在しません: {jdk_issues_dir}")
+
+    release_files = sorted(input_root.glob("*.txt"))
+    if not release_files:
+        raise FileNotFoundError(f"テキストファイルが見つかりません: {input_root}")
+
+    reference_backports = load_temurin_reference_backports(issue_output_root)
+    temurin_per_file_dir = issue_output_root / TEMURIN_PER_FILE_SUBDIRECTORY
+    temurin_tmp_dir = issue_output_root / TEMURIN_TMP_SUBDIRECTORY
+    aggregate_ids: set[str] = set()
+    aggregate_backports: dict[str, set[str]] = {}
+    collected_text_issue_ids: set[str] = set()
+    missing_backport_origins: set[str] = set()
+
+    for release_path in release_files:
+        entries = list(iter_temurin_release_notes(release_path))
+        if not entries:
+            continue
+
+        collected_text_issue_ids.update(entry.issue_id for entry in entries)
+        issue_ids, backport_map = collect_temurin_issue_ids(
+            release_path,
+            entries,
+            reference_backports,
+            missing_backport_origins,
+            jdk_issues_dir,
+        )
+        for original, backports in backport_map.items():
+            for backport in backports:
+                reference_backports.setdefault(backport, original)
+
+        unique_ids = write_temurin_unique_ids(
+            temurin_per_file_dir,
+            release_path,
+            issue_ids,
+            backport_map,
+        )
+        aggregate_ids.update(unique_ids)
+        for issue_id in unique_ids:
+            aggregate_backports.setdefault(issue_id, set())
+        for issue_id, backports in backport_map.items():
+            aggregate_backports.setdefault(issue_id, set()).update(backports)
+
+        duplicate_ids = temurin_sorted_duplicates(issue_ids)
+        if duplicate_ids:
+            print(f"[INFO] Temurin duplicate ids: {release_path.name}")
+            for issue_id in duplicate_ids:
+                print(f"  {issue_id}")
+
+    temurin_tmp_dir.mkdir(parents=True, exist_ok=True)
+    tmp_issue_path = temurin_tmp_dir / TEMURIN_TMP_FILENAME
+    tmp_ids = temurin_sorted_unique(collected_text_issue_ids)
+    tmp_issue_path.write_text(
+        "\n".join(tmp_ids) + ("\n" if tmp_ids else ""), encoding="utf-8"
+    )
+
+    issue_output_root.mkdir(parents=True, exist_ok=True)
+    aggregate_output_path = issue_output_root / TEMURIN_AGGREGATED_FILENAME
+    aggregate_output = temurin_sorted_unique(aggregate_ids)
+    aggregate_lines = [
+        format_temurin_issue_line(
+            issue_id,
+            aggregate_backports.get(issue_id, ()),
+        )
+        for issue_id in aggregate_output
+    ]
+    aggregate_output_path.write_text(
+        "\n".join(aggregate_lines) + ("\n" if aggregate_lines else ""),
+        encoding="utf-8",
+    )
+
+    print(
+        f"[INFO] Temurin tmp issue ids -> {tmp_issue_path.relative_to(Path.cwd())}"
+    )
+    print(
+        f"[INFO] Temurin aggregate issue ids -> {aggregate_output_path.relative_to(Path.cwd())}"
+    )
+    print(
+        f"[INFO] Temurin per-file issue ids -> {temurin_per_file_dir.relative_to(Path.cwd())}"
+    )
+
+    if missing_backport_origins:
+        unresolved = temurin_sorted_unique(missing_backport_origins)
+        print("[INFO] Temurin missing backport origins:")
+        for issue_id in unresolved:
+            print(f"  {issue_id}")
+        raise ValueError(
+            "Backport元のIssue IDを解決できません。jdk_issuesの取得状況を確認してください: "
+            + ", ".join(unresolved)
+        )
+
+    return aggregate_output_path
 
 def iter_issue_xml_files(root: Path) -> list[Path]:
     files: list[Path] = []
@@ -414,6 +778,7 @@ def collect_resolved_in_build_xml(
 def main() -> None:
     xml_output_root = Path.cwd() / XML_OUTPUT_ROOT
     issue_output_root = Path.cwd() / ISSUE_IDS_OUTPUT_ROOT
+    temurin_input_root = Path.cwd() / TEMURIN_INPUT_ROOT
     total_failures = 0
     any_collected = False
 
@@ -454,6 +819,20 @@ def main() -> None:
         )
         print(
             f"[INFO] Issue ID 集約: {aggregated_issue_path.relative_to(Path.cwd())} に保存しました"
+        )
+
+    try:
+        temurin_aggregate_path = generate_temurin_issue_outputs(
+            temurin_input_root,
+            issue_output_root,
+            TEMURIN_JDK_ISSUES_DIR,
+        )
+    except (FileNotFoundError, ValueError) as error:
+        print(f"[ERROR] Temurin: {error}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print(
+            f"[INFO] Temurin Issue ID 集約: {temurin_aggregate_path.relative_to(Path.cwd())} に保存しました"
         )
 
     if not any_collected:
