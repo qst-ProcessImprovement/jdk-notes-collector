@@ -4,13 +4,15 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, List, Mapping, Sequence, Tuple
+from typing import Iterable, List, Sequence, Tuple
+from xml.etree import ElementTree
 
 import re
 _BASE_DIR = Path(__file__).parent
 _TEMURIN_DIR = _BASE_DIR / "temurin"
 _OUTPUT_DIR = _BASE_DIR / "issue_ids_output"
 _PER_FILE_DIR = _OUTPUT_DIR / "per_file"
+_JDK_ISSUES_DIR = Path("/Users/irieryuuhei/Documents/qst-ProcessImprovement/jdk-notes-collector/Phage1/run/jdk_issues")
 _TMP_DIR = _BASE_DIR / "tmp"
 _AGGREGATED_FILENAME = "all_issue_ids.txt"
 _ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
@@ -78,7 +80,8 @@ def _iter_release_notes(text_path: Path) -> Iterable[ReleaseNoteEntry]:
 def collect_issue_ids(
     release_path: Path,
     entries: Iterable[ReleaseNoteEntry],
-    reference_backports: Mapping[str, str],
+    reference_backports: dict[str, str],
+    missing_backport_origins: set[str],
 ) -> Tuple[List[str], dict[str, set[str]]]:
     """Backportの元Issue IDを含むIssue ID一覧とBackport対応表を抽出して返す。"""
     issue_ids: List[str] = []
@@ -87,15 +90,19 @@ def collect_issue_ids(
     for entry in entries:
         if entry.issue_type == "Backport":
             try:
-                backport_of = _require_jdk_issue_id(
-                    reference_backports[entry.issue_id],
-                    source_path=release_path,
-                    field_name="backportOf",
+                backport_origin = _resolve_backport_origin(
+                    entry.issue_id,
+                    reference_backports,
+                    release_path=release_path,
                 )
-            except KeyError as exc:
-                raise KeyError(
-                    f"Backport元のIssue IDをissue_ids_outputから解決できません: {release_path}:{entry.issue_id}"
-                ) from exc
+            except (FileNotFoundError, ValueError):
+                missing_backport_origins.add(entry.issue_id)
+                continue
+            backport_of = _require_jdk_issue_id(
+                backport_origin,
+                source_path=release_path,
+                field_name="backportOf",
+            )
             backport_map.setdefault(backport_of, set()).add(entry.issue_id)
             issue_ids.append(backport_of)
             continue
@@ -144,6 +151,51 @@ def _update_reference_mapping_from_file(mapping: dict[str, str], source_path: Pa
                     f"Backportの対応関係が衝突しています: {source_path}:{backport_issue_id}"
                 )
             mapping[backport_issue_id] = original
+
+
+def _resolve_backport_origin(
+    backport_issue_id: str,
+    reference_backports: dict[str, str],
+    *,
+    release_path: Path,
+) -> str:
+    """Backport Issue IDの元Issue IDを既存マップまたはjdk_issuesから取得する。"""
+    origin = reference_backports.get(backport_issue_id)
+    if origin is not None:
+        return origin
+
+    origin = _lookup_backport_origin_in_issue_xml(backport_issue_id)
+    if origin is None:
+        raise ValueError(
+            f"Backport元のIssue IDをjdk_issuesから解決できません: {release_path}:{backport_issue_id}"
+        )
+    reference_backports[backport_issue_id] = origin
+    return origin
+
+
+def _lookup_backport_origin_in_issue_xml(backport_issue_id: str) -> str | None:
+    """jdk_issuesディレクトリ内のXMLを解析してBackport元を取得する。"""
+    issue_dir = _JDK_ISSUES_DIR / backport_issue_id
+    xml_path = issue_dir / f"{backport_issue_id.lower()}.xml"
+    if not xml_path.is_file():
+        raise FileNotFoundError(f"Backport Issue XMLが存在しません: {xml_path}")
+
+    try:
+        tree = ElementTree.parse(xml_path)
+    except ElementTree.ParseError as exc:
+        raise ValueError(f"Backport Issue XMLの解析に失敗しました: {xml_path}") from exc
+
+    root = tree.getroot()
+    for link_type in root.findall(".//issuelinktype"):
+        if link_type.findtext("name") != "Backport":
+            continue
+        for inwardlinks in link_type.findall("inwardlinks"):
+            if inwardlinks.get("description") != "backport of":
+                continue
+            issue_key = inwardlinks.findtext("issuelink/issuekey")
+            if issue_key and _ISSUE_ID_PATTERN.fullmatch(issue_key):
+                return issue_key
+    return None
 
 
 def _sorted_unique(values: Sequence[str]) -> List[str]:
@@ -201,6 +253,8 @@ def main() -> None:
     """temurin配下のテキストを処理し、重複IDのみを標準出力する。"""
     if not _TEMURIN_DIR.is_dir():
         raise FileNotFoundError(f"temurinディレクトリが存在しません: {_TEMURIN_DIR}")
+    if not _JDK_ISSUES_DIR.is_dir():
+        raise FileNotFoundError(f"jdk_issuesディレクトリが存在しません: {_JDK_ISSUES_DIR}")
 
     release_files = sorted(_TEMURIN_DIR.glob("*.txt"))
     if not release_files:
@@ -210,6 +264,7 @@ def main() -> None:
     aggregate_ids: set[str] = set()
     aggregate_backports: dict[str, set[str]] = {}
     collected_text_issue_ids: set[str] = set()
+    missing_backport_origins: set[str] = set()
 
     for release_path in release_files:
         entries = list(_iter_release_notes(release_path))
@@ -217,7 +272,12 @@ def main() -> None:
             continue
 
         collected_text_issue_ids.update(entry.issue_id for entry in entries)
-        issue_ids, backport_map = collect_issue_ids(release_path, entries, reference_backports)
+        issue_ids, backport_map = collect_issue_ids(
+            release_path,
+            entries,
+            reference_backports,
+            missing_backport_origins,
+        )
         for original, backports in backport_map.items():
             for backport in backports:
                 reference_backports.setdefault(backport, original)
@@ -248,6 +308,21 @@ def main() -> None:
         _format_issue_line(issue_id, aggregate_backports.get(issue_id, ())) for issue_id in aggregate_output
     ]
     aggregate_output_path.write_text("\n".join(aggregate_lines) + "\n", encoding="utf-8")
+
+    print(f"tmp issue ids -> {tmp_issue_path}")
+    print(f"aggregate issue ids -> {aggregate_output_path}")
+    print(f"per-file issue ids -> {_PER_FILE_DIR}")
+
+    if missing_backport_origins:
+        unresolved = _sorted_unique(list(missing_backport_origins))
+        print("missing backport origins:")
+        for issue_id in unresolved:
+            print(issue_id)
+        print()
+        raise ValueError(
+            "Backport元のIssue IDを解決できません。jdk_issuesの取得状況を確認してください: "
+            + ", ".join(unresolved)
+        )
 
 
 if __name__ == "__main__":
