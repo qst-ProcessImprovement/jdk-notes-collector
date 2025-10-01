@@ -1,0 +1,1340 @@
+
+P1
+Backport
+client-libs
+JDK-8327265
+Test "api/java_awt/interactive/SystemTrayTests.html" failed because A blue ball icon is added outside of the system tray
+P1
+Backport
+hotspot
+JDK-8323124
+Fix build failures caused by 8315097
+P1
+Backport
+hotspot
+JDK-8323329
+Generational ZGC: ZColorStoreGoodOopClosure is only valid for young objects
+P2
+Backport
+core-libs
+JDK-8323678
+LinkedTransferQueue add and put methods call overridable offer
+P2
+Backport
+core-libs
+JDK-8325856
+[vectorapi] Bounds checking issues when accessing memory segments
+P2
+Backport
+core-svc
+JDK-8322607
+[REDO] serviceability/jdwp/AllModulesCommandTest.java ignores VM flags
+P2
+Backport
+hotspot
+JDK-8322378
+compiler/interpreter/TestVerifyStackAfterDeopt.java failed with SIGBUS in PcDescContainer::find_pc_desc_internal
+P2
+Backport
+hotspot
+JDK-8322613
+serviceability/sa/jmap-hprof/JMapHProfLargeHeapTest.java times out after JDK-8314829
+P2
+Backport
+hotspot
+JDK-8322942
+release _object in ObjectMonitor dtor to avoid races
+P2
+Backport
+hotspot
+JDK-8323048
+Crash in ciKlass::is_subtype_of because TypeAryPtr::_klass is not initialized
+P2
+Backport
+hotspot
+JDK-8323161
+Data loss in AVX3 Base64 decoding
+P2
+Backport
+hotspot
+JDK-8324000
+C2 compilation fails with "Bad immediate dominator info"
+P2
+Backport
+hotspot
+JDK-8324201
+Generational ZGC: Use ZFragmentationLimit and ZYoungCompactionLimit as percentage instead of multiples
+P2
+Backport
+hotspot
+JDK-8324476
+Incorrect LoaderConstraintTable::add_entry after JDK-8298468
+P2
+Backport
+hotspot
+JDK-8324485
+JNI invocation of an abstract instance method corrupts the stack
+P2
+Backport
+hotspot
+JDK-8324773
+JFR: Periodic tasks aren't orphaned between recordings
+P2
+Backport
+hotspot
+JDK-8325046
+C2: assert(n->in(0) == nullptr) failed: divisions with zero check should already have bailed out earlier in split-if
+P2
+Backport
+hotspot
+JDK-8325336
+Generational ZGC: Relocation selection must join the STS
+P2
+Backport
+hotspot
+JDK-8326475
+ZGC fails assert(index == 0 || is_power_of_2(index)) failed: Incorrect load shift: 11
+P3
+Backport
+client-libs
+JDK-8322376
+Update FreeType to 2.13.2
+P3
+Backport
+client-libs
+JDK-8322975
+The SendRawSysexMessage test may cause a JVM crash
+P3
+Backport
+client-libs
+JDK-8323433
+Chinese characters in RTF are not decoded
+P3
+Backport
+client-libs
+JDK-8324035
+Popups that request focus are not shown on Linux with Wayland
+P3
+Backport
+client-libs
+JDK-8324140
+JButton ignores margin when painting HTML text
+P3
+Backport
+client-libs
+JDK-8324216
+[macos14] Expand/collapse a JTree using keyboard freezes the application in macOS 14 Sonoma
+P3
+Backport
+core-libs
+JDK-8322389
+Test java/net/Inet6Address/serialize/Inet6AddressSerializationTest.java fails due to dynamic reconfigurations of network interface during test
+P3
+Backport
+core-libs
+JDK-8322628
+Console read line with zero out should zero out underlying buffer in JLine (redux)
+P3
+Backport
+core-libs
+JDK-8323341
+(tz) Update Timezone Data to 2023d
+P3
+Backport
+core-libs
+JDK-8323749
+StringBuffer.repeat does not work correctly after toString() was called
+P3
+Backport
+core-libs
+JDK-8323808
+test/jdk/sun/nio/cs/TestCharsetMapping.java is spuriously passing
+P3
+Backport
+core-libs
+JDK-8324278
+java/util/concurrent/ConcurrentLinkedQueue/WhiteBox.java shows intermittent failures on linux ppc64le and aarch64
+P3
+Backport
+core-libs
+JDK-8324747
+ISO 4217 Amendment 176 Update
+P3
+Backport
+core-libs
+JDK-8324895
+java/io/File/createTempFile/SpecialTempFile.java fails in Windows 11
+P3
+Backport
+core-libs
+JDK-8325582
+(tz) Update Timezone Data to 2024a
+P3
+Backport
+hotspot
+JDK-8322099
+[PPC64][ZGC] C1 generates wrong code for atomics
+P3
+Backport
+hotspot
+JDK-8322213
+TestUnorderedReduction.java fails with -XX:MaxVectorSize=32 and -XX:+AlignVector
+P3
+Backport
+hotspot
+JDK-8322387
+Generational ZGC: Strong OopStorage stats reported as weak roots
+P3
+Backport
+hotspot
+JDK-8322610
+NMT tests ignore vm flags
+P3
+Backport
+hotspot
+JDK-8322626
+SIGSEGV in ciVirtualCallTypeData::translate_from
+P3
+Backport
+hotspot
+JDK-8322635
+Accessing jmethodID might lead to spurious crashes
+P3
+Backport
+hotspot
+JDK-8322699
+Incorrect x86 instruction encoding for VSIB addressing mode
+P3
+Backport
+hotspot
+JDK-8322700
+C2: Missing ChaCha20 stub for x86_32 leads to crashes
+P3
+Backport
+hotspot
+JDK-8322776
+C2 SuperWord: wrong result with -XX:+UseVectorCmov -XX:+UseCMoveUnconditionally
+P3
+Backport
+hotspot
+JDK-8322780
+CompilerThread leaks CodeBlob memory when dynamically stopping compiler thread in non-product
+P3
+Backport
+hotspot
+JDK-8322792
+Some intrinsics/stubs missing vzeroupper on x86_64
+P3
+Backport
+hotspot
+JDK-8322998
+C2: remove copy-by-value of GrowableArray for InterfaceSet
+P3
+Backport
+hotspot
+JDK-8323148
+C2 SuperWord: wrong result with hand unrolled loops
+P3
+Backport
+hotspot
+JDK-8323152
+Stress mode to randomize incremental inlining decision
+P3
+Backport
+hotspot
+JDK-8323193
+Zero: Use atomic built-ins for 64-bit accesses
+P3
+Backport
+hotspot
+JDK-8323266
+[AArch64] C1 compilation fails because monitor offset in OSR buffer is too large for immediate
+P3
+Backport
+hotspot
+JDK-8323339
+CDSProtectionDomain::get_shared_protection_domain should check for exception
+P3
+Backport
+hotspot
+JDK-8324034
+Shenandoah: Heap could be corrupted by oom during evacuation
+P3
+Backport
+hotspot
+JDK-8324473
+Generational ZGC: The SoftMaxHeapSize might be wrong when CDS decreases the MaxHeapSize
+P3
+Backport
+hotspot
+JDK-8324652
+Issue store-store barrier after re-materializing objects during deoptimization
+P3
+Backport
+hotspot
+JDK-8324934
+C2: assert(cmp != nullptr && cmp->Opcode() == Op_Cmp(bt)) failed: no exit test
+P3
+Backport
+hotspot
+JDK-8325193
+Zero: Use __atomic built-ins for atomic RMW operations
+P3
+Backport
+hotspot
+JDK-8326134
+C2: allocate PhaseIdealLoop::_loop_or_ctrl from C->comp_arena()
+P3
+Backport
+hotspot
+JDK-8328253
+Add SipHash attribution file
+P3
+Backport
+infrastructure
+JDK-8324158
+filter out harmful -std* flags added by autoconf from CXX
+P3
+Backport
+infrastructure
+JDK-8325733
+GHA: JDK-8325194 causes a regression
+P3
+Backport
+security-libs
+JDK-8322379
+Update Public Suffix List to b5bf572
+P3
+Backport
+security-libs
+JDK-8322558
+DHEKeySizing.java should be modified to use TLS versions TLSv1, TLSv1.1, TLSv1.2
+P3
+Backport
+security-libs
+JDK-8322777
+PKCS11 tests fail with NSS 3.91
+P3
+Backport
+security-libs
+JDK-8323015
+NPE in PKCS7.parseOldSignedData
+P3
+Backport
+security-libs
+JDK-8323303
+NSS tests failing on OL9 linux-aarch64 hosts
+P3
+Backport
+security-libs
+JDK-8323776
+Update XML Security for Java to 3.0.3
+P3
+Backport
+security-libs
+JDK-8324217
+Support for NSS tests on aarch64 platforms
+P3
+Backport
+security-libs
+JDK-8324437
+sun/security/pkcs11 tests fail on OL 7.9 aarch64
+P3
+Backport
+security-libs
+JDK-8324438
+Skip pkcs11 tests on linux-aarch64
+P3
+Backport
+security-libs
+JDK-8324705
+sun/security/pkcs11 tests fail on Linux RHEL 8.6 and newer
+P3
+Backport
+security-libs
+JDK-8325958
+PlatformPCSC should load versioned so
+P3
+Backport
+security-libs
+JDK-8326476
+Add Certainly roots R1 and E1
+P3
+Backport
+tools
+JDK-8322395
+NPE in JavacProcessingEnvironment for missing enum constructor body
+P3
+Backport
+tools
+JDK-8322642
+Missing array bounds check in ClassReader.parameter
+P3
+Backport
+tools
+JDK-8323052
+ThisEscapeAnalyzer crashes for erroneous code
+
+P3
+Backport
+tools
+JDK-8323176
+Compiler should accept final variable in Record Pattern
+P3
+Backport
+tools
+JDK-8323737
+yield <primitive-type>.class not parsed correctly.
+P3
+Backport
+tools
+JDK-8323777
+Better Error Handling for Jar Tool When Processing Non-existent Files
+P3
+Backport
+tools
+JDK-8323816
+javac with annotation processor throws AssertionError: Filling jrt:/... during JarFileObject[/...]
+P4
+Backport
+client-libs
+JDK-8322999
+[macos14] javax/swing/JMenuItem/4654927/bug4654927.java: component must be showing on the screen to determine its location
+P4
+Backport
+client-libs
+JDK-8323070
+Open source several Swing Text related tests
+P4
+Backport
+client-libs
+JDK-8323143
+[test bug] javax/swing/JTableHeader/6889007/bug6889007.java fails
+P4
+Backport
+client-libs
+JDK-8323151
+TestFileChooserSingleDirectorySelection.java fails with "getSelectedFiles returned empty array"
+P4
+Backport
+client-libs
+JDK-8323955
+Open source few headless Swing misc tests
+P4
+Backport
+client-libs
+JDK-8324036
+Improve stability of WheelModifier.java test
+P4
+Backport
+client-libs
+JDK-8324037
+Open source few swing JInternalFrame and JMenuBar tests
+P4
+Backport
+client-libs
+JDK-8324285
+WheelModifier.java fails by timeout
+P4
+Backport
+client-libs
+JDK-8324746
+Write a test to check textArea triggers MouseEntered/MouseExited events properly
+P4
+Backport
+client-libs
+JDK-8324819
+Open source few swing JList and JMenuBar tests
+P4
+Backport
+client-libs
+JDK-8324912
+Open source few more headless Swing misc tests
+P4
+Backport
+client-libs
+JDK-8325045
+Open source swing text/html and tree test
+P4
+Backport
+client-libs
+JDK-8326008
+Parallelize sun/java2d/marlin/ClipShapeTest.java
+P4
+Backport
+client-libs
+JDK-8326072
+Enable "maybe-uninitialized" warning for FreeType 2.13.1
+P4
+Backport
+client-libs
+JDK-8326130
+Open source swing security manager test
+P4
+Backport
+client-libs
+JDK-8326474
+Open source several AWT applet tests
+P4
+Backport
+client-libs
+JDK-8326637
+Allow PassFailJFrame to accept single window creator
+P4
+Backport
+client-libs
+JDK-8326695
+JDK-8294427 breaks Windows L&F on all older Windows versions
+P4
+Backport
+client-libs
+JDK-8326771
+java/awt/font/JNICheck/FreeTypeScalerJNICheck.java still fails with JNI warning on some Windows configurations
+P4
+Backport
+core-libs
+JDK-8322131
+Console read line with zero out should zero out underlying buffer
+P4
+Backport
+core-libs
+JDK-8322245
+Console read line with zero out should zero out underlying buffer in JLine
+P4
+Backport
+core-libs
+JDK-8322391
+java/net/Socket/Timeouts.java fails with AssertionError on test temporal post condition
+P4
+Backport
+core-libs
+JDK-8322392
+java/nio/channels/DatagramChannel/Connect.java timed out
+P4
+Backport
+core-libs
+JDK-8322471
+handle setsocktopt return values
+P4
+Backport
+core-libs
+JDK-8322541
+test/jdk/com/sun/jndi/ldap/LdapPoolTimeoutTest.java fails with ConnectException: Connection timed out: no further information
+P4
+Backport
+core-libs
+JDK-8322686
+Console read line with zero out should zero out when throwing exception
+P4
+Backport
+core-libs
+JDK-8322731
+File.mkdirs() occasionally fails to create folders on Windows shared folder
+P4
+Backport
+core-libs
+JDK-8322794
+Clean up code after JDK-8322417
+P4
+Backport
+core-libs
+JDK-8323126
+Several java/util tests should be updated to accept VM flags
+P4
+Backport
+core-libs
+JDK-8323323
+Refactor java.util.Currency:i18n shell tests to plain java tests
+P4
+Backport
+core-libs
+JDK-8323564
+Test java/lang/Thread/virtual/JfrEvents::testVirtualThreadPinned failed
+P4
+Backport
+core-libs
+JDK-8323736
+AIX: pthreads created by foreign test library don't work as expected
+P4
+Backport
+core-libs
+JDK-8324038
+ChoiceFormat patterns are not well tested
+P4
+Backport
+core-libs
+JDK-8324055
+Refactor Currency tests to use JUnit
+P4
+Backport
+core-libs
+JDK-8324057
+CloseRace.java#id0 fails transiently on libgraal
+P4
+Backport
+core-libs
+JDK-8324061
+Test logic for BODY_CF in AbstractThrowingSubscribers.java is wrong
+P4
+Backport
+core-libs
+JDK-8324063
+Speed up test/jdk/java/util/zip/ZipFile/TestTooManyEntries.java and clarify its purpose
+P4
+Backport
+core-libs
+JDK-8324137
+Additional refactoring of Locale tests to JUnit
+P4
+Backport
+core-libs
+JDK-8324138
+(fs) Move toRealPath tests in java/nio/file/Path/Misc.java to separate JUnit 5 test
+P4
+Backport
+core-libs
+JDK-8324434
+Tests in Locale should have more descriptive names
+P4
+Backport
+core-libs
+JDK-8324932
+Files/probeContentType/Basic.java fails on latest Windows 11 - content type mismatch
+P4
+Backport
+core-libs
+JDK-8326131
+java/foreign/TestLinker.java failed with "error occurred while instantiating class TestLinker: null"
+P4
+Backport
+core-libs
+JDK-8326215
+Fallback linker passes bad JNI handle
+P4
+Backport
+core-libs
+JDK-8326392
+java/net/HttpURLConnection/HttpURLConnectionExpectContinueTest.java fails intermittently in timeout
+P4
+Backport
+core-svc
+JDK-8322301
+jdk/java/lang/instrument/BootClassPath/BootClassPathTest.sh fails on Japanese Windows
+P4
+Backport
+core-svc
+JDK-8322604
+Update com/sun/jdi/ProcessAttachTest.java to use ProcessTools.createTestJvm(..)
+P4
+Backport
+core-svc
+JDK-8322614
+4 sun/management/jdp tests ignore VM flags
+P4
+Backport
+core-svc
+JDK-8322625
+MonitorVmStartTerminate.java timed out
+P4
+Backport
+core-svc
+JDK-8322672
+Some tests in serviceability area fail on localized Windows platform
+P4
+Backport
+core-svc
+JDK-8322678
+Mark com/sun/management/HotSpotDiagnosticMXBean/CheckOrigin.java as vm.flagless
+P4
+Backport
+core-svc
+JDK-8322710
+8 sun/management/jmxremote tests ignore VM flags
+P4
+Backport
+core-svc
+JDK-8322713
+3 sun/tools tests ignore VM flags
+P4
+Backport
+core-svc
+JDK-8323962
+com/sun/jdi/JdwpAllowTest.java fails on Alpine 3.17 / 3.18
+P4
+Backport
+core-svc
+JDK-8325048
+com/sun/jdi/JdwpAllowTest.java shows failures on AIX if prefixLen of mask is larger than 32 in IPv6 case
+P4
+Backport
+core-svc
+JDK-8325486
+[aix] Implement support for reporting swap space in jdk.management
+P4
+Backport
+hotspot
+JDK-8322093
+exclude compiler/vectorapi/reshape/TestVectorReinterpret.java on ppc64(le) platforms
+P4
+Backport
+hotspot
+JDK-8322105
+java/lang/ref/ReachabilityFenceTest.java should run with -Xbatch
+P4
+Backport
+hotspot
+JDK-8322164
+Adjust hs_err output in malloc/mmap error cases
+P4
+Backport
+hotspot
+JDK-8322277
+runtime/posixSig/TestPosixSig.java intermittent timeouts on UNIX
+P4
+Backport
+hotspot
+JDK-8322361
+refresh libraries cache on AIX in VMError::report
+P4
+Backport
+hotspot
+JDK-8322368
+Parallel: Make TestAggressiveHeap use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322370
+G1: Make TestG1ConcMarkStepDurationMillis use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322373
+GC: Make TestDisableDefaultGC use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322375
+GC: Make TestCompressedClassFlags use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322393
+Enhance class initialization logging
+P4
+Backport
+hotspot
+JDK-8322394
+Move StackWatermark handling out of LockStack::contains
+P4
+Backport
+hotspot
+JDK-8322421
+Configurable InlineCacheBuffer size
+P4
+Backport
+hotspot
+JDK-8322600
+Remove remaining usages of -Xdebug from test/hotspot/jtreg
+P4
+Backport
+hotspot
+JDK-8322602
+Some jdk/sun/tools/jhsdb tests don't pass test JVM args to the debuggee JVM
+P4
+Backport
+hotspot
+JDK-8322611
+Add test for dump of resolved references
+P4
+Backport
+hotspot
+JDK-8322612
+serviceability/sa/jmap-hprof/JMapHProfLargeHeapTest.java ignores vm flags
+
+P4
+Backport
+hotspot
+JDK-8322615
+GC: Make TestXXXHeapSizeFlags use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322616
+Parallel: Make TestInitialTenuringThreshold use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322618
+GC: Make TestHeapFreeRatio use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322620
+G1: Make TestG1RemSetFlags use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322621
+G1: Make TestG1PercentageOptions use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322622
+G1: Make TestG1HeapRegionSize use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322623
+G1: Make TestG1ConcRefinementThreads use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322624
+sun/jvmstat/monitor/MonitoredVm/MonitorVmStartTerminate.java ignores VM flags
+P4
+Backport
+hotspot
+JDK-8322658
+test runtime/Unsafe/InternalErrorTest.java timeout on linux-riscv64 platform
+P4
+Backport
+hotspot
+JDK-8322673
+IR Framework: check for type and size of vector nodes
+P4
+Backport
+hotspot
+JDK-8322674
+[IR Framework] Some internal IR Framework tests are failing after JDK-8310308 on PPC and Cascade Lake
+P4
+Backport
+hotspot
+JDK-8322676
+Mark runtime/CommandLine/ tests as flagless
+P4
+Backport
+hotspot
+JDK-8322677
+runtime/ErrorHandling/ tests ignore external VM flags
+P4
+Backport
+hotspot
+JDK-8322679
+G1: Make TestMaxNewSize use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322683
+jdk/jfr/event/gc/collection/TestGCCauseWith[Serial|Parallel].java : GC cause 'GCLocker Initiated GC' not in the valid causes
+P4
+Backport
+hotspot
+JDK-8322688
+Problem list gc/TestAllocHumongousFragment.java subtests for 8298781
+P4
+Backport
+hotspot
+JDK-8322695
+[AIX] Dont mix os::dll_load() with direct dlclose() calls
+P4
+Backport
+hotspot
+JDK-8322755
+C1: -XX:AbortVMOnException does not work if all methods in the call stack are compiled with C1 and there are no exception handlers
+P4
+Backport
+hotspot
+JDK-8322756
+AArch64: VMError::print_native_stack() crashes on Java native method frame
+P4
+Backport
+hotspot
+JDK-8322774
+Memory leak related to ClassLoader::update_class_path_entry_list
+P4
+Backport
+hotspot
+JDK-8322775
+runtime/ErrorHandling/TestAbortVmOnException.java times out due to core dumps taking a long time on OSX
+P4
+Backport
+hotspot
+JDK-8322778
+GC: Make TestArrayAllocatorMallocLimit use createTestJvm
+P4
+Backport
+hotspot
+JDK-8322862
+hotspot can't compile with the latest of gtest because of <iomanip>
+P4
+Backport
+hotspot
+JDK-8322872
+support latest VS2022 MSC_VER in abstract_vm_version.cpp
+P4
+Backport
+hotspot
+JDK-8323049
+Unexpected internal name for Filler array klass causes error in VisualVM
+P4
+Backport
+hotspot
+JDK-8323053
+Add man page doc for -XX:+VerifySharedSpaces
+P4
+Backport
+hotspot
+JDK-8323098
+RISC-V: Enable fast class initialization checks
+P4
+Backport
+hotspot
+JDK-8323123
+Rename createJavaProcessBuilder
+P4
+Backport
+hotspot
+JDK-8323153
+Simplify at-requires checkDockerSupport()
+P4
+Backport
+hotspot
+JDK-8323267
+Shenandoah: Encountered reference count always attributed to first worker thread
+P4
+Backport
+hotspot
+JDK-8323512
+Enable parallelism in vmTestbase/nsk/stress/threads tests
+P4
+Backport
+hotspot
+JDK-8323513
+Enable parallelism in vmTestbase/nsk/stress/jni tests
+P4
+Backport
+hotspot
+JDK-8323533
+prioritize /etc/os-release over /etc/SuSE-release in hs_err/info output
+P4
+Backport
+hotspot
+JDK-8323567
+Increase timeout for JDK tests that are close to the limit when run with libgraal
+P4
+Backport
+hotspot
+JDK-8323750
+Unneccesary CodeBlob lookup in CompiledIC::internal_set_ic_destination
+P4
+Backport
+hotspot
+JDK-8323767
+Shenandoah: Remove ShenandoahSelfFixing flag
+P4
+Backport
+hotspot
+JDK-8323769
+Shenandoah: Remove ShenandoahUnloadClassesFrequency support
+P4
+Backport
+hotspot
+JDK-8323770
+Shenandoah: Enable ShenandoahVerifyOptoBarriers in debug builds
+P4
+Backport
+hotspot
+JDK-8324045
+Shenandoah: Unused memory in regions compacted during a full GC should be mangled
+P4
+Backport
+hotspot
+JDK-8324054
+IR verification fails because IR dump is chopped up
+P4
+Backport
+hotspot
+JDK-8324058
+Disable runtime/os/TestTracePageSizes.java for ShenandoahGC
+P4
+Backport
+hotspot
+JDK-8324119
+os::Linux::print_system_memory_info enhance the THP output with /sys/kernel/mm/transparent_hugepage/hpage_pmd_size
+P4
+Backport
+hotspot
+JDK-8324120
+fix typo hpage_pdm_size
+P4
+Backport
+hotspot
+JDK-8324139
+Modify runtime/ErrorHandling/TestDwarf.java to split dwarf and decoder testing
+P4
+Backport
+hotspot
+JDK-8324143
+Parallel: Implement better work distribution for large object arrays in old gen
+P4
+Backport
+hotspot
+JDK-8324297
+RISC-V: implement roundD/roundF intrinsics
+P4
+Backport
+hotspot
+JDK-8324439
+Do not use LFS64 symbols on Linux
+P4
+Backport
+hotspot
+JDK-8324621
+compiler/tiered/LevelTransitionTest.java fails with -XX:CompileThreshold=100 -XX:TieredStopAtLevel=1
+P4
+Backport
+hotspot
+JDK-8324622
+Require platforms to define DEFAULT_CACHE_LINE_SIZE
+P4
+Backport
+hotspot
+JDK-8324654
+Shenandoah: Remove ShenandoahElasticTLAB flag
+P4
+Backport
+hotspot
+JDK-8324663
+Shenandoah: Remove ShenandoahLoopOptsAfterExpansion flag
+P4
+Backport
+hotspot
+JDK-8324712
+Generational ZGC: ZPageSizeMedium should be set before MaxTenuringThreshold
+P4
+Backport
+hotspot
+JDK-8324738
+Shenandoah: Remove unused code
+P4
+Backport
+hotspot
+JDK-8324847
+RISC-V: Incorrect implementation in VM_Version::parse_satp_mode
+P4
+Backport
+hotspot
+JDK-8325000
+RISC-V: implement ensureMaterializedForStackWalk intrinsic
+P4
+Backport
+hotspot
+JDK-8325243
+[TESTBUG] Remove "@requires vm.flagless" from jtreg vectorization tests
+P4
+Backport
+hotspot
+JDK-8325323
+Simplify shared lib name handling code in some tests
+P4
+Backport
+hotspot
+JDK-8325338
+Shenandoah: Remove ShenandoahSuspendibleWorkers flag
+P4
+Backport
+hotspot
+JDK-8325389
+Fallback implementations for 64-bit Atomic::{add,xchg} on 32-bit platforms
+P4
+Backport
+hotspot
+JDK-8325474
+Zero: Support 8-byte cmpxchg
+P4
+Backport
+hotspot
+JDK-8325475
+Zero: Misplaced CX8 enablement flag
+P4
+Backport
+hotspot
+JDK-8325479
+runtime/Thread/ThreadCountLimit.java fails intermittently on AIX
+P4
+Backport
+hotspot
+JDK-8325480
+use mem_unit when working with sysinfo memory and swap related information
+P4
+Backport
+hotspot
+JDK-8325524
+AArch64: [TESTBUG] compiler/intrinsics/sha/cli/TestUseSHA3IntrinsicsOptionOnSupportedCPU.java fails on Neoverse N2 and V1
+P4
+Backport
+hotspot
+JDK-8325720
+[AIX] adjust os_posix after JDK-8318696
+P4
+Backport
+hotspot
+JDK-8325853
+Create test alias "all" for all test roots
+P4
+Backport
+hotspot
+JDK-8325854
+Invalid test group of lib-test after JDK-8323515
+P4
+Backport
+hotspot
+JDK-8325855
+update jcstress to 0.16
+P4
+Backport
+hotspot
+JDK-8325929
+ClassLoaderData::print_on should print address of class loader
+P4
+Backport
+hotspot
+JDK-8325930
+Introduce test keyword for tests that need external dependencies
+P4
+Backport
+hotspot
+JDK-8325933
+NMT detail report slow or hangs for large number of mappings
+P4
+Backport
+hotspot
+JDK-8326156
+[AIX] Find a better way to mimic dl handle equality
+P4
+Backport
+hotspot
+JDK-8326217
+AArch64: crypto pmull based CRC32/CRC32C intrinsics clobber V8-V15 registers
+P4
+Backport
+hotspot
+JDK-8326320
+RISC-V: Tune costs for shuffles with no conversion
+P4
+Backport
+hotspot
+JDK-8326393
+Generational ZGC: Clearing All SoftReferences log line lacks GCId
+
+P4
+Backport
+hotspot
+JDK-8326415
+[TESTBUG]testMemoryFailCount in jdk/internal/platform/docker/TestDockerMemoryMetrics.java always fail because OOM killed
+P4
+Backport
+hotspot
+JDK-8326555
+gtest wrappers should be marked as flagless
+P4
+Backport
+hotspot
+JDK-8326657
+[AIX] use fclose after fopen in read_psinfo
+P4
+Backport
+hotspot
+JDK-8326662
+crashes in docker container tests on Linuxppc64le Power8 machines
+P4
+Backport
+hotspot
+JDK-8326765
+Make TrimNativeHeapInterval a product switch
+P4
+Enhancement
+infrastructure
+JDK-8321894
+Bump update version for OpenJDK: 21.0.3
+P4
+Backport
+infrastructure
+JDK-8322130
+Enable CreateCoredumpOnCrash for testing in makefiles
+P4
+Backport
+infrastructure
+JDK-8322462
+Add a configure option to explicitly set CompanyName property in VersionInfo resource for Windows exe/dll
+P4
+Backport
+infrastructure
+JDK-8323054
+GHA: Parallelize hotspot_compiler test jobs
+P4
+Backport
+infrastructure
+JDK-8324826
+GHA: Generic jtreg errors are not reported
+P4
+Backport
+infrastructure
+JDK-8325196
+GHA: Avoid multiple test suites per job
+P4
+Backport
+infrastructure
+JDK-8325197
+Capture hotspot replay files in GHA
+P4
+Backport
+infrastructure
+JDK-8325619
+GHA: Bump macOS and Xcode versions
+P4
+Backport
+infrastructure
+JDK-8325642
+Library debug files contain non-reproducible full gcc include paths
+P4
+Backport
+infrastructure
+JDK-8325646
+DevKit build gcc libraries contain full paths to source location
+P4
+Backport
+infrastructure
+JDK-8325732
+GHA: Add macOS M1 testing
+P4
+Bug
+infrastructure
+JDK-8329838
+[21u] Remove designator DEFAULT_PROMOTED_VERSION_PRE=ea for release 21.0.3
+P4
+Backport
+security-libs
+JDK-8322574
+KeytoolReaderP12Test.java fail on localized Windows platform
+P4
+Backport
+security-libs
+JDK-8322681
+jtreg is confused when folder name is the same as the test name
+P4
+Backport
+security-libs
+JDK-8322715
+Fix comment typo in PKCS12Passwd.java
+P4
+Backport
+security-libs
+JDK-8322729
+Exclude sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java on Linux ppc64le
+P4
+Backport
+security-libs
+JDK-8323565
+java/security/cert/CertPathValidator/OCSP/OCSPTimeout.java fails with RuntimeException Server not ready
+P4
+Backport
+security-libs
+JDK-8324436
+Compatibility.java reads both stdout and stderr of JdkUtils
+P4
+Backport
+security-libs
+JDK-8324931
+Remove pkcs11/Cipher/TestKATForGCM.java from ProblemList
+P4
+Backport
+security-libs
+JDK-8325339
+Test java/security/cert/CertPathBuilder/akiExt/AKISerialNumber.java is failing
+P4
+Backport
+security-libs
+JDK-8326554
+CKA_TOKEN private and secret keys are not necessarily sensitive
+P4
+Backport
+security-libs
+JDK-8326565
+Remove obsolete comments for class sun.security.ssl.SunJSSE
+P4
+Backport
+tools
+JDK-8322388
+javac erroneously allows "final" in front of a record pattern
+P4
+Backport
+tools
+JDK-8322396
+Non-verifiable code is emitted when two guards declare pattern variables in colon-switch
+P4
+Backport
+tools
+JDK-8323262
+ConcurrentModificationException from IndexWriter
+P4
+Backport
+tools
+JDK-8326490
+Interactive component with ARIA role 'tabpanel' does not have a programmatically associated name
+P4
+Backport
+xml
+JDK-8324284
+Binary files in JAXP test should be removed
+P5
+Backport
+core-libs
+JDK-8322380
+Fixup of jar filename typo in BadFactoryTest.sh
+P5
+Backport
+core-libs
+JDK-8322390
+test/jdk/jdk/internal/math/FloatingDecimal/TestFloatingDecimal should use RandomFactory
+P5
+Backport
+hotspot
+JDK-8322365
+5 compiled/codecache tests ignore VM flags
+P5
+Backport
+hotspot
+JDK-8322367
+3 compiler tests ignore vm flags
+P5
+Backport
+hotspot
+JDK-8322599
+Remove obsolete code and comments in TestLVT.java
+P5
+Backport
+hotspot
+JDK-8322791
+C2: RepeatCompilation compiler directive does not choose stress seed randomly
+P5
+Backport
+hotspot
+JDK-8323145
+TestStressIGVNAndCCP.java failed with different IGVN traces for the same seed
+P?
+Hidden
+JDK-8315708
+Enhance HTTP/2 client usage
+P?
+Hidden
+JDK-8318340
+Improve RSA key implementations
+P?
+Hidden
+JDK-8322122
+Enhance generation of addresses
+P?
+Hidden
+JDK-8319851
+Improve exception logging

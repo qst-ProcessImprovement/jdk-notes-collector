@@ -1,0 +1,4442 @@
+
+P2
+Enhancement
+core-libs
+JDK-8303001
+Add test for re-entrant upcalls
+P2
+Enhancement
+hotspot
+JDK-8303154
+Investigate and improve instruction cache flushing during compilation
+P2
+Enhancement
+core-libs
+JDK-8303409
+Add Windows AArch64 ABI support to the Foreign Function & Memory API
+P2
+Enhancement
+core-libs
+JDK-8303002
+Reject packed structs from linker
+P2
+Enhancement
+core-libs
+JDK-8300784
+Specify exactly how padding should be presented to the linker
+P2
+Enhancement
+core-libs
+JDK-8303524
+Check FunctionDescriptor byte order when linking
+P2
+Enhancement
+hotspot
+JDK-8300584
+Accelerate AVX-512 CRC32C for small buffers
+P2
+Enhancement
+hotspot
+JDK-8300575
+JVMTI support when using alternative virtual thread implementation
+P3
+Enhancement
+core-libs
+JDK-8305206
+Add @spec tags in java.base/java.* (part 1)
+P3
+Enhancement
+core-libs
+JDK-8304846
+Provide a shared utility to dump generated classes defined via Lookup API
+P3
+Enhancement
+core-libs
+JDK-8304919
+Implementation of Virtual Threads
+P3
+Enhancement
+core-libs
+JDK-8305089
+Implement missing socket options on AIX
+P3
+Enhancement
+core-libs
+JDK-8296248
+Update CLDR to Version 43.0
+P3
+Enhancement
+hotspot
+JDK-8303678
+[JVMCI] Add possibility to convert object JavaConstant to jobject.
+P3
+Enhancement
+hotspot
+JDK-8303646
+[JVMCI] Add possibility to lookup ResolvedJavaType from jclass.
+P3
+Enhancement
+hotspot
+JDK-8191565
+Last-ditch Full GC should also move humongous objects
+P3
+Enhancement
+hotspot
+JDK-8292818
+replace 96-bit representation for field metadata with variable-sized streams
+P3
+Enhancement
+hotspot
+JDK-8303229
+JFR: Preserve disk repository after exit
+P3
+Enhancement
+hotspot
+JDK-8257967
+JFR: Events for loaded agents
+P3
+Enhancement
+security-libs
+JDK-8305310
+Calculate PublicKey from PrivateKey
+P3
+Enhancement
+security-libs
+JDK-8302696
+Revert API signature changes made in JDK-8285504 and JDK-8285263
+P3
+Enhancement
+tools
+JDK-8305407
+ExternalSpecsWriter should ignore white-space differences in spec titles
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P3
+Enhancement
+core-libs
+JDK-8298478
+(fs) Path.of should allow input to include long path prefix
+P3
+Enhancement
+core-libs
+JDK-8301627
+System.exit and Runtime.exit debug logging
+P3
+Enhancement
+core-libs
+JDK-8304265
+Implementation of Foreign Function and Memory API (Third Preview)
+P3
+Enhancement
+core-libs
+JDK-8304803
+NPE thrown during downcall classification under Linux/x64
+P3
+Enhancement
+core-libs
+JDK-8305201
+Improve error message for GroupLayouts that are too large on SysV
+P3
+Enhancement
+core-libs
+JDK-8302845
+Replace finalizer usage in JNDI DNS provider with Cleaner
+P3
+Enhancement
+core-libs
+JDK-8287834
+Add SymbolLookup::or method
+P3
+Enhancement
+core-libs
+JDK-8303040
+linux PPC64le: Implementation of Foreign Function & Memory API (Preview)
+P3
+Enhancement
+core-svc
+JDK-8282384
+[LOOM] Need test for ThreadReference.interrupt() on a vthread
+P3
+Enhancement
+core-svc
+JDK-8308819
+add JDWP and JDI virtual thread support for ThreadReference.ForceEarlyReturn
+P3
+Enhancement
+hotspot
+JDK-8257197
+Add additional verification code to PhaseCCP
+P3
+Enhancement
+hotspot
+JDK-8288287
+Remove expired flags in JDK 21
+P3
+Enhancement
+hotspot
+JDK-8292674
+ReportJNIFatalError should print all java frames
+P3
+Enhancement
+hotspot
+JDK-8299031
+JFR: Clean up jdk.management.jfr
+P3
+Enhancement
+hotspot
+JDK-8295974
+jni_FatalError and Xcheck:jni warnings should print the native stack when there are no Java frames
+P3
+Enhancement
+hotspot
+JDK-8291302
+ARM32: nmethod entry barriers support
+P3
+Enhancement
+hotspot
+JDK-8297933
+[REDO] Compiler should only use verified interface types for optimization
+P3
+Enhancement
+hotspot
+JDK-8292635
+Run ArchivedEnumTest.java in jdk tier testing
+P3
+Enhancement
+hotspot
+JDK-8293841
+RISC-V: Implementation of Foreign Function & Memory API (Preview)
+P3
+Enhancement
+hotspot
+JDK-8300266
+Detect Virtualization on Linux aarch64
+P3
+Enhancement
+hotspot
+JDK-8301123
+Enable Symbol refcounting underflow checks in PRODUCT
+P3
+Enhancement
+hotspot
+JDK-8301819
+Enable continuations code by default
+P3
+Enhancement
+hotspot
+JDK-8294402
+Add diagnostic logging to VMProps.checkDockerSupport
+P3
+Enhancement
+hotspot
+JDK-8301992
+Embed SymbolTable CHT node
+P3
+Enhancement
+hotspot
+JDK-8301749
+Tracking malloc pooled memory size
+P3
+Enhancement
+hotspot
+JDK-8301661
+Enhance os::pd_print_cpu_info on macOS and Windows
+P3
+Enhancement
+hotspot
+JDK-8302883
+JFR: Improve periodic events
+P3
+Enhancement
+hotspot
+JDK-8302677
+JFR: Cache label and contentType in EventType and ValueDescriptor
+P3
+Enhancement
+hotspot
+JDK-8303077
+JFR: Add example usage to jdk.jfr
+P3
+Enhancement
+hotspot
+JDK-8305590
+Remove nothrow exception specifications from operator new
+P3
+Enhancement
+hotspot
+JDK-8293117
+Add atomic bitset functions
+P3
+Enhancement
+hotspot
+JDK-8306929
+Avoid CleanClassLoaderDataMetaspaces safepoints when previous versions are shared
+P3
+Enhancement
+hotspot
+JDK-8307423
+[s390x] Represent Registers as values
+P3
+Enhancement
+hotspot
+JDK-8299229
+[JVMCI] add support for UseZGC
+P3
+Enhancement
+hotspot
+JDK-8308335
+JFR: Remove @Experimental from Virtual Threads events
+P3
+Enhancement
+hotspot
+JDK-8306703
+JFR: Summary views
+P3
+Enhancement
+infrastructure
+JDK-8300120
+Configure should support different defaults for CI/dev build environments
+P3
+Enhancement
+infrastructure
+JDK-8297851
+Add devkit for RISC-V
+P3
+Enhancement
+infrastructure
+JDK-8300805
+Update autoconf build-aux files with latest from 2022-09-17
+P3
+Enhancement
+infrastructure
+JDK-8303476
+Add the runtime version in the release file of a JDK image
+P3
+Enhancement
+infrastructure
+JDK-8306658
+GHA: MSVC installation could be optional since it might already be pre-installed
+P3
+Enhancement
+infrastructure
+JDK-8304896
+Update to use jtreg 7.2
+P3
+Enhancement
+infrastructure
+JDK-8307349
+Support xlc17 clang toolchain on AIX
+P3
+Enhancement
+security-libs
+JDK-8301260
+Add system property to toggle XML Signature secure validation mode
+P3
+Enhancement
+security-libs
+JDK-8245654
+Add Certigna Root CA
+P3
+Enhancement
+security-libs
+JDK-8301700
+Increase the default TLS Diffie-Hellman group size from 1024-bit to 2048-bit
+P3
+Enhancement
+security-libs
+JDK-8282201
+Consider removal of expiry check in VerifyCACerts.java test
+P3
+Enhancement
+security-libs
+JDK-8302182
+Update Public Suffix List to 88467c9
+P3
+Enhancement
+security-libs
+JDK-8305975
+Add TWCA Global Root CA
+P3
+Enhancement
+security-libs
+JDK-8304760
+Add 2 Microsoft TLS roots
+P3
+Enhancement
+security-libs
+JDK-8307134
+Add GTS root CAs
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P3
+Enhancement
+security-libs
+JDK-8305972
+Update XML Security for Java to 3.0.2
+P3
+Enhancement
+security-libs
+JDK-8297878
+KEM: Implementation
+P3
+Enhancement
+tools
+JDK-8299896
+Reduce enum values of HtmlLinkInfo.Kind
+P3
+Enhancement
+tools
+JDK-8301201
+Allow \n@ inside inline tags using inlineContent
+P3
+Enhancement
+tools
+JDK-8300914
+Allow `@` as an escape in documentation comments
+P3
+Enhancement
+tools
+JDK-8285932
+Implementation of JEP 430 String Templates (Preview)
+P3
+Enhancement
+tools
+JDK-8307377
+Remove use of `tagName` from TagletWriterImpl.linkSeeReferenceOutput
+P3
+Enhancement
+tools
+JDK-8286470
+Support searching for sections in class/package javadoc
+P4
+Enhancement
+client-libs
+JDK-8302513
+remove sun.awt.util.IdentityLinkedList
+P4
+Enhancement
+client-libs
+JDK-8304054
+Linux: NullPointerException from FontConfiguration.getVersion in case no fonts are installed
+P4
+Enhancement
+core-libs
+JDK-8302666
+Replace CHM with VarHandle in ForeachOrderedTask
+P4
+Enhancement
+core-libs
+JDK-8303814
+getLastErrorString should avoid charset conversions
+P4
+Enhancement
+core-libs
+JDK-8302659
+Modernize Windows native code for NetworkInterface
+P4
+Enhancement
+core-libs
+JDK-8304283
+Modernize the switch statements in jdk.internal.foreign
+P4
+Enhancement
+core-libs
+JDK-8303684
+Lift upcall sharing mechanism to AbstractLinker (mainline)
+P4
+Enhancement
+core-libs
+JDK-8304360
+Test to ensure ConstantDescs fields work
+P4
+Enhancement
+core-libs
+JDK-8304163
+Move jdk.internal.module.ModuleInfoWriter to the test library
+P4
+Enhancement
+core-libs
+JDK-8303018
+Unicode Emoji Properties
+P4
+Enhancement
+core-libs
+JDK-8304542
+Convert use of internal VM::classFileVersion to ClassFileFormatVersion
+P4
+Enhancement
+core-libs
+JDK-8303648
+Add String.indexOf(String str, int beginIndex, int endIndex)
+P4
+Enhancement
+core-libs
+JDK-8304180
+Constant Descriptors for MethodHandles::classData and classDataAt
+P4
+Enhancement
+core-libs
+JDK-8304139
+Add <init> and <clinit> method constants to ConstantDescs
+P4
+Enhancement
+core-libs
+JDK-8288730
+Add type parameter to Lookup::accessClass and Lookup::ensureInitialized
+P4
+Enhancement
+core-libs
+JDK-4842457
+(bf spec) Clarify meaning of "(optional operation)"
+P4
+Enhancement
+core-libs
+JDK-8304833
+(fc) Remove dead code in sun.nio.ch.FileChannelImpl::implCloseChannel
+P4
+Enhancement
+core-libs
+JDK-8304013
+Add a fast, non-manual alternative to test/jdk/java/util/zip/ZipFile/TestTooManyEntries
+P4
+Enhancement
+core-libs
+JDK-8303485
+Replacing os.name for operating system customization
+P4
+Enhancement
+core-libs
+JDK-8304761
+Update IANA Language Subtag Registry to Version 2023-03-22
+P4
+Enhancement
+core-libs
+JDK-8300979
+Lazily initialize (byte, char)arr in java.io.DataInputStream
+P4
+Enhancement
+core-libs
+JDK-8300977
+Retire java.io.ExpiringCache
+P4
+Enhancement
+core-libs
+JDK-8291598
+Matcher.appendReplacement should not create new StringBuilder instances
+P4
+Enhancement
+core-libs
+JDK-8303392
+Runtime.exec and ProcessBuilder.start should use System logger
+P4
+Enhancement
+core-libs
+JDK-8304976
+Optimize DateTimeFormatterBuilder.ZoneTextPrinterParser.getTree()
+P4
+Enhancement
+core-libs
+JDK-8305157
+The java.util.Arrays class should be declared final
+P4
+Enhancement
+core-libs
+JDK-8202110
+(fs) Remove FileSystem support for resolving against a default directory (chdir configuration)
+P4
+Enhancement
+core-libs
+JDK-8304928
+Optimize ClassDesc.resolveConstantDesc
+P4
+Enhancement
+core-libs
+JDK-8304014
+Convert test/jdk/java/util/zip/ZipFile/CorruptedZipFiles.java to junit
+P4
+Enhancement
+core-libs
+JDK-8305442
+(bf) Direct and view implementations of CharBuffer.toString(int, int) do not need to catch SIOBE
+P4
+Enhancement
+core-libs
+JDK-8304945
+StringBuilder and StringBuffer should implement Appendable explicitly
+P4
+Enhancement
+core-libs
+JDK-8305107
+Emoji related binary properties in RegEx
+P4
+Enhancement
+core-libs
+JDK-8267140
+Support closing the HttpClient by making it auto-closable
+P4
+Enhancement
+core-libs
+JDK-8304745
+Lazily initialize byte[] in java.io.BufferedInputStream
+P4
+Enhancement
+core-libs
+JDK-8305461
+[vectorapi] Add VectorMask::xor
+P4
+Enhancement
+core-libs
+JDK-8205129
+Remove java.lang.Compiler
+P4
+Enhancement
+core-libs
+JDK-8302819
+Remove JAR Index
+P4
+Enhancement
+core-libs
+JDK-8284871
+Use covariant overrides for the resolveConstantDesc(Lookup) method in sub‑interfaces of java.lang.constant.ConstantDesc
+P4
+Enhancement
+core-libs
+JDK-8303923
+ZipOutStream::putEntry should include an apiNote to indicate that the STORED compression method should be used when writing directory entries
+P4
+Enhancement
+core-libs
+JDK-8304450
+[vectorapi] Refactor VectorShuffle implementation
+P4
+Enhancement
+core-libs
+JDK-8305902
+(cs) Resolve default Charset only once in StreamEncoder and StreamDecoder
+P4
+Enhancement
+core-libs
+JDK-8306036
+Use @apiNote in String.toLowerCase, String.toUpperCase
+P4
+Enhancement
+core-libs
+JDK-8305811
+(bf) Improve performance of CharBuffer::append(CharSequence[,int,int])
+P4
+Enhancement
+core-svc
+JDK-8298966
+Deprecate JMX Subject Delegation and the method JMXConnector.getMBeanServerConnection(Subject) for removal.
+P4
+Enhancement
+core-svc
+JDK-8304547
+Remove checking of -Djava.compiler in src/jdk.jdi/share/classes/com/sun/tools/jdi/SunCommandLineLauncher.java
+P4
+Enhancement
+core-svc
+JDK-8304543
+Modernize debugging jvm args in test/hotspot/jtreg/vmTestbase/nsk/jdi/Argument/value/value004.java
+P4
+Enhancement
+docs
+JDK-8305118
+Add RISC-V related content to building.md
+P4
+Enhancement
+hotspot
+JDK-8303822
+gtestMain should give more helpful output
+P4
+Enhancement
+hotspot
+JDK-8303548
+Arguments::get_default_shared_archive_path() should cache the result for future use
+P4
+Enhancement
+hotspot
+JDK-8303495
+Unused path parameter in ClassLoader::add_to_app_classpath_entries(JavaThread* current, char* path, ...)
+P4
+Enhancement
+hotspot
+JDK-8281941
+Change CDS warning messages to use Unified Logging
+P4
+Enhancement
+hotspot
+JDK-8303900
+Rename BitMap search functions
+P4
+Enhancement
+hotspot
+JDK-8274400
+HotSpot Style Guide should permit use of alignof
+P4
+Enhancement
+hotspot
+JDK-8294715
+Add IR checks to the reduction vectorization tests
+P4
+Enhancement
+hotspot
+JDK-8303963
+Replace various encodings of UINT/SIZE_MAX in gc code
+P4
+Enhancement
+hotspot
+JDK-8303969
+Limit printed failures within an object during G1 heap verification
+P4
+Enhancement
+hotspot
+JDK-8303238
+Create generalizations for existing LShift ideal transforms
+P4
+Enhancement
+hotspot
+JDK-8303824
+Parallel: Use more strict card table API
+P4
+Enhancement
+hotspot
+JDK-8303955
+RISC-V: Factor out the tmp parameter from copy_memory and copy_memory_v
+P4
+Enhancement
+hotspot
+JDK-8301244
+Tidy up compiler specific warnings files
+P4
+Enhancement
+hotspot
+JDK-8303415
+Add VM_Version::is_intrinsic_supported(id)
+P4
+Enhancement
+hotspot
+JDK-8304059
+Use InstanceKlass in dependencies
+P4
+Enhancement
+hotspot
+JDK-8270865
+Print process ID with -Xlog:os
+P4
+Enhancement
+hotspot
+JDK-8301308
+Remove version conditionalization for gcc/clang PRAGMA_DIAG_PUSH/POP
+P4
+Enhancement
+hotspot
+JDK-8302906
+AArch64: Add SVE backend support for vector unsigned comparison
+P4
+Enhancement
+hotspot
+JDK-8303749
+Serial: Use more strict card table API
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+hotspot
+JDK-8303150
+DCmd framework unnecessarily creates a DCmd instance on registration
+P4
+Enhancement
+hotspot
+JDK-8292059
+Do not inline InstanceKlass::allocate_instance()
+P4
+Enhancement
+hotspot
+JDK-8301684
+Fix test code to not get finalizer deprecation warnings
+P4
+Enhancement
+hotspot
+JDK-8298469
+Obsolete legacy parallel class loading workaround for non-parallel-capable class loaders
+P4
+Enhancement
+hotspot
+JDK-8304138
+[JVMCI] Test FailedSpeculation existence before appending.
+P4
+Enhancement
+hotspot
+JDK-8304293
+RISC-V: JDK-8276799 missed atomic intrinsic support for C1
+P4
+Enhancement
+hotspot
+JDK-8304411
+Remove unused CardTable::clear
+P4
+Enhancement
+hotspot
+JDK-8301715
+CDS should be disabled in exploded JDK
+P4
+Enhancement
+hotspot
+JDK-8304393
+Provide method to iterate over regions of humongous object in G1
+P4
+Enhancement
+hotspot
+JDK-8304016
+Add BitMap find_last suite of functions
+P4
+Enhancement
+hotspot
+JDK-8304303
+implement VirtualThread class notifyJvmti methods as C2 intrinsics
+P4
+Enhancement
+hotspot
+JDK-8304387
+Fix positions of shared static stubs / trampolines
+P4
+Enhancement
+hotspot
+JDK-8304144
+G1: Remove unnecessary is_survivor check in G1ClearCardTableTask
+P4
+Enhancement
+hotspot
+JDK-8304657
+G1: Rename set_state_empty to set_state_untracked
+P4
+Enhancement
+hotspot
+JDK-8304089
+Convert TraceDependencies to UL
+P4
+Enhancement
+hotspot
+JDK-8302191
+Performance degradation for float/double modulo on Linux
+P4
+Enhancement
+hotspot
+JDK-8303951
+Add asserts before record_method_not_compilable where possible
+P4
+Enhancement
+hotspot
+JDK-8304687
+Move add_to_hierarchy
+P4
+Enhancement
+hotspot
+JDK-8304712
+Only pass total number of regions into G1Policy::calc_min_old_cset_length
+P4
+Enhancement
+hotspot
+JDK-8304711
+Combine G1 root region abort and wait into a single method
+P4
+Enhancement
+hotspot
+JDK-8231349
+Move intrinsic stubs generation to compiler runtime initialization code
+P4
+Enhancement
+hotspot
+JDK-8304716
+Clean up G1Policy::calc_max_old_cset_length()
+P4
+Enhancement
+hotspot
+JDK-8304301
+Remove the global option SuperWordMaxVectorSize
+P4
+Enhancement
+hotspot
+JDK-8304069
+ClassFileParser has ad-hoc hashtables
+P4
+Enhancement
+hotspot
+JDK-8298725
+Add BitMap support for reverse iteration
+P4
+Enhancement
+hotspot
+JDK-8304258
+x86: Improve the code generation of VectorRearrange with int and float
+P4
+Enhancement
+hotspot
+JDK-8304809
+Remove develop flag G1ExitOnExpansionFailure
+P4
+Enhancement
+hotspot
+JDK-8304804
+Remove develop flag G1VerifyCTCleanup
+P4
+Enhancement
+hotspot
+JDK-8301012
+[vectorapi]: Intrinsify CompressBitsV/ExpandBitsV and add the AArch64 SVE backend implementation
+P4
+Enhancement
+hotspot
+JDK-8304828
+Lots of constant static data not declared static const in cpu/x86
+P4
+Enhancement
+hotspot
+JDK-8304412
+Serial: Refactor old generation cards update after Full GC
+P4
+Enhancement
+hotspot
+JDK-8304884
+Update Bytecodes data to be mostly compile time constants
+P4
+Enhancement
+hotspot
+JDK-8305008
+RISC-V: Factor out immediate checking functions from assembler_riscv.inline.hpp
+P4
+Enhancement
+hotspot
+JDK-8305171
+PPC: Should use IMA::load_resolved_indy_entry() in TIG::generate_return_entry_for()
+P4
+Enhancement
+hotspot
+JDK-8302738
+IGV: refine 'Simplify graph' filter
+P4
+Enhancement
+hotspot
+JDK-8305223
+IGV: mark osr compiled graphs with [OSR] in the name
+P4
+Enhancement
+hotspot
+JDK-8304820
+Statically allocate ObjectSynchronizer mutexes
+P4
+Enhancement
+hotspot
+JDK-8297539
+Use PrimitiveConversions::cast for local uses of the int<->float union conversion trick
+P4
+Enhancement
+hotspot
+JDK-8304815
+Use NMT for more precise hs_err location printing
+P4
+Enhancement
+hotspot
+JDK-8294266
+Add a way to pre-touch java thread stacks
+P4
+Enhancement
+hotspot
+JDK-8303210
+[linux, Windows] Make UseSystemMemoryBarrier available as product flag
+P4
+Enhancement
+hotspot
+JDK-8241613
+Suspicious calls to MacroAssembler::null_check(Register, offset)
+P4
+Enhancement
+infrastructure
+JDK-8304893
+Link Time Optimization with gcc can be faster
+P4
+Enhancement
+tools
+JDK-8305004
+add @spec tags to langtools modules
+P4
+Enhancement
+hotspot
+JDK-8304759
+Add BitMap iterators
+P4
+Enhancement
+hotspot
+JDK-8302814
+Delete unused CountLoopEnd instruct with CmpX
+P4
+Enhancement
+hotspot
+JDK-8301106
+Allow archived Java strings to be moved by GC
+P4
+Enhancement
+hotspot
+JDK-8303805
+[REDO] JDK-8302189 and JDK-8302799
+P4
+Enhancement
+hotspot
+JDK-8305222
+Change unique_ctrl_out_or_null to unique_ctrl_out in PhaseCFG::convert_NeverBranch_to_Goto
+P4
+Enhancement
+hotspot
+JDK-8302644
+IGV: Apply filters per graph tab and not globally
+P4
+Enhancement
+hotspot
+JDK-8304445
+Remaining uses of NULL in ciInstanceKlass.cpp
+P4
+Enhancement
+hotspot
+JDK-8304743
+Compile_lock and SystemDictionary updates
+P4
+Enhancement
+hotspot
+JDK-8303278
+Imprecise bottom type of ExtractB/UB
+P4
+Enhancement
+hotspot
+JDK-8305500
+SystemDictionary::find_placeholder/find_class declared but not used
+P4
+Enhancement
+hotspot
+JDK-8305425
+Thread.isAlive0 doesn't need to call into the VM
+P4
+Enhancement
+hotspot
+JDK-8300829
+Make CtwRunner available as an independent tool
+P4
+Enhancement
+hotspot
+JDK-8300257
+C2: vectorization fails on some simple Memory Segment loops
+P4
+Enhancement
+hotspot
+JDK-8305728
+RISC-V: Use bexti instruction to do single-bit testing
+P4
+Enhancement
+hotspot
+JDK-8305370
+Inconsistent use of for_young_only_phase parameter in G1 predictions
+P4
+Enhancement
+hotspot
+JDK-8305368
+G1 remset chunk claiming may use relaxed memory ordering
+P4
+Enhancement
+hotspot
+JDK-8305484
+Compiler::init_c1_runtime unnecessarily uses an Arena that lives for the lifetime of the process
+P4
+Enhancement
+hotspot
+JDK-8305203
+Simplify trimming operation in Region::Ideal
+P4
+Enhancement
+hotspot
+JDK-8305783
+x86_64: Optimize AbsI and AbsL
+P4
+Enhancement
+hotspot
+JDK-8305618
+Move gcold out of tier1
+P4
+Enhancement
+hotspot
+JDK-8305404
+Compile_lock not needed for InstanceKlass::implementor()
+P4
+Enhancement
+hotspot
+JDK-8305405
+Compile_lock not needed in Universe::genesis()
+P4
+Enhancement
+hotspot
+JDK-8305740
+C2: add print statements to assert: Can't determine return type.
+P4
+Enhancement
+hotspot
+JDK-8305892
+G1: Fix G1MMUTracker::when_sec documentation
+P4
+Enhancement
+hotspot
+JDK-8305233
+G1: Refactor G1ClearCardTableTask
+P4
+Enhancement
+hotspot
+JDK-8305543
+Ensure GC barriers for arraycopy on AArch64 use caller saved neon temp registers
+P4
+Enhancement
+hotspot
+JDK-8305060
+G1: Refactor G1ScanHRForRegionClosure::scan_heap_roots
+P4
+Enhancement
+hotspot
+JDK-8303422
+Use common functions to exit the VM for -Xshare:dump and CDS errors
+P4
+Enhancement
+hotspot
+JDK-8306077
+Replace NEW_ARENA_ARRAY with NEW_RESOURCE_ARRAY when applicable in opto
+P4
+Enhancement
+infrastructure
+JDK-8303922
+build-test-lib target is broken
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+infrastructure
+JDK-8304930
+Enable Link Time Optimization as an option for Visual C++
+P4
+Enhancement
+other-libs
+JDK-8304161
+Add TypeKind.from to derive from TypeDescriptor.OfField
+P4
+Enhancement
+security-libs
+JDK-8303410
+Remove ContentSigner APIs and jarsigner -altsigner and -altsignerpath options
+P4
+Enhancement
+tools
+JDK-8303820
+Simplify type metadata
+P4
+Enhancement
+tools
+JDK-8303895
+Simplify and clean up LinkFactory code
+P4
+Enhancement
+tools
+JDK-8015831
+Add lint check for calling overridable methods from a constructor
+P4
+Enhancement
+tools
+JDK-6557145
+Warn about calling abstract methods in constructors
+P4
+Enhancement
+tools
+JDK-8304433
+cleanup sentence breaker code in DocTreeMaker
+P4
+Enhancement
+tools
+JDK-8304691
+Remove jlink --post-process-path option
+P4
+Enhancement
+tools
+JDK-8287885
+Local classes cause ClassLoader error if the type names are similar but not same
+P4
+Enhancement
+tools
+JDK-8305094
+typo (missing *) in doc comment
+P4
+Enhancement
+tools
+JDK-8305100
+[REDO] Clean up JavadocTokenizer
+P4
+Enhancement
+tools
+JDK-8305591
+Cleanup use of `newline` flag in DocCommentParser
+P4
+Enhancement
+tools
+JDK-8305673
+Convert DocCommentParser to use enhanced switch
+P4
+Enhancement
+client-libs
+JDK-8296275
+Write a test to verify setAccelerator method of JMenuItem
+P4
+Enhancement
+client-libs
+JDK-8299296
+Write a test to verify the components selection sends ItemEvent
+P4
+Enhancement
+client-libs
+JDK-8296934
+Write a test to verify whether Undecorated Frame can be iconified or not
+P4
+Enhancement
+client-libs
+JDK-8300205
+Swing test bug8078268 make latch timeout configurable
+P4
+Enhancement
+client-libs
+JDK-8300279
+Use generalized see and link tags in core libs in client libs
+P4
+Enhancement
+client-libs
+JDK-8267582
+BasicLookAndFeel should not call getComponentPopupMenu twice to get a popup menu
+P4
+Enhancement
+client-libs
+JDK-8300725
+Improve performance of ColorConvertOp for default destinations with alpha
+P4
+Enhancement
+client-libs
+JDK-8302525
+Write a test to check various components send Events while mouse and key are used simultaneously
+P4
+Enhancement
+client-libs
+JDK-8302495
+update for deprecated sprintf for java.desktop
+P4
+Enhancement
+client-libs
+JDK-8279216
+Investigate implementation of premultiplied alpha in the Little-CMS 2.13
+P4
+Enhancement
+client-libs
+JDK-8303830
+update for deprecated sprintf for jdk.accessibility
+P4
+Enhancement
+client-libs
+JDK-8307132
+Cleanup the code of sun.java2d.cmm.lcms package
+P4
+Enhancement
+core-libs
+JDK-8297295
+Remove ThreadGroup.allowThreadSuspension
+P4
+Enhancement
+core-libs
+JDK-8298380
+Clean up redundant array length checks in JDK code base
+P4
+Enhancement
+core-libs
+JDK-8298639
+Perform I/O operations in bulk for RandomAccessFile
+P4
+Enhancement
+core-libs
+JDK-8298590
+Refactor LambdaForm constructors
+P4
+Enhancement
+core-libs
+JDK-8299187
+(bf) ByteOrder.name should be declared final
+P4
+Enhancement
+core-libs
+JDK-8299437
+Make InetSocketAddressHolder shallowly immutable
+P4
+Enhancement
+core-libs
+JDK-8299475
+Enhance SocketException by cause where it is missing in net and nio area
+P4
+Enhancement
+core-libs
+JDK-8299600
+Use Objects.check*() where appropriate in java.io
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8258776
+ThreadLocal#initialValue() Javadoc is unaware of ThreadLocal#withInitial()
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8297306
+Incorrect brackets in Javadoc for a constructor of IteratorSpliterator
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+core-libs
+JDK-8299978
+Remove MethodHandleNatives.getMembers
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299576
+Reimplement java.io.Bits using VarHandle access
+P4
+Enhancement
+core-libs
+JDK-8300321
+Use link tags in javax.sql.rowset package-info
+P4
+Enhancement
+core-libs
+JDK-8300237
+Minor improvements in MethodHandles
+P4
+Enhancement
+core-libs
+JDK-8300489
+Use ArraysSupport.vectorizedHashCode in j.l.CharacterName
+P4
+Enhancement
+core-libs
+JDK-8300133
+Use generalized see and link tags in core libs
+P4
+Enhancement
+core-libs
+JDK-8300594
+Use generalized see and link tags in UnicastRemoteObject
+P4
+Enhancement
+core-libs
+JDK-8300595
+Use improved @see and @link syntax in javax.lang.model and javax.tools
+P4
+Enhancement
+core-libs
+JDK-8300647
+Miscellaneous hashCode improvements in java.base
+P4
+Enhancement
+core-libs
+JDK-8299827
+Add resolved IP address in connection exception for sockets
+P4
+Enhancement
+core-libs
+JDK-8300493
+Use ArraysSupport.vectorizedHashCode in j.u.zip.ZipCoder
+P4
+Enhancement
+core-libs
+JDK-8294693
+Add Collections.shuffle overload that accepts RandomGenerator interface
+P4
+Enhancement
+core-libs
+JDK-8300864
+Declare some fields in java.io as final
+P4
+Enhancement
+core-libs
+JDK-8300693
+Lower the compile threshold and reduce the iterations of warmup loop in VarHandles tests
+P4
+Enhancement
+core-libs
+JDK-8300236
+Use VarHandle access in Data(Input | Output)Stream classes
+P4
+Enhancement
+core-libs
+JDK-8299444
+java.util.Set.copyOf allocates needlessly for empty input collections
+P4
+Enhancement
+core-libs
+JDK-8301120
+Cleanup utility classes java.util.Arrays and java.util.Collections
+P4
+Enhancement
+core-libs
+JDK-8301767
+Convert virtual thread tests to JUnit
+P4
+Enhancement
+core-libs
+JDK-8301704
+Shorten the number of GCs in UnloadingTest.java to verify a class loader not being unloaded
+P4
+Enhancement
+core-libs
+JDK-8301578
+Perform output outside synchronization in Module.class
+P4
+Enhancement
+core-libs
+JDK-8301833
+Add wide-ranging tests for FDLIBM porting
+P4
+Enhancement
+core-libs
+JDK-8301958
+Reduce Arrays.copyOf/-Range overheads
+P4
+Enhancement
+core-libs
+JDK-8301226
+Add clamp() methods to java.lang.Math and to StrictMath
+P4
+Enhancement
+core-libs
+JDK-8297632
+InputStream.transferTo() method should specify what the return value should be when the number of bytes transfered is larger than Long.MAX_VALUE
+P4
+Enhancement
+core-libs
+JDK-8301460
+Clean up LambdaForm to reference BasicType enums directly
+P4
+Enhancement
+core-libs
+JDK-8302163
+Speed up various String comparison methods with ArraysSupport.mismatch
+P4
+Enhancement
+core-libs
+JDK-8301873
+Avoid string decoding in ZipFile.Source.getEntryPos
+P4
+Enhancement
+core-libs
+JDK-8302863
+Speed up String::encodeASCII using countPositives
+P4
+Enhancement
+core-libs
+JDK-8302789
+(fs) Files.copy should include unsupported copy option in exception message
+P4
+Enhancement
+core-libs
+JDK-8302877
+Speed up latin1 case conversions
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+core-libs
+JDK-8302512
+Update IANA Language Subtag Registry to Version 2023-02-14
+P4
+Enhancement
+core-libs
+JDK-8302871
+Speed up StringLatin1.regionMatchesCI
+P4
+Enhancement
+core-libs
+JDK-8302899
+Executors.newSingleThreadExecutor can use Cleaner to shutdown executor
+P4
+Enhancement
+core-libs
+JDK-8301964
+Expensive fillInStackTrace operation in HttpURLConnection.getLastModified when no last-modified in response
+P4
+Enhancement
+core-libs
+JDK-8300792
+Refactor examples in java.net.http to use @snippet
+P4
+Enhancement
+core-libs
+JDK-8301119
+Support for GB18030-2022
+P4
+Enhancement
+core-libs
+JDK-8292914
+Lambda proxies have unstable names
+P4
+Enhancement
+core-libs
+JDK-8282319
+java.util.Locale method to stream available Locales
+P4
+Enhancement
+core-libs
+JDK-8302590
+Add String.indexOf(int ch, int fromIndex, int toIndex)
+P4
+Enhancement
+core-libs
+JDK-8303582
+Reduce duplication in jdk/java/foreign tests
+P4
+Enhancement
+core-libs
+JDK-8302791
+Add specific ClassLoader object to Proxy IllegalArgumentException message
+P4
+Enhancement
+core-libs
+JDK-8171156
+Class java.util.LocaleISOData has outdated information for country Code NP
+P4
+Enhancement
+core-libs
+JDK-8306452
+Fix Amazon copyright in JDK-8305425 test
+P4
+Enhancement
+core-libs
+JDK-8306075
+Micro-optimize Enum.hashCode
+P4
+Enhancement
+core-libs
+JDK-8266571
+Sequenced Collections
+P4
+Enhancement
+core-libs
+JDK-8306031
+Update IANA Language Subtag Registry to Version 2023-04-13
+P4
+Enhancement
+core-libs
+JDK-8304918
+Remove unused decl field from AnnotatedType implementations
+P4
+Enhancement
+core-libs
+JDK-8306374
+(bf) Improve performance of DirectCharBuffer::append(CharSequence[,int,int])
+P4
+Enhancement
+core-libs
+JDK-8205592
+BigDecimal.doubleValue() is depressingly slow
+P4
+Enhancement
+core-libs
+JDK-8307088
+Allow the jdbc.drivers system property to be searchable
+P4
+Enhancement
+core-libs
+JDK-8300818
+Reduce complexity of padding with DateTimeFormatter
+P4
+Enhancement
+core-libs
+JDK-8304888
+Add dedicated VMProps for linker and fallback linker
+P4
+Enhancement
+core-libs
+JDK-8306729
+Add nominal descriptors of modules and packages to Constants API
+P4
+Enhancement
+core-libs
+JDK-8305092
+Improve Thread.sleep(millis, nanos) for sub-millisecond granularity
+P4
+Enhancement
+core-libs
+JDK-8305486
+Add split() variants that keep the delimiters to String and j.u.r.Pattern
+P4
+Enhancement
+core-libs
+JDK-8159337
+Introduce a method in Locale class to return the language tags as per RFC 5646 convention
+P4
+Enhancement
+core-libs
+JDK-8305748
+Clarify reentrant behavior of close() in FileInputStream, FileOutputStream, and RandomAccessFile
+P4
+Enhancement
+core-libs
+JDK-8281103
+Give example for Locale that is English and follows the ISO standards
+P4
+Enhancement
+core-libs
+JDK-8299340
+CreateProcessW lpCommandLine must be mutable
+P4
+Enhancement
+core-libs
+JDK-8308049
+Refactor nested class declarations in FdLibm.java
+P4
+Enhancement
+core-libs
+JDK-8307547
+Support variant collations
+P4
+Enhancement
+core-libs
+JDK-8308239
+Tighten up accessibility of nested classes in java.lang.invoke
+P4
+Enhancement
+core-libs
+JDK-8306842
+Classfile API performance improvements
+P4
+Enhancement
+core-libs
+JDK-8132995
+Matcher$ImmutableMatchResult should be optimized to reduce space usage
+P4
+Enhancement
+core-libs
+JDK-8308021
+Update IANA Language Subtag Registry to Version 2023-05-11
+P4
+Enhancement
+core-libs
+JDK-8307007
+Implementation for javax.lang.model for unnamed variables (Preview)
+P4
+Enhancement
+core-libs
+JDK-8308300
+enhance exceptions in MappedMemoryUtils.c
+P4
+Enhancement
+core-libs
+JDK-8306698
+Add overloads to MethodTypeDesc::of
+P4
+Enhancement
+core-libs
+JDK-8286597
+Implement PollerProvider on AIX
+P4
+Enhancement
+core-libs
+JDK-8308108
+Support Unicode extension for collation settings
+P4
+Enhancement
+core-libs
+JDK-8308801
+update for deprecated sprintf for libnet in java.base
+P4
+Enhancement
+core-libs
+JDK-8308987
+Update java.lang.Class to use javadoc snippets
+P4
+Enhancement
+core-libs
+JDK-8308022
+update for deprecated sprintf for java.base
+P4
+Enhancement
+core-svc
+JDK-8299957
+Enhance error logging in instrument coding with additional jplis_assert_msg
+P4
+Enhancement
+core-svc
+JDK-8300357
+Use generalized see and link tags in java.management
+P4
+Enhancement
+core-svc
+JDK-8301132
+Test update for deprecated sprintf in Xcode 14
+P4
+Enhancement
+core-svc
+JDK-8300811
+jdb ThreadStartRequest and ThreadDeathRequest should use SUSPEND_NONE instead of SUSPEND_ALL
+P4
+Enhancement
+core-svc
+JDK-8301638
+A number of nsk/jdi invokemethod tests should be converted to create virtual threads
+P4
+Enhancement
+core-svc
+JDK-8301279
+update for deprecated sprintf for management components
+P4
+Enhancement
+core-svc
+JDK-8299234
+JMX Repository.query performance
+P4
+Enhancement
+core-svc
+JDK-8302516
+Do some cleanup of nsk/share/jdi/EventHandler.java
+P4
+Enhancement
+core-svc
+JDK-8303617
+update for deprecated sprintf for jdk.jdwp.agent
+P4
+Enhancement
+core-svc
+JDK-8303702
+Provide ThreadFactory to create platform/virtual threads for com/sun/jdi tests
+P4
+Enhancement
+core-svc
+JDK-8307850
+update for deprecated sprintf for jdk.jdi
+P4
+Enhancement
+core-svc
+JDK-8307848
+update for deprecated sprintf for jdk.attach
+P4
+Enhancement
+core-svc
+JDK-8306471
+Add virtual threads support to JDWP ThreadReference.Stop and JDI ThreadReference.stop()
+P4
+Enhancement
+core-svc
+JDK-8308237
+add JDWP and JDI virtual thread support for ThreadReference.PopFrames
+P4
+Enhancement
+core-svc
+JDK-8308481
+JDI TestScaffold does not support passing app arguments to the debuggee
+P4
+Enhancement
+core-svc
+JDK-8304074
+[JMX] Add an approximation of total bytes allocated on the Java heap by the JVM
+P4
+Enhancement
+docs
+JDK-8306408
+Fix the format of several tables in building.md
+P4
+Enhancement
+hotspot
+JDK-8292289
+[vectorapi] Improve the implementation of VectorTestNode
+P4
+Enhancement
+hotspot
+JDK-8298281
+Serial: Refactor MarkAndPushClosure
+P4
+Enhancement
+hotspot
+JDK-8297036
+Generalize C2 stub mechanism
+P4
+Enhancement
+hotspot
+JDK-8292265
+Add old gen used field at G1HeapSummary JFR event
+P4
+Enhancement
+hotspot
+JDK-8298126
+Print statistics for objects in CDS archive heap
+P4
+Enhancement
+hotspot
+JDK-8298471
+Parallel: Don't keep alive nmethods in Young GC
+P4
+Enhancement
+hotspot
+JDK-8298480
+Remove unused KlassRemSet
+P4
+Enhancement
+hotspot
+JDK-8298521
+Rename members in G1MonitoringSupport
+P4
+Enhancement
+hotspot
+JDK-8298576
+Serial: Move some MarkSweep method definitions to cpp
+P4
+Enhancement
+hotspot
+JDK-8298144
+Remove Space::new_dcto_cl
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+hotspot
+JDK-8298475
+Remove JVM_ACC_PROMOTED_FLAGS
+P4
+Enhancement
+hotspot
+JDK-8297639
+Remove preventive GCs in G1
+P4
+Enhancement
+hotspot
+JDK-8281946
+VM.native_memory should report size of shareable memory
+P4
+Enhancement
+hotspot
+JDK-8297912
+HotSpot Style Guide should permit alignas (Second Proposal Attempt)
+P4
+Enhancement
+hotspot
+JDK-8298468
+Clean up class_loader parameters
+P4
+Enhancement
+hotspot
+JDK-8298241
+Replace C-style casts with JavaThread::cast
+P4
+Enhancement
+hotspot
+JDK-8298088
+RISC-V: Make Address a discriminated union internally
+P4
+Enhancement
+hotspot
+JDK-8296374
+Check for young region in G1BarrierSet::invalidate instead of card-by-card check
+P4
+Enhancement
+hotspot
+JDK-8298244
+AArch64: Optimize vector implementation of AddReduction for floating point
+P4
+Enhancement
+hotspot
+JDK-8265688
+Unused ciMethodType::ptype_at should be removed
+P4
+Enhancement
+hotspot
+JDK-8295661
+CompileTask::compile_id() should be passed as int
+P4
+Enhancement
+hotspot
+JDK-8298470
+Short cut java.lang.Object super class loading
+P4
+Enhancement
+hotspot
+JDK-8298651
+Serial: Remove MarkSweep::follow_klass
+P4
+Enhancement
+hotspot
+JDK-8298913
+Add override qualifiers to Relocation classes
+P4
+Enhancement
+hotspot
+JDK-8269736
+Optimize CDS PatchEmbeddedPointers::do_bit()
+P4
+Enhancement
+hotspot
+JDK-8299061
+Using lambda to optimize GraphKit::compute_stack_effects()
+P4
+Enhancement
+hotspot
+JDK-8299191
+Unnecessarily global friend functions for relocInfo
+P4
+Enhancement
+hotspot
+JDK-8299398
+Remove metaprogramming/isConst.hpp
+P4
+Enhancement
+hotspot
+JDK-8298652
+G1: Refactor G1MarkAndPushClosure
+P4
+Enhancement
+hotspot
+JDK-8299402
+Remove metaprogramming/isVolatile.hpp
+P4
+Enhancement
+hotspot
+JDK-8299396
+Remove metaprogramming/removeExtent.hpp
+P4
+Enhancement
+hotspot
+JDK-8299399
+Remove metaprogramming/isArray.hpp
+P4
+Enhancement
+hotspot
+JDK-8299397
+Remove metaprogramming/isFloatingPoint.hpp
+P4
+Enhancement
+hotspot
+JDK-8299030
+Refactor ReservedSpace::reserve
+P4
+Enhancement
+hotspot
+JDK-8299395
+Remove metaprogramming/removeCV.hpp
+P4
+Enhancement
+hotspot
+JDK-8299520
+TestPrintXML.java output error messages in case compare fails
+P4
+Enhancement
+hotspot
+JDK-8299378
+sprintf is deprecated in Xcode 14
+P4
+Enhancement
+hotspot
+JDK-8299079
+Better interface nmethod oop accesses
+P4
+Enhancement
+hotspot
+JDK-8299326
+LinkResolver::resolve_field resolved_klass cannot be null
+P4
+Enhancement
+hotspot
+JDK-8299072
+java_lang_ref_Reference::clear_referent should be GC agnostic
+P4
+Enhancement
+hotspot
+JDK-8299158
+Improve MD5 intrinsic on AArch64
+P4
+Enhancement
+hotspot
+JDK-8299254
+Support dealing with standard assert macro
+P4
+Enhancement
+hotspot
+JDK-8299343
+Windows: Invalid thread_native_entry declaration
+P4
+Enhancement
+hotspot
+JDK-8299726
+[cleanup] Some code cleanup in opto/compile.hpp
+P4
+Enhancement
+hotspot
+JDK-8299274
+Add elements to resolved_references consistently
+P4
+Enhancement
+hotspot
+JDK-8299544
+Improve performance of CRC32C intrinsics (non-AVX-512) for small inputs
+P4
+Enhancement
+hotspot
+JDK-8299481
+Remove metaprogramming/removePointer.hpp
+P4
+Enhancement
+hotspot
+JDK-8299671
+Speed up compiler/intrinsics/string/TestStringLatin1IndexOfChar.java
+P4
+Enhancement
+hotspot
+JDK-8299608
+Add Register + imm32 orq to x86_64 assembler
+P4
+Enhancement
+hotspot
+JDK-8298730
+Refactor subsystem_file_line_contents and add docs and tests
+P4
+Enhancement
+hotspot
+JDK-8298472
+AArch64: Detect Ampere-1 and Ampere-1A CPUs and set default options
+P4
+Enhancement
+hotspot
+JDK-8299692
+G1: Remove unused G1BlockOffsetTable::is_card_boundary
+P4
+Enhancement
+hotspot
+JDK-8299312
+Clean up BarrierSetNMethod
+P4
+Enhancement
+hotspot
+JDK-8299275
+Add some ClassLoaderData verification code
+P4
+Enhancement
+hotspot
+JDK-8255119
+Monitor::wait takes signed integer as timeout
+P4
+Enhancement
+hotspot
+JDK-8299525
+RISC-V: Add backend support for half float conversion intrinsics
+P4
+Enhancement
+hotspot
+JDK-8287925
+AArch64: intrinsics for compareUnsigned method in Integer and Long
+P4
+Enhancement
+hotspot
+JDK-8297572
+Remove unused PrecisionStyle::Precise
+P4
+Enhancement
+hotspot
+JDK-8297487
+G1 Remark: no need to keep alive oop constants of nmethods on stack
+P4
+Enhancement
+hotspot
+JDK-8299845
+Remove obsolete comments in DirtyCardToOopClosure::get_actual_top
+P4
+Enhancement
+hotspot
+JDK-8299701
+Remove unused GCCause::_wb_conc_mark
+P4
+Enhancement
+hotspot
+JDK-8299479
+Remove metaprogramming/decay.hpp
+P4
+Enhancement
+hotspot
+JDK-8299482
+Remove metaprogramming/isIntegral.hpp
+P4
+Enhancement
+hotspot
+JDK-8299327
+Allow super late barrier expansion of store barriers in C2
+P4
+Enhancement
+hotspot
+JDK-8299853
+Serial: Use more concrete type for TenuredGeneration::_the_space
+P4
+Enhancement
+hotspot
+JDK-8298065
+Provide more information in message of NoSuchFieldError
+P4
+Enhancement
+hotspot
+JDK-8264684
+os::get_summary_cpu_info padded with spaces
+P4
+Enhancement
+hotspot
+JDK-8299672
+Enhance HeapDump JFR event
+P4
+Enhancement
+hotspot
+JDK-8298482
+Implement ParallelGC NUMAStats for Linux
+P4
+Enhancement
+hotspot
+JDK-8299125
+UnifiedOopRef in JFR leakprofiler should treat thread local oops correctly
+P4
+Enhancement
+hotspot
+JDK-8298448
+UndefinedBehaviorSanitizer
+P4
+Enhancement
+hotspot
+JDK-8299032
+Interface IN_NATIVE oop stores for C2
+P4
+Enhancement
+hotspot
+JDK-8300054
+Use static_assert in basic_types_init
+P4
+Enhancement
+hotspot
+JDK-8299962
+Speed up compiler/intrinsics/unsafe/DirectByteBufferTest.java and HeapByteBufferTest.java
+P4
+Enhancement
+hotspot
+JDK-8299960
+Speed up test/hotspot/jtreg/compiler/c2/irTests/TestVectorizeURShiftSubword.java
+P4
+Enhancement
+hotspot
+JDK-8299038
+Add AArch64 backend support for auto-vectorized FP16 conversions
+P4
+Enhancement
+hotspot
+JDK-8299879
+CollectedHeap hierarchy should use override
+P4
+Enhancement
+hotspot
+JDK-8300124
+Remove unnecessary assert in GenCollectedHeap::initialize
+P4
+Enhancement
+hotspot
+JDK-8296401
+ConcurrentHashTable::bulk_delete might miss to delete some objects
+P4
+Enhancement
+hotspot
+JDK-8299971
+Remove metaprogramming/conditional.hpp
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+hotspot
+JDK-8300125
+Serial: Remove unused Generation::reset_saved_marks
+P4
+Enhancement
+hotspot
+JDK-8300184
+Optimize ResourceHashtableBase::iterate_all using _number_of_entries
+P4
+Enhancement
+infrastructure
+JDK-8296478
+Rework 8282948 and 8282700 to use the new autoconf UTIL_ARG_WITH
+P4
+Enhancement
+infrastructure
+JDK-8300068
+UBSan CFLAGS/LDFLAGS not passed when building ADLC
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+hotspot
+JDK-8300109
+RISC-V: Improve code generation for MinI/MaxI nodes
+P4
+Enhancement
+hotspot
+JDK-8299089
+Instrument global jni handles with tag to make them distinguishable
+P4
+Enhancement
+hotspot
+JDK-8153837
+AArch64: Handle special cases for MaxINode & MinINode
+P4
+Enhancement
+hotspot
+JDK-8298632
+[TESTBUG] Add IR checks in jtreg vectorization tests
+P4
+Enhancement
+hotspot
+JDK-8300526
+Test runtime/jni/IsVirtualThread/IsVirtualThread.java should exercise alternative virtual thread implementation
+P4
+Enhancement
+hotspot
+JDK-8300264
+Remove metaprogramming/isPointer.hpp
+P4
+Enhancement
+hotspot
+JDK-8300447
+Parallel: Refactor PSPromotionManager::drain_stacks_depth
+P4
+Enhancement
+hotspot
+JDK-8300540
+Serial: Remove obsolete comments in GenMarkSweep
+P4
+Enhancement
+hotspot
+JDK-8300042
+Improve CPU related JFR events descriptions
+P4
+Enhancement
+hotspot
+JDK-8287873
+Add test for using -XX:+AutoCreateSharedArchive with different JDK versions
+P4
+Enhancement
+hotspot
+JDK-8300653
+G1EvacInfo should use common naming scheme for collection set
+P4
+Enhancement
+hotspot
+JDK-8298908
+Instrument Metaspace for ASan
+P4
+Enhancement
+hotspot
+JDK-8300260
+Remove metaprogramming/isSame.hpp
+P4
+Enhancement
+hotspot
+JDK-8300265
+Remove metaprogramming/isSigned.hpp
+P4
+Enhancement
+hotspot
+JDK-8286775
+Remove identical per-compiler definitions of unsigned integral jtypes
+P4
+Enhancement
+hotspot
+JDK-8300910
+Remove metaprogramming/integralConstant.hpp
+P4
+Enhancement
+hotspot
+JDK-8300862
+Remove some G1 collection set remembered set debugging code
+P4
+Enhancement
+hotspot
+JDK-8300769
+Remove G1CollectionSet::_inc_bytes_used_before
+P4
+Enhancement
+hotspot
+JDK-8300830
+Remove redundant assertion in src/hotspot/share/runtime/javaCalls.cpp
+P4
+Enhancement
+hotspot
+JDK-8300657
+Remove null filtering in CLD oop handle area
+P4
+Enhancement
+hotspot
+JDK-8299635
+Hotspot update for deprecated sprintf in Xcode 14
+P4
+Enhancement
+hotspot
+JDK-8301098
+Remove dead code FileMapInfo::stop_sharing_and_unmap()
+P4
+Enhancement
+hotspot
+JDK-8301063
+Remove dead code from GrowableArray
+P4
+Enhancement
+hotspot
+JDK-8300127
+Serial: Remove unnecessary from-space iteration in DefNewGeneration::oop_since_save_marks_iterate
+P4
+Enhancement
+hotspot
+JDK-8300958
+Parallel: Remove unused MutableNUMASpace::capacity_in_words
+P4
+Enhancement
+hotspot
+JDK-8300652
+Parallel: Refactor oop marking stack in Full GC
+P4
+Enhancement
+hotspot
+JDK-8299953
+Merge ContiguousSpaceDCTOC into DirtyCardToOopClosure
+P4
+Enhancement
+hotspot
+JDK-8300962
+Parallel: Remove PSParallelCompact::_total_invocations
+P4
+Enhancement
+hotspot
+JDK-8300247
+Harden C1 xchg on AArch64 and PPC
+P4
+Enhancement
+hotspot
+JDK-8300968
+Accessorize raw oop load in DeadCounterClosure
+P4
+Enhancement
+hotspot
+JDK-8301005
+Clean up Copy::conjoint_*_atomic on windows
+P4
+Enhancement
+hotspot
+JDK-8221785
+Let possibly_parallel_threads_do cover the same threads as threads_do
+P4
+Enhancement
+hotspot
+JDK-8300253
+Introduce AArch64 nzcv accessors
+P4
+Enhancement
+hotspot
+JDK-8301164
+Remove unused ResourceStack class
+P4
+Enhancement
+hotspot
+JDK-8299844
+RISC-V: Implement _onSpinWait intrinsic
+P4
+Enhancement
+hotspot
+JDK-8300208
+Optimize Adler32 stub for AVX-512 targets.
+P4
+Enhancement
+hotspot
+JDK-8291569
+Consider removing JNI checks for signals SIGPIPE and SIGXFSZ
+P4
+Enhancement
+hotspot
+JDK-8301088
+oopDesc::print_on should consistently use a trailing newline
+P4
+Enhancement
+hotspot
+JDK-8301217
+Remove FilteringClosure
+P4
+Enhancement
+hotspot
+JDK-8301229
+Clean up SuspendibleThreadSet::_suspend_all
+P4
+Enhancement
+hotspot
+JDK-8301047
+Clean up type unsafe uses of oop from compiler code
+P4
+Enhancement
+hotspot
+JDK-8301248
+Less side effects in InstanceRefKlass::trace_reference_gc
+P4
+Enhancement
+hotspot
+JDK-8301148
+Serial: Remove ContiguousSpace::reset_saved_mark
+P4
+Enhancement
+hotspot
+JDK-8301033
+RISC-V: Handle special cases for MinI/MaxI nodes for Zbb
+P4
+Enhancement
+hotspot
+JDK-8301036
+RISC-V: Factor out functions baseOffset & baseOffset32 from MacroAssembler
+P4
+Enhancement
+hotspot
+JDK-8267935
+Replace BasicHashtable and Hashtable
+P4
+Enhancement
+hotspot
+JDK-8301378
+CodeHeap has virtual methods that are not overridden
+P4
+Enhancement
+hotspot
+JDK-8301346
+Remove dead emit_entry_barrier_stub definition
+P4
+Enhancement
+hotspot
+JDK-8301344
+G1: Remove DirtyCardToOopClosure forward declaration in g1OopClosures.hpp
+P4
+Enhancement
+hotspot
+JDK-8301067
+RISC-V: better error message when reporting unsupported satp modes
+P4
+Enhancement
+hotspot
+JDK-8301326
+Optimize compiler/uncommontrap/TestDeoptOOM.java test
+P4
+Enhancement
+hotspot
+JDK-8301340
+Make DirtyCardToOopClosure stack-allocated
+P4
+Enhancement
+hotspot
+JDK-8301555
+Remove constantPoolCacheKlass friend
+P4
+Enhancement
+hotspot
+JDK-8301549
+Fix comment about ClassCircularityError
+P4
+Enhancement
+hotspot
+JDK-8301459
+Serial: Merge KeepAliveClosure into FastKeepAliveClosure
+P4
+Enhancement
+hotspot
+JDK-8301446
+Remove unused includes of gc/shared/genOopClosures
+P4
+Enhancement
+hotspot
+JDK-8301447
+[REDO] CodeHeap has virtual methods that are not overridden
+P4
+Enhancement
+hotspot
+JDK-8301612
+OopLoadProxy constructor should be explicit
+P4
+Enhancement
+hotspot
+JDK-8301149
+Parallel: Refactor MutableNUMASpace::update_layout
+P4
+Enhancement
+hotspot
+JDK-8301564
+Non-C-heap allocated ResourceHashtable keys and values must have trivial destructor
+P4
+Enhancement
+hotspot
+JDK-8301050
+Detect Xen Virtualization on Linux aarch64
+P4
+Enhancement
+hotspot
+JDK-8301744
+Remove unused includes of genOopClosures.hpp
+P4
+Enhancement
+hotspot
+JDK-8301740
+RISC-V: Address::uses() should check address mode
+P4
+Enhancement
+hotspot
+JDK-8301743
+RISC-V: Add InlineSkippedInstructionsCounter to post-call nops
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+hotspot
+JDK-8299162
+Refactor shared trampoline emission logic
+P4
+Enhancement
+hotspot
+JDK-8301599
+Serial: Refactor nested closures in DefNewGeneration
+P4
+Enhancement
+hotspot
+JDK-8301818
+RISC-V: Factor out function mvw from MacroAssembler
+P4
+Enhancement
+hotspot
+JDK-8296999
+AArch64: scalar intrinsics for reverse method in Integer and Long
+P4
+Enhancement
+hotspot
+JDK-8301371
+Interpreter store barriers on x86_64 don't have disjoint temp registers
+P4
+Enhancement
+hotspot
+JDK-8151413
+os::allocation_granularity/page_size and friends return signed values
+P4
+Enhancement
+hotspot
+JDK-8298445
+Add LeakSanitizer support in HotSpot
+P4
+Enhancement
+hotspot
+JDK-8301862
+G1: Remove G1PageBasedVirtualSpace::_executable
+P4
+Enhancement
+hotspot
+JDK-8302047
+G1: Remove unused G1RegionToSpaceMapper::_region_granularity
+P4
+Enhancement
+hotspot
+JDK-8302072
+Parallel: Remove unimplemented ParCompactionManager::stack_push
+P4
+Enhancement
+hotspot
+JDK-8288783
+Error messages are confusing when options conflict in -XX:StartFlightRecording
+P4
+Enhancement
+hotspot
+JDK-8301116
+Parallelize TLAB resizing in G1
+P4
+Enhancement
+hotspot
+JDK-8302121
+Parallel: Remove unused arg in PSCardTable::inline_write_ref_field_gc
+P4
+Enhancement
+hotspot
+JDK-8301843
+Remove dummy region allocation
+P4
+Enhancement
+hotspot
+JDK-8302109
+Trivial fixes to btree tests
+P4
+Enhancement
+hotspot
+JDK-8293198
+[vectorapi] Improve the implementation of VectorMask.indexInRange()
+P4
+Enhancement
+hotspot
+JDK-8302125
+Make G1 full gc abort the VM after failing VerifyDuringGC verification
+P4
+Enhancement
+hotspot
+JDK-8302167
+Avoid allocating register in fast_lock()
+P4
+Enhancement
+hotspot
+JDK-8301852
+RISC-V: Optimize class atomic when order is memory_order_relaxed
+P4
+Enhancement
+hotspot
+JDK-8302203
+IR framework should detect non-compilable test methods early
+P4
+Enhancement
+hotspot
+JDK-8299970
+Speed up compiler/arraycopy/TestArrayCopyConjoint.java
+P4
+Enhancement
+hotspot
+JDK-8294194
+[AArch64] Create intrinsics compress and expand
+P4
+Enhancement
+hotspot
+JDK-8300139
+[AIX] Use pthreads to avoid JNI_createVM call from primordial thread
+P4
+Enhancement
+hotspot
+JDK-8301838
+PPC: continuation yield intrinsic: exception check not needed if yield succeeded
+P4
+Enhancement
+hotspot
+JDK-8302289
+RISC-V: Use bgez instruction in arraycopy_simple_check when possible
+P4
+Enhancement
+hotspot
+JDK-8300255
+Introduce interface for GC oop verification in the assembler
+P4
+Enhancement
+hotspot
+JDK-8298293
+NMT: os::realloc() should verify that flags do not change between reallocations
+P4
+Enhancement
+hotspot
+JDK-8302108
+Clean up placeholder supername code
+P4
+Enhancement
+hotspot
+JDK-8301874
+BarrierSetC2 should assign barrier data to stores
+P4
+Enhancement
+hotspot
+JDK-8225409
+G1: Remove the Hot Card Cache
+P4
+Enhancement
+hotspot
+JDK-8295344
+Harden runtime/StackGuardPages/TestStackGuardPages.java
+P4
+Enhancement
+hotspot
+JDK-8298278
+JFR: Turn MEMFLAGS into a type for use with the NativeMemoryUsage events
+P4
+Enhancement
+hotspot
+JDK-8302262
+Remove -XX:SuppressErrorAt develop option
+P4
+Enhancement
+hotspot
+JDK-8296344
+Remove dependency on G1 for writing the CDS archive heap
+P4
+Enhancement
+hotspot
+JDK-8302129
+Make MetaspaceReclaimPolicy a diagnostic switch
+P4
+Enhancement
+hotspot
+JDK-8302102
+Disable ASan for SafeFetch and os::print_hex_dump
+P4
+Enhancement
+hotspot
+JDK-8302152
+Speed up tests with infinite loops, sleep less
+P4
+Enhancement
+hotspot
+JDK-8302147
+Speed up compiler/jvmci/compilerToVM/IterateFramesNative.java
+P4
+Enhancement
+hotspot
+JDK-8300808
+Accelerate Base64 on x86 for AVX2
+P4
+Enhancement
+hotspot
+JDK-8302127
+Remove unused arg in write_ref_field_post
+P4
+Enhancement
+hotspot
+JDK-8302385
+Remove MetaspaceReclaimPolicy=none
+P4
+Enhancement
+hotspot
+JDK-8297031
+IGV: Copy extracted nodes and layout for cloned graph
+P4
+Enhancement
+hotspot
+JDK-8302464
+Parallel: Remove unreachable code in callers of numa_has_static_binding
+P4
+Enhancement
+hotspot
+JDK-8298276
+JFR: Update NMT events to make use of common periodic timestamp feature
+P4
+Enhancement
+hotspot
+JDK-8293313
+NMT: Rework MallocLimit
+P4
+Enhancement
+hotspot
+JDK-8293292
+Remove MallocMaxTestWords
+P4
+Enhancement
+hotspot
+JDK-8280419
+Remove dead code related to VerifyThread and verify_thread()
+P4
+Enhancement
+hotspot
+JDK-8296158
+Refactor the verification of CDS region checksum
+P4
+Enhancement
+hotspot
+JDK-8302674
+Parallel: Remove unused methods in MutableNUMASpace
+P4
+Enhancement
+hotspot
+JDK-8302661
+Parallel: Remove PSVirtualSpace::is_aligned
+P4
+Enhancement
+hotspot
+JDK-8302734
+Parallel: Remove unused LGRPSpace::_invalid_region
+P4
+Enhancement
+hotspot
+JDK-8302615
+make JVMTI thread cpu time functions optional for virtual threads
+P4
+Enhancement
+hotspot
+JDK-8302462
+[REDO] 8297487: G1 Remark: no need to keep alive oop constants of nmethods on stack
+P4
+Enhancement
+hotspot
+JDK-8295979
+[IR Framework] Improve IR matching warning
+P4
+Enhancement
+hotspot
+JDK-8302206
+Factor out duplicate G1VerificationClosure
+P4
+Enhancement
+hotspot
+JDK-8302122
+Parallelize TLAB retirement in prologue in G1
+P4
+Enhancement
+hotspot
+JDK-8297611
+G1: Merge tlab and per-thread dirty card log flushing
+P4
+Enhancement
+hotspot
+JDK-8302312
+Make ParGCRareEvent_lock G1 specific
+P4
+Enhancement
+hotspot
+JDK-8302709
+Remove explicit remembered set verification in G1
+P4
+Enhancement
+hotspot
+JDK-8302518
+Add missing Op_RoundDoubleMode in VectorNode::vector_operands()
+P4
+Enhancement
+hotspot
+JDK-8302068
+Serial: Refactor oop closures used in Young GC
+P4
+Enhancement
+hotspot
+JDK-8302070
+Factor null-check into load_klass() calls
+P4
+Enhancement
+hotspot
+JDK-8302369
+Reduce the stack size of the C1 compiler
+P4
+Enhancement
+hotspot
+JDK-8302453
+RISC-V: Add support for small width vector operations
+P4
+Enhancement
+hotspot
+JDK-8302146
+Move TestOverloadCompileQueues.java to tier3
+P4
+Enhancement
+hotspot
+JDK-8302150
+Speed up compiler/codegen/Test7100757.java
+P4
+Enhancement
+hotspot
+JDK-8302867
+G1: Removing unused variable in G1CardTable::initialize
+P4
+Enhancement
+hotspot
+JDK-8302868
+Serial: Remove CardTableRS::initialize
+P4
+Enhancement
+hotspot
+JDK-8302886
+Parallel: Remove unimplemented methods in ParCompactionManager
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+hotspot
+JDK-8302975
+Remove redundant mark verification during G1 Full GC
+P4
+Enhancement
+hotspot
+JDK-8302880
+Fix includes in g1ConcurrentMarkObjArrayProcessor files
+P4
+Enhancement
+hotspot
+JDK-8303067
+G1: Remove unimplemented G1FullGCScope::heap_transition
+P4
+Enhancement
+hotspot
+JDK-8302760
+Improve liveness/remembered set verification for G1
+P4
+Enhancement
+hotspot
+JDK-8303081
+Serial: Remove unused VM_MarkSweep
+P4
+Enhancement
+hotspot
+JDK-8302811
+NMT.random_reallocs_vm fails if NMT is off
+P4
+Enhancement
+hotspot
+JDK-8303085
+Runtime problem list cleanup
+P4
+Enhancement
+hotspot
+JDK-8303089
+[jittester] Add time limit to IRTree generation
+P4
+Enhancement
+hotspot
+JDK-8302810
+NMT gtests don't correctly check for marked ranges
+P4
+Enhancement
+hotspot
+JDK-8302681
+[IR Framework] Only allow cpuFeatures from a verified list
+P4
+Enhancement
+hotspot
+JDK-8302149
+Speed up compiler/jsr292/methodHandleExceptions/TestAMEnotNPE.java
+P4
+Enhancement
+hotspot
+JDK-8303135
+JFR: Log periodic events using periodic tag
+P4
+Enhancement
+hotspot
+JDK-8303051
+Stop saving 5 chunks in each ChunkPool
+P4
+Enhancement
+hotspot
+JDK-8302124
+HotSpot Style Guide should permit noreturn attribute
+P4
+Enhancement
+hotspot
+JDK-8303250
+Call ct_max_alignment_constraint using the base class
+P4
+Enhancement
+hotspot
+JDK-8303133
+Update ProcessTools.startProcess(...) to exit early if process exit before linePredicate is printed.
+P4
+Enhancement
+hotspot
+JDK-8302798
+Refactor -XX:+UseOSErrorReporting for noreturn crash reporting
+P4
+Enhancement
+hotspot
+JDK-8303013
+Always do remembered set verification during G1 Full GC
+P4
+Enhancement
+hotspot
+JDK-8303362
+Serial: Move CardTableRS to serial directory
+P4
+Enhancement
+hotspot
+JDK-8302144
+Move ZeroTLABTest.java to tier3
+P4
+Enhancement
+hotspot
+JDK-8303418
+Improve parameter and variable names in BitMap
+P4
+Enhancement
+hotspot
+JDK-8302820
+Remove costs for NMTPreInit when NMT is off
+P4
+Enhancement
+hotspot
+JDK-8302830
+AArch64: Fix the mismatch between cas.m4 and aarch64.ad
+P4
+Enhancement
+hotspot
+JDK-8143900
+OptimizeStringConcat has an opaque dependency on Integer.sizeTable field
+P4
+Enhancement
+hotspot
+JDK-8297753
+AArch64: Add optimized rules for vector compare with zero on NEON
+P4
+Enhancement
+hotspot
+JDK-8301622
+ProcessTools.java compilation gets ThreadDeath deprecation warning
+P4
+Enhancement
+hotspot
+JDK-8279619
+[JVMCI] improve EncodedSpeculationReason
+P4
+Enhancement
+hotspot
+JDK-8297936
+Use reachabilityFence to manage liveness in ClassUnload tests
+P4
+Enhancement
+hotspot
+JDK-8301117
+Remove old_size param from ResizeableResourceHashtable::resize()
+P4
+Enhancement
+hotspot
+JDK-8303527
+update for deprecated sprintf for jdk.hotspot.agent
+P4
+Enhancement
+hotspot
+JDK-8292269
+Replace FileMapInfo::fail_continue() with Unified Logging
+P4
+Enhancement
+hotspot
+JDK-8303588
+[JVMCI] make JVMCI source directories conform with standard layout
+P4
+Enhancement
+hotspot
+JDK-8303562
+Remove obsolete comments in os::pd_attempt_reserve_memory_at
+P4
+Enhancement
+hotspot
+JDK-8299518
+HotSpotVirtualMachine shared code across different platforms
+P4
+Enhancement
+hotspot
+JDK-8302780
+Add support for vectorized arraycopy GC barriers
+P4
+Enhancement
+hotspot
+JDK-8303244
+G1: call CardTable::clear_MemRegion directly
+P4
+Enhancement
+hotspot
+JDK-8301222
+Generalize check_release_entry in OopStorage
+P4
+Enhancement
+hotspot
+JDK-8300654
+Remove JVMFlag::flag_error_str as it is unused
+P4
+Enhancement
+hotspot
+JDK-8303486
+[REDO] Update ProcessTools.startProcess(...) to exit early if process exit before linePredicate is printed.
+P4
+Enhancement
+hotspot
+JDK-8303264
+Refactor nsk/stress/strace to extract shared and remove redundant code
+P4
+Enhancement
+hotspot
+JDK-8204550
+NMT: RegionIterator does not need to keep _current_size
+P4
+Enhancement
+hotspot
+JDK-8303534
+Merge CompactibleSpace into ContiguousSpace
+P4
+Enhancement
+hotspot
+JDK-8303621
+BitMap::iterate should support lambdas and other function objects
+P4
+Enhancement
+hotspot
+JDK-8302452
+[JVMCI] Export _poly1305_processBlocks, JfrThreadLocal fields to JVMCI compiler.
+P4
+Enhancement
+hotspot
+JDK-8303151
+DCmd framework cleanups
+P4
+Enhancement
+hotspot
+JDK-8286781
+Replace the deprecated/obsolete gethostbyname and inet_addr calls
+P4
+Enhancement
+hotspot
+JDK-8303622
+JFR: Missing message with Objects.requireNonNull
+P4
+Enhancement
+hotspot
+JDK-8302189
+Mark assertion failures noreturn
+P4
+Enhancement
+hotspot
+JDK-8302799
+Refactor Debugging variable usage for noreturn crash reporting
+P4
+Enhancement
+hotspot
+JDK-8303443
+IGV: Syntax highlighting and resizing for filter editor
+P4
+Enhancement
+hotspot
+JDK-8302508
+Add timestamp to the output TraceCompilerThreads
+P4
+Enhancement
+hotspot
+JDK-8303467
+Serial: Refactor reference processor
+P4
+Enhancement
+hotspot
+JDK-8303334
+Further improve liveness/remembered set verification for G1
+P4
+Enhancement
+hotspot
+JDK-8300783
+Consolidate byteswap implementations
+P4
+Enhancement
+hotspot
+JDK-8305757
+Call Method::compute_has_loops_flag() when creating CDS archive
+P4
+Enhancement
+hotspot
+JDK-8303431
+[JVMCI] libgraal annotation API
+P4
+Enhancement
+hotspot
+JDK-8306321
+Add an accessor for the top of a PLAB
+P4
+Enhancement
+hotspot
+JDK-8305880
+Loom: Avoid putting stale object pointers in oops
+P4
+Enhancement
+hotspot
+JDK-8306459
+s390x: Replace NULL to nullptr
+P4
+Enhancement
+hotspot
+JDK-8306284
+G1: Remove assertion in G1ScanHRForRegionClosure::do_claimed_block
+P4
+Enhancement
+hotspot
+JDK-8305236
+Some LoadLoad barriers in the interpreter are unnecessary after JDK-8220051
+P4
+Enhancement
+hotspot
+JDK-8306436
+Rename PSS*:_n_workers to PSS*:_num_workers
+P4
+Enhancement
+hotspot
+JDK-8306440
+Rename PSS:_num_optional_regions to _max_num_optional_regions
+P4
+Enhancement
+hotspot
+JDK-8298048
+Combine CDS archive heap into a single block
+P4
+Enhancement
+hotspot
+JDK-8305062
+Refactor CardTable::resize_covered_region
+P4
+Enhancement
+hotspot
+JDK-8305056
+Avoid unaligned access in emit_intX methods if it's unsupported
+P4
+Enhancement
+hotspot
+JDK-8306444
+Don't leak memory in PhaseChaitin::PhaseChaitin
+P4
+Enhancement
+hotspot
+JDK-8305994
+Guarantee eventual async monitor deflation
+P4
+Enhancement
+hotspot
+JDK-8305922
+[aix,linux] Avoid comparing 'this' to nullptr
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+hotspot
+JDK-8306872
+Rename Node_Array::Size()
+P4
+Enhancement
+hotspot
+JDK-8302328
+[s390x] Simplify asm_assert definition
+P4
+Enhancement
+hotspot
+JDK-8306654
+Disable NMT location_printing_cheap_dead_xx tests again
+P4
+Enhancement
+hotspot
+JDK-8306858
+Remove some remnants of CMS from SA agent
+P4
+Enhancement
+hotspot
+JDK-8287087
+C2: perform SLP reduction analysis on-demand
+P4
+Enhancement
+hotspot
+JDK-8306833
+Change CardTable::_covered to static array
+P4
+Enhancement
+hotspot
+JDK-8306901
+Macro offset_of confuses Eclipse CDT
+P4
+Enhancement
+hotspot
+JDK-8306696
+Remove MetaspaceReclaimPolicy=aggressive and obsolete MetaspaceReclaimPolicy
+P4
+Enhancement
+hotspot
+JDK-8306028
+separate ThreadStart/ThreadEnd events posting code in JVMTI VTMS transitions
+P4
+Enhancement
+hotspot
+JDK-8304444
+Reappearance of NULL in jvmtiThreadState.cpp
+P4
+Enhancement
+hotspot
+JDK-8300197
+Freeze/thaw an interpreter frame using a single copy_to_chunk() call
+P4
+Enhancement
+hotspot
+JDK-8306510
+Print number of threads and stack sizes in error reports
+P4
+Enhancement
+hotspot
+JDK-8307150
+RISC-V: Remove remaining StoreLoad barrier with UseCondCardMark for Serial/Parallel GC
+P4
+Enhancement
+hotspot
+JDK-8307106
+Allow concurrent GCs to walk CLDG without ClassLoaderDataGraph_lock
+P4
+Enhancement
+hotspot
+JDK-8307005
+Make CardTableBarrierSet::initialize non-virtual
+P4
+Enhancement
+hotspot
+JDK-8306836
+Remove pinned tag for G1 heap regions
+P4
+Enhancement
+hotspot
+JDK-8307346
+Add missing gc+phases logging for ObjectCount(AfterGC) JFR event collection code
+P4
+Enhancement
+hotspot
+JDK-8307378
+Allow collectors to provide specific values for GC notifications' actions
+P4
+Enhancement
+hotspot
+JDK-8307421
+Fix comment in g1CollectionSetChooser.hpp after JDK-8306836
+P4
+Enhancement
+hotspot
+JDK-8307236
+Rendezvous GC threads under STS for monitor deflation
+P4
+Enhancement
+hotspot
+JDK-8306583
+Add JVM crash check in CDSTestUtils.executeAndLog
+P4
+Enhancement
+hotspot
+JDK-8307553
+Remove dead code MetaspaceClosure::push_method_entry
+P4
+Enhancement
+hotspot
+JDK-8307446
+RISC-V: Improve performance of floating point to integer conversion
+P4
+Enhancement
+hotspot
+JDK-8301739
+AArch64: Add optimized rules for vector compare with immediate for SVE
+P4
+Enhancement
+hotspot
+JDK-8306966
+RISC-V: Support vector cast node for Vector API
+P4
+Enhancement
+hotspot
+JDK-8307521
+Introduce check_oop infrastructure to check oops in the oop class
+P4
+Enhancement
+hotspot
+JDK-8293547
+Add relaxed add_and_fetch for macos aarch64 atomics
+P4
+Enhancement
+hotspot
+JDK-8307517
+Add VMErrorCallback infrastructure to extend hs_err dumping
+P4
+Enhancement
+hotspot
+JDK-8307100
+Remove ReferentBasedDiscovery reference discovery policy
+P4
+Enhancement
+hotspot
+JDK-8307571
+Remove unused SomeConstants in WatcherThread class
+P4
+Enhancement
+hotspot
+JDK-8291555
+Implement alternative fast-locking scheme
+P4
+Enhancement
+hotspot
+JDK-8306738
+Select num workers for safepoint ParallelCleanupTask
+P4
+Enhancement
+hotspot
+JDK-8307399
+get rid of compatibility ThreadStart/ThreadEnd events for virtual threads
+P4
+Enhancement
+hotspot
+JDK-8307651
+RISC-V: stringL_indexof_char instruction has wrong format string
+P4
+Enhancement
+hotspot
+JDK-8307351
+(CmpI/L(AndI/L reg1 reg2)) on x86 can be optimized
+P4
+Enhancement
+hotspot
+JDK-8307348
+Parallelize heap walk for ObjectCount(AfterGC) JFR event collection
+P4
+Enhancement
+hotspot
+JDK-8306965
+osThread allocation failures should not abort the VM
+P4
+Enhancement
+hotspot
+JDK-8307758
+RISC-V: Improve bit test code introduced by JDK-8291555
+P4
+Enhancement
+hotspot
+JDK-8307869
+Remove unnecessary log statements from arm32 fastlocking code
+P4
+Enhancement
+hotspot
+JDK-8307813
+[JVMCI] Export markWord::lock_mask_in_place to JVMCI compilers.
+P4
+Enhancement
+hotspot
+JDK-8306034
+add support of virtual threads to JVMTI StopThread
+P4
+Enhancement
+hotspot
+JDK-8281715
+Move "base CDS archive not loaded" tests to SharedArchiveFileOption.java
+P4
+Enhancement
+hotspot
+JDK-8307518
+Remove G1 workaround in jstat about zero sized generation sizes
+P4
+Enhancement
+hotspot
+JDK-8307806
+Rename Atomic::fetch_and_add and friends
+P4
+Enhancement
+hotspot
+JDK-8307808
+G1: Remove partial object-count report after gc
+P4
+Enhancement
+hotspot
+JDK-8307855
+update for deprecated sprintf for src/utils
+P4
+Enhancement
+hotspot
+JDK-8306541
+Refactor collection set candidate handling to prepare for JDK-8140326
+P4
+Enhancement
+hotspot
+JDK-8307480
+Improve SA "transported core" documentation for windows
+P4
+Enhancement
+hotspot
+JDK-8307926
+Support byte-sized atomic bitset operations
+P4
+Enhancement
+hotspot
+JDK-8307959
+Remove explicit type casts from SerializeClosure::do_xxx() calls
+P4
+Enhancement
+hotspot
+JDK-8307567
+Avoid relocating global roots to metaspaceObjs in CDS dump
+P4
+Enhancement
+hotspot
+JDK-8308097
+Generational ZGC: Update constructor syntax
+P4
+Enhancement
+hotspot
+JDK-8307533
+Use atomic bitset functions for metadata flags
+P4
+Enhancement
+hotspot
+JDK-8307458
+Add periodic heap usage JFR events
+P4
+Enhancement
+hotspot
+JDK-8296469
+Instrument VMError::report with reentrant iteration step for register and stack printing
+P4
+Enhancement
+hotspot
+JDK-8308088
+Improve class check in CollectedHeap::is_oop
+P4
+Enhancement
+hotspot
+JDK-8308236
+Remove SystemDictionaryShared::clone_dumptime_tables()
+P4
+Enhancement
+hotspot
+JDK-8279993
+Assert that a shared class is not loaded more than once
+P4
+Enhancement
+hotspot
+JDK-8308277
+RISC-V: Improve vectorization of Match.sqrt() on floats
+P4
+Enhancement
+hotspot
+JDK-8307609
+RISC-V: Added support for Extract, Compress, Expand and other nodes for Vector API
+P4
+Enhancement
+hotspot
+JDK-8308396
+Fix offset_of conversion warnings in runtime code
+P4
+Enhancement
+hotspot
+JDK-8308342
+Remove MetaspaceClosure::Ref::keep_after_pushing()
+P4
+Enhancement
+hotspot
+JDK-8308000
+add PopFrame support for virtual threads
+P4
+Enhancement
+hotspot
+JDK-8307804
+Reorganize ArrayJuggle test cases
+P4
+Enhancement
+hotspot
+JDK-8308181
+Generational ZGC: Remove CLDG_lock from old gen root scanning
+P4
+Enhancement
+hotspot
+JDK-8307190
+Refactor ref_at methods in Constant Pool
+P4
+Enhancement
+hotspot
+JDK-8306507
+[linux] Print number of memory mappings in error reports
+P4
+Enhancement
+hotspot
+JDK-8302652
+[SuperWord] Reduction should happen after loop, when possible
+P4
+Enhancement
+hotspot
+JDK-8308403
+[s390x] separate remaining_cargs from z_abi_160
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+hotspot
+JDK-8297887
+Update Siphash
+P4
+Enhancement
+hotspot
+JDK-8308400
+add ForceEarlyReturn support for virtual threads
+P4
+Enhancement
+hotspot
+JDK-8308656
+RISC-V: vstring_compare doesnt manifest usage of all vector registers
+P4
+Enhancement
+hotspot
+JDK-8308506
+Reduce testing time by removing combinations tested
+P4
+Enhancement
+hotspot
+JDK-8308655
+Narrow types of ConstantPool and ConstMethod returns
+P4
+Enhancement
+hotspot
+JDK-8308098
+G1: Remove redundant checks in G1ObjectCountIsAliveClosure
+P4
+Enhancement
+hotspot
+JDK-8308657
+ReplayInline is not availabe in production build
+P4
+Enhancement
+hotspot
+JDK-8308594
+Use atomic bitset function for PackageEntry::_defined_by_cds_in_class_path
+P4
+Enhancement
+hotspot
+JDK-8308814
+extend SetLocalXXX minimal support for virtual threads
+P4
+Enhancement
+hotspot
+JDK-8308915
+RISC-V: Improve temporary vector register usage avoiding the use of v0
+P4
+Enhancement
+hotspot
+JDK-8308948
+Remove unimplemented ThreadLocalAllocBuffer::reset
+P4
+Enhancement
+hotspot
+JDK-8308906
+Make CIPrintCompilerName a diagnostic flag
+P4
+Enhancement
+hotspot
+JDK-8308817
+RISC-V: Support VectorTest node for Vector API
+P4
+Enhancement
+hotspot
+JDK-8307795
+AArch64: Optimize VectorMask.truecount() on Neon
+P4
+Enhancement
+hotspot
+JDK-8308997
+RISC-V: Sign extend when comparing 32-bit value with zero instead of testing the sign bit
+P4
+Enhancement
+hotspot
+JDK-8240774
+[REDO] G1DirtyCardQueue destructor has useless flush
+P4
+Enhancement
+hotspot
+JDK-8309048
+Remove malloc locker test case
+P4
+Enhancement
+hotspot
+JDK-8309111
+Removing unused constructor of PerfLongCounter and PerfLongVariable
+P4
+Enhancement
+hotspot
+JDK-8308765
+RISC-V: Expand size of stub routines for zgc only
+P4
+Enhancement
+hotspot
+JDK-8308917
+C2 SuperWord::output: assert before bailout with CountedLoopReserveKit
+P4
+Enhancement
+hotspot
+JDK-8308910
+Allow executeAndLog to accept running process
+P4
+Enhancement
+infrastructure
+JDK-8299146
+No copyright statement on ArtifactResolverException.java
+P4
+Enhancement
+infrastructure
+JDK-8294403
+[REDO] make test should report only on executed tests
+P4
+Enhancement
+infrastructure
+JDK-8146132
+Excessive output from make test-image
+P4
+Enhancement
+infrastructure
+JDK-8300806
+Update googletest to v1.13.0
+P4
+Enhancement
+infrastructure
+JDK-8301097
+Update GHA XCode to 12.5.1
+P4
+Enhancement
+infrastructure
+JDK-8298424
+Remove redundant FOUND_CORES variable in build-performance.m4
+P4
+Enhancement
+infrastructure
+JDK-8301393
+Include cdb in the Windows devkit
+P4
+Enhancement
+infrastructure
+JDK-8301717
+Remove obsolete jib profiles
+P4
+Enhancement
+infrastructure
+JDK-8302155
+[AIX] NUM_LCPU is not required variable
+P4
+Enhancement
+infrastructure
+JDK-8302599
+Extend ASan support to Microsoft Visual C++
+P4
+Enhancement
+infrastructure
+JDK-8304434
+[AIX] Update minimum xlclang version
+P4
+Enhancement
+infrastructure
+JDK-8307194
+Add make target for optionally building a complete set of all JDK and hotspot libjvm static libraries
+P4
+Enhancement
+infrastructure
+JDK-8307520
+set minimum supported CPU architecture to Power8 on AIX
+P4
+Enhancement
+infrastructure
+JDK-8307573
+Implementation of JEP 449: Deprecate the Windows 32-bit x86 Port for Removal
+P4
+Enhancement
+infrastructure
+JDK-8308475
+Make the thread dump files generated by jcmd Thread.dump_to_file jtreg failure handler action easily accessible
+P4
+Enhancement
+other-libs
+JDK-8294982
+Implementation of Classfile API
+P4
+Enhancement
+performance
+JDK-8301092
+Add benchmark for CRC32
+P4
+Enhancement
+performance
+JDK-8302113
+Improve CRC32 intrinsic with crypto pmull on AArch64
+P4
+Enhancement
+performance
+JDK-8303401
+Add a Vector API equalsIgnoreCase micro benchmark
+P4
+Enhancement
+performance
+JDK-8302783
+Improve CRC32C intrinsic with crypto pmull on AArch64
+P4
+Enhancement
+performance
+JDK-8307483
+New micros for j.u.c.LockSupport
+P4
+Enhancement
+security-libs
+JDK-8300272
+Improve readability of the test JarWithOneNonDisabledDigestAlg
+P4
+Enhancement
+security-libs
+JDK-8288050
+Add support of SHA-512/224 and SHA-512/256 to the PBKDF2 and PBES2 impls in SunJCE provider
+P4
+Enhancement
+security-libs
+JDK-8286907
+keytool should warn about weak PBE algorithms
+P4
+Enhancement
+security-libs
+JDK-8300259
+Add test coverage for processing of pending block files in signed JARs
+P4
+Enhancement
+security-libs
+JDK-8301274
+update for deprecated sprintf for security components
+P4
+Enhancement
+security-libs
+JDK-8302623
+jarsigner - use BufferedOutputStream to improve performance while creating the signed jar
+P4
+Enhancement
+security-libs
+JDK-8303442
+Clean up w2k_lsa_auth linker parameters
+P4
+Enhancement
+security-libs
+JDK-8301793
+AlgorithmId should not encode a missing parameters field as NULL unless hardcoded
+P4
+Enhancement
+security-libs
+JDK-8306772
+Remove sun.security.x509.CertException, sun.security.x509.CertParseError
+P4
+Enhancement
+security-libs
+JDK-8307077
+Convert CRLF to LF in java.xml.crypto
+P4
+Enhancement
+security-libs
+JDK-8305846
+Support compilation in Proc test utility
+P4
+Enhancement
+security-libs
+JDK-8307555
+Reduce memory reads in x86 MD5 intrinsic
+P4
+Enhancement
+security-libs
+JDK-8308118
+Avoid multiarray allocations in AESCrypt.makeSessionKey
+P4
+Enhancement
+security-libs
+JDK-8301381
+Verify DTLS 1.0 cannot be negotiated
+P4
+Enhancement
+security-libs
+JDK-8308465
+Reduce memory accesses in AArch64 MD5 intrinsic
+P4
+Enhancement
+security-libs
+JDK-8179502
+Enhance OCSP, CRL and Certificate Fetch Timeouts
+P4
+Enhancement
+security-libs
+JDK-8308872
+enhance logging and some exception in krb5/Config.java
+P4
+Enhancement
+tools
+JDK-8300111
+Add rpath for common lib locations for jpackageapplauncher
+P4
+Enhancement
+tools
+JDK-8301207
+(jdeps) Deprecate jdeps -profile option
+P4
+Enhancement
+tools
+JDK-8301636
+Minor cleanup in CommentHelper and DocPretty
+P4
+Enhancement
+tools
+JDK-8221580
+Confusing diagnostic for assigning a static final field in a constructor
+P4
+Enhancement
+tools
+JDK-8303078
+Reduce allocations when pretty printing JCTree during compilation
+P4
+Enhancement
+tools
+JDK-8293667
+Align jlink's --compress option with jmod's --compress option
+P4
+Enhancement
+tools
+JDK-8303540
+Eliminate unnecessary reference to javac internal class
+P4
+Enhancement
+tools
+JDK-8304036
+Use CommandLine class from shared module
+P4
+Enhancement
+tools
+JDK-8306952
+improve generic signature of internal DCInlineTag class
+P4
+Enhancement
+tools
+JDK-8068925
+Add @Override in javax.tools classes
+
+P3
+Enhancement
+core-libs
+JDK-8298726
+(fs) Change PollingWatchService to record last modified time as FileTime rather than milliseconds
+P4
+Enhancement
+core-libs
+JDK-8299499
+Usage of constructors of primitive wrapper classes should be avoided in java.net API docs
+P4
+Enhancement
+core-libs
+JDK-8299500
+Usage of constructors of primitive wrapper classes should be avoided in java.text API docs
+P4
+Enhancement
+core-libs
+JDK-8299501
+Usage of constructors of primitive wrapper classes should be avoided in java.util API docs
+P4
+Enhancement
+core-libs
+JDK-8299498
+Usage of constructors of primitive wrapper classes should be avoided in java.lang API docs
+P4
+Enhancement
+xml
+JDK-8299502
+Usage of constructors of primitive wrapper classes should be avoided in javax.xml API docs
+P4
+Enhancement
+tools
+JDK-8144891
+ToolBox should use java.nio.file.Path internally, instead of java.io.File
+P4
+Enhancement
+tools
+JDK-8306560
+Add TOOLING.jsh load file
+P4
+Enhancement
+tools
+JDK-8309134
+Augment test/langtools/tools/javac/versions/Versions.java for JDK 21 language changes
+P4
+Enhancement
+xml
+JDK-8301269
+Update Commons BCEL to Version 6.7.0
+P5
+Enhancement
+client-libs
+JDK-8303213
+Avoid AtomicReference in TextComponentPrintable
+P5
+Enhancement
+core-libs
+JDK-8302360
+Atomic*.compareAndExchange Javadoc unclear
+P5
+Enhancement
+core-libs
+JDK-8304591
+(fs) UnixPath.stringValue need not be volatile
+P5
+Enhancement
+core-libs
+JDK-8305696
+(zipfs) Avoid redundant LinkedHashMap.containsKey call ZipFileSystem.makeParentDirs
+P5
+Enhancement
+core-svc
+JDK-8304376
+Rename t1/t2 classes in com/sun/jdi/CLETest.java to avoid class duplication error in IDE
+P5
+Enhancement
+hotspot
+JDK-8303883
+Confusing parameter name in G1UpdateRemSetTrackingBeforeRebuild::distribute_marked_bytes
+P5
+Enhancement
+hotspot
+JDK-8304015
+G1: Metaspace-induced GCs should not trigger maximal compaction
+P5
+Enhancement
+hotspot
+JDK-8293324
+ciField.hpp has two methods to return field's offset
+P5
+Enhancement
+hotspot
+JDK-8305112
+RISC-V: Typo fix for RVC description
+P5
+Enhancement
+core-libs
+JDK-8299976
+Initialize static fields in Net eagerly
+P5
+Enhancement
+client-libs
+JDK-8299199
+Avoid redundant split calls in FontConfiguration.initReorderMap implementations
+P5
+Enhancement
+client-libs
+JDK-8298449
+Unnecessary Vector usage in MetaData.ProxyPersistenceDelegate
+P5
+Enhancement
+client-libs
+JDK-8298447
+Unnecessary Vector usage in DocPrintJob implementations
+P5
+Enhancement
+client-libs
+JDK-8299425
+"LCMSImageLayout.isIntPacked" flag can be deleted
+P5
+Enhancement
+client-libs
+JDK-8300166
+Unused array allocation in ProcessPath.doProcessPath
+P5
+Enhancement
+client-libs
+JDK-8300731
+Avoid unnecessary array fill after creation in PaletteBuilder
+P5
+Enhancement
+client-libs
+JDK-8300828
+Avoid unnecessary array fill after creation in com.sun.media.sound
+P5
+Enhancement
+client-libs
+JDK-8300929
+Avoid unnecessary array fill after creation in java.awt.image
+P5
+Enhancement
+client-libs
+JDK-8300235
+Use VarHandle access in Image(Input | Output)StreamImpl classes
+P5
+Enhancement
+client-libs
+JDK-8301342
+Prefer ArrayList to LinkedList in LayoutComparator
+P5
+Enhancement
+client-libs
+JDK-8301828
+Avoid unnecessary array fill after creation in javax.swing.text
+P5
+Enhancement
+client-libs
+JDK-8302120
+Prefer ArrayList to LinkedList in AggregatePainter
+P5
+Enhancement
+client-libs
+JDK-8302268
+Prefer ArrayList to LinkedList in XEmbeddedFramePeer
+P5
+Enhancement
+core-libs
+JDK-8297778
+Modernize and improve module jdk.sctp
+P5
+Enhancement
+core-libs
+JDK-8297822
+De-duplicate code in module jdk.sctp
+P5
+Enhancement
+core-libs
+JDK-8298567
+Make field in RandomAccessFile final
+P5
+Enhancement
+core-libs
+JDK-8297682
+Use Collections.emptyIterator where applicable
+P5
+Enhancement
+core-libs
+JDK-8299193
+(bf) Buffer.capacity should be declared final
+P5
+Enhancement
+core-libs
+JDK-8300868
+Reduce visibility in java.io.SerialCallbackContext
+P5
+Enhancement
+core-libs
+JDK-8300867
+Fix document issues in java.io
+P5
+Enhancement
+core-libs
+JDK-8300866
+Declare some classes final in java.io
+P5
+Enhancement
+core-libs
+JDK-8300863
+Remove C-style array declarations in java.io
+P5
+Enhancement
+core-libs
+JDK-8302979
+(fs) Files usage of SUPPORTED_CHARSETS could be simplified
+P5
+Enhancement
+core-libs
+JDK-8303024
+(fs) WindowsFileSystem.supportedFileAttributeViews can use Set.of
+P5
+Enhancement
+core-libs
+JDK-8303216
+Prefer ArrayList to LinkedList in sun.net.httpserver.ServerImpl
+P5
+Enhancement
+core-libs
+JDK-8303833
+java.util.LocaleISOData has wrong comments for 'Norwegian Bokmål' and 'Volapük'
+P5
+Enhancement
+core-libs
+JDK-6714245
+[Col] Collator - Faster Comparison for identical strings.
+P5
+Enhancement
+core-libs
+JDK-8305785
+Avoid redundant HashMap.containsKey call in java.util.regex
+P5
+Enhancement
+core-svc
+JDK-8298090
+Use String.join() instead of manual loop in DescriptorSupport.toString
+P5
+Enhancement
+core-svc
+JDK-8300810
+Get rid of unused JDI removeListener() methods
+P5
+Enhancement
+core-svc
+JDK-8302858
+Polish FlightRecorderMXBeanImpl
+P5
+Enhancement
+core-svc
+JDK-8303690
+Prefer ArrayList to LinkedList in com.sun.jmx.mbeanserver.Introspector
+P5
+Enhancement
+core-svc
+JDK-8309159
+Some minor comment and code cleanup in jdk/com/sun/jdi/PopFramesTest.java
+P5
+Enhancement
+hotspot
+JDK-8300267
+Remove duplicated setter/getter for do_not_unlock
+P5
+Enhancement
+hotspot
+JDK-8301337
+Remove unused os::_polling_page
+P5
+Enhancement
+hotspot
+JDK-8302215
+G1: Last-ditch Full GC should do serial compaction for tail regions in per thread compaction points.
+P5
+Enhancement
+hotspot
+JDK-8303252
+G1: Return early from Full-GC if no regions are selected for compaction.
+P5
+Enhancement
+hotspot
+JDK-8303267
+Prefer ArrayList to LinkedList in ConcurrentLocksPrinter
+P5
+Enhancement
+hotspot
+JDK-8306766
+Reduce heap size for TestJNICriticalStressTest
+P5
+Enhancement
+hotspot
+JDK-8306735
+G1: G1FullGCScope remove unnecessary member _explicit_gc
+P5
+Enhancement
+hotspot
+JDK-8051725
+Improve expansion of Conv2B nodes in the middle-end
