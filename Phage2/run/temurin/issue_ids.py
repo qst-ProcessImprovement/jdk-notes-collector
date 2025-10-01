@@ -1,54 +1,149 @@
 """Temurin JDKリリースノートからIssue ID一覧を抽出するユーティリティ。"""
 from __future__ import annotations
 
-import json
 from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, List, Sequence, Tuple
+from typing import Iterable, List, Mapping, Sequence, Tuple
 
 import re
 _BASE_DIR = Path(__file__).parent
 _TEMURIN_DIR = _BASE_DIR / "temurin"
 _OUTPUT_DIR = _BASE_DIR / "issue_ids_output"
 _PER_FILE_DIR = _OUTPUT_DIR / "per_file"
+_TMP_DIR = _BASE_DIR / "tmp"
 _AGGREGATED_FILENAME = "all_issue_ids.txt"
 _ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
 
 
-def _iter_release_notes(json_path: Path) -> Iterable[dict]:
-    """JSONに含まれるリリースノート項目を順に返す。"""
-    try:
-        with json_path.open("r", encoding="utf-8") as file:
-            data = json.load(file)
-    except FileNotFoundError as exc:
-        raise FileNotFoundError(f"入力JSONが見つかりません: {json_path}") from exc
-
-    notes = data.get("release_notes")
-    if not isinstance(notes, list):
-        raise ValueError("release_notes が配列ではありません")
-    for entry in notes:
-        if not isinstance(entry, dict):
-            raise ValueError("release_notes 内の要素がオブジェクトではありません")
-        yield entry
+@dataclass(slots=True, frozen=True)
+class ReleaseNoteEntry:
+    priority: str
+    issue_type: str
+    issue_id: str
+    summary: str
+    component: str | None
 
 
-def collect_issue_ids(json_path: Path) -> Tuple[List[str], dict[str, set[str]]]:
+def _iter_release_notes(text_path: Path) -> Iterable[ReleaseNoteEntry]:
+    """temurinテキストに含まれるリリースノート項目を順に返す。"""
+    if not text_path.is_file():
+        raise FileNotFoundError(f"入力テキストが見つかりません: {text_path}")
+
+    raw_lines = text_path.read_text(encoding="utf-8").splitlines()
+    lines = [line.strip() for line in raw_lines if line.strip()]
+    index = 0
+    line_count = len(lines)
+
+    while index < line_count:
+        priority = lines[index]
+        index += 1
+        if not priority.startswith("P"):
+            raise ValueError(f"優先度行の形式が不正です: {text_path} -> '{priority}'")
+
+        if index >= line_count:
+            raise ValueError(f"タイプ行が欠落しています: {text_path}")
+        issue_type = lines[index]
+        index += 1
+
+        if index >= line_count:
+            raise ValueError(f"Issue ID行が欠落しています: {text_path}")
+        candidate = lines[index]
+        index += 1
+
+        if _ISSUE_ID_PATTERN.fullmatch(candidate):
+            component: str | None = None
+            issue_id = _require_jdk_issue_id(candidate, source_path=text_path, field_name="id")
+        else:
+            component = candidate
+            if index >= line_count:
+                raise ValueError(f"Issue ID行が欠落しています: {text_path}")
+            issue_id = _require_jdk_issue_id(lines[index], source_path=text_path, field_name="id")
+            index += 1
+
+        if index >= line_count:
+            raise ValueError(f"概要行が欠落しています: {text_path}:{issue_id}")
+        summary = lines[index]
+        index += 1
+
+        yield ReleaseNoteEntry(
+            priority=priority,
+            issue_type=issue_type,
+            issue_id=issue_id,
+            summary=summary,
+            component=component,
+        )
+
+
+def collect_issue_ids(
+    release_path: Path,
+    entries: Iterable[ReleaseNoteEntry],
+    reference_backports: Mapping[str, str],
+) -> Tuple[List[str], dict[str, set[str]]]:
     """Backportの元Issue IDを含むIssue ID一覧とBackport対応表を抽出して返す。"""
     issue_ids: List[str] = []
     backport_map: dict[str, set[str]] = {}
-    for entry in _iter_release_notes(json_path):
-        issue_type = entry.get("type")
-        if issue_type == "Backport":
-            backport_of = _require_jdk_issue_id(entry.get("backportOf"), json_path=json_path, field_name="backportOf")
-            backport_issue_id = _require_jdk_issue_id(entry.get("id"), json_path=json_path, field_name="id")
+
+    for entry in entries:
+        if entry.issue_type == "Backport":
+            try:
+                backport_of = _require_jdk_issue_id(
+                    reference_backports[entry.issue_id],
+                    source_path=release_path,
+                    field_name="backportOf",
+                )
+            except KeyError as exc:
+                raise KeyError(
+                    f"Backport元のIssue IDをissue_ids_outputから解決できません: {release_path}:{entry.issue_id}"
+                ) from exc
+            backport_map.setdefault(backport_of, set()).add(entry.issue_id)
             issue_ids.append(backport_of)
-            backport_map.setdefault(backport_of, set()).add(backport_issue_id)
             continue
 
-        issue_id = _require_jdk_issue_id(entry.get("id"), json_path=json_path, field_name="id")
-        issue_ids.append(issue_id)
-        backport_map.setdefault(issue_id, set())
+        backport_map.setdefault(entry.issue_id, set())
+        issue_ids.append(entry.issue_id)
+
     return issue_ids, backport_map
+
+
+def _load_reference_backports() -> dict[str, str]:
+    """issue_ids_output配下からBackport -> 元Issue IDのマップを構築する。"""
+    mapping: dict[str, str] = {}
+
+    aggregate_path = _OUTPUT_DIR / _AGGREGATED_FILENAME
+    if aggregate_path.is_file():
+        _update_reference_mapping_from_file(mapping, aggregate_path)
+
+    if _PER_FILE_DIR.is_dir():
+        for per_file_path in sorted(_PER_FILE_DIR.glob("*.txt")):
+            _update_reference_mapping_from_file(mapping, per_file_path)
+
+    return mapping
+
+
+def _update_reference_mapping_from_file(mapping: dict[str, str], source_path: Path) -> None:
+    """issue_ids_outputの1ファイルからBackport情報を抽出してマップへ追記する。"""
+    for raw_line in source_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        parts = [part.strip() for part in line.split(",") if part.strip()]
+        if not parts:
+            continue
+        original = _require_jdk_issue_id(parts[0], source_path=source_path, field_name="original")
+        for suffix in parts[1:]:
+            if not suffix.startswith("temurin_"):
+                continue
+            backport_id = suffix[len("temurin_") :]
+            backport_issue_id = _require_jdk_issue_id(
+                backport_id, source_path=source_path, field_name="backport"
+            )
+            existing = mapping.get(backport_issue_id)
+            if existing is not None and existing != original:
+                raise ValueError(
+                    f"Backportの対応関係が衝突しています: {source_path}:{backport_issue_id}"
+                )
+            mapping[backport_issue_id] = original
 
 
 def _sorted_unique(values: Sequence[str]) -> List[str]:
@@ -62,16 +157,16 @@ def _sorted_duplicates(values: Sequence[str]) -> List[str]:
     return sorted([value for value, count in counter.items() if count > 1])
 
 
-def _require_jdk_issue_id(value: object, *, json_path: Path, field_name: str) -> str:
+def _require_jdk_issue_id(value: object, *, source_path: Path, field_name: str) -> str:
     """JDK Issue IDが正準表現か検証し、正当な値を返す。"""
     if not isinstance(value, str):
-        raise ValueError(f"{json_path}:{field_name} が文字列ではありません: {value!r}")
+        raise ValueError(f"{source_path}:{field_name} が文字列ではありません: {value!r}")
     normalized = value.strip()
     if not normalized:
-        raise ValueError(f"{json_path}:{field_name} が空文字です")
+        raise ValueError(f"{source_path}:{field_name} が空文字です")
     if not _ISSUE_ID_PATTERN.fullmatch(normalized):
         raise ValueError(
-            f"正準表現に合致しないIssue IDを検出しました: {json_path}:{field_name} -> '{normalized}'"
+            f"正準表現に合致しないIssue IDを検出しました: {source_path}:{field_name} -> '{normalized}'"
         )
     return normalized
 
@@ -83,18 +178,18 @@ def _format_issue_line(issue_id: str, backport_ids: Iterable[str]) -> str:
         return issue_id
     return ",".join([issue_id, *suffixes])
 
-def _canonical_output_filename(json_path: Path) -> str:
-    """JSONファイル名からビルド番号サフィックスを除いた出力ファイル名を得る。"""
-    stem = json_path.stem
+def _canonical_output_filename(source_path: Path) -> str:
+    """入力ファイル名からビルド番号サフィックスを除いた出力ファイル名を得る。"""
+    stem = source_path.stem
     canonical_stem = re.sub(r"\+\d+$", "", stem)
     return f"{canonical_stem}.txt"
 
 def _write_unique_ids(
-    json_path: Path, issue_ids: Sequence[str], backport_map: dict[str, set[str]]
+    source_path: Path, issue_ids: Sequence[str], backport_map: dict[str, set[str]]
 ) -> List[str]:
     """ユニークなIssue IDをファイル別ディレクトリへ書き出し、書き出したIDを返す。"""
     _PER_FILE_DIR.mkdir(parents=True, exist_ok=True)
-    output_filename = _canonical_output_filename(json_path)
+    output_filename = _canonical_output_filename(source_path)
     output_path = _PER_FILE_DIR / output_filename
     unique_ids = _sorted_unique(issue_ids)
     lines = [_format_issue_line(issue_id, backport_map.get(issue_id, ())) for issue_id in unique_ids]
@@ -103,33 +198,48 @@ def _write_unique_ids(
 
 
 def main() -> None:
-    """temurin配下のJSONを処理し、重複IDのみを標準出力する。"""
+    """temurin配下のテキストを処理し、重複IDのみを標準出力する。"""
     if not _TEMURIN_DIR.is_dir():
         raise FileNotFoundError(f"temurinディレクトリが存在しません: {_TEMURIN_DIR}")
 
-    json_files = sorted(_TEMURIN_DIR.glob("*.json"))
-    if not json_files:
-        raise FileNotFoundError(f"JSONファイルが見つかりません: {_TEMURIN_DIR}")
+    release_files = sorted(_TEMURIN_DIR.glob("*.txt"))
+    if not release_files:
+        raise FileNotFoundError(f"テキストファイルが見つかりません: {_TEMURIN_DIR}")
 
+    reference_backports = _load_reference_backports()
     aggregate_ids: set[str] = set()
     aggregate_backports: dict[str, set[str]] = {}
+    collected_text_issue_ids: set[str] = set()
 
-    for json_path in json_files:
-        issue_ids, backport_map = collect_issue_ids(json_path)
-        unique_ids = _write_unique_ids(json_path, issue_ids, backport_map)
+    for release_path in release_files:
+        entries = list(_iter_release_notes(release_path))
+        if not entries:
+            continue
+
+        collected_text_issue_ids.update(entry.issue_id for entry in entries)
+        issue_ids, backport_map = collect_issue_ids(release_path, entries, reference_backports)
+        for original, backports in backport_map.items():
+            for backport in backports:
+                reference_backports.setdefault(backport, original)
+
+        unique_ids = _write_unique_ids(release_path, issue_ids, backport_map)
         aggregate_ids.update(unique_ids)
         for issue_id in unique_ids:
             aggregate_backports.setdefault(issue_id, set())
         for issue_id, backports in backport_map.items():
             aggregate_backports.setdefault(issue_id, set()).update(backports)
-        duplicate_ids = _sorted_duplicates(issue_ids)
-        if not duplicate_ids:
-            continue
 
-        print("duplicate ids: " + json_path.name)
-        for issue_id in duplicate_ids:
-            print(issue_id)
-        print()
+        duplicate_ids = _sorted_duplicates(issue_ids)
+        if duplicate_ids:
+            print("duplicate ids: " + release_path.name)
+            for issue_id in duplicate_ids:
+                print(issue_id)
+            print()
+
+    _TMP_DIR.mkdir(parents=True, exist_ok=True)
+    tmp_issue_path = _TMP_DIR / "temurin_jdk_ids.txt"
+    tmp_ids = _sorted_unique(list(collected_text_issue_ids))
+    tmp_issue_path.write_text("\n".join(tmp_ids) + ("\n" if tmp_ids else ""), encoding="utf-8")
 
     _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     aggregate_output_path = _OUTPUT_DIR / _AGGREGATED_FILENAME
