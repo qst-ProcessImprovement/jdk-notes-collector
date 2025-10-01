@@ -15,6 +15,9 @@ PRODUCT_DEFINITIONS: Tuple[Tuple[str, Tuple[str, ...]], ...] = (
     ("OracleJDK", ("oraclejdk", "issue_ids.txt")),
     ("Temurin", ("temurin", "issue_ids.txt")),
 )
+BACKPORT_PREFIX_TO_PRODUCT: Dict[str, str] = {
+    path_parts[0]: product for product, path_parts in PRODUCT_DEFINITIONS
+}
 
 
 class JDKDiffError(Exception):
@@ -35,22 +38,58 @@ def resolve_product_specs() -> Tuple[List[Tuple[str, Path]], Path]:
     )
 
 
-def load_issue_ids(path: Path) -> set[str]:
+def load_issue_ids(path: Path) -> Tuple[set[str], Dict[str, Dict[str, List[str]]]]:
     if not path.is_file():
         raise JDKDiffError(f"JDK番号リストが見つかりません: {path}")
 
     issue_ids: set[str] = set()
+    backport_entries: Dict[str, Dict[str, List[str]]] = {}
     with path.open(encoding="utf-8") as handle:
         for lineno, raw_line in enumerate(handle, start=1):
             entry = raw_line.strip()
             if not entry:
                 continue
-            if not entry.startswith("JDK-") or not entry[4:].isdigit():
+
+            segments = [segment.strip() for segment in entry.split(",")]
+            base_issue = segments[0]
+            if not base_issue.startswith("JDK-") or not base_issue[4:].isdigit():
                 raise JDKDiffError(
                     f"正準表現に反する行を検出しました: {path}:{lineno} -> '{entry}'"
                 )
-            issue_ids.add(entry)
-    return issue_ids
+            if base_issue in issue_ids:
+                raise JDKDiffError(
+                    f"同一JDK番号が重複しています: {path}:{lineno} -> '{base_issue}'"
+                )
+
+            issue_ids.add(base_issue)
+
+            for raw_backport in segments[1:]:
+                if not raw_backport:
+                    raise JDKDiffError(
+                        f"正準表現に反するbackport指定を検出しました: {path}:{lineno}"
+                    )
+                if "_" not in raw_backport:
+                    raise JDKDiffError(
+                        f"backport指定の形式が不正です: {path}:{lineno} -> '{raw_backport}'"
+                    )
+
+                prefix, backport_issue = raw_backport.split("_", 1)
+                product_name = BACKPORT_PREFIX_TO_PRODUCT.get(prefix)
+                if product_name is None:
+                    raise JDKDiffError(
+                        f"未知のbackport接頭辞を検出しました: {path}:{lineno} -> '{prefix}'"
+                    )
+                if not backport_issue.startswith("JDK-") or not backport_issue[4:].isdigit():
+                    raise JDKDiffError(
+                        f"backport指定のJDK番号が正準表現に反します: {path}:{lineno} -> '{backport_issue}'"
+                    )
+
+                per_issue = backport_entries.setdefault(base_issue, {})
+                backport_list = per_issue.setdefault(product_name, [])
+                if backport_issue not in backport_list:
+                    backport_list.append(backport_issue)
+
+    return issue_ids, backport_entries
 
 
 def make_fix_version_loader(base_dir: Path) -> Callable[[str], Tuple[str, ...]]:
@@ -124,7 +163,9 @@ def render_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
 
 
 def build_diff_table(
-    data: Dict[str, set[str]], fix_version_loader: Callable[[str], Tuple[str, ...]]
+    data: Dict[str, set[str]],
+    backport_lookup: Dict[str, Dict[str, List[str]]],
+    fix_version_loader: Callable[[str], Tuple[str, ...]]
 ) -> Tuple[List[List[str]], int, int, int]:
     if not data:
         return [], 0, 0, 0
@@ -147,7 +188,12 @@ def build_diff_table(
         if counted:
             non_21_count += 1
         formatted_fix_versions = ", ".join(fix_versions)
-        rows.append([issue_id, *presence, formatted_fix_versions])
+        per_issue_backports = backport_lookup.get(issue_id, {})
+        backport_values: List[str] = []
+        for product in product_order:
+            issues = per_issue_backports.get(product)
+            backport_values.append(", ".join(issues) if issues else "")
+        rows.append([issue_id, *presence, formatted_fix_versions, *backport_values])
 
     return rows, len(diff_ids), len(common_ids), non_21_count
 
@@ -157,11 +203,23 @@ def build_report() -> tuple[str, int, int, int]:
     fix_version_loader = make_fix_version_loader(base_dir)
 
     product_data: Dict[str, set[str]] = {}
+    backport_lookup: Dict[str, Dict[str, List[str]]] = {}
     for product, path in product_specs:
-        product_data[product] = load_issue_ids(path)
+        issue_ids, backports = load_issue_ids(path)
+        product_data[product] = issue_ids
+        for base_issue, per_product_backports in backports.items():
+            target = backport_lookup.setdefault(base_issue, {})
+            for backport_product, issues in per_product_backports.items():
+                target_list = target.setdefault(backport_product, [])
+                for issue in issues:
+                    if issue not in target_list:
+                        target_list.append(issue)
 
-    rows, diff_count, matched_count, non_21_count = build_diff_table(product_data, fix_version_loader)
-    headers = ["JDK", *product_data.keys(), "Fix Version/s"]
+    rows, diff_count, matched_count, non_21_count = build_diff_table(
+        product_data, backport_lookup, fix_version_loader
+    )
+    backport_headers = [f"JDK - {product} backport" for product in product_data.keys()]
+    headers = ["JDK", *product_data.keys(), "Fix Version/s", *backport_headers]
     table_text = render_table(headers, rows)
     return table_text, diff_count, matched_count, non_21_count
 
