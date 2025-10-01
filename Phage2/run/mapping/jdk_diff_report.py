@@ -8,7 +8,7 @@ from typing import Callable, Dict, Iterable, List, Sequence, Tuple
 import xml.etree.ElementTree as ET
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-OUTPUT_FILENAME = "jdk_diff_report.txt"
+OUTPUT_FILENAME = "jdk_diff_report.md"
 
 PRODUCT_DEFINITIONS: Tuple[Tuple[str, Tuple[str, ...]], ...] = (
     ("OpenJDK", ("openjdk", "issue_ids.txt")),
@@ -141,24 +141,14 @@ def sort_jdk_ids(issue_ids: Iterable[str]) -> List[str]:
 
 
 def render_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
-    matrix = [list(headers), *[list(row) for row in rows]]
-    columns = list(zip(*matrix))
-    widths = [max(len(str(cell)) for cell in column) for column in columns]
+    def format_row(cells: Sequence[str]) -> str:
+        return "| " + " | ".join(str(cell) for cell in cells) + " |"
 
-    def render_line(cells: Sequence[str]) -> str:
-        padded_cells = []
-        for index, (cell, width) in enumerate(zip(cells, widths)):
-            cell_str = str(cell)
-            if index == len(widths) - 1:
-                padded_cells.append(cell_str)
-            else:
-                padded_cells.append(cell_str.ljust(width))
-        return " | ".join(padded_cells).rstrip()
-
-    lines = [render_line(headers)]
-    lines.append("-+-".join("-" * width for width in widths))
+    header_line = format_row(headers)
+    separator_line = "| " + " | ".join("---" for _ in headers) + " |"
+    lines = [header_line, separator_line]
     for row in rows:
-        lines.append(render_line(row))
+        lines.append(format_row(row))
     return "\n".join(lines)
 
 
