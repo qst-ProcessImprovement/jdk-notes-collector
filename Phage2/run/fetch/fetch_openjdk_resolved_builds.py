@@ -701,7 +701,7 @@ def save_individual_xml(
 
 
 def build_aggregate_xml(
-    entries: Sequence[tuple[str, str, bytes]],
+    entries: Sequence[ResolvedBuildEntry],
     target_fix_versions: Sequence[str],
 ) -> bytes:
     root = ET.Element(
@@ -712,22 +712,26 @@ def build_aggregate_xml(
         },
     )
 
-    fix_versions_in_order = tuple(dict.fromkeys(fix_version for fix_version, _, _ in entries))
+    fix_versions_in_order = tuple(dict.fromkeys(entry.fix_version for entry in entries))
     if fix_versions_in_order:
         root.set("fixVersions", ",".join(fix_versions_in_order))
 
-    for fix_version, build_number, xml_content in entries:
+    for entry in entries:
         container = ET.SubElement(
-            root, "searchResult", attrib={"fixVersion": fix_version, "build": build_number}
+            root,
+            "searchResult",
+            attrib={
+                "fixVersion": entry.fix_version,
+                "build": entry.build_number,
+            },
         )
-        rss_root = ET.fromstring(xml_content)
-        container.append(rss_root)
+        container.append(ET.fromstring(entry.xml_content))
 
     return ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
 
 def write_aggregate_xml(
-    entries: Sequence[tuple[str, str, bytes]],
+    entries: Sequence[ResolvedBuildEntry],
     output_dir: Path,
     aggregate_filename: str,
     target_fix_versions: Sequence[str],
@@ -739,12 +743,22 @@ def write_aggregate_xml(
     return aggregate_path
 
 
+
+
+class ResolvedBuildEntry(NamedTuple):
+    """Resolved in Build の XML を収集した結果1件分。"""
+
+    fix_version: str
+    build_number: str
+    xml_content: bytes
+    fetched: bool
+
 def collect_resolved_in_build_xml(
     targets: Iterable[tuple[str, Iterable[str]]],
     output_dir: Path,
     output_subdirectory: Path,
-) -> tuple[list[tuple[str, str, bytes]], int]:
-    collected: list[tuple[str, str, bytes]] = []
+) -> tuple[list[ResolvedBuildEntry], int]:
+    collected: list[ResolvedBuildEntry] = []
     failures = 0
     for fix_version, build_numbers in targets:
         for build_number in build_numbers:
@@ -760,8 +774,15 @@ def collect_resolved_in_build_xml(
                         file=sys.stderr,
                     )
                 else:
-                    print(f"[INFO] {fix_version} {build_number}: 既存 XML を再利用します")
-                    collected.append((fix_version, build_number, xml_content))
+                    # print(f"[INFO] {fix_version} {build_number}: 既存 XML を再利用します")
+                    collected.append(
+                        ResolvedBuildEntry(
+                            fix_version=fix_version,
+                            build_number=build_number,
+                            xml_content=xml_content,
+                            fetched=False,
+                        )
+                    )
                     continue
 
             outcome, xml_content = fetch_build_xml(fix_version, build_number)
@@ -771,7 +792,14 @@ def collect_resolved_in_build_xml(
             if outcome is FetchOutcome.NOT_FOUND:
                 continue
             assert xml_content is not None
-            collected.append((fix_version, build_number, xml_content))
+            collected.append(
+                ResolvedBuildEntry(
+                    fix_version=fix_version,
+                    build_number=build_number,
+                    xml_content=xml_content,
+                    fetched=True,
+                )
+            )
     return collected, failures
 
 
@@ -796,11 +824,13 @@ def main() -> None:
             continue
 
         any_collected = True
-        for fix_version, build_number, xml_content in collected_entries:
+        for entry in collected_entries:
+            if not entry.fetched:
+                continue
             save_individual_xml(
-                fix_version,
-                build_number,
-                xml_content,
+                entry.fix_version,
+                entry.build_number,
+                entry.xml_content,
                 xml_output_root,
                 distribution.output_subdirectory,
             )
