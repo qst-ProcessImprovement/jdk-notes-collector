@@ -17,6 +17,7 @@ from typing import Callable, Dict, Iterable, List, NamedTuple, Optional, Sequenc
 from xml.etree import ElementTree as ET
 
 # 取得対象のバージョンと "Resolved in Build" の正準定義。
+import json
 OPENJDK_RESOLVED_BUILD_TARGETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("21", tuple(f"b{index:02d}" for index in range(1, 36))),
     ("21.0.1", tuple(f"b{index:02d}" for index in range(1, 11))),
@@ -89,6 +90,10 @@ TEMURIN_PER_FILE_SUBDIRECTORY = Path("temurin") / "per_file"
 TEMURIN_TMP_SUBDIRECTORY = Path("temurin") / "tmp"
 TEMURIN_AGGREGATED_FILENAME = "all_issue_ids_temurin.txt"
 TEMURIN_TMP_FILENAME = "temurin_jdk_ids.txt"
+TEMURIN_BACKOUT_TMP_FILENAME = "temurin_backout_excluded_ids.txt"
+TEMURIN_BACKOUT_MARKER_PATTERN = re.compile(r"\[BACKOUT\]", re.IGNORECASE)
+TEMURIN_BACKOUT_JDK_ID_PATTERN = re.compile(r"JDK-(\d+)", re.IGNORECASE)
+TEMURIN_BACKOUT_NUMERIC_ID_PATTERN = re.compile(r"\b(\d{6,})\b")
 TEMURIN_ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
 
 JDK_ISSUE_ID_PATTERN = TEMURIN_ISSUE_ID_PATTERN
@@ -117,61 +122,107 @@ class JDKDiffError(Exception):
 
 @dataclass(slots=True, frozen=True)
 class TemurinReleaseNoteEntry:
-    priority: str
-    issue_type: str
     issue_id: str
-    summary: str
+    issue_type: str | None
+    priority: str | None
+    title: str
     component: str | None
+    backport_of: str | None
+    backout_targets: tuple[str, ...]
 
 
 
 
-def iter_temurin_release_notes(text_path: Path) -> Iterable[TemurinReleaseNoteEntry]:
-    """Temurin のリリースノートテキストから項目を抽出する。"""
-    if not text_path.is_file():
-        raise FileNotFoundError(f"入力テキストが見つかりません: {text_path}")
+def iter_temurin_release_notes(json_path: Path) -> Iterable[TemurinReleaseNoteEntry]:
+    """Temurin のリリースノートJSONから項目を抽出する。"""
+    if not json_path.is_file():
+        raise FileNotFoundError(f"入力ファイルが見つかりません: {json_path}")
 
-    raw_lines = text_path.read_text(encoding="utf-8").splitlines()
-    lines = [line.strip() for line in raw_lines if line.strip()]
-    index = 0
+    try:
+        data = json.loads(json_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Temurin JSON の解析に失敗しました: {json_path}") from exc
 
-    while index < len(lines):
-        priority = lines[index]
-        index += 1
-        if not priority.startswith("P"):
-            raise ValueError(f"優先度行の形式が不正です: {text_path} -> '{priority}'")
+    release_notes = data.get("release_notes")
+    if not isinstance(release_notes, list):
+        raise ValueError(f"release_notes が配列ではありません: {json_path}")
 
-        if index >= len(lines):
-            raise ValueError(f"タイプ行が欠落しています: {text_path}")
-        issue_type = lines[index]
-        index += 1
+    for index, raw_entry in enumerate(release_notes, start=1):
+        if not isinstance(raw_entry, dict):
+            raise ValueError(
+                f"release_notes[{index}] がオブジェクトではありません: {json_path}"
+            )
 
-        if index >= len(lines):
-            raise ValueError(f"Issue ID行が欠落しています: {text_path}")
-        candidate = lines[index]
-        index += 1
+        issue_id = require_temurin_jdk_issue_id(
+            raw_entry.get("id"),
+            source_path=json_path,
+            field_name=f"release_notes[{index}].id",
+        )
 
-        if TEMURIN_ISSUE_ID_PATTERN.fullmatch(candidate):
-            component: str | None = None
-            issue_id = require_temurin_jdk_issue_id(candidate, source_path=text_path, field_name="id")
+        issue_type_raw = raw_entry.get("type")
+        if issue_type_raw is None:
+            issue_type: str | None = None
+        elif isinstance(issue_type_raw, str):
+            normalized_type = issue_type_raw.strip()
+            issue_type = normalized_type or None
         else:
-            component = candidate
-            if index >= len(lines):
-                raise ValueError(f"Issue ID行が欠落しています: {text_path}")
-            issue_id = require_temurin_jdk_issue_id(lines[index], source_path=text_path, field_name="id")
-            index += 1
+            raise ValueError(
+                f"type が文字列ではありません: {json_path}:release_notes[{index}].type"
+            )
 
-        if index >= len(lines):
-            raise ValueError(f"概要行が欠落しています: {text_path}:{issue_id}")
-        summary = lines[index]
-        index += 1
+        priority_raw = raw_entry.get("priority")
+        if priority_raw is None:
+            priority: str | None = None
+        elif isinstance(priority_raw, str):
+            normalized_priority = priority_raw.strip()
+            priority = normalized_priority or None
+        else:
+            raise ValueError(
+                f"priority が文字列ではありません: {json_path}:release_notes[{index}].priority"
+            )
+
+        title_raw = raw_entry.get("title")
+        if not isinstance(title_raw, str):
+            raise ValueError(
+                f"title が文字列ではありません: {json_path}:release_notes[{index}].title"
+            )
+        title = title_raw.strip()
+        if not title:
+            raise ValueError(
+                f"title が空文字です: {json_path}:release_notes[{index}].title"
+            )
+
+        component_raw = raw_entry.get("component")
+        if component_raw is None:
+            component: str | None = None
+        elif isinstance(component_raw, str):
+            normalized_component = component_raw.strip()
+            component = normalized_component or None
+        else:
+            raise ValueError(
+                f"component が文字列ではありません: {json_path}:release_notes[{index}].component"
+            )
+
+        backport_of_raw = raw_entry.get("backportOf")
+        if backport_of_raw is None:
+            backport_of: str | None = None
+        else:
+            backport_of = require_temurin_jdk_issue_id(
+                backport_of_raw,
+                source_path=json_path,
+                field_name=f"release_notes[{index}].backportOf",
+            )
+
+        backout_targets = extract_temurin_backout_targets(title)
 
         yield TemurinReleaseNoteEntry(
-            priority=priority,
-            issue_type=issue_type,
             issue_id=issue_id,
-            summary=summary,
+            issue_type=issue_type,
+            priority=priority,
+            title=title,
             component=component,
+            backport_of=backport_of,
+            backout_targets=backout_targets,
         )
 
 
@@ -189,6 +240,27 @@ def require_temurin_jdk_issue_id(
             f"正準表現に合致しないIssue IDを検出しました: {source_path}:{field_name} -> '{normalized}'"
         )
     return normalized
+
+def extract_temurin_backout_targets(title: str) -> tuple[str, ...]:
+    """BACKOUT タイトルから除外対象の JDK 番号を抽出する。"""
+    match = TEMURIN_BACKOUT_MARKER_PATTERN.search(title)
+    if match is None:
+        return ()
+
+    tail = title[match.end() :]
+    targets: set[str] = set()
+
+    for jdk_match in TEMURIN_BACKOUT_JDK_ID_PATTERN.finditer(tail):
+        targets.add(f"JDK-{jdk_match.group(1)}")
+
+    if not targets:
+        for numeric_match in TEMURIN_BACKOUT_NUMERIC_ID_PATTERN.finditer(tail):
+            targets.add(f"JDK-{numeric_match.group(1)}")
+
+    if not targets:
+        return ()
+
+    return tuple(sorted(targets, key=lambda item: int(item.split("-", maxsplit=1)[1])))
 
 
 def lookup_temurin_backport_origin_in_issue_xml(
@@ -289,36 +361,46 @@ def collect_temurin_issue_ids(
     reference_backports: dict[str, str],
     missing_backport_origins: set[str],
     jdk_issues_dir: Path,
-) -> tuple[list[str], dict[str, set[str]]]:
-    """Backport の元 Issue ID を含む Issue ID 一覧と Backport 対応表を返す。"""
+) -> tuple[list[str], dict[str, set[str]], set[str]]:
+    """Backport の元 Issue ID を含む Issue ID 一覧と Backport 対応表、BACKOUT 指定による除外一覧を返す。"""
     issue_ids: list[str] = []
     backport_map: dict[str, set[str]] = {}
+    excluded_issue_ids: set[str] = set()
 
     for entry in entries:
+        if entry.backout_targets:
+            excluded_issue_ids.update(entry.backout_targets)
+            continue
+
         if entry.issue_type == "Backport":
-            try:
-                backport_origin = resolve_temurin_backport_origin(
-                    entry.issue_id,
-                    reference_backports,
-                    release_path=release_path,
-                    jdk_issues_dir=jdk_issues_dir,
-                )
-            except (FileNotFoundError, ValueError):
-                missing_backport_origins.add(entry.issue_id)
-                continue
-            backport_of = require_temurin_jdk_issue_id(
-                backport_origin,
-                source_path=release_path,
-                field_name="backportOf",
-            )
-            backport_map.setdefault(backport_of, set()).add(entry.issue_id)
-            issue_ids.append(backport_of)
+            backport_origin: str | None
+            if entry.backport_of is not None:
+                backport_origin = entry.backport_of
+            else:
+                try:
+                    backport_origin = resolve_temurin_backport_origin(
+                        entry.issue_id,
+                        reference_backports,
+                        release_path=release_path,
+                        jdk_issues_dir=jdk_issues_dir,
+                    )
+                except (FileNotFoundError, ValueError):
+                    missing_backport_origins.add(entry.issue_id)
+                    continue
+
+            backport_map.setdefault(backport_origin, set()).add(entry.issue_id)
+            issue_ids.append(backport_origin)
             continue
 
         backport_map.setdefault(entry.issue_id, set())
         issue_ids.append(entry.issue_id)
 
-    return issue_ids, backport_map
+    if excluded_issue_ids:
+        issue_ids = [issue_id for issue_id in issue_ids if issue_id not in excluded_issue_ids]
+        for issue_id in excluded_issue_ids:
+            backport_map.pop(issue_id, None)
+
+    return issue_ids, backport_map, excluded_issue_ids
 
 
 def temurin_sorted_unique(values: Iterable[str]) -> list[str]:
@@ -376,9 +458,13 @@ def generate_temurin_issue_outputs(
     if not jdk_issues_dir.is_dir():
         raise FileNotFoundError(f"jdk_issuesディレクトリが存在しません: {jdk_issues_dir}")
 
-    release_files = sorted(input_root.glob("*.txt"))
+    release_files = sorted(input_root.glob("*.json"))
     if not release_files:
-        raise FileNotFoundError(f"テキストファイルが見つかりません: {input_root}")
+        nested_json_root = input_root / "json"
+        if nested_json_root.is_dir():
+            release_files = sorted(nested_json_root.glob("*.json"))
+    if not release_files:
+        raise FileNotFoundError(f"JSONファイルが見つかりません: {input_root}")
 
     reference_backports = load_temurin_reference_backports(issue_output_root)
     temurin_per_file_dir = issue_output_root / TEMURIN_PER_FILE_SUBDIRECTORY
@@ -387,6 +473,7 @@ def generate_temurin_issue_outputs(
     aggregate_backports: dict[str, set[str]] = {}
     collected_text_issue_ids: set[str] = set()
     missing_backport_origins: set[str] = set()
+    excluded_backout_issue_ids: set[str] = set()
 
     for release_path in release_files:
         entries = list(iter_temurin_release_notes(release_path))
@@ -394,13 +481,15 @@ def generate_temurin_issue_outputs(
             continue
 
         collected_text_issue_ids.update(entry.issue_id for entry in entries)
-        issue_ids, backport_map = collect_temurin_issue_ids(
+        issue_ids, backport_map, excluded_ids = collect_temurin_issue_ids(
             release_path,
             entries,
             reference_backports,
             missing_backport_origins,
             jdk_issues_dir,
         )
+        excluded_backout_issue_ids.update(excluded_ids)
+
         for original, backports in backport_map.items():
             for backport in backports:
                 reference_backports.setdefault(backport, original)
@@ -430,6 +519,22 @@ def generate_temurin_issue_outputs(
         "\n".join(tmp_ids) + ("\n" if tmp_ids else ""), encoding="utf-8"
     )
 
+    backout_issue_path = temurin_tmp_dir / TEMURIN_BACKOUT_TMP_FILENAME
+    sorted_backout_ids = (
+        sorted(excluded_backout_issue_ids, key=issue_sort_key)
+        if excluded_backout_issue_ids
+        else []
+    )
+    backout_issue_path.write_text(
+        "\n".join(sorted_backout_ids) + ("\n" if sorted_backout_ids else ""),
+        encoding="utf-8",
+    )
+
+    if excluded_backout_issue_ids:
+        aggregate_ids.difference_update(excluded_backout_issue_ids)
+        for issue_id in excluded_backout_issue_ids:
+            aggregate_backports.pop(issue_id, None)
+
     issue_output_root.mkdir(parents=True, exist_ok=True)
     aggregate_output_path = issue_output_root / TEMURIN_AGGREGATED_FILENAME
     aggregate_output = temurin_sorted_unique(aggregate_ids)
@@ -445,15 +550,18 @@ def generate_temurin_issue_outputs(
         encoding="utf-8",
     )
 
-    print(
-        f"[INFO] Temurin tmp issue ids -> {tmp_issue_path.relative_to(Path.cwd())}"
-    )
-    print(
-        f"[INFO] Temurin aggregate issue ids -> {aggregate_output_path.relative_to(Path.cwd())}"
-    )
-    print(
-        f"[INFO] Temurin per-file issue ids -> {temurin_per_file_dir.relative_to(Path.cwd())}"
-    )
+    def resolve_display_path(path: Path) -> Path:
+        return path if not path.is_absolute() else path.relative_to(Path.cwd())
+
+    tmp_issue_display = resolve_display_path(tmp_issue_path)
+    backout_issue_display = resolve_display_path(backout_issue_path)
+    aggregate_output_display = resolve_display_path(aggregate_output_path)
+    per_file_display = resolve_display_path(temurin_per_file_dir)
+
+    print(f"[INFO] Temurin tmp issue ids -> {tmp_issue_display}")
+    print(f"[INFO] Temurin BACKOUT excluded ids -> {backout_issue_display}")
+    print(f"[INFO] Temurin aggregate issue ids -> {aggregate_output_display}")
+    print(f"[INFO] Temurin per-file issue ids -> {per_file_display}")
 
     if missing_backport_origins:
         unresolved = temurin_sorted_unique(missing_backport_origins)
