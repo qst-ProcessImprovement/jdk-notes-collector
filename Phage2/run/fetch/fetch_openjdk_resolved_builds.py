@@ -56,6 +56,30 @@ class IssueIdGenerationResult(NamedTuple):
     aggregated_issue_map: dict[str, set[str]]
 
 
+@dataclass(slots=True)
+class IssueItemExtraction:
+    pairs: list[tuple[str, Optional[str]]]
+    excluded_targets: set[str]
+    redo_targets: set[str]
+    skipped_issue_ids: set[str]
+
+
+@dataclass(slots=True)
+class IssuePairsExtraction:
+    issue_pairs: list[tuple[str, Optional[str]]]
+    excluded_issue_ids: set[str]
+    redo_issue_ids: set[str]
+    skipped_issue_ids: set[str]
+
+
+@dataclass(slots=True)
+class IssueCollectionResult:
+    per_file_results: list[tuple[Path, dict[str, set[str]]]]
+    aggregated_issue_map: dict[str, set[str]]
+    excluded_issue_ids: set[str]
+    redo_issue_ids: set[str]
+    skipped_issue_ids: set[str]
+
 DISTRIBUTION_TARGETS: tuple[DistributionTarget, ...] = (
     DistributionTarget(
         "OpenJDK",
@@ -104,10 +128,6 @@ TEMURIN_JDK_ISSUES_DIR = Path(
 
 OPENJDK_PER_FILES_ROOT = Path("INPUT") / "OpenJDK" / "per_files"
 ORACLEJDK_PER_FILES_ROOT = Path("INPUT") / "oraclejdk" / "per_files"
-DISTRIBUTION_INPUT_ROOT_MAP: dict[str, Path] = {
-    "OpenJDK": OPENJDK_PER_FILES_ROOT,
-    "OracleJDK": ORACLEJDK_PER_FILES_ROOT,
-}
 OPENJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OpenJDK" / "resolved_builds.json"
 ORACLEJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OracleJDK" / "resolved_builds.json"
 RESOLVED_BUILD_FILENAME_PATTERN = re.compile(r"^jdk-(?P<fix_version>[^_]+)_b(?P<build>\d{2,3})\.xml$", re.IGNORECASE)
@@ -252,9 +272,9 @@ def require_temurin_jdk_issue_id(
         )
     return normalized
 
-def extract_temurin_backout_targets(title: str) -> tuple[str, ...]:
-    """BACKOUT タイトルから除外対象の JDK 番号を抽出する。"""
-    match = TEMURIN_BACKOUT_MARKER_PATTERN.search(title)
+def extract_jdk_marker_targets(title: str, marker_pattern: re.Pattern[str]) -> tuple[str, ...]:
+    """JDK 課題タイトルからマーカー対象の JDK 番号を抽出する。"""
+    match = marker_pattern.search(title)
     if match is None:
         return ()
 
@@ -272,28 +292,16 @@ def extract_temurin_backout_targets(title: str) -> tuple[str, ...]:
         return ()
 
     return tuple(sorted(targets, key=lambda item: int(item.split("-", maxsplit=1)[1])))
+
+
+def extract_temurin_backout_targets(title: str) -> tuple[str, ...]:
+    """BACKOUT タイトルから除外対象の JDK 番号を抽出する。"""
+    return extract_jdk_marker_targets(title, TEMURIN_BACKOUT_MARKER_PATTERN)
 
 
 def extract_temurin_redo_targets(title: str) -> tuple[str, ...]:
     """[REDO] タイトルから再適用対象の JDK 番号を抽出する。"""
-    match = TEMURIN_REDO_MARKER_PATTERN.search(title)
-    if match is None:
-        return ()
-
-    tail = title[match.end() :]
-    targets: set[str] = set()
-
-    for jdk_match in TEMURIN_BACKOUT_JDK_ID_PATTERN.finditer(tail):
-        targets.add(f"JDK-{jdk_match.group(1)}")
-
-    if not targets:
-        for numeric_match in TEMURIN_BACKOUT_NUMERIC_ID_PATTERN.finditer(tail):
-            targets.add(f"JDK-{numeric_match.group(1)}")
-
-    if not targets:
-        return ()
-
-    return tuple(sorted(targets, key=lambda item: int(item.split("-", maxsplit=1)[1])))
+    return extract_jdk_marker_targets(title, TEMURIN_REDO_MARKER_PATTERN)
 
 
 def lookup_temurin_backport_origin_in_issue_xml(
@@ -668,70 +676,115 @@ def iter_issue_xml_files(root: Path) -> list[Path]:
     return files
 
 
-def extract_issue_pairs_from_item(item: ET.Element, source: Path) -> list[tuple[str, Optional[str]]]:
+def extract_issue_pairs_from_item(item: ET.Element, source: Path) -> IssueItemExtraction:
     issue_key_elem = item.find("key")
     if issue_key_elem is None or not (issue_key_elem.text or "").strip():
         print(f"[WARN] Issue key が存在しない item を検出: file={source}", file=sys.stdout)
-        return []
+        return IssueItemExtraction(pairs=[], excluded_targets=set(), redo_targets=set(), skipped_issue_ids=set())
 
     issue_key = (issue_key_elem.text or "").strip()
     issue_type_text = (item.findtext("type") or "").strip()
+    title_text = (item.findtext("title") or "").strip()
 
-    if issue_type_text != "Backport":
-        return [(issue_key, None)]
+    backout_targets = set(extract_jdk_marker_targets(title_text, TEMURIN_BACKOUT_MARKER_PATTERN))
+    redo_targets = set(extract_jdk_marker_targets(title_text, TEMURIN_REDO_MARKER_PATTERN))
 
-    collected: list[str] = []
-    backport_links = item.findall("issuelinks/issuelinktype")
+    pairs: list[tuple[str, Optional[str]]] = []
+    skipped_issue_ids: set[str] = set()
 
-    for link in backport_links:
-        name_text = (link.findtext("name") or "").strip()
-        if name_text != "Backport":
-            continue
-        for inward in link.findall("inwardlinks"):
-            description = (inward.get("description") or "").strip()
-            if description != "backport of":
+    if issue_type_text == "Backport" and not backout_targets:
+        collected: list[str] = []
+        backport_links = item.findall("issuelinks/issuelinktype")
+
+        for link in backport_links:
+            name_text = (link.findtext("name") or "").strip()
+            if name_text != "Backport":
                 continue
-            for issue in inward.findall("issuelink/issuekey"):
-                original = (issue.text or "").strip()
-                if original and original not in collected:
-                    collected.append(original)
+            for inward in link.findall("inwardlinks"):
+                description = (inward.get("description") or "").strip()
+                if description != "backport of":
+                    continue
+                for issue in inward.findall("issuelink/issuekey"):
+                    original = (issue.text or "").strip()
+                    if original and original not in collected:
+                        collected.append(original)
 
-    if not collected:
-        print(
-            f"[WARN] Backport 課題なのに元 Issue ID が見つかりません: file={source} issue={issue_key}",
-            file=sys.stdout,
-        )
+        if not collected:
+            print(
+                f"[WARN] Backport 課題なのに元 Issue ID が見つかりません: file={source} issue={issue_key}",
+                file=sys.stdout,
+            )
+        else:
+            for original in collected:
+                pairs.append((original, issue_key))
+    elif not backout_targets:
+        pairs.append((issue_key, None))
+    else:
+        skipped_issue_ids.add(issue_key)
 
-    return [(original, issue_key) for original in collected]
+    return IssueItemExtraction(
+        pairs=pairs,
+        excluded_targets=backout_targets,
+        redo_targets=redo_targets,
+        skipped_issue_ids=skipped_issue_ids,
+    )
 
 
 def extract_issue_pairs_from_xml_content(
     xml_content: bytes, source: Path
-) -> list[tuple[str, Optional[str]]]:
+) -> IssuePairsExtraction:
     try:
         root = ET.fromstring(xml_content)
     except ET.ParseError as error:
         print(f"[WARN] XML の解析に失敗しました: file={source} error={error}", file=sys.stdout)
-        return []
+        return IssuePairsExtraction(
+            issue_pairs=[],
+            excluded_issue_ids=set(),
+            redo_issue_ids=set(),
+            skipped_issue_ids=set(),
+        )
 
     channel = root.find("channel")
     if channel is None:
         print(f"[WARN] channel 要素が存在しません: file={source}", file=sys.stdout)
-        return []
+        return IssuePairsExtraction(
+            issue_pairs=[],
+            excluded_issue_ids=set(),
+            redo_issue_ids=set(),
+            skipped_issue_ids=set(),
+        )
 
     issue_pairs: list[tuple[str, Optional[str]]] = []
+    excluded_issue_ids: set[str] = set()
+    redo_issue_ids: set[str] = set()
+    skipped_issue_ids: set[str] = set()
+
     for item in channel.findall("item"):
-        issue_pairs.extend(extract_issue_pairs_from_item(item, source))
+        extraction = extract_issue_pairs_from_item(item, source)
+        issue_pairs.extend(extraction.pairs)
+        excluded_issue_ids.update(extraction.excluded_targets)
+        redo_issue_ids.update(extraction.redo_targets)
+        skipped_issue_ids.update(extraction.skipped_issue_ids)
 
-    return issue_pairs
+    return IssuePairsExtraction(
+        issue_pairs=issue_pairs,
+        excluded_issue_ids=excluded_issue_ids,
+        redo_issue_ids=redo_issue_ids,
+        skipped_issue_ids=skipped_issue_ids,
+    )
 
 
-def extract_issue_pairs_from_xml_file(xml_path: Path) -> list[tuple[str, Optional[str]]]:
+def extract_issue_pairs_from_xml_file(xml_path: Path) -> IssuePairsExtraction:
     try:
         xml_content = xml_path.read_bytes()
     except OSError as error:
         print(f"[WARN] XML の読み込みに失敗しました: file={xml_path} error={error}", file=sys.stdout)
-        return []
+        return IssuePairsExtraction(
+            issue_pairs=[],
+            excluded_issue_ids=set(),
+            redo_issue_ids=set(),
+            skipped_issue_ids=set(),
+        )
     return extract_issue_pairs_from_xml_content(xml_content, xml_path)
 
 
@@ -1250,17 +1303,53 @@ def write_resolved_builds_json(
     return output_path
 
 
-def collect_issue_ids_from_directory(
-    root: Path,
-) -> tuple[list[tuple[Path, dict[str, set[str]]]], dict[str, set[str]]]:
+def collect_issue_ids_from_directory(root: Path) -> IssueCollectionResult:
     per_file: list[tuple[Path, dict[str, set[str]]]] = []
     aggregated: dict[str, set[str]] = {}
+    excluded_issue_ids: set[str] = set()
+    redo_issue_ids: set[str] = set()
+    skipped_issue_ids: set[str] = set()
+
     for xml_file in iter_issue_xml_files(root):
-        issue_map = build_issue_backport_map(extract_issue_pairs_from_xml_file(xml_file))
+        extraction = extract_issue_pairs_from_xml_file(xml_file)
+        issue_map = build_issue_backport_map(extraction.issue_pairs)
+
+        for skipped_issue_id in extraction.skipped_issue_ids:
+            if skipped_issue_id in issue_map:
+                issue_map.pop(skipped_issue_id, None)
+        for excluded_issue_id in extraction.excluded_issue_ids:
+            if excluded_issue_id not in extraction.redo_issue_ids:
+                issue_map.pop(excluded_issue_id, None)
+
         per_file.append((xml_file, issue_map))
+
         for original_issue, backports in issue_map.items():
             aggregated.setdefault(original_issue, set()).update(backports)
-    return per_file, aggregated
+
+        excluded_issue_ids.update(extraction.excluded_issue_ids)
+        redo_issue_ids.update(extraction.redo_issue_ids)
+        skipped_issue_ids.update(extraction.skipped_issue_ids)
+
+    for skipped_issue_id in skipped_issue_ids:
+        aggregated.pop(skipped_issue_id, None)
+    for excluded_issue_id in excluded_issue_ids:
+        if excluded_issue_id not in redo_issue_ids:
+            aggregated.pop(excluded_issue_id, None)
+
+    if skipped_issue_ids:
+        for backports in aggregated.values():
+            backports.difference_update(skipped_issue_ids)
+
+    for redo_issue_id in redo_issue_ids:
+        aggregated.setdefault(redo_issue_id, set())
+
+    return IssueCollectionResult(
+        per_file_results=per_file,
+        aggregated_issue_map=aggregated,
+        excluded_issue_ids=excluded_issue_ids,
+        redo_issue_ids=redo_issue_ids,
+        skipped_issue_ids=skipped_issue_ids,
+    )
 
 
 def format_issue_lines(issue_map: dict[str, set[str]]) -> list[str]:
@@ -1280,6 +1369,30 @@ def write_issue_lines(lines: Sequence[str], output_path: Path) -> None:
     output_path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def apply_marker_filters(
+    issue_map: dict[str, set[str]],
+    *,
+    excluded_issue_ids: set[str],
+    redo_issue_ids: set[str],
+    skipped_issue_ids: set[str],
+) -> None:
+    """BACKOUT/REDO 判定に基づき issue_map をフィルタリングする。"""
+    if skipped_issue_ids:
+        for skipped_issue_id in skipped_issue_ids:
+            issue_map.pop(skipped_issue_id, None)
+
+    for excluded_issue_id in excluded_issue_ids:
+        if excluded_issue_id not in redo_issue_ids:
+            issue_map.pop(excluded_issue_id, None)
+
+    if skipped_issue_ids:
+        for backports in issue_map.values():
+            backports.difference_update(skipped_issue_ids)
+
+    for redo_issue_id in redo_issue_ids:
+        issue_map.setdefault(redo_issue_id, set())
+
+
 def generate_issue_id_outputs(
     xml_root: Path,
     issue_output_root: Path,
@@ -1287,25 +1400,33 @@ def generate_issue_id_outputs(
     distribution_subdirectory: Path,
     supplemental_issue_maps: Optional[Sequence[dict[str, set[str]]]] = None,
 ) -> IssueIdGenerationResult:
-    per_file_results, aggregated_issue_map = collect_issue_ids_from_directory(xml_root)
+    collection = collect_issue_ids_from_directory(xml_root)
     distribution_issue_root = issue_output_root / distribution_subdirectory
 
-    for xml_path, issue_map in per_file_results:
+    for xml_path, issue_map in collection.per_file_results:
         relative = xml_path.relative_to(xml_root)
         output_path = (distribution_issue_root / relative).with_suffix(".txt")
         write_issue_lines(format_issue_lines(issue_map), output_path)
 
     merged_aggregated_map: dict[str, set[str]] = {
-        issue_id: set(backports) for issue_id, backports in aggregated_issue_map.items()
+        issue_id: set(backports)
+        for issue_id, backports in collection.aggregated_issue_map.items()
     }
     if supplemental_issue_maps:
         counts = [len(supplemental) for supplemental in supplemental_issue_maps]
         print(
-            f"[DEBUG] generate_issue_id_outputs: base_count={len(aggregated_issue_map)} supplemental_counts={counts}"
+            f"[DEBUG] generate_issue_id_outputs: base_count={len(collection.aggregated_issue_map)} supplemental_counts={counts}"
         )
         for supplemental in supplemental_issue_maps:
             for issue_id, backports in supplemental.items():
                 merged_aggregated_map.setdefault(issue_id, set()).update(backports)
+
+    apply_marker_filters(
+        merged_aggregated_map,
+        excluded_issue_ids=collection.excluded_issue_ids,
+        redo_issue_ids=collection.redo_issue_ids,
+        skipped_issue_ids=collection.skipped_issue_ids,
+    )
 
     aggregated_path = issue_output_root / aggregate_filename
     write_issue_lines(format_issue_lines(merged_aggregated_map), aggregated_path)
@@ -1698,7 +1819,6 @@ def cleanup_generated_outputs(*, xml_root: Path, issue_root: Path, diff_report_p
     if diff_report_path.exists():
         diff_report_path.unlink()
 
-
 def main() -> None:
     xml_output_root = Path.cwd() / XML_OUTPUT_ROOT
     issue_output_root = Path.cwd() / ISSUE_IDS_OUTPUT_ROOT
@@ -1712,34 +1832,38 @@ def main() -> None:
     )
     any_collected = False
     issue_generation_results: dict[str, IssueIdGenerationResult] = {}
+    input_directory_map: dict[str, Path] = {
+        "OpenJDK": Path.cwd() / OPENJDK_PER_FILES_ROOT,
+        "OracleJDK": Path.cwd() / ORACLEJDK_PER_FILES_ROOT,
+    }
 
     for distribution in DISTRIBUTION_TARGETS:
-        input_root = DISTRIBUTION_INPUT_ROOT_MAP.get(distribution.label)
-        if input_root is None:
+        resolved_input_dir = input_directory_map.get(distribution.label)
+        if resolved_input_dir is None:
             print(
-                f"[ERROR] {distribution.label}: 入力ディレクトリが定義されていません",
+                f"[ERROR] {distribution.label}: resolved in build 入力ディレクトリが定義されていません",
                 file=sys.stderr,
             )
             sys.exit(1)
 
-        resolved_input_dir = Path.cwd() / input_root
         try:
             collected_entries = collect_resolved_in_build_xml(
                 distribution.targets,
                 resolved_input_dir,
             )
-        except (FileNotFoundError, OSError) as error:
+        except FileNotFoundError as error:
             print(f"[ERROR] {distribution.label}: {error}", file=sys.stderr)
             sys.exit(1)
 
         if not collected_entries:
             print(
-                f"[ERROR] {distribution.label}: resolved in build 入力が空です",
+                f"[WARN] {distribution.label}: resolved in build 入力が空です",
                 file=sys.stderr,
             )
-            sys.exit(1)
+            continue
 
         any_collected = True
+
         write_aggregate_xml(
             collected_entries,
             xml_output_root,
@@ -1763,19 +1887,17 @@ def main() -> None:
             f"[INFO] Issue ID 集約: {issue_result.aggregated_path.relative_to(Path.cwd())} に保存しました"
         )
 
-    openjdk_distribution = DISTRIBUTION_TARGET_MAP["OpenJDK"]
-    oracle_distribution = DISTRIBUTION_TARGET_MAP["OracleJDK"]
     resolved_openjdk_input = Path.cwd() / OPENJDK_PER_FILES_ROOT
     resolved_oracle_input = Path.cwd() / ORACLEJDK_PER_FILES_ROOT
 
     try:
         openjdk_resolved_builds = collect_resolved_builds_from_per_files(
             resolved_openjdk_input,
-            openjdk_distribution,
+            DISTRIBUTION_TARGET_MAP["OpenJDK"],
         )
         oracle_resolved_builds_only = collect_resolved_builds_from_per_files(
             resolved_oracle_input,
-            oracle_distribution,
+            DISTRIBUTION_TARGET_MAP["OracleJDK"],
         )
     except (FileNotFoundError, ValueError) as error:
         print(f"[ERROR] Resolved Builds: {error}", file=sys.stderr)
@@ -1824,10 +1946,10 @@ def main() -> None:
             f"[INFO] JDK差分レポート: {diff_report_path.relative_to(Path.cwd())} に保存しました"
         )
 
-
     if not any_collected:
-        print("[ERROR] resolved in build 入力が空のため処理を継続できません", file=sys.stderr)
+        print("[WARN] 保存対象となる XML がありませんでした", file=sys.stderr)
         sys.exit(1)
+
 
 
 if __name__ == "__main__":
