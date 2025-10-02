@@ -94,6 +94,7 @@ TEMURIN_BACKOUT_TMP_FILENAME = "temurin_backout_excluded_ids.txt"
 TEMURIN_BACKOUT_MARKER_PATTERN = re.compile(r"\[BACKOUT\]", re.IGNORECASE)
 TEMURIN_BACKOUT_JDK_ID_PATTERN = re.compile(r"JDK-(\d+)", re.IGNORECASE)
 TEMURIN_BACKOUT_NUMERIC_ID_PATTERN = re.compile(r"\b(\d{6,})\b")
+TEMURIN_REDO_MARKER_PATTERN = re.compile(r"\[REDO\]", re.IGNORECASE)
 TEMURIN_ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
 
 JDK_ISSUE_ID_PATTERN = TEMURIN_ISSUE_ID_PATTERN
@@ -129,6 +130,7 @@ class TemurinReleaseNoteEntry:
     component: str | None
     backport_of: str | None
     backout_targets: tuple[str, ...]
+    redo_targets: tuple[str, ...]
 
 
 
@@ -214,6 +216,7 @@ def iter_temurin_release_notes(json_path: Path) -> Iterable[TemurinReleaseNoteEn
             )
 
         backout_targets = extract_temurin_backout_targets(title)
+        redo_targets = extract_temurin_redo_targets(title)
 
         yield TemurinReleaseNoteEntry(
             issue_id=issue_id,
@@ -223,6 +226,7 @@ def iter_temurin_release_notes(json_path: Path) -> Iterable[TemurinReleaseNoteEn
             component=component,
             backport_of=backport_of,
             backout_targets=backout_targets,
+            redo_targets=redo_targets,
         )
 
 
@@ -244,6 +248,28 @@ def require_temurin_jdk_issue_id(
 def extract_temurin_backout_targets(title: str) -> tuple[str, ...]:
     """BACKOUT タイトルから除外対象の JDK 番号を抽出する。"""
     match = TEMURIN_BACKOUT_MARKER_PATTERN.search(title)
+    if match is None:
+        return ()
+
+    tail = title[match.end() :]
+    targets: set[str] = set()
+
+    for jdk_match in TEMURIN_BACKOUT_JDK_ID_PATTERN.finditer(tail):
+        targets.add(f"JDK-{jdk_match.group(1)}")
+
+    if not targets:
+        for numeric_match in TEMURIN_BACKOUT_NUMERIC_ID_PATTERN.finditer(tail):
+            targets.add(f"JDK-{numeric_match.group(1)}")
+
+    if not targets:
+        return ()
+
+    return tuple(sorted(targets, key=lambda item: int(item.split("-", maxsplit=1)[1])))
+
+
+def extract_temurin_redo_targets(title: str) -> tuple[str, ...]:
+    """[REDO] タイトルから再適用対象の JDK 番号を抽出する。"""
+    match = TEMURIN_REDO_MARKER_PATTERN.search(title)
     if match is None:
         return ()
 
@@ -368,11 +394,21 @@ def collect_temurin_issue_ids(
     excluded_issue_ids: set[str] = set()
 
     for entry in entries:
+        if entry.redo_targets:
+            excluded_issue_ids.difference_update(entry.redo_targets)
+
         if entry.backout_targets:
             excluded_issue_ids.update(entry.backout_targets)
             continue
 
         if entry.issue_type == "Backport":
+            if entry.redo_targets:
+                for target in entry.redo_targets:
+                    backport_map.setdefault(target, set()).add(entry.issue_id)
+                    issue_ids.append(target)
+                    reference_backports.setdefault(entry.issue_id, target)
+                continue
+
             backport_origin: str | None
             if entry.backport_of is not None:
                 backport_origin = entry.backport_of
@@ -390,6 +426,7 @@ def collect_temurin_issue_ids(
 
             backport_map.setdefault(backport_origin, set()).add(entry.issue_id)
             issue_ids.append(backport_origin)
+            reference_backports.setdefault(entry.issue_id, backport_origin)
             continue
 
         backport_map.setdefault(entry.issue_id, set())
