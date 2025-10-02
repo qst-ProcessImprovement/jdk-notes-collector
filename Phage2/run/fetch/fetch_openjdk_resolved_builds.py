@@ -28,14 +28,14 @@ OPENJDK_RESOLVED_BUILD_TARGETS: tuple[tuple[str, tuple[str, ...]], ...] = (
 )
 OPENJDK_FIX_VERSIONS: tuple[str, ...] = tuple(version for version, _ in OPENJDK_RESOLVED_BUILD_TARGETS)
 ORACLEJDK_RESOLVED_BUILD_TARGETS: tuple[tuple[str, tuple[str, ...]], ...] = (
-    ("21.0.3-oracle", tuple(f"b{index:02d}" for index in range(1, 7))),
-    ("21.0.4-oracle", tuple(f"b{index:02d}" for index in range(1, 9))),
+    ("21.0.3-oracle", ("b01", "b02", "b03", "b04", "b05", "b06")),
+    ("21.0.4-oracle", ("b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08")),
     ("21.0.4.0.1-oracle", ("b01",)),
-    ("21.0.5-oracle", tuple(f"b{index:02d}" for index in range(1, 10))),
-    ("21.0.6-oracle", tuple(f"b{index:02d}" for index in range(1, 9))),
-    ("21.0.7-oracle", tuple(f"b{index:02d}" for index in range(1, 8))),
+    ("21.0.5-oracle", ("b01", "b02", "b03", "b04", "b05", "b07", "b08", "b09")),
+    ("21.0.6-oracle", ("b01", "b02", "b03", "b04", "b05", "b06", "b08")),
+    ("21.0.7-oracle", ("b01", "b02", "b03", "b04", "b05", "b06", "b07")),
     ("21.0.7.0.1-oracle", ("b01",)),
-    ("21.0.8-oracle", tuple(f"b{index:02d}" for index in range(1, 12))),
+    ("21.0.8-oracle", ("b01", "b02", "b03", "b04", "b06", "b08", "b10", "b11")),
     ("21.0.8.0.1-oracle", ("b01",)),
     ("21.0.8.0.2-oracle", ("b01",)),
 )
