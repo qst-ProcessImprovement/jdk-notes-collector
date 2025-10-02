@@ -79,6 +79,9 @@ DISTRIBUTION_TARGETS: tuple[DistributionTarget, ...] = (
     ),
 )
 
+DISTRIBUTION_TARGET_MAP: dict[str, DistributionTarget] = {
+    target.label: target for target in DISTRIBUTION_TARGETS
+}
 
 # JIRA 検索結果 XML のリクエスト URL テンプレート。
 # https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+AND+%22resolved+in+build%22+%3D+{build_number}
@@ -103,7 +106,11 @@ TEMURIN_JDK_ISSUES_DIR = Path(
     "/Users/irieryuuhei/Documents/qst-ProcessImprovement/jdk-notes-collector/Phage1/run/jdk_issues"
 )
 
-
+OPENJDK_PER_FILES_ROOT = Path("INPUT") / "OpenJDK" / "per_files"
+ORACLEJDK_PER_FILES_ROOT = Path("INPUT") / "oraclejdk" / "per_files"
+OPENJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OpenJDK" / "resolved_builds.json"
+ORACLEJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OracleJDK" / "resolved_builds.json"
+RESOLVED_BUILD_FILENAME_PATTERN = re.compile(r"^jdk-(?P<fix_version>[^_]+)_b(?P<build>\d{2,3})\.xml$", re.IGNORECASE)
 
 class JDKDiffProductSpec(NamedTuple):
     name: str
@@ -745,6 +752,153 @@ def issue_sort_key(issue_id: str) -> tuple[str, int]:
         return (issue_id, 0)
     prefix, number = match.groups()
     return (prefix, int(number))
+
+
+def parse_resolved_build_filename(path: Path) -> tuple[str, str]:
+    """per_files から取得したファイル名から FixVersion と build 番号を抽出する。"""
+    match = RESOLVED_BUILD_FILENAME_PATTERN.fullmatch(path.name)
+    if match is None:
+        raise ValueError(f"正規化されていない per_files ファイル名です: {path}")
+    fix_version = match.group("fix_version")
+    build_number = f"b{match.group('build')}"
+    return fix_version, build_number
+
+
+def extract_backport_origins_from_item(item: ET.Element, *, source: Path) -> list[str]:
+    """Backport 課題が参照する元 Issue ID を抽出する。"""
+    origins: set[str] = set()
+    for link_type in item.findall("issuelinks/issuelinktype"):
+        name_text = (link_type.findtext("name") or "").strip()
+        if name_text != "Backport":
+            continue
+        for inward in link_type.findall("inwardlinks"):
+            description = (inward.get("description") or "").strip()
+            if description != "backport of":
+                continue
+            for issue_key in inward.findall("issuelink/issuekey"):
+                key = (issue_key.text or "").strip()
+                if not key:
+                    continue
+                if not JDK_ISSUE_ID_PATTERN.fullmatch(key):
+                    raise ValueError(
+                        f"Backport 元 Issue ID が正準表現ではありません: {source} -> '{key}'"
+                    )
+                origins.add(key)
+    return sorted(origins, key=issue_sort_key)
+
+
+def parse_resolved_build_item(item: ET.Element, *, source: Path) -> dict[str, object]:
+    """per_files 内の item 要素を resolved_builds JSON の構造に変換する。"""
+    issue_id = (item.findtext("key") or "").strip()
+    if not issue_id:
+        raise ValueError(f"issue key が空です: {source}")
+    if not JDK_ISSUE_ID_PATTERN.fullmatch(issue_id):
+        raise ValueError(
+            f"Issue ID が正準表現ではありません: {source} -> '{issue_id}'"
+        )
+
+    issue_type_text = (item.findtext("type") or "").strip()
+    if not issue_type_text:
+        raise ValueError(f"issue type が空です: {source}:{issue_id}")
+
+    title_text = (item.findtext("title") or "").strip()
+    if not title_text:
+        raise ValueError(f"title が空です: {source}:{issue_id}")
+
+    payload: dict[str, object] = {
+        "issue_id": issue_id,
+        "issue_type": issue_type_text,
+        "title": title_text,
+    }
+
+    backport_origins = extract_backport_origins_from_item(item, source=source)
+    if backport_origins:
+        payload["backport_of"] = backport_origins
+
+    return payload
+
+
+def parse_resolved_build_xml(xml_path: Path) -> list[dict[str, object]]:
+    """per_files の XML 1 件をパースし、課題一覧を返す。"""
+    try:
+        root = ET.parse(xml_path).getroot()
+    except ET.ParseError as error:
+        raise ValueError(f"resolved build XML の解析に失敗しました: {xml_path}") from error
+
+    channel = root.find("channel")
+    if channel is None:
+        raise ValueError(f"channel 要素が存在しません: {xml_path}")
+
+    issues: list[dict[str, object]] = []
+    for item in channel.findall("item"):
+        issues.append(parse_resolved_build_item(item, source=xml_path))
+
+    return issues
+
+
+def collect_resolved_builds_from_per_files(
+    per_files_dir: Path,
+    distribution: DistributionTarget,
+) -> list[dict[str, object]]:
+    """per_files から resolved_builds.json 用のペイロードを構築する。"""
+    if not per_files_dir.is_dir():
+        raise FileNotFoundError(
+            f"resolved build 入力ディレクトリが存在しません: {per_files_dir}"
+        )
+
+    builds_by_key: dict[tuple[str, str], dict[str, object]] = {}
+    for xml_path in sorted(per_files_dir.glob("*.xml")):
+        fix_version, build_number = parse_resolved_build_filename(xml_path)
+        issues = parse_resolved_build_xml(xml_path)
+        builds_by_key[(fix_version, build_number)] = {
+            "fix_version": fix_version,
+            "build": build_number,
+            "issues": issues,
+        }
+
+    expected_keys: list[tuple[str, str]] = []
+    for fix_version, build_numbers in distribution.targets:
+        for build_number in build_numbers:
+            expected_keys.append((fix_version, build_number))
+
+    missing_keys = [
+        f"{fix_version} {build_number}"
+        for fix_version, build_number in expected_keys
+        if (fix_version, build_number) not in builds_by_key
+    ]
+    if missing_keys:
+        print(
+            f"[WARN] {distribution.label}: per_files に resolved build 入力が不足しています -> "
+            + ", ".join(missing_keys),
+            file=sys.stderr,
+        )
+
+    ordered_builds: list[dict[str, object]] = [
+        builds_by_key[key] for key in expected_keys if key in builds_by_key
+    ]
+
+    extra_keys = sorted(
+        (key for key in builds_by_key if key not in expected_keys),
+        key=lambda item: (item[0], int(item[1][1:]) if item[1].startswith("b") else item[1]),
+    )
+    for key in extra_keys:
+        ordered_builds.append(builds_by_key[key])
+
+    return ordered_builds
+
+
+def write_resolved_builds_json(
+    output_path: Path,
+    builds: list[dict[str, object]],
+) -> Path:
+    """resolved_builds.json を所定のパスへ書き出す。"""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"builds": builds}
+    output_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return output_path
 
 
 def collect_issue_ids_from_directory(
@@ -1393,6 +1547,39 @@ def main() -> None:
             f"[INFO] Issue ID 集約: {issue_result.aggregated_path.relative_to(Path.cwd())} に保存しました"
         )
 
+    openjdk_distribution = DISTRIBUTION_TARGET_MAP["OpenJDK"]
+    oracle_distribution = DISTRIBUTION_TARGET_MAP["OracleJDK"]
+    resolved_openjdk_input = Path.cwd() / OPENJDK_PER_FILES_ROOT
+    resolved_oracle_input = Path.cwd() / ORACLEJDK_PER_FILES_ROOT
+
+    try:
+        openjdk_resolved_builds = collect_resolved_builds_from_per_files(
+            resolved_openjdk_input,
+            openjdk_distribution,
+        )
+        oracle_resolved_builds_only = collect_resolved_builds_from_per_files(
+            resolved_oracle_input,
+            oracle_distribution,
+        )
+    except (FileNotFoundError, ValueError) as error:
+        print(f"[ERROR] Resolved Builds: {error}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        openjdk_resolved_path = write_resolved_builds_json(
+            Path.cwd() / OPENJDK_RESOLVED_BUILDS_PATH,
+            openjdk_resolved_builds,
+        )
+        oracle_resolved_path = write_resolved_builds_json(
+            Path.cwd() / ORACLEJDK_RESOLVED_BUILDS_PATH,
+            [*openjdk_resolved_builds, *oracle_resolved_builds_only],
+        )
+        print(
+            f"[INFO] OpenJDK resolved builds JSON -> {openjdk_resolved_path.relative_to(Path.cwd())}"
+        )
+        print(
+            f"[INFO] OracleJDK resolved builds JSON -> {oracle_resolved_path.relative_to(Path.cwd())}"
+        )
+
     try:
         temurin_aggregate_path = generate_temurin_issue_outputs(
             temurin_input_root,
@@ -1428,8 +1615,6 @@ def main() -> None:
     if total_failures:
         print(f"[WARN] 取得に失敗したビルドが {total_failures} 件あります", file=sys.stderr)
         sys.exit(1)
-
-    sys.exit(0)
 
 
 if __name__ == "__main__":
