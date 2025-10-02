@@ -8,10 +8,11 @@ import sys
 from collections import Counter
 from dataclasses import dataclass
 from enum import Enum
+from functools import lru_cache
 import urllib.error
 import urllib.request
 from pathlib import Path
-from typing import Iterable, NamedTuple, Optional, Sequence
+from typing import Callable, Dict, Iterable, List, NamedTuple, Optional, Sequence
 from xml.etree import ElementTree as ET
 
 # 取得対象のバージョンと "Resolved in Build" の正準定義。
@@ -68,6 +69,8 @@ DISTRIBUTION_TARGETS: tuple[DistributionTarget, ...] = (
         "all_issue_ids_oraclejdk.txt",
     ),
 )
+
+
 # JIRA 検索結果 XML のリクエスト URL テンプレート。
 # https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+AND+%22resolved+in+build%22+%3D+{build_number}
 ISSUE_KEY_PATTERN = re.compile(r"^([A-Z]+)-(\d+)$")
@@ -80,10 +83,30 @@ TEMURIN_TMP_SUBDIRECTORY = Path("temurin") / "tmp"
 TEMURIN_AGGREGATED_FILENAME = "all_issue_ids_temurin.txt"
 TEMURIN_TMP_FILENAME = "temurin_jdk_ids.txt"
 TEMURIN_ISSUE_ID_PATTERN = re.compile(r"^JDK-\d+$")
+
+JDK_ISSUE_ID_PATTERN = TEMURIN_ISSUE_ID_PATTERN
 TEMURIN_JDK_ISSUES_DIR = Path(
     "/Users/irieryuuhei/Documents/qst-ProcessImprovement/jdk-notes-collector/Phage1/run/jdk_issues"
 )
 
+
+
+class JDKDiffProductSpec(NamedTuple):
+    name: str
+    backport_prefix: str
+    aggregate_filename: str
+
+
+JDK_DIFF_OUTPUT_FILENAME = "jdk_diff_report.md"
+JDK_DIFF_PRODUCT_SPECS: tuple[JDKDiffProductSpec, ...] = (
+    JDKDiffProductSpec("OpenJDK", "openjdk", "all_issue_ids_openjdk.txt"),
+    JDKDiffProductSpec("OracleJDK", "oraclejdk", "all_issue_ids_oraclejdk.txt"),
+    JDKDiffProductSpec("Temurin", "temurin", TEMURIN_AGGREGATED_FILENAME),
+)
+
+
+class JDKDiffError(Exception):
+    """JDK 差分レポート生成時の例外。"""
 
 @dataclass(slots=True, frozen=True)
 class TemurinReleaseNoteEntry:
@@ -578,6 +601,230 @@ def generate_issue_id_outputs(
     aggregated_path = issue_output_root / aggregate_filename
     write_issue_lines(format_issue_lines(aggregated_issue_map), aggregated_path)
     return aggregated_path
+
+
+def ensure_jdk_issue_id(value: str, *, source_path: Path, lineno: int) -> str:
+    """JDK 課題 ID の正準表現 (JDK-<digits>) を検証する。"""
+    normalized = value.strip()
+    if not normalized:
+        raise JDKDiffError(f"空の JDK 番号を検出しました: {source_path}:{lineno}")
+    if not JDK_ISSUE_ID_PATTERN.fullmatch(normalized):
+        raise JDKDiffError(
+            f"正準表現に反する JDK 番号を検出しました: {source_path}:{lineno} -> '{normalized}'"
+        )
+    return normalized
+
+
+def load_issue_ids(
+    path: Path,
+    *,
+    product_name: str,
+    backport_prefix: str,
+) -> tuple[set[str], Dict[str, Dict[str, List[str]]]]:
+    """集約 issue_ids ファイルを読み込み、JDK 番号と backport 情報を返す。"""
+    if not path.is_file():
+        raise JDKDiffError(f"JDK 番号リストが見つかりません: {path}")
+
+    issue_ids: set[str] = set()
+    backport_entries: Dict[str, Dict[str, List[str]]] = {}
+    with path.open(encoding="utf-8") as handle:
+        for lineno, raw_line in enumerate(handle, start=1):
+            entry = raw_line.strip()
+            if not entry:
+                continue
+
+            segments = [segment.strip() for segment in entry.split(",")]
+            if not segments:
+                continue
+
+            base_issue = ensure_jdk_issue_id(segments[0], source_path=path, lineno=lineno)
+            if base_issue in issue_ids:
+                raise JDKDiffError(
+                    f"同一 JDK 番号が重複しています: {path}:{lineno} -> '{base_issue}'"
+                )
+            issue_ids.add(base_issue)
+
+            for raw_backport in segments[1:]:
+                if not raw_backport:
+                    raise JDKDiffError(
+                        f"正準表現に反する backport 指定を検出しました: {path}:{lineno}"
+                    )
+
+                if raw_backport.startswith(f"{backport_prefix}_"):
+                    backport_issue = raw_backport[len(backport_prefix) + 1 :]
+                elif "_" in raw_backport:
+                    prefix, suffix = raw_backport.split("_", 1)
+                    if prefix != backport_prefix:
+                        raise JDKDiffError(
+                            f"未知の backport 接頭辞を検出しました: {path}:{lineno} -> '{prefix}'"
+                        )
+                    backport_issue = suffix
+                else:
+                    if product_name == "Temurin":
+                        raise JDKDiffError(
+                            f"Temurin backport には接頭辞 {backport_prefix}_ が必要です: {path}:{lineno}"
+                        )
+                    backport_issue = raw_backport
+
+                backport_id = ensure_jdk_issue_id(
+                    backport_issue, source_path=path, lineno=lineno
+                )
+                per_issue = backport_entries.setdefault(base_issue, {})
+                backport_list = per_issue.setdefault(product_name, [])
+                if backport_id not in backport_list:
+                    backport_list.append(backport_id)
+
+    return issue_ids, backport_entries
+
+
+def make_fix_version_loader(jdk_issues_dir: Path) -> Callable[[str], tuple[str, ...]]:
+    """Fix Version/s をロードする関数を生成する。"""
+    if not jdk_issues_dir.is_dir():
+        raise JDKDiffError(
+            f"Fix Version 情報ディレクトリが見つかりません: {jdk_issues_dir}"
+        )
+
+    @lru_cache(maxsize=None)
+    def load(issue_id: str) -> tuple[str, ...]:
+        issue_dir = jdk_issues_dir / issue_id
+        if not issue_dir.is_dir():
+            raise JDKDiffError(
+                f"Fix Version 情報ディレクトリが見つかりません: {issue_dir}"
+            )
+        xml_path = (issue_dir / issue_id.lower()).with_suffix(".xml")
+        if not xml_path.is_file():
+            raise JDKDiffError(f"Fix Version 情報が見つかりません: {xml_path}")
+        try:
+            tree = ET.parse(xml_path)
+        except ET.ParseError as error:
+            raise JDKDiffError(
+                f"Fix Version XML の解析に失敗しました: {xml_path}"
+            ) from error
+
+        seen: set[str] = set()
+        versions: List[str] = []
+        for element in tree.iterfind(".//fixVersion"):
+            value = (element.text or "").strip()
+            if not value:
+                continue
+            if value not in seen:
+                seen.add(value)
+                versions.append(value)
+
+        if not versions:
+            raise JDKDiffError(f"Fix Version/s を取得できません: {xml_path}")
+
+        return tuple(versions)
+
+    return load
+
+
+def sort_jdk_ids(issue_ids: Iterable[str]) -> List[str]:
+    """JDK 番号を数値順にソートする。"""
+    def numeric_key(item: str) -> int:
+        try:
+            return int(item.split("-", maxsplit=1)[1])
+        except (IndexError, ValueError) as error:
+            raise JDKDiffError(f"JDK 番号の解析に失敗しました: '{item}'") from error
+
+    return sorted(issue_ids, key=numeric_key)
+
+
+def render_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
+    """Markdown テーブル文字列を生成する。"""
+    def format_row(cells: Sequence[str]) -> str:
+        return "| " + " | ".join(str(cell) for cell in cells) + " |"
+
+    header_line = format_row(headers)
+    separator_line = "| " + " | ".join("---" for _ in headers) + " |"
+    lines = [header_line, separator_line]
+    for row in rows:
+        lines.append(format_row(row))
+    return "\n".join(lines)
+
+
+def build_diff_table(
+    data: Dict[str, set[str]],
+    backport_lookup: Dict[str, Dict[str, List[str]]],
+    fix_version_loader: Callable[[str], tuple[str, ...]],
+) -> tuple[List[List[str]], int, int, int]:
+    """差分テーブル行と統計値を生成する。"""
+    if not data:
+        return [], 0, 0, 0
+
+    product_order = list(data.keys())
+    all_ids = set.union(*data.values())
+    common_ids = set.intersection(*data.values())
+    diff_ids = sort_jdk_ids(all_ids - common_ids)
+
+    rows: List[List[str]] = []
+    non_21_count = 0
+    for issue_id in diff_ids:
+        presence = ["Y" if issue_id in data[product] else "N" for product in product_order]
+        try:
+            fix_versions = list(fix_version_loader(issue_id))
+            has_non_21 = any(value != "21" for value in fix_versions)
+        except JDKDiffError:
+            fix_versions = ["Issueページなし"]
+            has_non_21 = False
+        if has_non_21:
+            non_21_count += 1
+        formatted_fix_versions = ", ".join(fix_versions)
+        per_issue_backports = backport_lookup.get(issue_id, {})
+        backport_values: List[str] = []
+        for product in product_order:
+            issues = per_issue_backports.get(product)
+            backport_values.append(", ".join(issues) if issues else "")
+        rows.append([issue_id, *presence, formatted_fix_versions, *backport_values])
+
+    return rows, len(diff_ids), len(common_ids), non_21_count
+
+
+def generate_jdk_diff_report(
+    issue_output_root: Path,
+    output_dir: Path,
+    jdk_issues_dir: Path,
+) -> Path:
+    """集約済み issue_ids を比較し、差分レポートを生成する。"""
+    product_data: Dict[str, set[str]] = {}
+    backport_lookup: Dict[str, Dict[str, List[str]]] = {}
+
+    for spec in JDK_DIFF_PRODUCT_SPECS:
+        source_path = issue_output_root / spec.aggregate_filename
+        issue_ids, backports = load_issue_ids(
+            source_path, product_name=spec.name, backport_prefix=spec.backport_prefix
+        )
+        product_data[spec.name] = issue_ids
+        for base_issue, per_product_backports in backports.items():
+            target = backport_lookup.setdefault(base_issue, {})
+            for product, issues in per_product_backports.items():
+                target_list = target.setdefault(product, [])
+                for issue in issues:
+                    if issue not in target_list:
+                        target_list.append(issue)
+
+    fix_version_loader = make_fix_version_loader(jdk_issues_dir)
+    rows, diff_count, matched_count, non_21_count = build_diff_table(
+        product_data, backport_lookup, fix_version_loader
+    )
+    backport_headers = [f"JDK - {product} backport" for product in product_data.keys()]
+    headers = ["JDK", *product_data.keys(), "Fix Version/s", *backport_headers]
+    table_text = render_table(headers, rows)
+
+    output_lines = [
+        "このファイルは OpenJDK・OracleJDK・Temurin の issue_ids.txt を比較し、三製品で一致しない JDK 番号と各 Fix Version/s を一覧化したものです。",
+        "",
+        table_text,
+        "",
+        f"全てのプロダクトで一致したJDK件数: {matched_count}  ",
+        f"プロダクトごとに差分のあるJDK件数: {diff_count}  ",
+        f"Fix Version/sが21以外のJDK件数: {non_21_count}  ",
+        "",
+    ]
+
+    output_path = output_dir / JDK_DIFF_OUTPUT_FILENAME
+    output_path.write_text("\n".join(output_lines), encoding="utf-8")
+    return output_path
 JIRA_SEARCH_URL_TEMPLATE = (
     "https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml"
     "?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+"
@@ -863,6 +1110,20 @@ def main() -> None:
     else:
         print(
             f"[INFO] Temurin Issue ID 集約: {temurin_aggregate_path.relative_to(Path.cwd())} に保存しました"
+        )
+
+    try:
+        diff_report_path = generate_jdk_diff_report(
+            issue_output_root,
+            Path.cwd(),
+            TEMURIN_JDK_ISSUES_DIR,
+        )
+    except JDKDiffError as error:
+        print(f"[ERROR] JDK Diff Report: {error}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print(
+            f"[INFO] JDK差分レポート: {diff_report_path.relative_to(Path.cwd())} に保存しました"
         )
 
     if not any_collected:
