@@ -17,9 +17,9 @@ from xml.etree import ElementTree as ET
 import json
 OPENJDK_RESOLVED_BUILD_TARGETS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("21", tuple(f"b{index:02d}" for index in range(1, 36))),
-    ("21.0.1", tuple(f"b{index:02d}" for index in range(1, 11))),
-    ("21.0.2", tuple(f"b{index:02d}" for index in range(1, 14))),
-    ("21.0.3", tuple(f"b{index:02d}" for index in range(1, 10))),
+    ("21.0.1", ("b01", "b02", "b04", "b05", "b06", "b08", "b09", "b10")),
+    ("21.0.2", ("b01", "b02", "b03", "b05", "b06", "b07", "b08", "b09", "b10", "b11", "b12", "b13")),
+    ("21.0.3", ("b01", "b02", "b03", "b04", "b05", "b06", "b07", "b09")),
     ("21.0.4", tuple(f"b{index:02d}" for index in range(1, 8))),
     ("21.0.5", tuple(f"b{index:02d}" for index in range(1, 12))),
     ("21.0.6", tuple(f"b{index:02d}" for index in range(1, 8))),
