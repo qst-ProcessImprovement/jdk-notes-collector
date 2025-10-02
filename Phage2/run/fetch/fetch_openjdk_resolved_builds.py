@@ -5,14 +5,10 @@ from __future__ import annotations
 import datetime as _dt
 import re
 import sys
-import time
 import shutil
 from collections import Counter
 from dataclasses import dataclass
-from enum import Enum
 from functools import lru_cache
-import urllib.error
-import urllib.request
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, NamedTuple, Optional, Sequence
 from xml.etree import ElementTree as ET
@@ -108,6 +104,10 @@ TEMURIN_JDK_ISSUES_DIR = Path(
 
 OPENJDK_PER_FILES_ROOT = Path("INPUT") / "OpenJDK" / "per_files"
 ORACLEJDK_PER_FILES_ROOT = Path("INPUT") / "oraclejdk" / "per_files"
+DISTRIBUTION_INPUT_ROOT_MAP: dict[str, Path] = {
+    "OpenJDK": OPENJDK_PER_FILES_ROOT,
+    "OracleJDK": ORACLEJDK_PER_FILES_ROOT,
+}
 OPENJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OpenJDK" / "resolved_builds.json"
 ORACLEJDK_RESOLVED_BUILDS_PATH = XML_OUTPUT_ROOT / "OracleJDK" / "resolved_builds.json"
 RESOLVED_BUILD_FILENAME_PATTERN = re.compile(r"^jdk-(?P<fix_version>[^_]+)_b(?P<build>\d{2,3})\.xml$", re.IGNORECASE)
@@ -787,6 +787,201 @@ def extract_backport_origins_from_item(item: ET.Element, *, source: Path) -> lis
     return sorted(origins, key=issue_sort_key)
 
 
+
+
+def _element_text(element: ET.Element | None) -> str | None:
+    """要素内のテキストを正規化して返す。"""
+    if element is None:
+        return None
+    text = "".join(element.itertext()).strip()
+    return text or None
+
+
+def _normalize_attribute_key(name: str) -> str:
+    """キャメルケースや記号を含む属性名をスネークケースへ正規化する。"""
+    sanitized = re.sub(r"[^0-9A-Za-z]+", "_", name.strip())
+    sanitized = re.sub(r"(?<!^)(?=[A-Z])", "_", sanitized)
+    normalized = re.sub(r"_+", "_", sanitized).strip("_")
+    return normalized.lower()
+
+
+def _collect_text_list(parent: ET.Element, path: str) -> list[str]:
+    values: list[str] = []
+    for element in parent.findall(path):
+        text = _element_text(element)
+        if text is not None:
+            values.append(text)
+    return values
+
+
+def _int_from_element(element: ET.Element | None) -> int | None:
+    text = _element_text(element)
+    if text is None:
+        return None
+    try:
+        return int(text)
+    except ValueError:
+        return None
+
+
+def _collect_comments(item: ET.Element) -> list[dict[str, object]]:
+    comments_parent = item.find("comments")
+    if comments_parent is None:
+        return []
+
+    comments: list[dict[str, object]] = []
+    for comment in comments_parent.findall("comment"):
+        entry: dict[str, object] = {}
+        for attr, value in comment.attrib.items():
+            if value:
+                entry[_normalize_attribute_key(attr)] = value
+        body = "".join(comment.itertext()).strip()
+        if body:
+            entry["body"] = body
+        if entry:
+            comments.append(entry)
+    return comments
+
+
+def _collect_issue_links(item: ET.Element) -> list[dict[str, object]]:
+    links_parent = item.find("issuelinks")
+    if links_parent is None:
+        return []
+
+    link_entries: list[dict[str, object]] = []
+    for link_type in links_parent.findall("issuelinktype"):
+        entry: dict[str, object] = {}
+        for attr, value in link_type.attrib.items():
+            if value:
+                entry[_normalize_attribute_key(attr)] = value
+        name = _element_text(link_type.find("name"))
+        if name:
+            entry["name"] = name
+
+        for direction_tag, key in (("outwardlinks", "outward"), ("inwardlinks", "inward")):
+            direction_entries: list[dict[str, object]] = []
+            for direction_elem in link_type.findall(direction_tag):
+                description = direction_elem.get("description")
+                for issue_link in direction_elem.findall("issuelink"):
+                    link_detail: dict[str, object] = {}
+                    issue_key_elem = issue_link.find("issuekey")
+                    issue_key = _element_text(issue_key_elem)
+                    if issue_key:
+                        link_detail["issue_key"] = issue_key
+                    if issue_key_elem is not None:
+                        for attr_name, attr_value in issue_key_elem.attrib.items():
+                            if attr_value:
+                                link_detail[_normalize_attribute_key(attr_name)] = attr_value
+                    summary = _element_text(issue_link.find("summary"))
+                    if summary:
+                        link_detail["summary"] = summary
+                    if description:
+                        link_detail["description"] = description
+                    if link_detail:
+                        direction_entries.append(link_detail)
+            if direction_entries:
+                entry[key] = direction_entries
+
+        if entry:
+            link_entries.append(entry)
+    return link_entries
+
+
+def _collect_attachments(item: ET.Element) -> list[dict[str, object]]:
+    attachments_parent = item.find("attachments")
+    if attachments_parent is None:
+        return []
+
+    attachments: list[dict[str, object]] = []
+    for attachment in attachments_parent.findall("attachment"):
+        entry: dict[str, object] = {}
+        for attr, value in attachment.attrib.items():
+            if not value:
+                continue
+            key = _normalize_attribute_key(attr)
+            if key == "size":
+                try:
+                    entry[key] = int(value)
+                except ValueError:
+                    entry[key] = value
+            else:
+                entry[key] = value
+        name = _element_text(attachment)
+        if name and "name" not in entry:
+            entry["name"] = name
+        if entry:
+            attachments.append(entry)
+    return attachments
+
+
+def _collect_subtasks(item: ET.Element) -> list[dict[str, object]]:
+    subtasks_parent = item.find("subtasks")
+    if subtasks_parent is None:
+        return []
+
+    subtasks: list[dict[str, object]] = []
+    for subtask in subtasks_parent.findall("subtask"):
+        entry: dict[str, object] = {}
+        for attr, value in subtask.attrib.items():
+            if value:
+                entry[_normalize_attribute_key(attr)] = value
+        issue_key = _element_text(subtask)
+        if issue_key:
+            entry["issue_key"] = issue_key
+        if entry:
+            subtasks.append(entry)
+    return subtasks
+
+
+def _canonicalize_custom_field_name(name: str, *, fallback: str) -> str:
+    normalized = re.sub(r"[^0-9a-zA-Z]+", "_", name.strip().lower())
+    normalized = re.sub(r"_+", "_", normalized).strip("_")
+    return normalized or fallback
+
+
+def _collect_custom_fields(item: ET.Element) -> dict[str, dict[str, object]]:
+    customfields_parent = item.find("customfields")
+    if customfields_parent is None:
+        return {}
+
+    fields: dict[str, dict[str, object]] = {}
+    for customfield in customfields_parent.findall("customfield"):
+        raw_name = _element_text(customfield.find("customfieldname"))
+        fallback_name = customfield.get("id") or customfield.get("key") or "custom_field"
+        canonical_name = _canonicalize_custom_field_name(raw_name or fallback_name, fallback=fallback_name)
+        if canonical_name in fields:
+            raise ValueError(f"custom field 名の正準化結果が重複しました: {canonical_name}")
+
+        field_entry: dict[str, object] = {}
+        attributes = {
+            _normalize_attribute_key(attr): value
+            for attr, value in customfield.attrib.items()
+            if value
+        }
+        if attributes:
+            field_entry["attributes"] = attributes
+
+        value_entries: list[dict[str, object]] = []
+        values_parent = customfield.find("customfieldvalues")
+        if values_parent is not None:
+            for value_element in values_parent.findall("customfieldvalue"):
+                value_entry: dict[str, object] = {}
+                text = _element_text(value_element)
+                if text is not None:
+                    value_entry["value"] = text
+                value_attrs = {
+                    _normalize_attribute_key(attr): attr_value
+                    for attr, attr_value in value_element.attrib.items()
+                    if attr_value
+                }
+                if value_attrs:
+                    value_entry["attributes"] = value_attrs
+                if value_entry:
+                    value_entries.append(value_entry)
+        field_entry["values"] = value_entries
+        fields[canonical_name] = field_entry
+    return fields
+
 def parse_resolved_build_item(item: ET.Element, *, source: Path) -> dict[str, object]:
     """per_files 内の item 要素を resolved_builds JSON の構造に変換する。"""
     issue_id = (item.findtext("key") or "").strip()
@@ -810,6 +1005,160 @@ def parse_resolved_build_item(item: ET.Element, *, source: Path) -> dict[str, ob
         "issue_type": issue_type_text,
         "title": title_text,
     }
+
+    link_text = _element_text(item.find("link"))
+    if link_text:
+        payload["link"] = link_text
+
+    project_element = item.find("project")
+    if project_element is not None:
+        project_entry: dict[str, object] = {}
+        project_id = project_element.get("id")
+        if project_id:
+            project_entry["id"] = project_id
+        project_key = project_element.get("key")
+        if project_key:
+            project_entry["key"] = project_key
+        project_name = _element_text(project_element)
+        if project_name:
+            project_entry["name"] = project_name
+        if project_entry:
+            payload["project"] = project_entry
+
+    environment_text = _element_text(item.find("environment"))
+    if environment_text:
+        payload["environment"] = environment_text
+
+    summary_text = _element_text(item.find("summary"))
+    if summary_text:
+        payload["summary"] = summary_text
+
+    type_element = item.find("type")
+    if type_element is not None:
+        for attr_name, attr_value in type_element.attrib.items():
+            if attr_value:
+                payload[f"issue_type_{_normalize_attribute_key(attr_name)}"] = attr_value
+
+    parent_element = item.find("parent")
+    if parent_element is not None:
+        parent_entry: dict[str, object] = {}
+        parent_internal_id = parent_element.get("id")
+        if parent_internal_id:
+            parent_entry["id"] = parent_internal_id
+        parent_key = _element_text(parent_element)
+        if parent_key:
+            parent_entry["issue_key"] = parent_key
+        if parent_entry:
+            payload["parent"] = parent_entry
+
+    priority_element = item.find("priority")
+    priority_text = _element_text(priority_element)
+    if priority_text:
+        payload["priority"] = priority_text
+    if priority_element is not None:
+        for attr_name, attr_value in priority_element.attrib.items():
+            if attr_value:
+                payload[f"priority_{_normalize_attribute_key(attr_name)}"] = attr_value
+
+    status_element = item.find("status")
+    status_text = _element_text(status_element)
+    if status_text:
+        payload["status"] = status_text
+    if status_element is not None:
+        for attr_name, attr_value in status_element.attrib.items():
+            if attr_value:
+                payload[f"status_{_normalize_attribute_key(attr_name)}"] = attr_value
+
+    status_category_element = item.find("statusCategory")
+    if status_category_element is not None:
+        status_category_entry = {
+            _normalize_attribute_key(attr): value
+            for attr, value in status_category_element.attrib.items()
+            if value
+        }
+        status_category_name = _element_text(status_category_element)
+        if status_category_name:
+            status_category_entry["name"] = status_category_name
+        if status_category_entry:
+            payload["status_category"] = status_category_entry
+
+    resolution_element = item.find("resolution")
+    resolution_text = _element_text(resolution_element)
+    if resolution_text:
+        payload["resolution"] = resolution_text
+    if resolution_element is not None:
+        for attr_name, attr_value in resolution_element.attrib.items():
+            if attr_value:
+                payload[f"resolution_{_normalize_attribute_key(attr_name)}"] = attr_value
+
+    def collect_user(element: ET.Element | None) -> dict[str, object] | None:
+        if element is None:
+            return None
+        user_entry: dict[str, object] = {}
+        for attr, value in element.attrib.items():
+            if value:
+                user_entry[_normalize_attribute_key(attr)] = value
+        display_name = _element_text(element)
+        if display_name:
+            user_entry["display_name"] = display_name
+        return user_entry or None
+
+    assignee_entry = collect_user(item.find("assignee"))
+    if assignee_entry:
+        payload["assignee"] = assignee_entry
+
+    reporter_entry = collect_user(item.find("reporter"))
+    if reporter_entry:
+        payload["reporter"] = reporter_entry
+
+    labels = _collect_text_list(item, "labels/label")
+    if labels:
+        payload["labels"] = labels
+
+    for field in ("created", "updated", "resolved", "due"):
+        value = _element_text(item.find(field))
+        if value:
+            payload[field] = value
+
+    versions = _collect_text_list(item, "version")
+    if versions:
+        payload["versions"] = versions
+
+    fix_versions = _collect_text_list(item, "fixVersion")
+    if fix_versions:
+        payload["fix_versions"] = fix_versions
+
+    components = _collect_text_list(item, "component")
+    if components:
+        payload["components"] = components
+
+    votes_value = _int_from_element(item.find("votes"))
+    if votes_value is not None:
+        payload["votes"] = votes_value
+
+    watches_value = _int_from_element(item.find("watches"))
+    if watches_value is not None:
+        payload["watches"] = watches_value
+
+    comments = _collect_comments(item)
+    if comments:
+        payload["comments"] = comments
+
+    issue_links = _collect_issue_links(item)
+    if issue_links:
+        payload["issue_links"] = issue_links
+
+    attachments = _collect_attachments(item)
+    if attachments:
+        payload["attachments"] = attachments
+
+    subtasks = _collect_subtasks(item)
+    if subtasks:
+        payload["subtasks"] = subtasks
+
+    custom_fields = _collect_custom_fields(item)
+    if custom_fields:
+        payload["custom_fields"] = custom_fields
 
     backport_origins = extract_backport_origins_from_item(item, source=source)
     if backport_origins:
@@ -1227,126 +1576,51 @@ def generate_jdk_diff_report(
     output_path = output_dir / JDK_DIFF_OUTPUT_FILENAME
     output_path.write_text("\n".join(output_lines), encoding="utf-8")
     return output_path
-JIRA_SEARCH_URL_TEMPLATE = (
-    "https://bugs.openjdk.org/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml"
-    "?jqlQuery=project+%3D+JDK+AND+fixVersion+%3D+{fix_version}+AND+resolution+%3D+Fixed+"
-    "AND+%22resolved+in+build%22+%3D+{build_number}"
-)
-
-# 出力先は実行時カレントディレクトリ配下。
-REQUEST_TIMEOUT_SECONDS = 60
-USER_AGENT = "jdk-notes-collector/1.0"
-
-
-class XmlIssueCountError(RuntimeError):
-    """XML 内から課題総数を特定できない場合の例外。"""
-
-
-def build_request_url(fix_version: str, build_number: str) -> str:
-    return JIRA_SEARCH_URL_TEMPLATE.format(fix_version=fix_version, build_number=build_number)
-
-
-def fetch_xml(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
-        if response.status != 200:
-            raise urllib.error.HTTPError(
-                url=url,
-                code=response.status,
-                msg=f"Unexpected HTTP status: {response.status}",
-                hdrs=response.headers,
-                fp=None,
-            )
-        return response.read()
-
-
-def extract_issue_total(xml_content: bytes) -> int:
-    try:
-        root = ET.fromstring(xml_content)
-    except ET.ParseError as error:
-        raise XmlIssueCountError(f"Failed to parse XML: {error}") from error
-
-    channel = root.find("channel")
-    if channel is None:
-        raise XmlIssueCountError("Missing <channel> element")
-
-    issue = channel.find("issue")
-    if issue is None:
-        raise XmlIssueCountError("Missing <issue> element")
-
-    total_attr = issue.attrib.get("total")
-    if total_attr is None:
-        raise XmlIssueCountError("Missing 'total' attribute on <issue> element")
-
-    try:
-        return int(total_attr)
-    except ValueError as error:
-        raise XmlIssueCountError("Invalid issue total value") from error
-
-
 def write_xml(content: bytes, output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_bytes(content)
 
 
-class FetchOutcome(Enum):
-    SUCCESS = "success"
-    NOT_FOUND = "not_found"
-    ERROR = "error"
+class ResolvedBuildEntry(NamedTuple):
+    """Resolved in Build の XML を収集した結果1件分。"""
+
+    fix_version: str
+    build_number: str
+    xml_content: bytes
 
 
-def fetch_build_xml(fix_version: str, build_number: str) -> tuple[FetchOutcome, bytes | None]:
-    url = build_request_url(fix_version, build_number)
-    try:
-        xml_content = fetch_xml(url)
-    except urllib.error.URLError as error:
-        if isinstance(error, urllib.error.HTTPError) and error.code == 400:
-            print(
-                f"[INFO] {fix_version} {build_number}: JIRA に該当するビルドが存在しません (HTTP 400)"
+def collect_resolved_in_build_xml(
+    targets: Iterable[tuple[str, Iterable[str]]],
+    input_dir: Path,
+) -> list[ResolvedBuildEntry]:
+    collected: list[ResolvedBuildEntry] = []
+    missing: list[str] = []
+    for fix_version, build_numbers in targets:
+        for build_number in build_numbers:
+            filename = f"jdk-{fix_version}_{build_number}.xml"
+            source_path = input_dir / filename
+            if not source_path.is_file():
+                missing.append(f"{fix_version} {build_number}")
+                continue
+            try:
+                xml_content = source_path.read_bytes()
+            except OSError as error:
+                raise OSError(
+                    f"{source_path}: 読み込みに失敗しました ({error})"
+                ) from error
+            collected.append(
+                ResolvedBuildEntry(
+                    fix_version=fix_version,
+                    build_number=build_number,
+                    xml_content=xml_content,
+                )
             )
-            return FetchOutcome.NOT_FOUND, None
-        print(f"[ERROR] {fix_version} {build_number}: {error}", file=sys.stderr)
-        return FetchOutcome.ERROR, None
-
-    try:
-        issue_total = extract_issue_total(xml_content)
-    except XmlIssueCountError as error:
-        print(f"[ERROR] {fix_version} {build_number}: {error}", file=sys.stderr)
-        return FetchOutcome.ERROR, None
-
-    if issue_total == 0:
-        print(f"[INFO] {fix_version} {build_number}: 対応する課題が見つかりません (保存をスキップ)")
-        return FetchOutcome.NOT_FOUND, None
-
-    return FetchOutcome.SUCCESS, xml_content
-
-
-
-
-def resolve_output_path(
-    fix_version: str,
-    build_number: str,
-    output_dir: Path,
-    output_subdirectory: Path,
-) -> Path:
-    filename = f"jdk-{fix_version}_{build_number}.xml"
-    return output_dir / output_subdirectory / filename
-
-def save_individual_xml(
-    fix_version: str,
-    build_number: str,
-    xml_content: bytes,
-    output_dir: Path,
-    output_subdirectory: Path,
-) -> Path:
-    output_path = resolve_output_path(
-        fix_version, build_number, output_dir, output_subdirectory
-    )
-    write_xml(xml_content, output_path)
-    print(
-        f"[INFO] {fix_version} {build_number}: {output_path.relative_to(Path.cwd())} に保存しました"
-    )
-    return output_path
+    if missing:
+        raise FileNotFoundError(
+            f"{input_dir}: resolved in build 入力が不足しています -> "
+            + ", ".join(missing)
+        )
+    return collected
 
 
 def build_aggregate_xml(
@@ -1379,6 +1653,7 @@ def build_aggregate_xml(
     return ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
 
+
 def write_aggregate_xml(
     entries: Sequence[ResolvedBuildEntry],
     output_dir: Path,
@@ -1390,66 +1665,6 @@ def write_aggregate_xml(
     write_xml(aggregate_content, aggregate_path)
     print(f"[INFO] 統合 XML: {aggregate_path.relative_to(Path.cwd())} に保存しました")
     return aggregate_path
-
-
-
-
-class ResolvedBuildEntry(NamedTuple):
-    """Resolved in Build の XML を収集した結果1件分。"""
-
-    fix_version: str
-    build_number: str
-    xml_content: bytes
-    fetched: bool
-
-def collect_resolved_in_build_xml(
-    targets: Iterable[tuple[str, Iterable[str]]],
-    output_dir: Path,
-    output_subdirectory: Path,
-) -> tuple[list[ResolvedBuildEntry], int]:
-    collected: list[ResolvedBuildEntry] = []
-    failures = 0
-    for fix_version, build_numbers in targets:
-        for build_number in build_numbers:
-            output_path = resolve_output_path(
-                fix_version, build_number, output_dir, output_subdirectory
-            )
-            if output_path.exists():
-                try:
-                    xml_content = output_path.read_bytes()
-                except OSError as error:
-                    print(
-                        f"[WARN] {fix_version} {build_number}: 既存 XML の読み込みに失敗しました ({error})",
-                        file=sys.stderr,
-                    )
-                else:
-                    # print(f"[INFO] {fix_version} {build_number}: 既存 XML を再利用します")
-                    collected.append(
-                        ResolvedBuildEntry(
-                            fix_version=fix_version,
-                            build_number=build_number,
-                            xml_content=xml_content,
-                            fetched=False,
-                        )
-                    )
-                    continue
-
-            outcome, xml_content = fetch_build_xml(fix_version, build_number)
-            if outcome is FetchOutcome.ERROR:
-                failures += 1
-                continue
-            if outcome is FetchOutcome.NOT_FOUND:
-                continue
-            assert xml_content is not None
-            collected.append(
-                ResolvedBuildEntry(
-                    fix_version=fix_version,
-                    build_number=build_number,
-                    xml_content=xml_content,
-                    fetched=True,
-                )
-            )
-    return collected, failures
 
 
 
@@ -1495,35 +1710,36 @@ def main() -> None:
         issue_root=issue_output_root,
         diff_report_path=diff_report_path,
     )
-    total_failures = 0
     any_collected = False
     issue_generation_results: dict[str, IssueIdGenerationResult] = {}
 
     for distribution in DISTRIBUTION_TARGETS:
-        collected_entries, failures = collect_resolved_in_build_xml(
-            distribution.targets, xml_output_root, distribution.output_subdirectory
-        )
-        total_failures += failures
+        input_root = DISTRIBUTION_INPUT_ROOT_MAP.get(distribution.label)
+        if input_root is None:
+            print(
+                f"[ERROR] {distribution.label}: 入力ディレクトリが定義されていません",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+        resolved_input_dir = Path.cwd() / input_root
+        try:
+            collected_entries = collect_resolved_in_build_xml(
+                distribution.targets,
+                resolved_input_dir,
+            )
+        except (FileNotFoundError, OSError) as error:
+            print(f"[ERROR] {distribution.label}: {error}", file=sys.stderr)
+            sys.exit(1)
 
         if not collected_entries:
             print(
-                f"[WARN] {distribution.label}: 保存対象となる XML がありませんでした",
+                f"[ERROR] {distribution.label}: resolved in build 入力が空です",
                 file=sys.stderr,
             )
-            continue
+            sys.exit(1)
 
         any_collected = True
-        for entry in collected_entries:
-            if not entry.fetched:
-                continue
-            save_individual_xml(
-                entry.fix_version,
-                entry.build_number,
-                entry.xml_content,
-                xml_output_root,
-                distribution.output_subdirectory,
-            )
-
         write_aggregate_xml(
             collected_entries,
             xml_output_root,
@@ -1536,7 +1752,7 @@ def main() -> None:
             if openjdk_result is not None:
                 supplemental_issue_maps.append(openjdk_result.aggregated_issue_map)
         issue_result = generate_issue_id_outputs(
-            xml_output_root / distribution.output_subdirectory,
+            resolved_input_dir,
             issue_output_root,
             distribution.issue_ids_aggregate_filename,
             distribution.output_subdirectory,
@@ -1608,12 +1824,9 @@ def main() -> None:
             f"[INFO] JDK差分レポート: {diff_report_path.relative_to(Path.cwd())} に保存しました"
         )
 
-    if not any_collected:
-        print("[WARN] 保存対象となる XML がありませんでした", file=sys.stderr)
-        sys.exit(1)
 
-    if total_failures:
-        print(f"[WARN] 取得に失敗したビルドが {total_failures} 件あります", file=sys.stderr)
+    if not any_collected:
+        print("[ERROR] resolved in build 入力が空のため処理を継続できません", file=sys.stderr)
         sys.exit(1)
 
 
