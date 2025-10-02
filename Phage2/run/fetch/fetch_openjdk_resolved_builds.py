@@ -5,6 +5,7 @@ from __future__ import annotations
 import datetime as _dt
 import re
 import sys
+import time
 from collections import Counter
 from dataclasses import dataclass
 from enum import Enum
@@ -17,6 +18,7 @@ from xml.etree import ElementTree as ET
 
 # 取得対象のバージョンと "Resolved in Build" の正準定義。
 OPENJDK_RESOLVED_BUILD_TARGETS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("21", tuple(f"b{index:02d}" for index in range(1, 36))),
     ("21.0.1", tuple(f"b{index:02d}" for index in range(1, 11))),
     ("21.0.2", tuple(f"b{index:02d}" for index in range(1, 14))),
     ("21.0.3", tuple(f"b{index:02d}" for index in range(1, 10))),
@@ -49,6 +51,11 @@ class DistributionTarget(NamedTuple):
     fix_versions: tuple[str, ...]
     aggregate_filename: str
     issue_ids_aggregate_filename: str
+
+
+class IssueIdGenerationResult(NamedTuple):
+    aggregated_path: Path
+    aggregated_issue_map: dict[str, set[str]]
 
 
 DISTRIBUTION_TARGETS: tuple[DistributionTarget, ...] = (
@@ -589,7 +596,8 @@ def generate_issue_id_outputs(
     issue_output_root: Path,
     aggregate_filename: str,
     distribution_subdirectory: Path,
-) -> Path:
+    supplemental_issue_maps: Optional[Sequence[dict[str, set[str]]]] = None,
+) -> IssueIdGenerationResult:
     per_file_results, aggregated_issue_map = collect_issue_ids_from_directory(xml_root)
     distribution_issue_root = issue_output_root / distribution_subdirectory
 
@@ -598,9 +606,21 @@ def generate_issue_id_outputs(
         output_path = (distribution_issue_root / relative).with_suffix(".txt")
         write_issue_lines(format_issue_lines(issue_map), output_path)
 
+    merged_aggregated_map: dict[str, set[str]] = {
+        issue_id: set(backports) for issue_id, backports in aggregated_issue_map.items()
+    }
+    if supplemental_issue_maps:
+        counts = [len(supplemental) for supplemental in supplemental_issue_maps]
+        print(
+            f"[DEBUG] generate_issue_id_outputs: base_count={len(aggregated_issue_map)} supplemental_counts={counts}"
+        )
+        for supplemental in supplemental_issue_maps:
+            for issue_id, backports in supplemental.items():
+                merged_aggregated_map.setdefault(issue_id, set()).update(backports)
+
     aggregated_path = issue_output_root / aggregate_filename
-    write_issue_lines(format_issue_lines(aggregated_issue_map), aggregated_path)
-    return aggregated_path
+    write_issue_lines(format_issue_lines(merged_aggregated_map), aggregated_path)
+    return IssueIdGenerationResult(aggregated_path=aggregated_path, aggregated_issue_map=merged_aggregated_map)
 
 
 def ensure_jdk_issue_id(value: str, *, source_path: Path, lineno: int) -> str:
@@ -1056,6 +1076,7 @@ def main() -> None:
     temurin_input_root = Path.cwd() / TEMURIN_INPUT_ROOT
     total_failures = 0
     any_collected = False
+    issue_generation_results: dict[str, IssueIdGenerationResult] = {}
 
     for distribution in DISTRIBUTION_TARGETS:
         collected_entries, failures = collect_resolved_in_build_xml(
@@ -1088,14 +1109,21 @@ def main() -> None:
             distribution.aggregate_filename,
             distribution.fix_versions,
         )
-        aggregated_issue_path = generate_issue_id_outputs(
+        supplemental_issue_maps: list[dict[str, set[str]]] = []
+        if distribution.label == "OracleJDK":
+            openjdk_result = issue_generation_results.get("OpenJDK")
+            if openjdk_result is not None:
+                supplemental_issue_maps.append(openjdk_result.aggregated_issue_map)
+        issue_result = generate_issue_id_outputs(
             xml_output_root / distribution.output_subdirectory,
             issue_output_root,
             distribution.issue_ids_aggregate_filename,
             distribution.output_subdirectory,
+            supplemental_issue_maps or None,
         )
+        issue_generation_results[distribution.label] = issue_result
         print(
-            f"[INFO] Issue ID 集約: {aggregated_issue_path.relative_to(Path.cwd())} に保存しました"
+            f"[INFO] Issue ID 集約: {issue_result.aggregated_path.relative_to(Path.cwd())} に保存しました"
         )
 
     try:
