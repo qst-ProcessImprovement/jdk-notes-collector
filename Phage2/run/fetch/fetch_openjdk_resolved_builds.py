@@ -404,6 +404,7 @@ def collect_temurin_issue_ids(
         if entry.issue_type == "Backport":
             if entry.redo_targets:
                 for target in entry.redo_targets:
+                    excluded_issue_ids.discard(target)
                     backport_map.setdefault(target, set()).add(entry.issue_id)
                     issue_ids.append(target)
                     reference_backports.setdefault(entry.issue_id, target)
@@ -424,11 +425,13 @@ def collect_temurin_issue_ids(
                     missing_backport_origins.add(entry.issue_id)
                     continue
 
+            excluded_issue_ids.discard(backport_origin)
             backport_map.setdefault(backport_origin, set()).add(entry.issue_id)
             issue_ids.append(backport_origin)
             reference_backports.setdefault(entry.issue_id, backport_origin)
             continue
 
+        excluded_issue_ids.discard(entry.issue_id)
         backport_map.setdefault(entry.issue_id, set())
         issue_ids.append(entry.issue_id)
 
@@ -556,20 +559,21 @@ def generate_temurin_issue_outputs(
         "\n".join(tmp_ids) + ("\n" if tmp_ids else ""), encoding="utf-8"
     )
 
+    effective_excluded = {
+        issue_id for issue_id in excluded_backout_issue_ids if issue_id not in aggregate_ids
+    }
     backout_issue_path = temurin_tmp_dir / TEMURIN_BACKOUT_TMP_FILENAME
     sorted_backout_ids = (
-        sorted(excluded_backout_issue_ids, key=issue_sort_key)
-        if excluded_backout_issue_ids
-        else []
+        sorted(effective_excluded, key=issue_sort_key) if effective_excluded else []
     )
     backout_issue_path.write_text(
         "\n".join(sorted_backout_ids) + ("\n" if sorted_backout_ids else ""),
         encoding="utf-8",
     )
 
-    if excluded_backout_issue_ids:
-        aggregate_ids.difference_update(excluded_backout_issue_ids)
-        for issue_id in excluded_backout_issue_ids:
+    if effective_excluded:
+        aggregate_ids.difference_update(effective_excluded)
+        for issue_id in effective_excluded:
             aggregate_backports.pop(issue_id, None)
 
     issue_output_root.mkdir(parents=True, exist_ok=True)
